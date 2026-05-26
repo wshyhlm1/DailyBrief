@@ -56,6 +56,8 @@ export const WATCHLIST: TickerDef[] = [
   { symbol: "GOOGL", displayName: "Alphabet", group: "us-equity" },
   { symbol: "TSLA", displayName: "Tesla", group: "us-equity" },
   { symbol: "META", displayName: "Meta", group: "us-equity" },
+  { symbol: "CIEN", displayName: "Ciena", group: "us-equity" },
+  { symbol: "NOK", displayName: "Nokia", group: "us-equity" },
   // === 加密货币 ===
   { symbol: "BTC-USD", displayName: "Bitcoin", group: "crypto" },
   { symbol: "ETH-USD", displayName: "Ethereum", group: "crypto" },
