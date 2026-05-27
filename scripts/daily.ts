@@ -34,14 +34,28 @@ const OUTPUT_DIR = "daily_reports";
 async function fetchAll(): Promise<ArticleInput[]> {
   const articles: ArticleInput[] = [];
   const enabled = sources.filter((s) => s.enabled !== false);
-  for (const source of enabled) {
-    try {
-      const items = await fetchSource(source);
-      console.log(`  ${source.id.padEnd(20)} ${items.length}`);
-      articles.push(...items.map((it) => ({ ...it, source: source.name })));
-    } catch (e) {
-      const msg = e instanceof Error ? e.message : String(e);
-      console.error(`  ${source.id.padEnd(20)} FAILED — ${msg}`);
+  // Fetch all sources in parallel (with concurrency limit to avoid
+  // overwhelming RSSHub / rate-limited APIs).
+  const CONCURRENCY = 8;
+  for (let i = 0; i < enabled.length; i += CONCURRENCY) {
+    const batch = enabled.slice(i, i + CONCURRENCY);
+    const results = await Promise.allSettled(
+      batch.map(async (source) => {
+        const items = await fetchSource(source);
+        return { source, items };
+      }),
+    );
+    for (const r of results) {
+      if (r.status === "fulfilled") {
+        const { source, items } = r.value;
+        console.log(`  ${source.id.padEnd(20)} ${items.length}`);
+        articles.push(...items.map((it) => ({ ...it, source: source.name })));
+      } else {
+        const source = (r as any).reason?.source || { id: "unknown" };
+        const msg =
+          r.reason instanceof Error ? r.reason.message : String(r.reason);
+        console.error(`  ${source.id?.padEnd(20) ?? "unknown".padEnd(20)} FAILED — ${msg}`);
+      }
     }
   }
   return articles;
