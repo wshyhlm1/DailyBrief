@@ -43,8 +43,19 @@ export const PRESETS: Record<OpenAICompatConfig["backend"], OpenAICompatConfig> 
 };
 
 const clientCache = new Map<string, OpenAI>();
+const VALID_REASONING_EFFORTS = new Set([
+  "none",
+  "minimal",
+  "low",
+  "medium",
+  "high",
+  "xhigh",
+] as const);
+type ReasoningEffort = "none" | "minimal" | "low" | "medium" | "high" | "xhigh";
 
-function getClient(cfg: OpenAICompatConfig): { client: OpenAI; model: string } {
+function getClient(
+  cfg: OpenAICompatConfig,
+): { client: OpenAI; model: string; baseURL: string } {
   // Provider-specific env wins; LLM_API_KEY / LLM_BASE_URL are generic
   // aliases so users pointing at a non-preset OpenAI-compatible service
   // (Moonshot, SiliconFlow, OpenRouter, self-hosted vLLM, ...) don't have
@@ -66,7 +77,34 @@ function getClient(cfg: OpenAICompatConfig): { client: OpenAI; model: string } {
     client = new OpenAI({ apiKey, baseURL });
     clientCache.set(cacheKey, client);
   }
-  return { client, model };
+  return { client, model, baseURL };
+}
+
+function resolveReasoningEffort(): ReasoningEffort | null {
+  const raw = process.env.LLM_REASONING_EFFORT?.trim().toLowerCase();
+  if (!raw) return null;
+  if (VALID_REASONING_EFFORTS.has(raw as ReasoningEffort)) {
+    return raw as ReasoningEffort;
+  }
+  console.warn(
+    `[llm] invalid LLM_REASONING_EFFORT='${raw}', expected one of: none|minimal|low|medium|high|xhigh`,
+  );
+  return null;
+}
+
+function isQwenEndpoint(model: string, baseURL: string): boolean {
+  const m = model.toLowerCase();
+  const b = baseURL.toLowerCase();
+  return m.includes("qwen") || b.includes("dashscope") || b.includes("aliyuncs");
+}
+
+function qwenThinkingBudget(effort: ReasoningEffort): number | null {
+  // For high/xhigh we let the provider default decide the max thinking depth.
+  if (effort === "none") return 0;
+  if (effort === "minimal") return 256;
+  if (effort === "low") return 800;
+  if (effort === "medium") return 2000;
+  return null;
 }
 
 export function openaiCompatModel(cfg: OpenAICompatConfig): string {
@@ -77,32 +115,51 @@ export async function runOpenAICompat(
   opts: LlmRunOptions,
   cfg: OpenAICompatConfig,
 ): Promise<LlmRunResult> {
-  const { client, model } = getClient(cfg);
+  const { client, model, baseURL } = getClient(cfg);
   const started = Date.now();
   const inputChars = opts.systemPrompt.length + opts.userPrompt.length;
   const timeoutMs = opts.timeoutMs ?? 180_000;
+  const reasoningEffort = resolveReasoningEffort();
+  const request: OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming = {
+    model,
+    messages: [
+      { role: "system", content: opts.systemPrompt },
+      { role: "user", content: opts.userPrompt },
+    ],
+    // Explicit max_tokens — most providers default low (DeepSeek 4096,
+    // some MiniMax variants 2048). A 16-item batch enrichment routinely
+    // exceeds 4K output tokens once you count Chinese chars + JSON
+    // structure, and silent truncation made it through with just 1/16
+    // entries parseable. 8192 covers all observed daily batches with
+    // generous headroom. Match the explicit value Anthropic SDK uses.
+    max_tokens: 8192,
+    // Don't force JSON mode — not all OpenAI-compat providers support
+    // response_format=json_object, and our prompts + jsonrepair already
+    // handle the slop.
+  };
+
+  if (reasoningEffort) {
+    request.reasoning_effort = reasoningEffort;
+  }
+
+  // Qwen's OpenAI-compatible APIs ignore `reasoning_effort`; use their native
+  // thinking controls so `LLM_REASONING_EFFORT=high` actually increases depth.
+  if (isQwenEndpoint(model, baseURL) && reasoningEffort) {
+    if (reasoningEffort === "none") {
+      (request as any).enable_thinking = false;
+    } else {
+      (request as any).enable_thinking = true;
+      const budget = qwenThinkingBudget(reasoningEffort);
+      if (budget && budget > 0) {
+        (request as any).thinking_budget = budget;
+      }
+    }
+  }
 
   try {
-    const resp = await client.chat.completions.create(
-      {
-        model,
-        messages: [
-          { role: "system", content: opts.systemPrompt },
-          { role: "user", content: opts.userPrompt },
-        ],
-        // Explicit max_tokens — most providers default low (DeepSeek 4096,
-        // some MiniMax variants 2048). A 16-item batch enrichment routinely
-        // exceeds 4K output tokens once you count Chinese chars + JSON
-        // structure, and silent truncation made it through with just 1/16
-        // entries parseable. 8192 covers all observed daily batches with
-        // generous headroom. Match the explicit value Anthropic SDK uses.
-        max_tokens: 8192,
-        // Don't force JSON mode — not all OpenAI-compat providers support
-        // response_format=json_object, and our prompts + jsonrepair already
-        // handle the slop.
-      },
-      { timeout: timeoutMs },
-    );
+    const resp = await client.chat.completions.create(request, {
+      timeout: timeoutMs,
+    });
     const text = (resp.choices[0]?.message?.content ?? "").trim();
     const durationMs = Date.now() - started;
     logLlmCall({

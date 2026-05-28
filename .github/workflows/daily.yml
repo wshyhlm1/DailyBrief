@@ -37,9 +37,6 @@ on:
     # absent from gh-pages.
     - cron: '7 * * * *'
   workflow_dispatch:
-  repository_dispatch:
-    types:
-      - daily-brief-fallback
 
 permissions:
   contents: write  # needed to push to gh-pages branch
@@ -70,27 +67,6 @@ jobs:
           if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
             echo "Manual trigger — bypassing time gate"
             echo "should-run=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          # External fallback trigger (repository_dispatch) only runs when
-          # today's report is still missing — avoids duplicate rebuilds.
-          if [ "$EVENT_NAME" = "repository_dispatch" ]; then
-            TZ_VAL="${REPORT_TZ:-UTC}"
-            TODAY=$(TZ="$TZ_VAL" date +%Y-%m-%d)
-            CHECK_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/contents/${TODAY}/${TODAY}.html?ref=gh-pages"
-            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
-              -H "Authorization: Bearer ${GH_TOKEN}" \
-              -H "Accept: application/vnd.github+json" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
-              "$CHECK_URL" || echo "000")
-            if [ "$HTTP_CODE" = "404" ]; then
-              echo "External fallback trigger — today's report missing, proceeding"
-              echo "should-run=true" >> "$GITHUB_OUTPUT"
-            else
-              echo "External fallback trigger ignored — report already exists (HTTP $HTTP_CODE)"
-              echo "should-run=false" >> "$GITHUB_OUTPUT"
-            fi
             exit 0
           fi
 
@@ -205,30 +181,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Start local RSSHub for Serenity X feed
-        env:
-          TWITTER_AUTH_TOKEN: ${{ secrets.TWITTER_AUTH_TOKEN }}
-        run: |
-          set -euo pipefail
-          # TWITTER_AUTH_TOKEN is optional but strongly recommended for
-          # reliable Twitter/X route access on RSSHub.
-          docker run -d --name rsshub \
-            -p 1200:1200 \
-            -e TWITTER_AUTH_TOKEN="${TWITTER_AUTH_TOKEN:-}" \
-            diygod/rsshub:chromium-bundled >/dev/null
-
-          for i in $(seq 1 45); do
-            if curl -fsS http://127.0.0.1:1200/ >/dev/null; then
-              echo "RSSHub is ready"
-              exit 0
-            fi
-            sleep 2
-          done
-
-          echo "RSSHub failed to become ready in time"
-          docker logs --tail=200 rsshub || true
-          exit 1
-
       # Bring previous reports into the workspace so they survive each run
       # and so build-site can list them all in the archive.
       - name: Restore existing reports from gh-pages
@@ -265,9 +217,9 @@ jobs:
           # vars above take precedence when both are set.
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          LLM_REASONING_EFFORT: ${{ vars.LLM_REASONING_EFFORT || 'high' }}
           REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
           REPORT_TZ: ${{ vars.REPORT_TZ }}
-          X_SERENITY_RSS_URL: 'http://127.0.0.1:1200/twitter/user/aleabitoreddit'
           WEB_MODE: 'true'
         run: npm run daily
 

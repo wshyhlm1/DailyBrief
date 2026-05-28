@@ -40,7 +40,6 @@ const SOURCE_SKIP_AFTER_FAILURES = parsePositiveIntEnv(
   3,
 );
 const SOURCE_SKIP_HOURS = parsePositiveIntEnv("SOURCE_SKIP_HOURS", 24);
-const X_SERENITY_SOURCE_ID = "x-serenity";
 
 type SourceHealthRecord = {
   consecutiveFailures: number;
@@ -106,13 +105,6 @@ function appendSourceFailureEvent(event: SourceFailureEvent): void {
   fs.appendFileSync(SOURCE_FAILURE_LOG_PATH, `${JSON.stringify(event)}\n`, "utf8");
 }
 
-function resolveRuntimeSource(source: SourceDef): SourceDef {
-  if (source.id !== X_SERENITY_SOURCE_ID) return source;
-  const override = process.env.X_SERENITY_RSS_URL?.trim();
-  if (!override) return source;
-  return { ...source, url: override };
-}
-
 function shouldSkipSource(
   source: SourceDef,
   health: SourceHealthMap,
@@ -129,11 +121,10 @@ function shouldSkipSource(
 async function fetchSourceWithRetries(
   source: SourceDef,
 ): Promise<{ source: SourceDef; items: ArticleInput[] }> {
-  const runtimeSource = resolveRuntimeSource(source);
   let lastErr: unknown;
   for (let attempt = 1; attempt <= SOURCE_FETCH_RETRIES; attempt++) {
     try {
-      const items = await fetchSource(runtimeSource);
+      const items = await fetchSource(source);
       return { source, items: items.map((it) => ({ ...it, source: source.name })) };
     } catch (e) {
       lastErr = e;
@@ -146,7 +137,7 @@ async function fetchSourceWithRetries(
           at: safeIso(Date.now()),
           sourceId: source.id,
           sourceName: source.name,
-          url: runtimeSource.url,
+          url: source.url,
           event: "retry",
           error: msg,
           attempt,
@@ -176,7 +167,7 @@ async function fetchAll(): Promise<ArticleInput[]> {
         at: safeIso(nowMs),
         sourceId: source.id,
         sourceName: source.name,
-        url: resolveRuntimeSource(source).url,
+        url: source.url,
         event: "skipped",
         error: `muted-until:${until}`,
         consecutiveFailures: health[source.id]?.consecutiveFailures ?? 0,
@@ -232,7 +223,7 @@ async function fetchAll(): Promise<ArticleInput[]> {
           at: safeIso(Date.now()),
           sourceId: source.id,
           sourceName: source.name,
-          url: resolveRuntimeSource(source).url,
+          url: source.url,
           event: "failed",
           error: msg,
           maxAttempts: SOURCE_FETCH_RETRIES,
