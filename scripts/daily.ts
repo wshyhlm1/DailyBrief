@@ -5,6 +5,7 @@ import path from "node:path";
 
 import { sources, REPORT_LOCALE } from "../lib/sources/registry";
 import { fetchSource } from "../lib/sources/dispatch";
+import type { SourceDef } from "../lib/sources/types";
 import {
   generateDailyReport,
   type ArticleInput,
@@ -30,34 +31,218 @@ import type { TradingSection } from "../lib/ai/pipeline";
 import { todayKey } from "../lib/utils";
 
 const OUTPUT_DIR = "daily_reports";
+const SOURCE_HEALTH_PATH = path.join("logs", "source-health.json");
+const SOURCE_FAILURE_LOG_PATH = path.join("logs", "source-failures.jsonl");
+
+const SOURCE_FETCH_RETRIES = parsePositiveIntEnv("SOURCE_FETCH_RETRIES", 3);
+const SOURCE_SKIP_AFTER_FAILURES = parsePositiveIntEnv(
+  "SOURCE_SKIP_AFTER_FAILURES",
+  3,
+);
+const SOURCE_SKIP_HOURS = parsePositiveIntEnv("SOURCE_SKIP_HOURS", 24);
+const X_SERENITY_SOURCE_ID = "x-serenity";
+
+type SourceHealthRecord = {
+  consecutiveFailures: number;
+  lastFailureAt?: string;
+  lastError?: string;
+  skipUntil?: string;
+};
+
+type SourceHealthMap = Record<string, SourceHealthRecord>;
+
+type SourceFailureEvent = {
+  at: string;
+  sourceId: string;
+  sourceName: string;
+  url: string;
+  event: "retry" | "failed" | "skipped";
+  error: string;
+  attempt?: number;
+  maxAttempts?: number;
+  consecutiveFailures?: number;
+  skipUntil?: string;
+};
+
+function parsePositiveIntEnv(name: string, fallback: number): number {
+  const raw = process.env[name];
+  if (!raw) return fallback;
+  const parsed = Number.parseInt(raw, 10);
+  if (!Number.isFinite(parsed) || parsed <= 0) return fallback;
+  return parsed;
+}
+
+function errorMessage(err: unknown): string {
+  return err instanceof Error ? err.message : String(err);
+}
+
+function safeIso(ts: number): string {
+  return new Date(ts).toISOString();
+}
+
+function loadSourceHealth(): SourceHealthMap {
+  if (!fs.existsSync(SOURCE_HEALTH_PATH)) return {};
+  try {
+    const raw = fs.readFileSync(SOURCE_HEALTH_PATH, "utf8");
+    const parsed = JSON.parse(raw) as unknown;
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      return parsed as SourceHealthMap;
+    }
+  } catch (e) {
+    console.warn(
+      `[daily] source health cache unreadable, resetting: ${errorMessage(e)}`,
+    );
+  }
+  return {};
+}
+
+function saveSourceHealth(health: SourceHealthMap): void {
+  fs.mkdirSync(path.dirname(SOURCE_HEALTH_PATH), { recursive: true });
+  fs.writeFileSync(SOURCE_HEALTH_PATH, JSON.stringify(health, null, 2), "utf8");
+}
+
+function appendSourceFailureEvent(event: SourceFailureEvent): void {
+  fs.mkdirSync(path.dirname(SOURCE_FAILURE_LOG_PATH), { recursive: true });
+  fs.appendFileSync(SOURCE_FAILURE_LOG_PATH, `${JSON.stringify(event)}\n`, "utf8");
+}
+
+function resolveRuntimeSource(source: SourceDef): SourceDef {
+  if (source.id !== X_SERENITY_SOURCE_ID) return source;
+  const override = process.env.X_SERENITY_RSS_URL?.trim();
+  if (!override) return source;
+  return { ...source, url: override };
+}
+
+function shouldSkipSource(
+  source: SourceDef,
+  health: SourceHealthMap,
+  nowMs: number,
+): { skip: boolean; until?: string } {
+  const rec = health[source.id];
+  if (!rec?.skipUntil) return { skip: false };
+  const untilMs = Date.parse(rec.skipUntil);
+  if (!Number.isFinite(untilMs)) return { skip: false };
+  if (untilMs <= nowMs) return { skip: false };
+  return { skip: true, until: rec.skipUntil };
+}
+
+async function fetchSourceWithRetries(
+  source: SourceDef,
+): Promise<{ source: SourceDef; items: ArticleInput[] }> {
+  const runtimeSource = resolveRuntimeSource(source);
+  let lastErr: unknown;
+  for (let attempt = 1; attempt <= SOURCE_FETCH_RETRIES; attempt++) {
+    try {
+      const items = await fetchSource(runtimeSource);
+      return { source, items: items.map((it) => ({ ...it, source: source.name })) };
+    } catch (e) {
+      lastErr = e;
+      const msg = errorMessage(e);
+      if (attempt < SOURCE_FETCH_RETRIES) {
+        console.warn(
+          `  ${source.id.padEnd(20)} retry ${attempt}/${SOURCE_FETCH_RETRIES} — ${msg}`,
+        );
+        appendSourceFailureEvent({
+          at: safeIso(Date.now()),
+          sourceId: source.id,
+          sourceName: source.name,
+          url: runtimeSource.url,
+          event: "retry",
+          error: msg,
+          attempt,
+          maxAttempts: SOURCE_FETCH_RETRIES,
+        });
+      }
+    }
+  }
+  throw new Error(errorMessage(lastErr));
+}
 
 async function fetchAll(): Promise<ArticleInput[]> {
   const articles: ArticleInput[] = [];
   const enabled = sources.filter((s) => s.enabled !== false);
+  const health = loadSourceHealth();
+  const nowMs = Date.now();
+  const candidates: SourceDef[] = [];
+
+  for (const source of enabled) {
+    const skip = shouldSkipSource(source, health, nowMs);
+    if (skip.skip) {
+      const until = skip.until ?? "unknown";
+      console.warn(
+        `  ${source.id.padEnd(20)} SKIPPED — muted after repeated failures (until ${until})`,
+      );
+      appendSourceFailureEvent({
+        at: safeIso(nowMs),
+        sourceId: source.id,
+        sourceName: source.name,
+        url: resolveRuntimeSource(source).url,
+        event: "skipped",
+        error: `muted-until:${until}`,
+        consecutiveFailures: health[source.id]?.consecutiveFailures ?? 0,
+        skipUntil: until,
+      });
+      continue;
+    }
+    candidates.push(source);
+  }
+
   // Fetch all sources in parallel (with concurrency limit to avoid
   // overwhelming RSSHub / rate-limited APIs).
   const CONCURRENCY = 8;
-  for (let i = 0; i < enabled.length; i += CONCURRENCY) {
-    const batch = enabled.slice(i, i + CONCURRENCY);
+  for (let i = 0; i < candidates.length; i += CONCURRENCY) {
+    const batch = candidates.slice(i, i + CONCURRENCY);
     const results = await Promise.allSettled(
       batch.map(async (source) => {
-        const items = await fetchSource(source);
-        return { source, items };
+        return fetchSourceWithRetries(source);
       }),
     );
-    for (const r of results) {
+    for (let idx = 0; idx < results.length; idx++) {
+      const r = results[idx];
       if (r.status === "fulfilled") {
         const { source, items } = r.value;
+        health[source.id] = { consecutiveFailures: 0 };
         console.log(`  ${source.id.padEnd(20)} ${items.length}`);
-        articles.push(...items.map((it) => ({ ...it, source: source.name })));
+        articles.push(...items);
       } else {
-        const source = (r as any).reason?.source || { id: "unknown" };
-        const msg =
-          r.reason instanceof Error ? r.reason.message : String(r.reason);
-        console.error(`  ${source.id?.padEnd(20) ?? "unknown".padEnd(20)} FAILED — ${msg}`);
+        const source = batch[idx];
+        const msg = errorMessage(r.reason);
+        if (!source) {
+          console.error(`  ${"unknown".padEnd(20)} FAILED — ${msg}`);
+          continue;
+        }
+        const prev = health[source.id] ?? { consecutiveFailures: 0 };
+        const nextFailures = prev.consecutiveFailures + 1;
+        const rec: SourceHealthRecord = {
+          consecutiveFailures: nextFailures,
+          lastFailureAt: safeIso(Date.now()),
+          lastError: msg,
+        };
+        if (nextFailures >= SOURCE_SKIP_AFTER_FAILURES) {
+          rec.skipUntil = safeIso(Date.now() + SOURCE_SKIP_HOURS * 3_600_000);
+        }
+        health[source.id] = rec;
+        console.error(`  ${source.id.padEnd(20)} FAILED — ${msg}`);
+        if (rec.skipUntil) {
+          console.error(
+            `  ${source.id.padEnd(20)} muted for ${SOURCE_SKIP_HOURS}h after ${nextFailures} consecutive failures`,
+          );
+        }
+        appendSourceFailureEvent({
+          at: safeIso(Date.now()),
+          sourceId: source.id,
+          sourceName: source.name,
+          url: resolveRuntimeSource(source).url,
+          event: "failed",
+          error: msg,
+          maxAttempts: SOURCE_FETCH_RETRIES,
+          consecutiveFailures: nextFailures,
+          skipUntil: rec.skipUntil,
+        });
       }
     }
   }
+  saveSourceHealth(health);
   return articles;
 }
 
