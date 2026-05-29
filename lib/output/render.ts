@@ -170,7 +170,7 @@ const SUBCATEGORY_ORDER: Partial<Record<Category, string[]>> = {
   // zh mode keeps cn-community (V2EX / LinuxDo); en mode keeps
   // overseas-community (Hacker News / r/stocks).
   tech: ["github-trending", "x-viral", "ai-news", "cn-community", "overseas-community"],
-  finance: ["news"],
+  finance: ["x-posts", "news"],
   politics: ["world"],
 };
 
@@ -183,6 +183,7 @@ const SUBCATEGORY_LABELS: Record<string, string> = {
   "overseas-community": STR.subOverseasCommunity,
   "ai-news": STR.subAiNews,
   "x-viral": STR.subXViral,
+  "x-posts": REPORT_LOCALE === "en" ? "X Stock Picks" : "X 选股",
   "blog-weekly": STR.subBlogWeekly,
   news: STR.subFinanceNews,
   world: STR.subWorld,
@@ -200,6 +201,7 @@ const SOURCE_DISPLAY_LIMITS: Record<string, number> = {
   "tech:github-trending": 20,
   "tech:cn-community": 10,
   "tech:x-viral": 20,
+  "finance:x-posts": 20,
 };
 
 /**

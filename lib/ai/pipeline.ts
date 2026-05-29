@@ -4,6 +4,7 @@ import { extractJson } from "./json-util";
 import { SYSTEM_PROMPT_DIGEST_EN, SYSTEM_PROMPT_DIGEST_ZH } from "./prompts";
 import { REPORT_LOCALE } from "../sources/registry";
 import type { Category, RawArticle } from "../sources/types";
+import { todayKey } from "../utils";
 
 const SYSTEM_PROMPT_DIGEST =
   REPORT_LOCALE === "en" ? SYSTEM_PROMPT_DIGEST_EN : SYSTEM_PROMPT_DIGEST_ZH;
@@ -51,6 +52,87 @@ const PER_CATEGORY_LIMIT: Record<Category, number> = {
 };
 
 const MAX_AGE_DAYS = 14;
+const FINANCE_BRIEFS_MAX = 5;
+const SERENITY_SOURCE_ID = "x-serenity";
+const SERENITY_SYMBOL_RE = /\$[A-Za-z]{1,5}(?:\.[A-Za-z]{1,2})?/g;
+
+type SerenityMergedBrief = {
+  symbols: string[];
+  latestUrl: string;
+  sourceName: string;
+  postCount: number;
+};
+
+function normalizeTicker(raw: string): string | null {
+  const cleaned = raw.toUpperCase().replace(/[),.;!?]+$/g, "");
+  if (!/^\$[A-Z]{1,5}(?:\.[A-Z]{1,2})?$/.test(cleaned)) return null;
+  return cleaned;
+}
+
+function collectSerenityMergedBrief(
+  articles: ArticleInput[],
+  reportDayKey: string,
+): SerenityMergedBrief | null {
+  const serenityDaily = articles
+    .filter((a) => a.sourceId === SERENITY_SOURCE_ID)
+    .filter((a) => !a.publishedAt || todayKey(a.publishedAt) === reportDayKey);
+  if (serenityDaily.length === 0) return null;
+
+  const seen = new Set<string>();
+  const symbols: string[] = [];
+  for (const a of serenityDaily) {
+    const text = `${a.title}\n${a.excerpt ?? ""}`;
+    for (const m of text.match(SERENITY_SYMBOL_RE) ?? []) {
+      const sym = normalizeTicker(m);
+      if (!sym || seen.has(sym)) continue;
+      seen.add(sym);
+      symbols.push(sym);
+    }
+  }
+  if (symbols.length === 0) return null;
+
+  const latest = [...serenityDaily].sort(
+    (a, b) =>
+      (b.publishedAt?.getTime() ?? 0) - (a.publishedAt?.getTime() ?? 0),
+  )[0];
+  return {
+    symbols,
+    latestUrl: latest?.url ?? serenityDaily[0].url,
+    sourceName: latest?.source ?? "X Serenity (@aleabitoreddit)",
+    postCount: serenityDaily.length,
+  };
+}
+
+function injectSerenityStockBrief(
+  report: DailyReport,
+  articles: ArticleInput[],
+  reportDayKey: string,
+): void {
+  const merged = collectSerenityMergedBrief(articles, reportDayKey);
+  if (!merged) return;
+
+  const brief: BriefItem = {
+    title:
+      REPORT_LOCALE === "en"
+        ? "Serenity Daily Stock Picks (Merged)"
+        : "Serenity 当日荐股标的汇总",
+    url: merged.latestUrl,
+    source: merged.sourceName,
+    summary:
+      REPORT_LOCALE === "en"
+        ? `Merged from ${merged.postCount} Serenity post(s) today. Mentioned stock tickers: ${merged.symbols.join(", ")}. All picks are deduplicated for quick pre-market tracking.`
+        : `已合并 Serenity 当日 ${merged.postCount} 条推文中的荐股信息，去重后标的为：${merged.symbols.join("、")}。供盘前快速跟踪。`,
+    importance: 10,
+  };
+
+  const kept = report.finance_briefs.filter(
+    (b) =>
+      !/serenity/i.test(b.source) &&
+      !/aleabitoreddit/i.test(b.url) &&
+      !/Serenity/.test(b.title),
+  );
+  report.finance_briefs = [brief, ...kept].slice(0, FINANCE_BRIEFS_MAX);
+}
 
 /**
  * Pick `limit` items from `items` so every source gets a fair shot.
@@ -195,6 +277,7 @@ async function callOnce(userPayloadJson: string): Promise<DailyReport> {
 
 export async function generateDailyReport(
   articles: ArticleInput[],
+  reportDayKey: string = todayKey(),
 ): Promise<{ report: DailyReport; tokensUsed: number }> {
   const grouped: Record<Category, ArticleInput[]> = {
     tech: [],
@@ -231,6 +314,10 @@ export async function generateDailyReport(
     );
     report = await callOnce(userPayloadJson);
   }
+
+  // Hard requirement: if Serenity posted stock picks today, always surface
+  // a merged, deduped ticker brief in finance summaries.
+  injectSerenityStockBrief(report, articles, reportDayKey);
 
   // Max subscription has no per-call token meter — we expose 0 for schema
   // compatibility; consumers should treat 0 as "metric not available".

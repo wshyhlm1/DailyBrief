@@ -7,6 +7,8 @@ name: Daily Brief
 #   2. Settings → Pages → Build & deployment → Source: "Deploy from a branch" → gh-pages / root
 #   3. Settings → Secrets and variables → Actions:
 #        - Secrets: ANTHROPIC_API_KEY (or OPENAI / DEEPSEEK / MINIMAX as you prefer)
+#                   ATTENTIONVC_API_KEY (optional, for the X viral feed)
+#                   TWITTER_AUTH_TOKEN (optional, for self-hosted RSSHub X feeds)
 #        - Variables (all optional, sensible defaults provided):
 #            LLM_BACKEND     anthropic | openai | deepseek | minimax    (default: anthropic)
 #            LLM_MODEL       e.g. claude-sonnet-4-6 / gpt-4o-mini       (backend default if unset)
@@ -28,18 +30,14 @@ name: Daily Brief
 
 on:
   schedule:
-    # Hourly trigger at minute 7 (off-peak). GitHub Actions silently drops
-    # a non-trivial fraction of scheduled runs whose cron lands at minute
-    # 0 — that's where everyone clusters. Moving to an odd off-peak minute
-    # roughly halves the miss rate. The gate decides which firings actually
-    # build, and the catchup branch in the gate covers the residual misses
-    # by allowing a build later in the day if today's report is still
-    # absent from gh-pages.
-    - cron: '7 * * * *'
+    # Trigger 4x per hour at off-peak minutes. GitHub's schedule queue can
+    # delay/drop individual triggers; dense fan-out plus gate dedupe keeps
+    # the "target hour" run much more reliable than single-hourly cron.
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write  # needed to push to gh-pages branch
+  contents: write # needed to push to gh-pages branch
 
 concurrency:
   group: daily-brief
@@ -78,15 +76,40 @@ jobs:
           NOW_DOW=$(TZ="$TZ_VAL" date +%w)
           NOW_PRINT=$(TZ="$TZ_VAL" date '+%Y-%m-%d %H:%M %Z')
 
-          echo "Now in $TZ_VAL: $NOW_PRINT (hour=$NOW_HOUR, dow=$NOW_DOW)"
-          echo "Configured REPORT_HOUR='$HOURS_VAL', REPORT_DAYS='$DAYS_VAL'"
-
-          # Hour match: comma-separated list of integers (0-23).
-          hour_match=false
-          IFS=',' read -ra HLIST <<< "$HOURS_VAL"
-          for h in "${HLIST[@]}"; do
+          # Normalize REPORT_HOUR to integers so "08" and "8" are equivalent.
+          # If parsing fails, fall back to default hour=8.
+          declare -a HLIST=()
+          IFS=',' read -ra HRAW <<< "$HOURS_VAL"
+          for h in "${HRAW[@]}"; do
             h_trim="${h// /}"
-            if [ "$NOW_HOUR" = "$h_trim" ]; then
+            [ -z "$h_trim" ] && continue
+            if [ "$h_trim" = "*" ]; then
+              for i in $(seq 0 23); do HLIST+=("$i"); done
+              continue
+            fi
+            if ! [[ "$h_trim" =~ ^[0-9]{1,2}$ ]]; then
+              echo "Ignoring invalid REPORT_HOUR token: '$h_trim'"
+              continue
+            fi
+            h_num=$((10#$h_trim))
+            if [ "$h_num" -lt 0 ] || [ "$h_num" -gt 23 ]; then
+              echo "Ignoring out-of-range REPORT_HOUR token: '$h_trim'"
+              continue
+            fi
+            HLIST+=("$h_num")
+          done
+          if [ "${#HLIST[@]}" -eq 0 ]; then
+            HLIST=(8)
+          fi
+          HLIST_PRINT=$(IFS=,; echo "${HLIST[*]}")
+
+          echo "Now in $TZ_VAL: $NOW_PRINT (hour=$NOW_HOUR, dow=$NOW_DOW)"
+          echo "Configured REPORT_HOUR='$HOURS_VAL' (normalized: $HLIST_PRINT), REPORT_DAYS='$DAYS_VAL'"
+
+          # Hour match: normalized integer list.
+          hour_match=false
+          for h in "${HLIST[@]}"; do
+            if [ "$NOW_HOUR" -eq "$h" ]; then
               hour_match=true
               break
             fi
@@ -100,21 +123,38 @@ jobs:
             IFS=',' read -ra DLIST <<< "$DAYS_VAL"
             for d in "${DLIST[@]}"; do
               d_trim="${d// /}"
-              if [[ "$d_trim" == *-* ]]; then
+              if [[ "$d_trim" =~ ^[0-6]-[0-6]$ ]]; then
                 start="${d_trim%-*}"
                 end="${d_trim#*-}"
                 if [ "$NOW_DOW" -ge "$start" ] && [ "$NOW_DOW" -le "$end" ]; then
                   day_match=true
                   break
                 fi
-              else
+              elif [[ "$d_trim" =~ ^[0-6]$ ]]; then
                 if [ "$NOW_DOW" = "$d_trim" ]; then
                   day_match=true
                   break
                 fi
+              else
+                echo "Ignoring invalid REPORT_DAYS token: '$d_trim'"
               fi
             done
           fi
+
+          # Existence check for today's report in gh-pages (in REPORT_TZ date).
+          # Used for both exact-hour dedupe and catchup.
+          TODAY=$(TZ="$TZ_VAL" date +%Y-%m-%d)
+          CHECK_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/contents/${TODAY}/${TODAY}.html?ref=gh-pages"
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "$CHECK_URL" || echo "000")
+          report_exists=false
+          if [ "$HTTP_CODE" = "200" ]; then
+            report_exists=true
+          fi
+          echo "Today's report ($TODAY) exists on gh-pages: $report_exists (HTTP $HTTP_CODE)"
 
           # Catchup branch — covers GitHub Actions silently dropping scheduled
           # triggers (which happens to ~30% of cron runs, especially at the
@@ -129,36 +169,28 @@ jobs:
           if [ "$day_match" = "true" ] && [ "$hour_match" = "false" ]; then
             earliest_hour=99
             for h in "${HLIST[@]}"; do
-              h_trim="${h// /}"
-              if [ "$h_trim" -lt "$earliest_hour" ]; then
-                earliest_hour=$h_trim
+              if [ "$h" -lt "$earliest_hour" ]; then
+                earliest_hour=$h
               fi
             done
             if [ "$NOW_HOUR" -gt "$earliest_hour" ]; then
-              TODAY=$(TZ="$TZ_VAL" date +%Y-%m-%d)
-              CHECK_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/contents/${TODAY}/${TODAY}.html?ref=gh-pages"
-              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
-                -H "Authorization: Bearer ${GH_TOKEN}" \
-                -H "Accept: application/vnd.github+json" \
-                -H "X-GitHub-Api-Version: 2022-11-28" \
-                "$CHECK_URL" || echo "000")
-              if [ "$HTTP_CODE" = "404" ]; then
+              if [ "$report_exists" = "false" ]; then
                 echo "↻ Catchup: today's report ($TODAY) missing from gh-pages — recovering"
                 catchup_match=true
               else
-                echo "Catchup check: today's report exists (HTTP $HTTP_CODE) — no action"
+                echo "Catchup check: today's report already exists — no action"
               fi
             fi
           fi
 
-          if [ "$hour_match" = "true" ] && [ "$day_match" = "true" ]; then
-            echo "✓ Match — proceeding to build"
+          if [ "$hour_match" = "true" ] && [ "$day_match" = "true" ] && [ "$report_exists" = "false" ]; then
+            echo "✓ Match + missing report — proceeding to build"
             echo "should-run=true" >> "$GITHUB_OUTPUT"
           elif [ "$catchup_match" = "true" ]; then
             echo "✓ Catchup — proceeding to build"
             echo "should-run=true" >> "$GITHUB_OUTPUT"
           else
-            echo "✗ No match — skipping (hour=$hour_match day=$day_match catchup=$catchup_match)"
+            echo "✗ Skipping (hour=$hour_match day=$day_match exists=$report_exists catchup=$catchup_match)"
             echo "should-run=false" >> "$GITHUB_OUTPUT"
           fi
 
@@ -168,6 +200,14 @@ jobs:
     if: needs.gate.outputs.should-run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    services:
+      rsshub:
+        image: diygod/rsshub:latest
+        ports:
+          - 1200:1200
+        env:
+          NODE_ENV: production
+          TWITTER_AUTH_TOKEN: ${{ secrets.TWITTER_AUTH_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -175,11 +215,22 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Wait for RSSHub
+        run: |
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:1200/ >/dev/null; then
+              echo "RSSHub is ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "::warning::RSSHub did not become ready; RSSHub-backed X feeds may be empty"
 
       # Bring previous reports into the workspace so they survive each run
       # and so build-site can list them all in the archive.
@@ -204,6 +255,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+          ATTENTIONVC_API_KEY: ${{ secrets.ATTENTIONVC_API_KEY }}
           # Optional proxy / self-hosted endpoints — forward whatever the
           # forker set in Settings → Variables. Empty values are a no-op
           # (backends fall back to the official URL in code).
@@ -220,7 +272,7 @@ jobs:
           LLM_REASONING_EFFORT: ${{ vars.LLM_REASONING_EFFORT || 'high' }}
           REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
           REPORT_TZ: ${{ vars.REPORT_TZ }}
-          WEB_MODE: 'true'
+          WEB_MODE: "true"
         run: npm run daily
 
       - name: Build static site (index + archive)
@@ -232,5 +284,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./daily_reports
           publish_branch: gh-pages
-          keep_files: false  # we restored everything above, so a clean publish is fine
-          commit_message: 'daily: report for ${{ github.run_id }}'
+          keep_files: false # we restored everything above, so a clean publish is fine
+          commit_message: "daily: report for ${{ github.run_id }}"

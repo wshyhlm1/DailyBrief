@@ -1,0 +1,10 @@
+services:
+  rsshub:
+    image: diygod/rsshub:latest
+    container_name: dailybrief-rsshub
+    restart: unless-stopped
+    ports:
+      - "1200:1200"
+    environment:
+      NODE_ENV: production
+      TWITTER_AUTH_TOKEN: ${TWITTER_AUTH_TOKEN}

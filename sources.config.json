@@ -663,7 +663,7 @@
       "id": "x-serenity",
       "name": "X Serenity (@aleabitoreddit)",
       "type": "rss",
-      "url": "https://rsshub.app/twitter/user/aleabitoreddit",
+      "url": "http://localhost:1200/twitter/user/aleabitoreddit",
       "category": "finance",
       "subcategory": "x-posts",
       "enabled": true,

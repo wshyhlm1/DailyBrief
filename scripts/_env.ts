@@ -23,4 +23,8 @@ import { config } from "dotenv";
 
 // quiet: true suppresses dotenv's stdout banner ("injected env… // tip: …")
 // which v17 uses to advertise the author's paid products (dotenvx, vestauth).
+// Load order: `.env.local` first (project-specific override), then `.env`
+// as a compatibility fallback for environments that only provision one file.
+// dotenv does not override existing vars by default, so `.env.local` wins.
 config({ path: ".env.local", quiet: true });
+config({ path: ".env", quiet: true });
