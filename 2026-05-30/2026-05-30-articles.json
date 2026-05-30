@@ -6,170 +6,170 @@
       "title": "harry0703/MoneyPrinterTurbo",
       "url": "https://github.com/harry0703/MoneyPrinterTurbo",
       "excerpt": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
-      "meta": "Python · ★ 69,737 · 🍴 10,052 · 📈 3,567 stars today",
+      "meta": "Python · ★ 69,753 · 🍴 10,055 · 📈 3,567 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向自媒体创作者的AI短视频自动生成工具。基于大语言模型生成文案，结合TTS语音合成与视频素材匹配技术，实现从脚本到高清成片的流水线产出。适合需批量制作解说、营销类短视频的运营人员，大幅降低剪辑与配音门槛。"
+      "summary": "该项目通过整合大语言模型与 TTS 语音合成技术，实现一键自动化生成高清短视频。解决短视频创作中脚本编写、配音与画面匹配的繁琐流程。适合自媒体运营者与营销人员，用于快速批量生产科普、推广及资讯类视频内容。"
     },
     {
       "sourceId": "github-trending",
       "title": "microsoft/markitdown",
       "url": "https://github.com/microsoft/markitdown",
       "excerpt": "Python tool for converting files and office documents to Markdown.",
-      "meta": "Python · ★ 130,011 · 🍴 8,922 · 📈 1,873 stars today",
+      "meta": "Python · ★ 130,033 · 🍴 8,924 · 📈 1,873 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "微软开源的Python文档转换工具，专注将PDF、Word、Excel、PPT及图片统一转为标准Markdown格式。底层集成OCR与解析引擎，解决多格式内容结构化难题。适用于AI数据预处理、知识库构建与开发者笔记迁移场景。"
+      "summary": "基于 Python 开发的文档格式转换工具，专为将 PDF、Word、Excel 等办公文件高效转换为标准 Markdown 而设计。有效解决多源文档结构化提取难题。适用于开发者与数据分析师，常用于构建知识库、训练 RAG 系统。"
     },
     {
       "sourceId": "github-trending",
       "title": "EveryInc/compound-engineering-plugin",
       "url": "https://github.com/EveryInc/compound-engineering-plugin",
       "excerpt": "Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more",
-      "meta": "TypeScript · ★ 18,144 · 🍴 1,378 · 📈 353 stars today",
+      "meta": "TypeScript · ★ 18,152 · 🍴 1,378 · 📈 353 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "专为Claude Code、Cursor等AI编程环境设计的工程化插件。提供标准化代码生成规范、架构审查与上下文管理功能，解决大模型辅助编程时代码结构混乱问题。适合追求高质量AI协作流的开发团队与个人工程师。"
+      "summary": "面向 Claude Code、Cursor 等 AI 编程工具的官方工程规范插件。通过标准化协议与工作流集成，提升 AI 辅助代码生成的质量与可维护性，解决 AI 代码缺乏工程化约束的问题。主要服务全栈开发者，适用于复杂项目代码重构。"
     },
     {
       "sourceId": "github-trending",
       "title": "twentyhq/twenty",
       "url": "https://github.com/twentyhq/twenty",
       "excerpt": "The open alternative to Salesforce, designed for AI.",
-      "meta": "TypeScript · ★ 48,422 · 🍴 6,865 · 📈 578 stars today",
+      "meta": "TypeScript · ★ 48,426 · 🍴 6,865 · 📈 578 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向AI时代重构的开源CRM系统，旨在替代Salesforce。采用全栈TypeScript架构与灵活数据模型，内置AI工作流引擎与客户画像分析。解决传统CRM配置僵化痛点，适合中小企业构建智能化销售漏斗流程。"
+      "summary": "专为 AI 时代设计的开源客户关系管理系统，作为传统 CRM 的轻量化替代方案。采用现代技术栈与自动化工作流，解决部署昂贵、扩展僵化及智能体集成困难的问题。适合初创企业与销售团队，用于线索管理与业务数据优化。"
     },
     {
       "sourceId": "github-trending",
       "title": "anthropics/claude-code",
       "url": "https://github.com/anthropics/claude-code",
       "excerpt": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
-      "meta": "Python · ★ 127,893 · 🍴 20,912 · 📈 395 stars today",
+      "meta": "Python · ★ 127,900 · 🍴 20,912 · 📈 395 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Anthropic官方终端AI编程代理。深度集成本地代码库分析，支持自动执行重复任务、复杂逻辑解释与Git工作流管理。采用Agent架构实现多步代码推理，适合全栈开发者在本地环境中高效协同编码与重构项目。"
+      "summary": "Anthropic 推出的终端内 AI 编程智能体，能深度理解本地代码库并自主执行常规开发任务。通过上下文分析与自动化 Git 工作流，有效降低重复编码与调试成本。面向软件工程师，适用于代码编写、架构重构及版本管理。"
     },
     {
       "sourceId": "github-trending",
       "title": "Leonxlnx/taste-skill",
       "url": "https://github.com/Leonxlnx/taste-skill",
       "excerpt": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop",
-      "meta": "Shell · ★ 28,165 · 🍴 2,087 · 📈 2,062 stars today",
+      "meta": "Shell · ★ 28,183 · 🍴 2,087 · 📈 2,062 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "针对AI文本生成质量优化的提示词技能模块。通过内置审美对齐规则与风格约束机制，抑制大模型输出同质化内容，提升行文专业度。适合内容创作者、营销文案撰写者及开发者调试AI输出质量，避免生成机械模板。"
+      "summary": "该 Skill 文件旨在为大语言模型注入写作规范与风格约束，通过提示词工程解决 AI 生成文本千篇一律、缺乏个性的问题。主要服务于内容创作者与 AI 开发者。适用于高质量文案撰写、文学创作辅助及个性化内容定制。"
     },
     {
       "sourceId": "github-trending",
       "title": "cursor/plugins",
       "url": "https://github.com/cursor/plugins",
       "excerpt": "Cursor plugin specification and official plugins",
-      "meta": "TypeScript · ★ 1,303 · 🍴 111 · 📈 134 stars today",
+      "meta": "TypeScript · ★ 1,308 · 🍴 111 · 📈 134 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Cursor编辑器官方插件规范与生态仓库。定义标准化扩展接口、权限模型与通信协议，支持快速构建代码补全、框架适配与CI集成工具。适合用户按需增强IDE功能，或第三方开发者接入Cursor插件生态。"
+      "summary": "提供 Cursor AI 编辑器的官方插件开发规范与核心组件库。通过标准化接口扩展编辑器能力，解决定制 AI 功能时缺乏统一协议的问题。面向 IDE 插件开发者与技术团队，用于快速构建代码补全、上下文检索等增强型工作流。"
     },
     {
       "sourceId": "github-trending",
       "title": "run-llama/liteparse",
       "url": "https://github.com/run-llama/liteparse",
       "excerpt": "A fast, helpful, and open-source document parser",
-      "meta": "Rust · ★ 7,332 · 🍴 445 · 📈 701 stars today",
+      "meta": "Rust · ★ 7,350 · 🍴 446 · 📈 701 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "LlamaIndex生态轻量级开源文档解析器。针对PDF、HTML等格式提供高效结构化提取，内置智能分块与元数据保留逻辑，优化RAG管线数据摄入质量。适合构建企业知识库、搜索系统与大模型微调数据预处理。"
+      "summary": "轻量级高性能开源文档解析引擎，专注快速提取非结构化文本关键内容。采用优化算法，解决传统解析工具速度慢、格式丢失的痛点。适用于 RAG 开发者与企业数据团队，用于数据预处理、向量库导入及智能问答搭建。"
     },
     {
       "sourceId": "github-trending",
       "title": "galilai-group/stable-worldmodel",
       "url": "https://github.com/galilai-group/stable-worldmodel",
       "excerpt": "A platform for reproducible world model research and evaluation",
-      "meta": "Python · ★ 1,256 · 🍴 148 · 📈 362 stars today",
+      "meta": "Python · ★ 1,261 · 🍴 149 · 📈 362 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "专注世界模型研究的开源评估与复现平台。提供标准化数据集、训练流水线与基准测试指标，解决生成式AI环境模拟缺乏统一对比框架的问题。适合AI研究员与强化学习开发者验证模型预测能力与推理一致性。"
+      "summary": "面向世界模型研究的开源实验与评估平台。提供标准化数据集、训练框架与评测基准，解决生成式 AI 在物理规律理解与时空模拟方面难以复现的问题。主要服务 AI 研究员，适用于视频生成、自动驾驶仿真及具身智能验证。"
     },
     {
       "sourceId": "github-trending",
       "title": "byoungd/English-level-up-tips",
       "url": "https://github.com/byoungd/English-level-up-tips",
       "excerpt": "An advanced guide to learn English which might benefit you a lot 🎉 . 离谱的英语学习指南/英语学习教程/英语学习/学英语",
-      "meta": "★ 49,645 · 🍴 5,202 · 📈 1,566 stars today",
+      "meta": "★ 49,655 · 🍴 5,204 · 📈 1,566 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "体系化的进阶英语学习指南，涵盖听力、阅读、口语与思维训练方法。突破传统应试框架，结合二语习得理论与实战资源推荐，解决学习者瓶颈期效率问题。适合具备基础词汇量、追求跨文化沟通能力的大学生与职场人。"
+      "summary": "系统化进阶英语学习指南，整合实战技巧、认知方法论与免费资源。打破传统应试框架，专注语言习得底层逻辑，帮助学习者突破瓶颈。适合各阶段学习者与职场人士，用于听力训练、口语优化及备考规划。"
     },
     {
       "sourceId": "github-trending",
       "title": "Biohub/esm",
       "url": "https://github.com/Biohub/esm",
       "excerpt": "",
-      "meta": "Jupyter Notebook · ★ 2,568 · 🍴 314 · 📈 52 stars today",
+      "meta": "Jupyter Notebook · ★ 2,570 · 🍴 314 · 📈 52 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "专注于蛋白质语言模型的生物信息学开源库。基于大规模序列数据训练，提供氨基酸序列表征、结构预测与功能推断能力，加速靶点发现。适合计算生物学研究员、生物工程师及AI药物研发团队进行序列分析与建模。"
+      "summary": "Evolutionary Scale Modeling 蛋白质语言模型的官方实现。基于深度学习分析氨基酸序列进化规律，实现蛋白质结构预测与突变效应评估。面向计算生物学研究员与制药团队，用于靶点发现、酶工程设计及生物序列分析。"
     },
     {
       "sourceId": "github-trending",
       "title": "Crosstalk-Solutions/project-nomad",
       "url": "https://github.com/Crosstalk-Solutions/project-nomad",
       "excerpt": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
-      "meta": "TypeScript · ★ 26,970 · 🍴 2,657 · 📈 318 stars today",
+      "meta": "TypeScript · ★ 26,977 · 🍴 2,657 · 📈 318 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "专为极端环境设计的离线生存计算系统。集成本地AI模型、离线地图、急救指南与无线电协议，无需互联网即可提供决策支持。采用轻量化架构适配嵌入式设备，适合户外探险、应急管理及生存爱好者离线部署。"
+      "summary": "完全离线、自给自足的生存计算系统项目。将核心工具、本地知识库与轻量化 AI 打包至便携硬件，解决无网络环境下的信息获取与技术执行难题。适合应急储备人员，用于野外支持、本地 AI 决策与数据备份。"
     },
     {
       "sourceId": "github-trending",
       "title": "DigitalPlatDev/FreeDomain",
       "url": "https://github.com/DigitalPlatDev/FreeDomain",
       "excerpt": "DigitalPlat FreeDomain: Free Domain For Everyone",
-      "meta": "HTML · ★ 171,827 · 🍴 3,348 · 📈 1,313 stars today",
+      "meta": "HTML · ★ 171,832 · 🍴 3,348 · 📈 1,313 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向开发者与教育用户的免费域名注册平台。提供自动化DNS解析配置、SSL证书签发与域名生命周期监控，降低建站初始成本。适合学生项目、开源文档托管及轻量应用测试，提供稳定解析服务。"
+      "summary": "致力于为个人开发者与学生提供免费域名注册与 DNS 解析服务。通过优化架构与自动化审核降低建站门槛。适用于开源维护者与 Web 初学者。典型场景包括博客搭建、作品集展示、API 托管及低成本网站上线。"
     },
     {
       "sourceId": "github-trending",
       "title": "affaan-m/ECC",
       "url": "https://github.com/affaan-m/ECC",
       "excerpt": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "meta": "JavaScript · ★ 198,592 · 🍴 30,517 · 📈 1,406 stars today",
+      "meta": "JavaScript · ★ 198,600 · 🍴 30,519 · 📈 1,406 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向多平台AI编程代理的性能调优框架。提供技能路由、记忆管理、安全沙箱与自动化研究流机制，优化Claude Code、Cursor等工具的上下文利用率。适合需要深度定制AI辅助工作流的资深开发团队。"
+      "summary": "专为 AI 编程智能体设计的性能优化与调度框架。集成技能库、上下文记忆与安全沙箱，系统化提升 Agent 的代码执行效率。面向 AI 工作流架构师，适用于复杂项目自动化重构、多步任务编排及定制化开发环境增强。"
     },
     {
       "sourceId": "github-trending",
       "title": "hardikpandya/stop-slop",
       "url": "https://github.com/hardikpandya/stop-slop",
       "excerpt": "A skill file for removing AI tells from prose",
-      "meta": "★ 7,018 · 🍴 492 · 📈 617 stars today",
+      "meta": "★ 7,020 · 🍴 493 · 📈 617 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "专注于净化AI生成文本风格的技能配置。内置模式匹配与重写规则，自动识别并剔除大模型常见的冗余过渡词与机械表达。适合作为写作后处理组件，供内容编辑与开发者提升AI输出自然度与专业感。"
+      "summary": "该 Skill 文件专为消除 AI 文本典型特征而设计。通过提示词约束与风格重写，帮助模型输出更接近人类自然写作的内容，解决机器感过重问题。面向文案策划与运营者，适用于文章润色、博客优化及营销内容生成。"
     },
     {
       "sourceId": "github-trending",
       "title": "DataTalksClub/data-engineering-zoomcamp",
       "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
       "excerpt": "Data Engineering Zoomcamp is a free 9-week course on building production-ready data pipelines. The next cohort starts in January 2026. Join the course here 👇🏼",
-      "meta": "Jupyter Notebook · ★ 41,568 · 🍴 8,271 · 📈 160 stars today",
+      "meta": "Jupyter Notebook · ★ 41,572 · 🍴 8,271 · 📈 160 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "免费的九周数据工程实战训练营，聚焦生产级数据流水线构建。涵盖数据摄取、转换、编排与云原生部署全链路，提供真实数据集。适合转行数据工程师及掌握Airflow、dbt、Spark等工具的开发者系统进修。"
+      "summary": "为期 9 周的免费开源数据工程实战课程。涵盖数据湖构建、ETL 流水线设计及云部署，采用项目驱动教学。系统解决初学者缺乏工业级管道开发经验的问题。适合开发转型者与在校生，适用于大数据平台与数据栈落地。"
     },
     {
       "sourceId": "github-trending",
       "title": "codecrafters-io/build-your-own-x",
       "url": "https://github.com/codecrafters-io/build-your-own-x",
       "excerpt": "Master programming by recreating your favorite technologies from scratch.",
-      "meta": "Markdown · ★ 507,384 · 🍴 48,175 · 📈 866 stars today",
+      "meta": "Markdown · ★ 507,390 · 🍴 48,175 · 📈 866 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "系统化编程实战教程集合，指导开发者从零手写Redis、Docker、Git等核心组件。通过底层原理剖析与分步代码实现，强化架构设计能力。适合中高级程序员进阶、技术栈巩固及计算机科学教学参考。"
+      "summary": "面向工程师的编程实战资源库，汇集从零实现主流技术的教程。涵盖数据库、操作系统及框架底层实现，通过源码复现帮助开发者突破 API 局限，深入理解系统原理。适合中高级开发者，用于架构研究与技术进阶。"
     },
     {
       "sourceId": "v2ex-hot",
@@ -193,7 +193,7 @@
       "sourceId": "v2ex-hot",
       "title": "AI 把我调教了，从 0 消费，到月消费 1200 元。",
       "url": "https://www.v2ex.com/t/1216578",
-      "excerpt": "23 回复 · 程序员 节点",
+      "excerpt": "26 回复 · 程序员 节点",
       "publishedAt": "2026-05-29T14:37:35.000Z",
       "category": "tech",
       "source": "V2EX"
@@ -409,7 +409,7 @@
       "sourceId": "linuxdo",
       "title": "any牌路由器背后的gpt账号真离谱",
       "url": "https://linux.do/t/topic/2266124",
-      "excerpt": "不要动我帖子等级！！！！再动举报 事情原因是用any的5.5的时候突然爆了个错 去openai开发者文档一查，好家伙，这不是最高层级的tier5的账号报错吗 并且这个报错的意思是，短短一分钟内该账号就打满了4000w的token。 这还没算opus号池的费用，那个成本只会更高 111 个帖子 - 86 位参与者 阅读完整话题",
+      "excerpt": "不要动我帖子等级！！！！再动举报 事情原因是用any的5.5的时候突然爆了个错 去openai开发者文档一查，好家伙，这不是最高层级的tier5的账号报错吗 并且这个报错的意思是，短短一分钟内该账号就打满了4000w的token。 这还没算opus号池的费用，那个成本只会更高 112 个帖子 - 87 位参与者 阅读完整话题",
       "publishedAt": "2026-05-29T02:28:00.000Z",
       "category": "tech",
       "source": "LinuxDo"
@@ -454,7 +454,7 @@
       "sourceId": "linuxdo",
       "title": "她又来了，我不想接诊她了🥲",
       "url": "https://linux.do/t/topic/2267100",
-      "excerpt": "去年年底本院另一位大夫做的甲状腺手术患者，因为术后调药人家调不好，被推荐到我门诊…中间一次诊疗要求我开高脂血症的药物（不想挂内科的号了），我没下诊断，结果医保拒付了她20块，来我门诊要求赔偿，告诉我女儿是纪检的…会一直投诉我，我一开始就说我给你造成的损失我核验是我的错误我会赔偿你，不依不饶叨叨了我有20分钟，后来给转了现金，好生道歉给送走了，毕竟犯错了，立正挨打。 救命啊，当大夫真的有罪，我可不可以拒诊 （可惜不能） 。 现在好些大夫的怨念已经冲破天际了，如果看了一个吐槽视频，大概率会有无数视频推过来吧。 65 个帖子 - 51 位参与者 阅读完整话题",
+      "excerpt": "去年年底本院另一位大夫做的甲状腺手术患者，因为术后调药人家调不好，被推荐到我门诊…中间一次诊疗要求我开高脂血症的药物（不想挂内科的号了），我没下诊断，结果医保拒付了她20块，来我门诊要求赔偿，告诉我女儿是纪检的…会一直投诉我，我一开始就说我给你造成的损失我核验是我的错误我会赔偿你，不依不饶叨叨了我有20分钟，后来给转了现金，好生道歉给送走了，毕竟犯错了，立正挨打。 救命啊，当大夫真的有罪，我可不可以拒诊 （可惜不能） 。 现在好些大夫的怨念已经冲破天际了，如果看了一个吐槽视频，大概率会有无数视频推过来吧。 67 个帖子 - 53 位参与者 阅读完整话题",
       "publishedAt": "2026-05-29T04:48:03.000Z",
       "category": "tech",
       "source": "LinuxDo"
@@ -463,7 +463,7 @@
       "sourceId": "linuxdo",
       "title": "【干草铺公益站】临时运维公告",
       "url": "https://linux.do/t/topic/2269476",
-      "excerpt": "各位佬，今天蹬的有点狠了，我要优化一下服务，预计今天 19:00 服务暂停运维，明天上午 10 点再开放，佬们先去蹬冰佬吧，各位周末愉快～ 13 个帖子 - 13 位参与者 阅读完整话题",
+      "excerpt": "各位佬，今天蹬的有点狠了，我要优化一下服务，预计今天 19:00 服务暂停运维，明天上午 10 点再开放，佬们先去蹬冰佬吧，各位周末愉快～ 14 个帖子 - 14 位参与者 阅读完整话题",
       "publishedAt": "2026-05-29T10:34:59.000Z",
       "category": "tech",
       "source": "LinuxDo"
@@ -472,7 +472,7 @@
       "sourceId": "linuxdo",
       "title": "大手发力了，耿同学被永久限流，正义之路还有多远？",
       "url": "https://linux.do/t/topic/2270493",
-      "excerpt": "刚刚看到一个震惊的消息，也不知道该说什么了 这让我想起了鲁迅先生的一首诗： 运交华盖欲何求，未敢翻身已碰头。 88 个帖子 - 67 位参与者 阅读完整话题",
+      "excerpt": "刚刚看到一个震惊的消息，也不知道该说什么了 这让我想起了鲁迅先生的一首诗： 运交华盖欲何求，未敢翻身已碰头。 98 个帖子 - 71 位参与者 阅读完整话题",
       "publishedAt": "2026-05-29T14:06:59.000Z",
       "category": "tech",
       "source": "LinuxDo"
@@ -508,7 +508,7 @@
       "sourceId": "linuxdo",
       "title": "今天晚上十二点后OpenAI会有大动作，可能要发布gpt5.6，codex friday要来了",
       "url": "https://linux.do/t/topic/2267339",
-      "excerpt": "北京时间 = 太平洋时间 + 15 小时 看完OpenAI这些帖子我的结论是：上周四那次 CLI 正式 release 是在北京时间周五凌晨 0 点 48 分左右出现的。所以这周五更新换到北京时间大概是周六凌晨两三点，希望能发gpt5.6吧，两家赶紧打起来，咱们佬友们狠狠蹬 51 个帖子 - 41 位参与者 阅读完整话题",
+      "excerpt": "北京时间 = 太平洋时间 + 15 小时 看完OpenAI这些帖子我的结论是：上周四那次 CLI 正式 release 是在北京时间周五凌晨 0 点 48 分左右出现的。所以这周五更新换到北京时间大概是周六凌晨两三点，希望能发gpt5.6吧，两家赶紧打起来，咱们佬友们狠狠蹬 52 个帖子 - 42 位参与者 阅读完整话题",
       "publishedAt": "2026-05-29T05:40:28.000Z",
       "category": "tech",
       "source": "LinuxDo"
@@ -598,7 +598,7 @@
       "sourceId": "linuxdo",
       "title": "【CHY公益站】主帖",
       "url": "https://linux.do/t/topic/2271819",
-      "excerpt": "之前的那个主帖因为写错栏了被佬友删了，现在这是新的CHY公益站主帖 2026/5/30 站点已恢复，但是数据还是没了 94 个帖子 - 72 位参与者 阅读完整话题",
+      "excerpt": "之前的那个主帖因为写错栏了被佬友删了，现在这是新的CHY公益站主帖 2026/5/30 站点已恢复，但是数据还是没了 96 个帖子 - 74 位参与者 阅读完整话题",
       "publishedAt": "2026-05-29T22:08:31.000Z",
       "category": "tech",
       "source": "LinuxDo"
@@ -629,7 +629,7 @@
       "publishedAt": "2026-05-29T12:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "波士顿儿童医院引入OpenAI技术优化患者护理流程并降低运营负担，该应用已成功协助医疗团队确诊逾四十例罕见疾病，展现了人工智能在临床诊断与医院管理中的实际应用价值。"
+      "summary": "波士顿儿童医院引入OpenAI人工智能技术以优化患者护理并降低运营负担，目前已成功辅助诊断超40例罕见疾病病例，提升临床诊疗效率。"
     },
     {
       "sourceId": "openai-news",
@@ -639,7 +639,7 @@
       "publishedAt": "2026-05-29T12:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "人才平台Braintrust的工程团队采用Codex结合GPT-5.5模型，将客户需求直接转化为可执行代码。该工作流显著加快了实验验证与软件开发进程，提升了工程交付效率。"
+      "summary": "人才网络公司Braintrust工程师团队结合Codex与GPT-5.5模型进行技术实验与代码开发，有效提升了软件交付与迭代速度。"
     },
     {
       "sourceId": "openai-news",
@@ -649,7 +649,7 @@
       "publishedAt": "2026-05-29T03:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI启动生物防御项目，向经审核的开发人员与美国政府合作伙伴开放GPT-Rosalind模型接口，旨在利用前沿人工智能技术提升生物防御、公共卫生监测与疫情应对能力。"
+      "summary": "OpenAI正式推出生物防御项目，向经审核的开发者及美国政府合作伙伴开放模型权限，助力公共卫生安全与疫情防范体系建设。"
     },
     {
       "sourceId": "openai-news",
@@ -659,7 +659,7 @@
       "publishedAt": "2026-05-29T00:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI发布第三方人工智能评估指导框架，为独立机构提供前沿系统的能力测试、安全防护与有效性验证标准。该指南旨在建立透明的行业评估基准，促进系统可信与安全。"
+      "summary": "OpenAI发布第三方人工智能评估指南，详细规范前沿模型能力测试、安全机制审查及有效性验证流程，旨在推动行业建立标准化评估体系。"
     },
     {
       "sourceId": "openai-news",
@@ -669,7 +669,7 @@
       "publishedAt": "2026-05-28T12:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "软件服务企业Endava全面引入Codex工具构建智能体化组织架构。该举措显著缩短交付周期，将传统需耗时数周的需求分析流程压缩至数小时，大幅提升了工程开发与人效产出。"
+      "summary": "软件开发公司Endava部署AI代码工具构建智能体组织，大幅加速软件交付周期，并将需求分析耗时从数周缩短至数小时，提升研发效能。"
     },
     {
       "sourceId": "openai-news",
@@ -678,8 +678,7 @@
       "excerpt": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
       "publishedAt": "2026-05-28T00:00:00.000Z",
       "category": "tech",
-      "source": "OpenAI News",
-      "summary": "OpenAI正式发布前沿人工智能治理框架，披露其在系统安全、数据防护与风控方面的内部实践。该框架严格对标欧盟及加利福尼亚州最新监管法规，以确保算法合规与透明运营。"
+      "source": "OpenAI News"
     },
     {
       "sourceId": "openai-news",
@@ -1175,7 +1174,7 @@
       "publishedAt": "2026-05-29T00:00:00.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "Hugging Face发布技术教程，详细解析PyTorch框架中的torch.profiler性能分析工具。指南面向初学者，涵盖基础配置、指标监控与模型运行效率优化，适用于深度学习调试。"
+      "summary": "本文系PyTorch性能分析工具教程首篇，系统讲解基础用法与核心参数配置，旨在帮助开发者掌握模型训练阶段的性能监测与优化方法。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1446,7 +1445,7 @@
       "publishedAt": "2026-05-29T00:00:00.000Z",
       "category": "tech",
       "source": "TLDR AI",
-      "summary": "本期简报聚焦行业动态，涵盖Anthropic估值达九千六百五十亿美元及Opus 4.8模型发布，同时跟进微软新推出的编程专用大模型进展。内容侧重产品更新与资本市场数据。"
+      "summary": "行业资讯汇总显示，Anthropic估值攀升至9650亿美元并推出新模型；微软同步发布编程大模型，行业聚焦代码生成与自动化开发工具迭代。"
     },
     {
       "sourceId": "tldr-ai",
@@ -1627,7 +1626,7 @@
       "publishedAt": "2026-05-29T05:44:39.000Z",
       "category": "tech",
       "source": "Smol AI News",
-      "summary": "Anthropic正式发布Claude Opus 4.8模型。测试显示该版本在协作与代码生成方面有所增强，但文档解析能力出现小幅回退。平台同步更新对话中途系统指令功能，优化长上下文处理。"
+      "summary": "Anthropic发布Claude Opus 4.8模型，在协作与代码生成方面表现提升，但文档解析能力出现部分回退。平台同步更新对话中系统指令功能。"
     },
     {
       "sourceId": "smol-ai-news",
@@ -1637,7 +1636,7 @@
       "publishedAt": "2026-05-28T05:44:39.000Z",
       "category": "tech",
       "source": "Smol AI News",
-      "summary": "Anthropic完成六千五百亿美元H轮融资，投后估值达九千六百五十亿美元，由Altimeter等四家机构领投，年化营收突破四百七十亿美元。同期发布Claude Opus 4.8与动态工作流。"
+      "summary": "Anthropic宣布完成650亿美元H轮融资，投后估值达9650亿美元，由红杉等机构领投，年化收入突破470亿美元，同步发布大模型版本。"
     },
     {
       "sourceId": "smol-ai-news",
@@ -1893,13 +1892,23 @@
     },
     {
       "sourceId": "latent-space",
+      "title": "[AINews] Founders and Forward Deployed Engineers",
+      "url": "https://www.latent.space/p/ainews-founders-and-forward-deployed",
+      "excerpt": "a quiet day lets us highlight the new AIE WF focuses",
+      "publishedAt": "2026-05-30T01:57:15.000Z",
+      "category": "tech",
+      "source": "Latent Space",
+      "summary": "本期资讯内容较少，主要聚焦于AI工程师工作流的新关注点，整体行业动态处于平静期，未披露具体业务数据或重大融资事件。"
+    },
+    {
+      "sourceId": "latent-space",
       "title": "[AINews] Anthropic raises $965B Series H, releases Opus 4.8 and Dynamic Workflows/ultracode",
       "url": "https://www.latent.space/p/ainews-anthropic-raises-965b-series",
       "excerpt": "Total Anthropic victory!",
       "publishedAt": "2026-05-29T02:07:24.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "Anthropic宣布完成规模达九千六百五十亿美元的H轮融资，并同步推出Opus 4.8模型与动态工作流功能。该轮融资旨在加速新一代人工智能技术研发与商业化部署进程。"
+      "summary": "Anthropic完成H轮融资，投后估值达9650亿美元，同步发布Opus 4.8模型及配套工作流工具，产品线实现全面升级。"
     },
     {
       "sourceId": "latent-space",
@@ -1909,7 +1918,7 @@
       "publishedAt": "2026-05-28T18:41:24.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "Cognition与OpenInspect代表探讨异步智能体趋势，披露其核心工具Devin已贡献八成代码提交量。工作流覆盖从需求说明至拉取请求全过程，并引入完整虚拟机与长期记忆功能。"
+      "summary": "Cognition联合创始人探讨异步智能体发展趋势，披露其模型贡献超八成代码提交量，并展示全虚拟机与智能体记忆等前沿技术应用场景。"
     },
     {
       "sourceId": "latent-space",
@@ -1919,7 +1928,7 @@
       "publishedAt": "2026-05-28T07:26:09.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "人工智能代码生成公司Cognition宣布在D轮融资中完成十亿美元注资，本轮投后估值达二百六十亿美元。投资方指出，自动化编程与软件开发服务的潜在市场规模具备持续增长特性。"
+      "summary": "智能体开发公司Cognition完成D轮融资，募集10亿美元，投后估值达260亿美元，市场认为编程与自动化开发领域具备广阔增长空间。"
     },
     {
       "sourceId": "latent-space",
@@ -2066,15 +2075,6 @@
       "source": "Latent Space"
     },
     {
-      "sourceId": "latent-space",
-      "title": "[AINews] Anthropic growing 10x/year while everyone else is laying off >10% of their workforce",
-      "url": "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
-      "excerpt": "A quiet day lets us reflect on an interesting dichotomy in the economy.",
-      "publishedAt": "2026-05-09T01:08:28.000Z",
-      "category": "tech",
-      "source": "Latent Space"
-    },
-    {
       "sourceId": "mit-tech-review-ai",
       "title": "How the Pope’s Magnifica Humanitas offers a template for individuals to meet the AI moment",
       "url": "https://www.technologyreview.com/2026/05/29/1138107/how-the-popes-magnifica-humanitas-offers-a-template-for-individuals-to-meet-the-ai-moment/",
@@ -2082,7 +2082,7 @@
       "publishedAt": "2026-05-29T10:00:00.000Z",
       "category": "tech",
       "source": "MIT Tech Review AI",
-      "summary": "教皇利奥十四世发布人工智能新通谕《Magnifica Humanitas》，明确指出「科技绝非中立」。该文件呼吁科技从业者与政策制定者以责任感应对人工智能带来的社会与伦理挑战。"
+      "summary": "教宗良十四世发布关于人工智能的新通谕，明确指出技术绝非中立，呼吁科技从业者与政策制定者以审慎与勇气应对人工智能时代挑战。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -2092,7 +2092,7 @@
       "publishedAt": "2026-05-28T09:51:11.000Z",
       "category": "tech",
       "source": "MIT Tech Review AI",
-      "summary": "前谷歌首席执行官埃里克·施密特在亚利桑那大学毕业典礼上呼吁学生塑造人工智能未来，却遭现场集体嘘声回应。该事件反映出应届群体对技术冲击就业及行业过度宣传的抵触情绪。"
+      "summary": "人工智能热度指数观察：谷歌前CEO埃里克·施密特在亚利桑那大学毕业典礼上呼吁学子参与技术建设时遭嘘声，反映年轻群体对就业压力的态度。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -2175,7 +2175,7 @@
       "category": "tech",
       "meta": "@sairahul1 · 106.0K 粉丝 · 2.8M 阅 · 1.5K 赞 · 203 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "分享基于 Claude Code 构建自动化开发工作流的方案。核心为搭建7智能体协作系统，替代手动提示词模式。该流程聚焦解决上下文管理与任务分发痛点，适合希望实现代码自动交付的开发者。"
+      "summary": "详解基于 Claude Code 的 7-Agent 自动化软件开发工作流。突破单纯用 AI 敲代码的瓶颈，通过多智能体协作实现功能自动交付，旨在将开发周期缩短数月，适合搭建自主运转软件工厂的工程师参考。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2184,9 +2184,9 @@
       "excerpt": "Everyone is talking about AI agents. Save this :) Build an agent. Deploy an agent. Agent this. Agent that. But when you actually sit down to build one, you hit a wall. The tutorials assume you already",
       "publishedAt": "2026-05-23T09:24:09.000Z",
       "category": "tech",
-      "meta": "@eng_khairallah1 · 58.6K 粉丝 · 1.8M 阅 · 844 赞 · 117 转",
+      "meta": "@eng_khairallah1 · 58.6K 粉丝 · 1.8M 阅 · 844 赞 · 118 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "提供面向新手的 Claude 智能体开发全流程教程。针对市面教程门槛高、实操易卡壳的痛点，系统梳理从构建、配置到部署的核心步骤。内容直击工程细节，适合零经验开发者快速搭建多智能体团队。"
+      "summary": "面向零基础开发者的 AI Agent 团队构建全指南。针对现有教程门槛高、缺实操的痛点，提供从环境配置、智能体编排到部署上线的完整链路，帮助初学者跨越理论到落地的鸿沟。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2197,7 +2197,7 @@
       "category": "tech",
       "meta": "@sairahul1 · 106.0K 粉丝 · 203.2K 阅 · 500 赞 · 82 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "整理 AI 智能体底层逻辑与生产实践的系统指南。作者提炼海量课程、真实构建案例及线上故障复盘。内容跳出概念炒作，聚焦架构设计与生产环境避坑要点，为开发者提供从理论到落地的进阶参考。"
+      "summary": "系统拆解 AI Agent 底层原理与生产级实战经验。整合课程文献与真实项目踩坑记录，提炼从架构设计、容错机制到规模化部署的核心方法论，为开发者提供避开常见陷阱的落地指南。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2208,7 +2208,7 @@
       "category": "tech",
       "meta": "@nateberkopec · 29.8K 粉丝 · 166.7K 阅 · 500 赞 · 51 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "梳理 Opus-4.5 发布半年后的 LLM 行业观察。结合年末开发潮反馈，分析当前模型能力边界、工作流变迁及演进趋势。内容偏向一线视角，为评估下一代大模型落地提供现实参考。"
+      "summary": "对 2026 年 LLM 生态演进与开发者工作流变迁的观察。基于 Opus-4.5 发布后的实战体验，探讨大模型效能瓶颈、成本结构变化及行业趋势，为从业者提供客观参考坐标。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2219,7 +2219,7 @@
       "category": "tech",
       "meta": "@cyrilXBT · 181.7K 粉丝 · 127.8K 阅 · 533 赞 · 80 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "分享基于 Claude 构建晨间简报智能体的工作流。针对社媒与邮件信息过载痛点，设计自动抓取、过滤并提炼核心资讯的代理方案。该流程将信息获取压缩至5分钟，适合追求高效资讯处理的从业者。"
+      "summary": "手把手搭建基于 Claude 的自动化信息简报 Agent。针对资讯过载痛点，设计网络自动抓取、噪声过滤与核心要点提炼工作流，实现每日五分钟精准阅读，大幅提升信息获取效率。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2230,7 +2230,7 @@
       "category": "tech",
       "meta": "@poteto · 26.6K 粉丝 · 86.5K 阅 · 540 赞 · 48 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "结合 Meta 开发背景，分享 Cursor 与 Claude Code 的真实对比。作者从付费体验切入，剖析两款 AI 编程工具在交互逻辑、编码效率及适用场景的差异，为开发者选型提供一线参考。"
+      "summary": "深度对比 Cursor 与 Claude Code 的实际开发体验。作者基于内部生态及高价个人订阅实测，剖析两款工具在上下文理解与代码生成质量上的差异，给出理性选型建议。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2241,7 +2241,7 @@
       "category": "tech",
       "meta": "@TheAhmadOsman · 59.9K 粉丝 · 54.5K 阅 · 512 赞 · 65 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "提供从零手写大模型技术栈的实战指南。逐步拆解 Tokenizer、Embedding、位置编码、注意力机制与 Transformer 模块的实现逻辑。内容强调底层原理与工程实践，适合深入掌握 LLM 架构的开发者。"
+      "summary": "2026 版 LLM 底层架构从零构建实战教程。按顺序拆解 Tokenizer、Embedding、注意力机制到 Transformer 解码模块的完整技术栈，提供可复现代码路径以吃透原理。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2252,7 +2252,7 @@
       "category": "tech",
       "meta": "@hansolar21 · 30.1K 粉丝 · 50.8K 阅 · 500 赞 · 82 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "分析韩国 AI 产业链投资逻辑演变。指出市场重心正从存储转向具身智能，重点关注机器人、执行器、减速器及精密加工企业。视角跳出纯软件叙事，为硬件供应链与具身智能布局提供参考。"
+      "summary": "产业视角分析韩国 AI 赛道估值逻辑转移。指出市场焦点正从 AI 存储芯片向具身智能硬件延伸，重点梳理机器人、执行器及精密机加工等底层供应链价值，提供新投资坐标。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2263,7 +2263,7 @@
       "category": "tech",
       "meta": "@KSimback · 17.1K 粉丝 · 40.0K 阅 · 508 赞 · 69 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "整理 Hermes Agent 记忆系统的配置指南。针对社区工具繁杂、信息碎片化问题，系统梳理各类记忆模块的调用逻辑与存储机制。内容侧重工程实操，助开发者快速搭建可靠的长期记忆架构。"
+      "summary": "Hermes Agent 记忆系统全景指南。针对每周涌现的碎片化教程，系统梳理存储架构、向量检索与上下文管理配置，提供一站式参考手册，解决智能体长期记忆模块的搭建难题。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2274,7 +2274,7 @@
       "category": "tech",
       "meta": "@difflawb · 20.3K 粉丝 · 21.9K 阅 · 1.1K 赞 · 389 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "复盘 Karpathy 发布的 40 行 Shell 脚本如何演变为基础设施。剖析极简代码在开发流中的杠杆效应，探讨轻量化工具对工程范式的重塑，为关注提效与架构演进的从业者提供参考。"
+      "summary": "复盘 Karpathy 于 2024 年发布的 40 行 Shell 脚本如何演变为关键 AI 基础设施。剖析极简代码在训练工作流中的杠杆效应，展示工程化思维如何重塑模型开发链路。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2285,7 +2285,7 @@
       "category": "tech",
       "meta": "@0xileri · 7.3K 粉丝 · 12.2K 阅 · 533 赞 · 63 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "分享 AI 视频制作工作流与工具清单。以新手视角拆解创意到生成的实操步骤，梳理各环节工具链及踩坑经验。内容聚焦可复用的基础流程，适合零基础创作者快速上手。"
+      "summary": "新手向 AI 视频生成工作流拆解。创作者公开实测有效的工具链组合、提示词调试与后期合成技巧，聚焦从图文到动态视频的实际路径，适合独立创作者快速上手。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2296,7 +2296,7 @@
       "category": "tech",
       "meta": "@ActionModelAI · 57.1K 粉丝 · 5.8K 阅 · 505 赞 · 344 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "分析 AI 对劳动力市场的替代进程。指出岗位替代已转为正在发生的经济现实，探讨技术渗透对业务结构的重塑。内容偏向宏观观察，为从业者评估职业风险与转型提供预警参考。"
+      "summary": "宏观视角下的 AI 自动化替代进程观察。指出大模型已从实验阶段进入劳动力市场实质性重塑期，结合商业落地案例分析技术替代拐点与职业结构变迁趋势。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2306,7 +2306,7 @@
       "publishedAt": "2026-05-30T01:12:35.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "美国国防部长赫格塞斯在香格里拉对话会上指出，中美关系已趋于稳定。同时，他对美国与其他北约成员国间日益加剧的紧张关系提出公开批评。"
+      "summary": "美国国防部长皮特·赫格塞斯在香格里拉防务峰会上指出，中美关系目前已趋于稳定。他还公开批评了美国与部分北约成员国之间不断加剧的紧张局势，强调跨大西洋关系面临挑战。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2316,7 +2316,7 @@
       "publishedAt": "2026-05-30T00:18:25.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "三星通过承诺向部分员工发放人工智能业务红利，勉强避免了罢工。但该差异化奖励引发未获同等福利员工不满，加剧了企业内部矛盾。"
+      "summary": "三星公司为避免工人罢工，承诺向部分员工发放由人工智能业务增长带来的高额奖金。该举措导致未获同等福利的其他员工不满加剧，内部薪酬分配分歧引发市场关注。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2326,7 +2326,7 @@
       "publishedAt": "2026-05-29T23:13:20.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "英国沉重债务与经济疲软引发市场担忧，恐再次冲击其政治与政策稳定。此外，投资者虽看好数据中心为长期基建，但周边社区对其能耗表示忧虑。"
+      "summary": "英国沉重债务与经济疲软加剧市场对金融局势冲击国内政治的担忧。此外，投资者视数据中心为长期基建，但其噪音、耗水及电力需求引发周边社区忧虑。波兰经济繁荣亦受关注。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2336,7 +2336,7 @@
       "publishedAt": "2026-05-29T23:00:00.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "五月亚洲大米价格单月上涨20%，创近二十年来最大涨幅。受极端天气及战争推升的能源化肥成本威胁，产量前景承压，价格或继续走高。"
+      "summary": "亚洲大米价格5月大涨20%，创近20年来最大单月涨幅。受天气风险加剧及地缘冲突推高能源与化肥成本威胁产量影响，市场预计米价短期内将延续上涨趋势。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2346,7 +2346,7 @@
       "publishedAt": "2026-05-29T21:55:18.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "联邦上诉法院驳回城堡证券的上诉，拒绝其阻止艾克斯集团推出新型期权交易所的计划。该交易所采用故意延迟订单机制，城堡证券阻击失败。"
+      "summary": "联邦上诉法院驳回城堡证券的诉讼请求，允许IEX集团推出刻意延缓交易指令的新型期权交易所。城堡证券试图阻止该新交易平台上线的计划宣告失败。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2356,7 +2356,7 @@
       "publishedAt": "2026-05-29T21:30:22.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "太空探索技术公司获超四十亿美元合同，将为特朗普政府的「金穹」防御系统建造追踪飞机与导弹的卫星网络，以强化美国本土防御能力。"
+      "summary": "太空探索技术公司获得超40亿美元合同，将为特朗普总统规划的「金穹」防御系统研发专用卫星。该卫星系统主要用于追踪境外飞行器与导弹轨迹。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2366,7 +2366,7 @@
       "publishedAt": "2026-05-29T20:22:51.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "霍尼韦尔旗下量子计算公司科廷纽姆正考虑扩大首次公开募股规模并上调发行价区间，反映出市场对该赛道企业上市融资需求的积极预期。"
+      "summary": "霍尼韦尔旗下的量子计算企业Quantinuum正评估扩大首次公开募股规模及调整定价区间的方案。知情人士透露，该公司对上市融资前景持积极态度。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2394,7 +2394,7 @@
       "publishedAt": "2026-05-29T20:31:27.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "摩根大通资管全球策略师艾莉加表示，人工智能热潮尚处早期阶段，市场将迎来更多波动。她强调技术变革正持续重塑投资者的市场评估框架。"
+      "summary": "摩根资产管理全球市场策略师斯特凡妮·阿利亚加指出，人工智能产业繁荣仍处于起步阶段，相关技术演进将继续推动资本市场波动，长期增长潜力依然巨大。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2404,7 +2404,7 @@
       "publishedAt": "2026-05-29T20:24:27.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "美国本周提供航行情报协助后，霍尔木兹海峡船舶通行量显著回升。航运业主对航道交通量持续恢复持乐观态度，正密切关注区域物流改善。"
+      "summary": "在美国情报协助下，近期更多船只顺利通过霍尔木兹海峡，该水域通行量显著回升。船东对航道交通进一步复苏持乐观态度，区域航运风险预期有所缓解。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2423,7 +2423,7 @@
       "publishedAt": "2026-05-29T20:22:26.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "华尔街机构大幅平仓崩盘对冲头寸，因遭大量做空的股票已反弹30%。市场数据显示，在当前行情下保持谨慎已成为成本最高的交易策略。"
+      "summary": "华尔街机构正大规模平仓市场崩盘对冲头寸。受遭做空最多的股票群体反弹30%影响，防御性对冲持仓成本急剧上升，投资者逐步降低避险仓位。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2478,7 +2478,7 @@
       "publishedAt": "2026-05-29T20:13:11.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "彭博经济研究预计，下周五公布的美国五月就业报告将显示新增岗位九万五千个。该机构首席经济学家王安娜在节目中解读了劳动力市场预期。"
+      "summary": "彭博经济研究首席美国经济学家安娜·黄预计，下周五公布的美国5月非农就业报告将显示新增岗位9.5万个。该数据将成为评估美联储政策路径的关键参考。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2767,7 +2767,7 @@
       "publishedAt": "2026-05-29T20:16:27.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "私募信贷公司城堡湖对廉价航空易捷航空表现出收购意向。若交易达成，易捷航空将成为又一家从英国股市退市的企业，或引发行业整合。"
+      "summary": "英国廉价航空易捷航空已收到私募信贷机构Castlelake的收购意向。若交易达成，该航司将成为又一家退出英国公开股票市场的上市公司，私有化进程引发关注。"
     },
     {
       "sourceId": "ft-companies",
@@ -3551,7 +3551,7 @@
       "publishedAt": "2026-05-29T23:30:33.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "特朗普与顾问团队举行会议后，美方未宣布与伊朗达成最终协议。此前官员已确认美伊就协议框架达成共识，但具体条款与执行时间表尚未公布，后续谈判仍面临多重变数与审核。"
+      "summary": "特朗普团队会后未公布美伊最终协议。美方确认双方已达框架共识，白宫正就执行细节进行内部磋商，正式结果尚未对外披露。"
     },
     {
       "sourceId": "bbc-world",
@@ -3570,7 +3570,7 @@
       "publishedAt": "2026-05-30T00:51:49.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "加纳议会正式通过反LGBTQ+法案。新法案明确针对同性恋与跨性别群体，规定同性性行为将面临监禁刑罚。该立法在加纳国内引发广泛讨论，并受到国际人权组织的密切关注。"
+      "summary": "加纳议会通过法案，明确将同性恋及跨性别者相关行为定为刑事犯罪，违者将面临监禁。该法案引发国际社会关注与人权组织批评。"
     },
     {
       "sourceId": "bbc-world",
@@ -3595,9 +3595,10 @@
       "title": "Former US attorney general Pam Bondi defends her handling of Epstein files in congressional probe",
       "url": "https://www.bbc.com/news/articles/czj2ldllgwgo?at_medium=RSS&at_campaign=rss",
       "excerpt": "The testimony comes about a month after America's top prosecutor was ousted by US President Donald Trump.",
-      "publishedAt": "2026-05-29T17:45:06.000Z",
+      "publishedAt": "2026-05-30T01:49:39.000Z",
       "category": "politics",
-      "source": "BBC World"
+      "source": "BBC World",
+      "summary": "美国前司法部长邦迪出席国会听证，为其处理爱泼斯坦档案辩护。她于一个月前遭特朗普解职，国会调查聚焦联邦司法部门的文件管理流程。"
     },
     {
       "sourceId": "bbc-world",
@@ -3733,7 +3734,7 @@
       "publishedAt": "2026-05-30T01:34:38.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "乌克兰军队使用人工智能无人机精准打击俄军后勤补给车队。经核实的相关视频显示，俄军运输弹药、燃料和食品的卡车在乌东被占领区遭袭，该战术正逐步削弱俄军前线物资供应能力。"
+      "summary": "乌军正使用人工智能无人机打击向俄军运送弹药与食品的关键补给车队。独立机构已核实相关袭击视频，确认该技术已在交战区投入实战。"
     },
     {
       "sourceId": "bbc-world",
@@ -3751,8 +3752,7 @@
       "excerpt": "Dabbawalas, who deliver home-cooked meals, are leaving the trade as remote work and rising costs threaten their future.",
       "publishedAt": "2026-05-29T23:04:40.000Z",
       "category": "politics",
-      "source": "BBC World",
-      "summary": "孟买百年历史的午餐盒配送行业正面临衰退。受远程办公普及与运营成本上升双重挤压，大量从业人员陆续转行。该传统服务业的萎缩折射出城市生活方式变迁对传统劳工市场的冲击。"
+      "source": "BBC World"
     },
     {
       "sourceId": "bbc-world",
@@ -3936,6 +3936,16 @@
     },
     {
       "sourceId": "guardian-world",
+      "title": "‘Essentially diving in coffee’: Australian diver among team rushing to rescue people trapped in flooded Laos cave",
+      "url": "https://www.theguardian.com/world/2026/may/29/essentially-diving-in-coffee-australian-diver-among-team-rushing-to-rescue-people-trapped-in-flooded-laos-cave",
+      "excerpt": "Josh Richards joins international mission to help five found alive and search for missing divers, with one person extracted successfully Get our breaking news email, free app or daily news podcast An Australian cave diver is part of an international team that has brought one man out alive from a rem",
+      "publishedAt": "2026-05-30T01:53:55.000Z",
+      "category": "politics",
+      "source": "The Guardian",
+      "summary": "国际救援队紧急前往老挝被淹洞穴营救五名被困人员，澳大利亚潜水员加入行动。目前1人成功获救，浑浊水质增加搜救难度，救援持续进行。"
+    },
+    {
+      "sourceId": "guardian-world",
       "title": "Can the second coming of Tony Abbott resurrect the Liberal party? Or is it another step toward ‘self-destruction’?",
       "url": "https://www.theguardian.com/australia-news/2026/may/30/tony-abbott-return-to-liberal-party-president-australia",
       "excerpt": "Angus Taylor believes the former PM is uniquely placed to help the party as its new president, but some fear he will render it even more unelectable Get our breaking news email, free app or daily news podcast Immediately after ousting Sussan Ley, Angus Taylor used his first press conference as oppos",
@@ -3958,15 +3968,6 @@
       "url": "https://www.theguardian.com/australia-news/2026/may/29/bmx-police-car-ramp-scientology-speedrun-church-brisbane-ntwnfb",
       "excerpt": "Zeppelin Witheridge charged with public nuisance over ‘Scientology speedrun’ social media trend Get our breaking news email, free app or daily news podcast A social media stunt that treats churches like video games has gone from TikTok to the dock, landing an alleged teenage “speedrunner” in court. ",
       "publishedAt": "2026-05-29T08:41:46.000Z",
-      "category": "politics",
-      "source": "The Guardian"
-    },
-    {
-      "sourceId": "guardian-world",
-      "title": "‘Essentially diving in coffee’: Australian diver among team rushing to rescue people trapped in flooded Laos cave",
-      "url": "https://www.theguardian.com/world/2026/may/29/essentially-diving-in-coffee-australian-diver-among-team-rushing-to-rescue-people-trapped-in-flooded-laos-cave",
-      "excerpt": "Josh Richards joins international mission to extract five found alive and search for missing two Get our breaking news email, free app or daily news podcast An Australian cave diver is part of an international team that has been flown into Laos from around the world to rescue seven people stuck in a",
-      "publishedAt": "2026-05-29T08:35:15.000Z",
       "category": "politics",
       "source": "The Guardian"
     },
@@ -4077,7 +4078,7 @@
       "publishedAt": "2026-05-30T01:34:42.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "美国总统特朗普推迟就伊朗协议作出「最终决定」。据白宫官员透露，特朗普已与幕僚就可能的停火延长方案会谈两小时。此前特朗普曾在社交平台暗示已准备好决策，目前谈判进展仍待明确。"
+      "summary": "特朗普与白宫幕僚讨论伊朗停火延期方案两小时后，推迟作出最终决定。此前其公开暗示已准备拍板，美伊框架谈判与磋商仍在持续。"
     },
     {
       "sourceId": "nyt-world",
@@ -4096,7 +4097,7 @@
       "publishedAt": "2026-05-30T01:00:19.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "专家指出特朗普政府的船只打击行动未能遏制可卡因流入美国。尽管军事行动造成伤亡上升，但研究数据显示美国多地可卡因获取难度与行动前基本持平，缉毒政策实际效果引发质疑。"
+      "summary": "专家指特朗普政府针对南美海岸的船只拦截行动未遏制可卡因流入美国。尽管打击致伤亡上升，美国多地毒品获取难度与行动前持平。"
     },
     {
       "sourceId": "nyt-world",
@@ -4142,7 +4143,7 @@
       "publishedAt": "2026-05-30T01:24:33.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "欧盟计划向匈牙利发放此前冻结的160亿欧元资金。随着欧尔班政府下台，匈牙利正推进反腐败与法治改革以满足拨款条件。该笔资金解冻将缓解其财政压力并改善双边经贸关系。"
+      "summary": "欧盟拟向匈牙利解冻此前冻结的160亿欧元资金。随着执政阵营选举失利及匈牙利承诺落实反腐与法治改革，拨款程序预计将正式启动。"
     },
     {
       "sourceId": "nyt-world",
@@ -4206,7 +4207,7 @@
       "publishedAt": "2026-05-29T23:09:37.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "伊朗强硬派正试图阻挠与美国的潜在协议。该派系通过组织集会、利用官方媒体及发布声明等方式施压，意图破坏谈判进程。伊朗国内政治博弈加剧，为美伊外交磋商增添不确定性。"
+      "summary": "伊朗强硬派正通过集会与官媒发声，试图阻挠美伊潜在协议推进。该派系虽在政坛占少数但发声集中，加剧了德黑兰内部政策分歧。"
     },
     {
       "sourceId": "nyt-world",
@@ -4216,7 +4217,7 @@
       "publishedAt": "2026-05-30T00:04:26.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "加拿大男子肯尼斯·劳承认协助14起自杀案件。检方披露该男子曾经营网店向全球40国寄送有毒盐类，并承认在英国导致79人死亡。案件已进入量刑阶段，引发跨境网络安全监管关注。"
+      "summary": "加拿大男子肯尼斯·劳对协助14人自杀认罪。其网店曾向40国寄送有毒物质，检方指控其另致英国79人死亡，案件进入量刑阶段。"
     },
     {
       "sourceId": "nyt-world",
@@ -4226,7 +4227,7 @@
       "publishedAt": "2026-05-29T23:54:16.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "墨西哥参议院通过法案，允许在外国干预情况下宣布选举无效。该立法出台正值墨美关系紧张之际，后续需多数州议会批准并交总统签署生效，旨在强化本国选举主权与制度安全性。"
+      "summary": "墨西哥参议院投票允许在外国干预时宣告选举无效。该法案在墨美关系紧张期推进，后续需获多数州议会批准并由总统签署生效。"
     },
     {
       "sourceId": "nyt-world",
@@ -4713,7 +4714,7 @@
       "publishedAt": "2026-05-30T00:27:54.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "路易斯安那州通过新版国会选区划分方案，取消了一个以黑人为主的选区，被指倾向共和党。此举系回应四月最高法院裁决，预计将对该州联邦众议院席位分配及未来选举格局产生直接影响。"
+      "summary": "路易斯安那州通过新版国会选区地图，取消原非裔占多数的选区。此举系执行美国最高法院裁决，将重塑该州联邦众议院政治格局。"
     },
     {
       "sourceId": "aljazeera",
@@ -4723,7 +4724,7 @@
       "publishedAt": "2026-05-30T00:04:15.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "老挝潜水救援人员成功救出被困淹水洞穴超一周的首名幸存者。当地共有五名村民此前因突发洪水被困，目前剩余人员搜救工作仍在进行，当地政府已调动多方资源保障救援安全推进。"
+      "summary": "国际潜水队在老挝成功救出五名被困村民中的首人。受困人员已在淹水洞穴滞留逾一周，救援队正克服低能见度与水位风险继续搜救。"
     },
     {
       "sourceId": "aljazeera",
@@ -4733,7 +4734,7 @@
       "publishedAt": "2026-05-30T00:00:00.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "特朗普预计将就伊朗协议作出最终决定。与此同时，以色列军队持续向黎巴嫩推进，以总理此前已下令控制加沙地带70%区域。中东局势在外交斡旋与军事行动交织中持续演变。"
+      "summary": "特朗普拟就美伊协议作出最终裁决之际，以色列军队向黎巴嫩纵深推进。以总理此前下令扩大加沙控制区，区域停火前景面临考验。"
     },
     {
       "sourceId": "aljazeera",
@@ -4743,7 +4744,7 @@
       "publishedAt": "2026-05-29T23:41:25.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "特朗普承诺退出肯尼迪表演艺术中心事务，此前联邦法官驳回其将个人姓名刻于建筑并关闭剧院两年的请求。法院裁决认定该行政干预缺乏法律依据，相关管理权将依法移交处理。"
+      "summary": "联邦法官驳回特朗普在肯尼迪中心署名并关闭剧院的请求。特朗普随即宣布撤资退出，双方围绕该机构管理权的法律争议持续发酵。"
     },
     {
       "sourceId": "aljazeera",
@@ -4752,8 +4753,7 @@
       "excerpt": "The charges stem from the January 14 shooting of Julio Cesar Sosa-Celis in Minneapolis during Operation Metro Surge.",
       "publishedAt": "2026-05-29T22:52:50.000Z",
       "category": "politics",
-      "source": "Al Jazeera",
-      "summary": "美国移民及海关执法局特工因在突击行动中枪击委内瑞拉籍男子被逮捕。事件发生于一月十四日明尼阿波利斯执法行动期间，司法部门已正式提起刑事指控，相关案件正在进一步审理中。"
+      "source": "Al Jazeera"
     },
     {
       "sourceId": "aljazeera",
