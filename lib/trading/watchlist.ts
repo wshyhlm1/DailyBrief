@@ -17,7 +17,7 @@ export function getDisplayName(t: TickerDef, locale: "zh" | "en"): string {
 }
 
 const ASSET_GROUP_LABELS_ZH: Record<AssetGroup, string> = {
-  "us-equity": "美股 / ETF",
+  "us-equity": "美股 / ADR / ETF",
   crypto: "加密货币",
   "china-equity": "中概 / 港股",
   "commodity-fx": "商品 / 外汇",
@@ -25,7 +25,7 @@ const ASSET_GROUP_LABELS_ZH: Record<AssetGroup, string> = {
 };
 
 const ASSET_GROUP_LABELS_EN: Record<AssetGroup, string> = {
-  "us-equity": "US Stocks / ETF",
+  "us-equity": "US Stocks / ADR / ETF",
   crypto: "Crypto",
   "china-equity": "China / HK",
   "commodity-fx": "Commodities / FX",
@@ -47,30 +47,40 @@ export const ASSET_GROUP_ORDER: AssetGroup[] = [
 ];
 
 export const WATCHLIST: TickerDef[] = [
-  // === 美股蓝筹 + 大盘 ETF ===
-  { symbol: "SPY", displayName: "S&P 500 ETF", group: "us-equity" },
-  { symbol: "QQQ", displayName: "Nasdaq 100 ETF", group: "us-equity" },
-  { symbol: "AAPL", displayName: "Apple", group: "us-equity" },
-  { symbol: "MSFT", displayName: "Microsoft", group: "us-equity" },
-  { symbol: "NVDA", displayName: "Nvidia", group: "us-equity" },
-  { symbol: "GOOGL", displayName: "Alphabet", group: "us-equity" },
-  { symbol: "TSLA", displayName: "Tesla", group: "us-equity" },
-  { symbol: "META", displayName: "Meta", group: "us-equity" },
-  { symbol: "CIEN", displayName: "Ciena", group: "us-equity" },
-  { symbol: "NOK", displayName: "Nokia", group: "us-equity" },
+  // === 用户跟踪的美股 / ADR / ETF ===
+  // Broker suffixes are mapped to Yahoo Finance symbols:
+  // .N/.O -> bare ticker, .PK IFNNY -> IFNNY, .P GLD -> GLD.
+  { symbol: "IBM", displayName: "IBM", group: "us-equity" },
+  { symbol: "AVGO", displayName: "博通 (AVGO)", displayNameEn: "Broadcom (AVGO)", group: "us-equity" },
+  { symbol: "IFNNY", displayName: "英飞凌 ADR (IFNNY)", displayNameEn: "Infineon Technologies ADR (IFNNY)", group: "us-equity" },
+  { symbol: "BB", displayName: "黑莓 (BB)", displayNameEn: "BlackBerry (BB)", group: "us-equity" },
+  { symbol: "NBIS", displayName: "Nebius Group (NBIS)", group: "us-equity" },
+  { symbol: "CIEN", displayName: "Ciena (CIEN)", group: "us-equity" },
+  { symbol: "GLD", displayName: "SPDR 黄金 ETF (GLD)", displayNameEn: "SPDR Gold Shares (GLD)", group: "commodity-fx" },
+  { symbol: "ASML", displayName: "ASML Holding (ASML)", group: "us-equity" },
+  { symbol: "QQQ", displayName: "Invesco QQQ ETF (QQQ)", group: "us-equity" },
+  { symbol: "AMD", displayName: "AMD", group: "us-equity" },
+  { symbol: "GFS", displayName: "GlobalFoundries (GFS)", group: "us-equity" },
+  { symbol: "AMZN", displayName: "亚马逊 (AMZN)", displayNameEn: "Amazon (AMZN)", group: "us-equity" },
+  { symbol: "SANM", displayName: "Sanmina (SANM)", group: "us-equity" },
+  { symbol: "AMKR", displayName: "Amkor Technology (AMKR)", group: "us-equity" },
+  { symbol: "TSM", displayName: "台积电 ADR (TSM)", displayNameEn: "Taiwan Semiconductor ADR (TSM)", group: "china-equity" },
+  { symbol: "BABA", displayName: "阿里巴巴 (BABA)", displayNameEn: "Alibaba (BABA)", group: "china-equity" },
+  { symbol: "VICR", displayName: "Vicor (VICR)", group: "us-equity" },
+  { symbol: "UMC", displayName: "联电 ADR (UMC)", displayNameEn: "United Microelectronics ADR (UMC)", group: "china-equity" },
+  { symbol: "CBRS", displayName: "Cerebras Systems (CBRS)", group: "us-equity" },
+  { symbol: "TE", displayName: "T1 Energy (TE)", group: "us-equity" },
+  { symbol: "GOOGL", displayName: "Alphabet (GOOGL)", group: "us-equity" },
+  { symbol: "SITM", displayName: "SiTime (SITM)", group: "us-equity" },
+  { symbol: "NOK", displayName: "Nokia ADR (NOK)", group: "us-equity" },
+  { symbol: "ASX", displayName: "日月光投控 ADR (ASX)", displayNameEn: "ASE Technology ADR (ASX)", group: "china-equity" },
+  { symbol: "AAOI", displayName: "Applied Optoelectronics (AAOI)", group: "us-equity" },
+  { symbol: "TSEM", displayName: "Tower Semiconductor (TSEM)", group: "us-equity" },
+  { symbol: "SMTC", displayName: "Semtech (SMTC)", group: "us-equity" },
   // === 加密货币 ===
   { symbol: "BTC-USD", displayName: "Bitcoin", group: "crypto" },
   { symbol: "ETH-USD", displayName: "Ethereum", group: "crypto" },
   { symbol: "SOL-USD", displayName: "Solana", group: "crypto" },
-  // === 中概 / 港股 ===
-  { symbol: "BABA", displayName: "阿里巴巴 (BABA)", displayNameEn: "Alibaba (BABA)", group: "china-equity" },
-  { symbol: "PDD", displayName: "拼多多 (PDD)", displayNameEn: "Pinduoduo (PDD)", group: "china-equity" },
-  { symbol: "JD", displayName: "京东 (JD)", displayNameEn: "JD.com (JD)", group: "china-equity" },
-  { symbol: "0700.HK", displayName: "腾讯控股 (0700.HK)", displayNameEn: "Tencent (0700.HK)", group: "china-equity" },
-  // === 商品 + 外汇 ===
-  { symbol: "GC=F", displayName: "黄金期货", displayNameEn: "Gold Futures", group: "commodity-fx" },
-  { symbol: "CL=F", displayName: "WTI 原油期货", displayNameEn: "WTI Crude Futures", group: "commodity-fx" },
-  { symbol: "USDCNY=X", displayName: "美元 / 人民币", displayNameEn: "USD / CNY", group: "commodity-fx" },
   // === 宏观信号（恐慌指数 / 利率 / 美元）===
   { symbol: "^VIX", displayName: "VIX 恐慌指数", displayNameEn: "VIX (Volatility)", group: "macro" },
   { symbol: "^TNX", displayName: "10Y 美债收益率 (%)", displayNameEn: "10Y Treasury Yield (%)", group: "macro" },

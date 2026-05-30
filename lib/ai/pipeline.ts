@@ -2,6 +2,7 @@ import { jsonrepair } from "jsonrepair";
 import { runLlm } from "./llm";
 import { extractJson } from "./json-util";
 import { SYSTEM_PROMPT_DIGEST_EN, SYSTEM_PROMPT_DIGEST_ZH } from "./prompts";
+import type { StockHighlight } from "./stock-highlights";
 import { REPORT_LOCALE } from "../sources/registry";
 import type { Category, RawArticle } from "../sources/types";
 import { todayKey } from "../utils";
@@ -25,6 +26,8 @@ export interface DailyReport {
   politics_briefs: BriefItem[];
   editor_note: string;
   keywords: string[];
+  /** Optional top-of-report table extracted from X stock-pick sources. */
+  stock_highlights?: StockHighlight[];
   /** Optional trading-signals section, present when scripts/daily.ts ran successfully. */
   trading?: TradingSection;
 }
@@ -292,11 +295,11 @@ export async function generateDailyReport(
 
   const userPayload = compact.map((a, i) => ({
     n: i + 1,
-    title: a.title,
+    title: a.displayTitle ?? a.title,
     url: a.url,
     source: a.source,
     category: a.category,
-    excerpt: (a.excerpt ?? "").slice(0, 200),
+    excerpt: (a.displayExcerpt ?? a.excerpt ?? "").slice(0, 200),
     published: a.publishedAt?.toISOString() ?? "",
   }));
   const userPayloadJson = JSON.stringify(userPayload);

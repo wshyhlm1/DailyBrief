@@ -69,6 +69,13 @@ const TEXTS_ZH = {
   mdTodayKeywords: "今日关键词",
   mdImportance: "重要度",
   archiveLink: "← 历史归档",
+  stockSummaryTitle: "X 推送当日总结",
+  stockSymbol: "股票",
+  stockSource: "来源",
+  stockView: "观点",
+  stockTarget: "目标价/参考价",
+  stockThesis: "核心内容",
+  stockNotMentioned: "未提及",
 };
 
 const TEXTS_EN: typeof TEXTS_ZH = {
@@ -118,6 +125,13 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   mdTodayKeywords: "Keywords",
   mdImportance: "Importance",
   archiveLink: "← Archive",
+  stockSummaryTitle: "X Stock-Pick Summary",
+  stockSymbol: "Symbol",
+  stockSource: "Source",
+  stockView: "View",
+  stockTarget: "Target / Reference",
+  stockThesis: "Core Point",
+  stockNotMentioned: "Not stated",
 };
 
 const STR = REPORT_LOCALE === "en" ? TEXTS_EN : TEXTS_ZH;
@@ -438,9 +452,10 @@ function formatDate(d: Date | undefined): string {
 // ----- raw article renderers -----
 
 function renderArticleHtml(a: ArticleInput, showSource = false): string {
-  const title = escapeHtml(a.title);
+  const title = escapeHtml(a.displayTitle ?? a.title);
   const url = escapeHtml(a.url);
-  const excerpt = a.excerpt ? escapeHtml(a.excerpt) : "";
+  const excerpt = a.displayExcerpt ?? a.excerpt;
+  const excerptHtml = excerpt ? escapeHtml(excerpt) : "";
   // Backwards-compat: old sidecar JSON files may carry `cnSummary` instead.
   const summaryText = a.summary ?? (a as unknown as { cnSummary?: string }).cnSummary;
   const summary = summaryText ? escapeHtml(summaryText) : "";
@@ -455,7 +470,7 @@ function renderArticleHtml(a: ArticleInput, showSource = false): string {
   <h3 class="article-title"><a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
   ${meta ? `<p class="article-stats">${meta}</p>` : ""}
   ${metaLine ? `<p class="article-meta">${metaLine}</p>` : ""}
-  ${excerpt ? `<p class="article-excerpt">${excerpt}</p>` : ""}
+  ${excerptHtml ? `<p class="article-excerpt">${excerptHtml}</p>` : ""}
   ${summary ? `<p class="article-summary"><span class="summary-label">${summaryLabel}</span> ${summary}</p>` : ""}
 </article>`;
 }
@@ -489,8 +504,18 @@ function renderSourceTabs(
     .join("")}</nav>`;
 }
 
-function renderSubContent(category: Category, sub: SubGroup, isActive: boolean): string {
+function renderSubContent(
+  category: Category,
+  sub: SubGroup,
+  isActive: boolean,
+  report?: DailyReport,
+): string {
+  const xStockSummary =
+    category === "finance" && sub.id === "x-posts" && report
+      ? renderStockSummaryTable(report)
+      : "";
   return `<div class="sub-content${isActive ? " active" : ""}" data-sub-content="${escapeHtml(sub.id)}" data-cat="${category}">
+    ${xStockSummary}
     ${renderSourceTabs(category, sub.id, sub.sources)}
     <div class="source-contents">
       ${sub.sources.map((s, i) => renderSourceContent(category, sub.id, s, i === 0)).join("\n")}
@@ -501,12 +526,13 @@ function renderSubContent(category: Category, sub: SubGroup, isActive: boolean):
 function renderRawCategoryPanel(
   category: Category,
   subs: SubGroup[],
+  report?: DailyReport,
 ): string {
   if (subs.length === 0) {
     return `<p class="empty">${STR.emptyCategory}</p>`;
   }
   if (subs.length === 1) {
-    return renderSubContent(category, subs[0], true);
+    return renderSubContent(category, subs[0], true, report);
   }
   const subTabs = subs
     .map((s, i) => {
@@ -515,9 +541,78 @@ function renderRawCategoryPanel(
     })
     .join("");
   const panels = subs
-    .map((s, i) => renderSubContent(category, s, i === 0))
+    .map((s, i) => renderSubContent(category, s, i === 0, report))
     .join("\n");
   return `<nav class="sub-tabs">${subTabs}</nav>\n<div class="sub-contents">${panels}</div>`;
+}
+
+type StockTableRow = {
+  symbol: string;
+  company?: string;
+  source: string;
+  url?: string;
+  view: string;
+  target: string;
+  thesis: string;
+};
+
+function stockRows(report: DailyReport): StockTableRow[] {
+  const rows: StockTableRow[] = [];
+  for (const h of report.stock_highlights ?? []) {
+    rows.push({
+      symbol: h.symbol,
+      company: h.company,
+      source: h.source,
+      url: h.url,
+      view: h.view,
+      target: h.target_price || h.reference_price || STR.stockNotMentioned,
+      thesis: h.thesis,
+    });
+  }
+
+  return rows.filter((r) => r.symbol && r.thesis);
+}
+
+function renderStockSummaryTable(report: DailyReport): string {
+  const rows = stockRows(report);
+  if (rows.length === 0) return "";
+
+  const body = rows
+    .map((r) => {
+      const symbol = escapeHtml(r.symbol);
+      const symbolHtml = r.url
+        ? `<a href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer">${symbol}</a>`
+        : symbol;
+      const company = r.company
+        ? `<span class="stock-company">${escapeHtml(r.company)}</span>`
+        : "";
+      return `<tr>
+        <td class="stock-symbol-cell">${symbolHtml}${company}</td>
+        <td class="stock-source-cell">${escapeHtml(r.source)}</td>
+        <td class="stock-view-cell">${escapeHtml(r.view)}</td>
+        <td class="stock-target-cell">${escapeHtml(r.target)}</td>
+        <td class="stock-thesis-cell">${escapeHtml(r.thesis)}</td>
+      </tr>`;
+    })
+    .join("");
+
+  return `<section class="stock-summary">
+    <h2 class="stock-summary-title">${STR.stockSummaryTitle}</h2>
+    <div class="stock-table-wrap">
+      <table class="stock-table">
+        <thead>
+          <tr>
+            <th>${STR.stockSymbol}</th>
+            <th>${STR.stockSource}</th>
+            <th>${STR.stockView}</th>
+            <th>${STR.stockTarget}</th>
+            <th>${STR.stockThesis}</th>
+          </tr>
+        </thead>
+        <tbody>${body}</tbody>
+      </table>
+    </div>
+  </section>`;
 }
 
 // ----- top-level renderer -----
@@ -810,6 +905,70 @@ export function renderHtml(
     border-radius: 999px;
     font-size: 0.8rem;
   }
+
+  /* ===== top stock summary ===== */
+  .stock-summary {
+    margin: 0.9rem 0 1.25rem;
+    padding: 0.9rem 0 1rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .stock-summary-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 0.65rem;
+    letter-spacing: 0.05em;
+  }
+  .stock-table-wrap { overflow-x: auto; }
+  .stock-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+  .stock-table th {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    padding: 0.45rem 0.6rem;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  .stock-table td {
+    vertical-align: top;
+    padding: 0.58rem 0.6rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--fg-soft);
+  }
+  .stock-table tr:last-child td { border-bottom: none; }
+  .stock-symbol-cell {
+    min-width: 7rem;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-weight: 700;
+    color: var(--fg);
+  }
+  .stock-symbol-cell a { color: var(--fg); text-decoration: none; }
+  .stock-symbol-cell a:hover { color: var(--link); text-decoration: underline; }
+  .stock-company {
+    display: block;
+    margin-top: 0.15rem;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 0.74rem;
+    color: var(--muted);
+  }
+  .stock-source-cell { min-width: 8rem; color: var(--muted); }
+  .stock-view-cell { min-width: 7rem; color: var(--fg); }
+  .stock-target-cell {
+    min-width: 7.5rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--fg);
+  }
+  .stock-thesis-cell { min-width: 18rem; }
 
   /* ===== L2 sub-tabs ===== */
   .sub-tabs {
@@ -1209,7 +1368,7 @@ export function renderHtml(
     ${renderRawCategoryPanel("politics", raw.politics)}
   </section>
   <section class="panel" data-panel="finance">
-    ${renderRawCategoryPanel("finance", raw.finance)}
+    ${renderRawCategoryPanel("finance", raw.finance, report)}
   </section>
   ${techCommunitySubs.length > 0 ? `<section class="panel" data-panel="community">
     ${renderRawCategoryPanel("tech", techCommunitySubs)}
@@ -1499,6 +1658,24 @@ function renderSectionMarkdown(title: string, briefs: BriefItem[]): string {
   return `## ${title}\n\n${briefs.map(renderBriefMarkdown).join("\n")}\n`;
 }
 
+function mdCell(s: string): string {
+  return s.replace(/\|/g, "\\|").replace(/\n+/g, " ").trim();
+}
+
+function renderXStockSummaryMarkdown(report: DailyReport): string {
+  const rows = stockRows(report);
+  if (rows.length === 0) return "";
+  const header = `## ${STR.stockSummaryTitle}\n\n| ${STR.stockSymbol} | ${STR.stockSource} | ${STR.stockView} | ${STR.stockTarget} | ${STR.stockThesis} |\n|---|---|---|---|---|`;
+  const body = rows
+    .map((r) => {
+      const symbol = r.url ? `[${mdCell(r.symbol)}](${r.url})` : mdCell(r.symbol);
+      const company = r.company ? `<br>${mdCell(r.company)}` : "";
+      return `| ${symbol}${company} | ${mdCell(r.source)} | ${mdCell(r.view)} | ${mdCell(r.target)} | ${mdCell(r.thesis)} |`;
+    })
+    .join("\n");
+  return `${header}\n${body}\n`;
+}
+
 export function renderMarkdown(report: DailyReport, date: string): string {
   const blocks: string[] = [];
   blocks.push(`# ${STR.siteTitle} · ${date}\n`);
@@ -1515,6 +1692,7 @@ export function renderMarkdown(report: DailyReport, date: string): string {
       report.finance_briefs,
     ),
   );
+  blocks.push(renderXStockSummaryMarkdown(report));
   blocks.push(
     renderSectionMarkdown(
       CATEGORY_DIGEST_LABELS.politics,

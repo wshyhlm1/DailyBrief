@@ -14,8 +14,10 @@ import { getModelTag } from "../lib/ai/llm";
 import {
   enrichFinanceNewsSummaries,
   enrichGithubTrendingSummaries,
+  enrichXStockPickSummaries,
   enrichXViralSummaries,
 } from "../lib/ai/enrich";
+import { generateStockHighlights } from "../lib/ai/stock-highlights";
 import {
   groupRaw,
   isSportsArticle,
@@ -33,6 +35,7 @@ import { todayKey } from "../lib/utils";
 const OUTPUT_DIR = "daily_reports";
 const SOURCE_HEALTH_PATH = path.join("logs", "source-health.json");
 const SOURCE_FAILURE_LOG_PATH = path.join("logs", "source-failures.jsonl");
+const X_STOCK_POST_LIMIT = 20;
 
 const SOURCE_FETCH_RETRIES = parsePositiveIntEnv("SOURCE_FETCH_RETRIES", 3);
 const SOURCE_SKIP_AFTER_FAILURES = parsePositiveIntEnv(
@@ -307,6 +310,66 @@ async function enrichXViral(articles: ArticleInput[]): Promise<void> {
   );
 }
 
+function xStockPickArticles(
+  articles: ArticleInput[],
+  reportDayKey: string = todayKey(),
+): ArticleInput[] {
+  const xStockSourceIds = new Set(
+    sources
+      .filter(
+        (s) =>
+          s.enabled !== false &&
+          s.category === "finance" &&
+          s.subcategory === "x-posts",
+      )
+      .map((s) => s.id),
+  );
+  return articles
+    .filter((a) => xStockSourceIds.has(a.sourceId))
+    .filter((a) => !a.publishedAt || todayKey(a.publishedAt) === reportDayKey)
+    .sort(
+      (a, b) =>
+        (b.publishedAt?.getTime() ?? 0) - (a.publishedAt?.getTime() ?? 0),
+    )
+    .slice(0, X_STOCK_POST_LIMIT);
+}
+
+async function enrichXStockPicks(
+  articles: ArticleInput[],
+  reportDayKey: string,
+): Promise<void> {
+  const xPosts = xStockPickArticles(articles, reportDayKey);
+  if (xPosts.length === 0) return;
+  const sourceById = new Map(sources.map((s) => [s.id, s]));
+  const toEnrich = xPosts.filter((a) => {
+    const sourceLang = sourceById.get(a.sourceId)?.lang ?? "en";
+    return sourceLang !== REPORT_LOCALE;
+  });
+  if (toEnrich.length === 0) return;
+  console.log(
+    `[daily] localizing ${toEnrich.length}/${xPosts.length} X stock-pick posts with ${REPORT_LOCALE} text…`,
+  );
+  const t0 = Date.now();
+  const localized = await enrichXStockPickSummaries(
+    toEnrich.map((a) => ({
+      url: a.url,
+      title: a.title,
+      excerpt: a.excerpt,
+      source: a.source,
+    })),
+  );
+  for (const a of toEnrich) {
+    const item = localized.get(a.url);
+    if (!item) continue;
+    if (item.title) a.displayTitle = item.title;
+    if (item.excerpt) a.displayExcerpt = item.excerpt;
+    if (item.summary) a.summary = item.summary;
+  }
+  console.log(
+    `[daily] X stock-pick localization done in ${((Date.now() - t0) / 1000).toFixed(1)}s, matched ${localized.size}/${toEnrich.length}`,
+  );
+}
+
 /**
  * Shared implementation for "merged subgroup" enrichment: collect all
  * enabled articles in (category, subcategory), sort by date desc, take
@@ -416,6 +479,7 @@ async function main() {
   await enrichPolitics(articles);
   await enrichAiNews(articles);
   await enrichXViral(articles);
+  await enrichXStockPicks(articles, date);
 
   // Trading signals: Yahoo fetch + indicators + commentary. Non-fatal —
   // if it errors, we still ship the news digest.
@@ -430,8 +494,27 @@ async function main() {
   console.log(`[daily] generating digest with ${getModelTag()}…`);
   const t0 = Date.now();
   const { report } = await generateDailyReport(articles, date);
-  if (trading) report.trading = trading;
   console.log(`[daily] digest ready in ${((Date.now() - t0) / 1000).toFixed(1)}s`);
+
+  const stockHighlightInputs = xStockPickArticles(articles, date).map((a) => ({
+    url: a.url,
+    title: a.displayTitle ?? a.title,
+    excerpt: a.displayExcerpt ?? a.excerpt,
+    source: a.source,
+  }));
+  if (stockHighlightInputs.length > 0) {
+    console.log(
+      `[daily] extracting X stock highlight table with ${getModelTag()}…`,
+    );
+    const tStock = Date.now();
+    const stockHighlights = await generateStockHighlights(stockHighlightInputs);
+    if (stockHighlights.length > 0) report.stock_highlights = stockHighlights;
+    console.log(
+      `[daily] stock highlights ready in ${((Date.now() - tStock) / 1000).toFixed(1)}s — ${stockHighlights.length} rows`,
+    );
+  }
+
+  if (trading) report.trading = trading;
 
   const dateDir = path.join(OUTPUT_DIR, date);
   fs.mkdirSync(dateDir, { recursive: true });

@@ -45,8 +45,18 @@ export interface SourceDef {
 export interface RawArticle {
   sourceId: string;
   title: string;
+  /**
+   * Optional locale-specific title for display. Kept separate from `title`
+   * so the original RSS/API title remains available for debugging.
+   */
+  displayTitle?: string;
   url: string;
   excerpt?: string;
+  /**
+   * Optional locale-specific excerpt for display when a source needs
+   * translation rather than only an added summary.
+   */
+  displayExcerpt?: string;
   publishedAt?: Date;
   category: Category;
   /**

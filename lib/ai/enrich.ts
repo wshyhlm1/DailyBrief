@@ -10,6 +10,13 @@ interface EnrichInput {
   source?: string;
 }
 
+export interface LocalizedXStockPick {
+  url: string;
+  title: string;
+  excerpt: string;
+  summary: string;
+}
+
 const GH_SYSTEM_PROMPT_ZH = `你是一名技术编辑，负责为 GitHub Trending 项目写中文介绍。
 
 输入：每个项目有 owner/repo 名 + 一行英文 description（可能没有）。
@@ -157,12 +164,70 @@ Output STRICTLY a JSON object, no markdown wrapping:
 
 **Quote rule (important!)**: For any quotation INSIDE a summary string, use single quotes ' or curly quotes '" — **never** a raw double quote, which breaks JSON parsing.`;
 
+const XSTOCK_SYSTEM_PROMPT_ZH = `你是一名中文财经编辑，负责把 X（Twitter）选股/投资观点帖整理成**完整中文展示文案**。
+
+输入：每条帖子有 url、title、excerpt 和 source。
+
+任务：对每条帖子输出：
+  - title：中文标题，保留股票代码（如 $AAOI）和关键数字，不要照搬英文
+  - excerpt：80-160 字中文正文摘要；必须把英文/日文等非中文内容翻译成中文
+  - summary：40-90 字中文要点，突出股票、观点、催化剂、目标价/参考价格/市值（如有）
+
+规则：
+  - 代码、公司名、金额、百分比、估值、市值、时间点必须保留
+  - 未明确目标价时不要编造，写成参考价/市值/历史价格即可
+  - 不提供投资建议，只客观转述原帖观点
+  - 信息不足时宁可短，不扩写
+
+输出严格 JSON 对象，不要 markdown 包裹：
+{
+  "items": [
+    { "url": "<原 url>", "title": "<中文标题>", "excerpt": "<中文正文摘要>", "summary": "<中文要点>" },
+    ...
+  ]
+}
+
+**引号规则（重要！）**：字段内引用一律用中文全角引号「」或中文引号“”，不要使用未转义英文双引号。`;
+
+const XSTOCK_SYSTEM_PROMPT_EN = `You are a financial editor cleaning up X (Twitter) stock-pick / investment-view posts for an English report.
+
+Input: each post has url, title, excerpt, and source.
+
+Task: for each post, output:
+  - title: a clean English headline preserving tickers (e.g. $AAOI) and key numbers
+  - excerpt: an 80-160 word English summary; translate any non-English source text into English
+  - summary: a 40-90 word English key takeaway emphasizing tickers, stance, catalyst, target price / reference price / market cap if present
+
+Rules:
+  - Preserve tickers, company names, dollar amounts, percentages, valuations, market caps, and dates
+  - If no target price is stated, do not invent one; describe reference prices / market caps / historical prices only
+  - Do not give investment advice; neutrally summarize the source's view
+  - Prefer shorter over fabrication when information is thin
+
+Output STRICTLY a JSON object, no markdown wrapping:
+{
+  "items": [
+    { "url": "<exact url>", "title": "<English headline>", "excerpt": "<English summary>", "summary": "<English takeaway>" },
+    ...
+  ]
+}`;
+
 // Pick the right localized prompt set at module init. Each enricher reaches
 // in via PROMPTS.<key> so the call sites stay locale-agnostic.
 const PROMPTS =
   REPORT_LOCALE === "en"
-    ? { gh: GH_SYSTEM_PROMPT_EN, finance: FINANCE_SYSTEM_PROMPT_EN, xViral: XVIRAL_SYSTEM_PROMPT_EN }
-    : { gh: GH_SYSTEM_PROMPT_ZH, finance: FINANCE_SYSTEM_PROMPT_ZH, xViral: XVIRAL_SYSTEM_PROMPT_ZH };
+    ? {
+        gh: GH_SYSTEM_PROMPT_EN,
+        finance: FINANCE_SYSTEM_PROMPT_EN,
+        xViral: XVIRAL_SYSTEM_PROMPT_EN,
+        xStock: XSTOCK_SYSTEM_PROMPT_EN,
+      }
+    : {
+        gh: GH_SYSTEM_PROMPT_ZH,
+        finance: FINANCE_SYSTEM_PROMPT_ZH,
+        xViral: XVIRAL_SYSTEM_PROMPT_ZH,
+        xStock: XSTOCK_SYSTEM_PROMPT_ZH,
+      };
 
 const USER_PROMPT_HEADER =
   REPORT_LOCALE === "en"
@@ -298,4 +363,62 @@ export async function enrichXViralSummaries(
     previewText: (it.excerpt ?? "").slice(0, 280),
   }));
   return runEnrichment(payload, PROMPTS.xViral, "X-viral summaries");
+}
+
+export async function enrichXStockPickSummaries(
+  items: EnrichInput[],
+): Promise<Map<string, LocalizedXStockPick>> {
+  if (items.length === 0) return new Map();
+  const payload = items.map((it) => ({
+    url: it.url,
+    title: it.title,
+    source: it.source ?? "",
+    excerpt: (it.excerpt ?? "").slice(0, 500),
+  }));
+  const langHeader =
+    REPORT_LOCALE === "en"
+      ? "**Output language: ENGLISH ONLY.** Translate every non-English title/excerpt/summary into English."
+      : "**输出语言：仅中文。** title、excerpt、summary 三个字段都必须写成中文；股票代码和金额数字保留原样。";
+  const userPrompt = [
+    langHeader,
+    "",
+    USER_PROMPT_HEADER(payload.length),
+    JSON.stringify(payload),
+    "",
+    REPORT_LOCALE === "en"
+      ? `Output {"items": [{"url": ..., "title": ..., "excerpt": ..., "summary": ...}, ...]} — url must be copied exactly from input.`
+      : `请输出 {"items": [{"url": ..., "title": ..., "excerpt": ..., "summary": ...}, ...]}，url 必须精确回填输入值。`,
+  ].join("\n");
+
+  const result = new Map<string, LocalizedXStockPick>();
+
+  try {
+    const { text } = await runLlm({
+      systemPrompt: PROMPTS.xStock,
+      userPrompt,
+      timeoutMs: 240_000,
+    });
+    const cleaned = extractJson(text);
+    let parsed: { items?: LocalizedXStockPick[] };
+    try {
+      parsed = JSON.parse(cleaned);
+    } catch {
+      parsed = JSON.parse(jsonrepair(cleaned));
+    }
+
+    for (const item of parsed.items ?? []) {
+      if (!item.url) continue;
+      result.set(item.url, {
+        url: item.url,
+        title: (item.title ?? "").trim(),
+        excerpt: (item.excerpt ?? "").trim(),
+        summary: (item.summary ?? "").trim(),
+      });
+    }
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    console.warn(`[enrich] X-stock summaries failed: ${msg}`);
+  }
+
+  return result;
 }
