@@ -324,9 +324,13 @@ function xStockPickArticles(
       )
       .map((s) => s.id),
   );
+  // Accept articles from the last 2 days — Serenity tweets are fetched via
+  // RSSHub which may have timezone/date mismatches with the report day key.
+  const reportDate = new Date(reportDayKey.replace(/-/g, "/"));
+  const twoDaysAgo = new Date(reportDate.getTime() - 2 * 86400000);
   return articles
     .filter((a) => xStockSourceIds.has(a.sourceId))
-    .filter((a) => !a.publishedAt || todayKey(a.publishedAt) === reportDayKey)
+    .filter((a) => !a.publishedAt || a.publishedAt >= twoDaysAgo)
     .sort(
       (a, b) =>
         (b.publishedAt?.getTime() ?? 0) - (a.publishedAt?.getTime() ?? 0),
