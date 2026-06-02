@@ -6,16 +6,19 @@
 <title>每日简报 · 2026-06-02</title>
 <style>
   :root {
-    --bg: #fafaf9;
+    --bg: #f6f7f9;
     --bg-elevated: #ffffff;
-    --fg: #18181b;
-    --fg-soft: #3f3f46;
-    --muted: #71717a;
-    --rule: #e4e4e7;
-    --card: #f4f4f5;
-    --link: #1d4ed8;
-    --accent: #18181b;
-    --accent-fg: #fafaf9;
+    --fg: #171717;
+    --fg-soft: #3d4351;
+    --muted: #737987;
+    --rule: #dde2ea;
+    --card: #eef1f5;
+    --link: #2563eb;
+    --accent: #111827;
+    --accent-fg: #ffffff;
+    --selected: #0f766e;
+    --selected-soft: #d9f4ef;
+    --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.08);
     --rank-high-bg: #fee2e2;
     --rank-high-fg: #991b1b;
     --rank-mid-bg: #fef3c7;
@@ -37,6 +40,9 @@
       --link: #93c5fd;
       --accent: #fafafa;
       --accent-fg: #0a0a0a;
+      --selected: #5eead4;
+      --selected-soft: rgba(20, 184, 166, 0.16);
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.28);
       --rank-high-bg: rgba(239,68,68,0.18);
       --rank-high-fg: #fca5a5;
       --rank-mid-bg: rgba(245,158,11,0.18);
@@ -75,6 +81,48 @@
     letter-spacing: -0.02em;
     line-height: 1.1;
   }
+  .title-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0.4rem 0 1.2rem;
+  }
+  .title-row h1.report-title { margin: 0; }
+  .weather-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.45rem;
+    padding: 0.46rem 0.7rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    background: var(--bg-elevated);
+    box-shadow: 0 5px 16px rgba(15, 23, 42, 0.06);
+    color: var(--fg-soft);
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  .weather-icon { font-size: 1.25rem; line-height: 1; }
+  .weather-city,
+  .weather-temp {
+    color: var(--fg);
+    font-weight: 700;
+  }
+  .weather-condition { color: var(--fg-soft); }
+  .weather-muted { color: var(--muted); }
+  .weather-aqi {
+    padding: 0.12rem 0.38rem;
+    border-radius: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .aqi-good { background: rgba(22, 163, 74, 0.13); color: #166534; }
+  .aqi-moderate { background: rgba(217, 119, 6, 0.15); color: #92400e; }
+  .aqi-sensitive { background: rgba(234, 88, 12, 0.16); color: #9a3412; }
+  .aqi-unhealthy,
+  .aqi-hazardous { background: rgba(220, 38, 38, 0.14); color: #991b1b; }
   .archive-link {
     display: inline-block;
     margin-bottom: 1rem;
@@ -124,34 +172,47 @@
   /* ===== primary tabs ===== */
   .tabs {
     display: flex;
-    gap: 0.25rem;
+    gap: 0.35rem;
     margin: 1.25rem 0 0.75rem;
-    border-bottom: 1px solid var(--rule);
+    padding: 0.35rem;
+    background: color-mix(in srgb, var(--bg-elevated) 88%, transparent);
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-soft);
     flex-wrap: wrap;
+    position: sticky;
+    top: 0.5rem;
+    z-index: 10;
+    backdrop-filter: blur(14px);
   }
   .tab {
     background: none;
     border: none;
-    padding: 0.7rem 1.1rem;
-    font-size: 0.95rem;
-    font-weight: 500;
+    padding: 0.6rem 0.95rem;
+    font-size: 0.92rem;
+    font-weight: 650;
     color: var(--muted);
     cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
+    border-radius: 0.4rem;
     font-family: inherit;
-    transition: color 0.15s;
+    transition: background 0.15s, color 0.15s, transform 0.15s;
   }
-  .tab:hover { color: var(--fg); }
+  .tab:hover { color: var(--fg); background: var(--card); }
   .tab.active {
-    color: var(--fg);
-    border-bottom-color: var(--accent);
+    color: var(--accent-fg);
+    background: var(--accent);
+    transform: translateY(-1px);
+  }
+  .tab[data-tab="selected"] { color: var(--selected); }
+  .tab[data-tab="selected"].active {
+    color: #ffffff;
+    background: var(--selected);
   }
   .tab .count {
     font-size: 0.72rem;
-    color: var(--muted);
     margin-left: 0.4rem;
     font-weight: 400;
+    opacity: 0.72;
   }
   .panel { display: none; }
   .panel.active { display: block; }
@@ -264,17 +325,26 @@
   /* ===== top stock summary ===== */
   .stock-summary {
     margin: 0.9rem 0 1.25rem;
-    padding: 0.9rem 0 1rem;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
+    padding: 1rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--selected);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-soft);
   }
   .stock-summary-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin: 0 0 0.65rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem;
     letter-spacing: 0.05em;
+    color: var(--fg);
   }
-  .stock-table-wrap { overflow-x: auto; }
+  .stock-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    background: var(--bg);
+  }
   .stock-table {
     width: 100%;
     min-width: 760px;
@@ -285,6 +355,7 @@
   .stock-table th {
     text-align: left;
     color: var(--muted);
+    background: var(--card);
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -299,6 +370,7 @@
     border-bottom: 1px solid var(--rule);
     color: var(--fg-soft);
   }
+  .stock-table tbody tr:hover td { background: color-mix(in srgb, var(--selected-soft) 48%, transparent); }
   .stock-table tr:last-child td { border-bottom: none; }
   .stock-symbol-cell {
     min-width: 7rem;
@@ -315,9 +387,35 @@
     font-weight: 400;
     font-size: 0.74rem;
     color: var(--muted);
+    overflow-wrap: anywhere;
   }
-  .stock-source-cell { min-width: 8rem; color: var(--muted); }
+  .stock-cell-value { min-width: 0; overflow-wrap: anywhere; }
+  .stock-source-cell { min-width: 8.8rem; color: var(--muted); }
   .stock-view-cell { min-width: 7rem; color: var(--fg); }
+  .stock-view-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    max-width: 100%;
+    padding: 0.18rem 0.48rem;
+    border-radius: 0.4rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .stock-view-badge.view-bull { background: rgba(22, 163, 74, 0.12); color: #166534; }
+  .stock-view-badge.view-bear { background: rgba(220, 38, 38, 0.12); color: #991b1b; }
+  .stock-view-badge.view-watch { background: rgba(100, 116, 139, 0.14); color: #334155; }
+  .stock-view-badge.view-neutral { background: var(--card); color: var(--fg-soft); }
+  @media (prefers-color-scheme: dark) {
+    .aqi-good,
+    .stock-view-badge.view-bull { color: #4ade80; }
+    .aqi-moderate,
+    .aqi-sensitive { color: #fcd34d; }
+    .aqi-unhealthy,
+    .aqi-hazardous,
+    .stock-view-badge.view-bear { color: #fca5a5; }
+    .stock-view-badge.view-watch { color: #cbd5e1; }
+  }
   .stock-target-cell {
     min-width: 7.5rem;
     font-variant-numeric: tabular-nums;
@@ -334,7 +432,7 @@
   }
   .sub-tab {
     background: var(--card);
-    border: 1px solid transparent;
+    border: 1px solid var(--rule);
     padding: 0.5rem 1.05rem;
     border-radius: 0.5rem;
     font-size: 0.9rem;
@@ -348,6 +446,7 @@
   .sub-tab.active {
     background: var(--accent);
     color: var(--accent-fg);
+    border-color: var(--accent);
   }
   .sub-tab .count {
     font-size: 0.7rem;
@@ -394,11 +493,20 @@
 
   /* ===== article cards in raw panels ===== */
   .article {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--rule);
+    padding: 1rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    background: var(--bg-elevated);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    margin-bottom: 0.75rem;
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
   }
-  .article:first-child { padding-top: 0; }
-  .article:last-child { border-bottom: none; }
+  .article:hover {
+    border-color: color-mix(in srgb, var(--selected) 42%, var(--rule));
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    transform: translateY(-1px);
+  }
+  .article:last-child { margin-bottom: 0; }
   .article-title {
     font-size: 1rem;
     margin: 0 0 0.3rem;
@@ -690,6 +798,93 @@
   .trading-risk .eyebrow { display: block; margin-bottom: 0.35rem; }
   .trading-risk p { margin: 0; font-size: 0.82rem; line-height: 1.65; color: var(--fg-soft); }
 
+  @media (max-width: 680px) {
+    main { padding: 2rem 1rem 3rem; }
+    h1.report-title { font-size: 2.35rem; }
+    .title-row {
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+    .weather-pill {
+      width: 100%;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      row-gap: 0.28rem;
+      white-space: normal;
+    }
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.28rem;
+      top: 0.35rem;
+      margin-top: 1rem;
+    }
+    .tab {
+      width: 100%;
+      padding: 0.58rem 0.35rem;
+      font-size: 0.84rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tab .count { display: block; margin: 0.1rem 0 0; font-size: 0.68rem; }
+    .stock-summary { padding: 0.85rem; }
+    .stock-table-wrap {
+      overflow: visible;
+      border: none;
+      background: transparent;
+    }
+    .stock-table {
+      min-width: 0;
+      display: block;
+      font-size: 0.86rem;
+    }
+    .stock-table thead { display: none; }
+    .stock-table tbody,
+    .stock-table tr,
+    .stock-table td {
+      display: block;
+      width: 100%;
+    }
+    .stock-table tr {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .stock-table tr:first-child { padding-top: 0; }
+    .stock-table tr:last-child { border-bottom: none; padding-bottom: 0; }
+    .stock-table td {
+      border-bottom: none;
+      padding: 0.22rem 0;
+      display: grid;
+      grid-template-columns: 5.5rem minmax(0, 1fr);
+      gap: 0.65rem;
+      align-items: start;
+    }
+    .stock-table td::before {
+      content: attr(data-label);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+    }
+    .stock-symbol-cell,
+    .stock-source-cell,
+    .stock-view-cell,
+    .stock-target-cell,
+    .stock-thesis-cell {
+      min-width: 0;
+    }
+    .article {
+      padding: 0.85rem;
+      margin-bottom: 0.65rem;
+    }
+    .article-title { font-size: 0.96rem; }
+    .article-excerpt,
+    .article-summary { font-size: 0.86rem; }
+    .ticker-head { gap: 0.7rem; }
+    .ticker-indicators { grid-template-columns: 1fr; }
+  }
+
   footer {
     margin-top: 2.5rem;
     border-top: 1px solid var(--rule);
@@ -703,19 +898,279 @@
 <main>
   <header class="report-header">
     <span class="eyebrow">每日简报</span>
-    <h1 class="report-title">2026-06-02</h1>
-    <a class="archive-link" href="../archive.html">← 历史归档</a>
+    <div class="title-row">
+      <h1 class="report-title">2026-06-02</h1>
+      <aside class="weather-pill" title="Open-Meteo · 2026-06-02" aria-label="上海 阴/多云 22-33°C">
+    <span class="weather-icon" aria-hidden="true">☁️</span>
+    <span class="weather-city">上海</span>
+    <strong class="weather-temp">22-33°C</strong>
+    <span class="weather-condition">阴/多云</span>
+    <span class="weather-muted">体感 30°</span>
+    <span class="weather-aqi aqi-moderate">空气 89 · 良</span>
+  </aside>
+    </div>
+    
   </header>
 
   <nav class="tabs" role="tablist">
-    <button class="tab active" data-tab="tech">技术动态<span class="count">45</span></button>
-    <button class="tab" data-tab="trading">市场行情<span class="count">33</span></button>
+    <button class="tab active" data-tab="selected">S’elected<span class="count">19</span></button>
+    <button class="tab" data-tab="tech">技术动态<span class="count">45</span></button>
+    <button class="tab" data-tab="trading">市场行情<span class="count">32</span></button>
     <button class="tab" data-tab="politics">时政观察<span class="count">15</span></button>
-    <button class="tab" data-tab="finance">财经要点<span class="count">31</span></button>
+    <button class="tab" data-tab="finance">财经要点<span class="count">12</span></button>
     <button class="tab" data-tab="community">社区讨论<span class="count">20</span></button>
   </nav>
 
-  <section class="panel active" data-panel="tech">
+  <section class="panel active" data-panel="selected">
+    <div class="sub-content active" data-sub-content="x-posts" data-cat="finance">
+    <section class="stock-summary">
+    <h2 class="stock-summary-title">S’elected 精选总结</h2>
+    <div class="stock-table-wrap">
+      <table class="stock-table">
+        <thead>
+          <tr>
+            <th>股票</th>
+            <th>来源</th>
+            <th>观点</th>
+            <th>目标价/参考价</th>
+            <th>核心内容</th>
+          </tr>
+        </thead>
+        <tbody><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061596599588114444" target="_blank" rel="noopener noreferrer">GOOGL</a><span class="stock-company">谷歌母公司</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-bull"><span aria-hidden="true">📈</span>看多</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">$800亿 拟筹资</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">拟筹资800亿美元押注AI基建资本开支，含400亿ATM与300亿发行，获巴菲特100亿美元跟投，彰显巨头对AI算力长期投入的决心。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061596599588114444" target="_blank" rel="noopener noreferrer">BRK.A</a><span class="stock-company">伯克希尔哈撒韦</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-bull"><span aria-hidden="true">👀📈</span>观察/看多</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">$100亿 注资</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">同步投入100亿美元参与AI基建巨头注资，反映顶级长期资本对AI基础设施产业链投资价值与现金流的深度认可。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061479663181189201" target="_blank" rel="noopener noreferrer">NBIS</a><span class="stock-company">尼比乌斯云计算</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-bull"><span aria-hidden="true">📈</span>看多</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">€80亿 投资 / 剑指 $1000亿 市值</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">获官宣投资超80亿欧元部署法国AI云基建，走势强势跑赢同行。基于行业景气度推演市值有望冲击千亿美元，当前正逐步兑现，资金做多意愿强烈。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061538735595069534" target="_blank" rel="noopener noreferrer">SIVE</a><span class="stock-company">赛弗斯半导体</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-bull"><span aria-hidden="true">📈</span>看多</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">掌握光子学关键激光器技术，系CPO共封装光学核心瓶颈标的。获产业链多方验证并受政策扶持，技术路径明确，后市成长空间广阔。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061498698098708676" target="_blank" rel="noopener noreferrer">AAOI</a><span class="stock-company">应用光电</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-bull"><span aria-hidden="true">📈</span>持仓/做多</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">+20.1% 单日涨幅</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">被重申为最看好光通信多头标的，单日大涨超20%。预期有望复刻历史强势股走势，2027下半年光子学迎业绩拐点，逢低布局胜率较高。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061486607870652876" target="_blank" rel="noopener noreferrer">ARM</a><span class="stock-company">安谋</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-bull"><span aria-hidden="true">📈</span>看多</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">$134 至 $413 (2.5个月)</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">两个半月内股价飙升三倍至413美元。新一代AGI CPU指引未来年收超150亿美元，强劲业绩预期与算力需求正持续驱动估值扩张。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061596599588114444" target="_blank" rel="noopener noreferrer">AVGO</a><span class="stock-company">博通</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-bull"><span aria-hidden="true">📈</span>看多</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">AI算力芯片与互联技术龙头，全面受益于下游云厂商资本开支扩张，定制芯片与网络芯片需求强劲推动业绩增长。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061596599588114444" target="_blank" rel="noopener noreferrer">TSM</a><span class="stock-company">台积电</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-bull"><span aria-hidden="true">📈</span>看多</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">全球先进制程代工绝对龙头，AI基建巨额投资直接转化为高端AI芯片流片需求，产能满载预期持续强化。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061596599588114444" target="_blank" rel="noopener noreferrer">MU</a><span class="stock-company">美光</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-bull"><span aria-hidden="true">📈</span>看多</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">高带宽存储芯片核心供应商，AI数据中心扩建将大幅拉升HBM及高性能内存需求，有望迎来量价齐升周期。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061596599588114444" target="_blank" rel="noopener noreferrer">LITE</a><span class="stock-company">鲁门特姆</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-watch"><span aria-hidden="true">👀</span>仅提及/无明确观点</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">作为AI上游光通信核心供应链企业，将直接受益于科技巨头数百亿级AI资本开支落地，产能利用率与订单量有望同步提升。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061538735595069534" target="_blank" rel="noopener noreferrer">GFS</a><span class="stock-company">格芯</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-watch"><span aria-hidden="true">👀</span>仅提及/无明确观点</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">作为硅光技术领军企业，在方案演示中明确将核心激光器列为关键供应商之一，侧面印证上游光器件产业链技术路径。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061538735595069534" target="_blank" rel="noopener noreferrer">JBL</a><span class="stock-company">捷普</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-watch"><span aria-hidden="true">👀</span>仅提及/无明确观点</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">在光模块制造领域强调采用特定激光方案的模块具备深厚护城河，反映市场对关键光通信元器件不可替代性的认可。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061498698098708676" target="_blank" rel="noopener noreferrer">SNDK</a><span class="stock-company">闪迪</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-watch"><span aria-hidden="true">👀</span>复盘</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">历史强势存储标的，被用于技术走势类比，认为当前光通信龙头有望复刻其当年的主升浪爆发行情。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061479663181189201" target="_blank" rel="noopener noreferrer">IREN</a><span class="stock-company">艾瑞斯算力</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-watch"><span aria-hidden="true">👀</span>仅提及/无明确观点</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">作为新型云基建算力企业之一，在近期行情中表现逊于NBIS，资金呈现明显的板块内部轮动与强弱分化特征。</div></td>
+      </tr><tr>
+        <td class="stock-symbol-cell" data-label="股票"><div class="stock-cell-value"><a href="https://x.com/aleabitoreddit/status/2061479663181189201" target="_blank" rel="noopener noreferrer">CIFR</a><span class="stock-company">赛弗矿业</span></div></td>
+        <td class="stock-source-cell" data-label="来源"><div class="stock-cell-value">Serenity 选股（@aleabitoreddit）</div></td>
+        <td class="stock-view-cell" data-label="观点"><div class="stock-cell-value"><span class="stock-view-badge view-watch"><span aria-hidden="true">👀</span>仅提及/无明确观点</span></div></td>
+        <td class="stock-target-cell" data-label="目标价/参考价"><div class="stock-cell-value">未提及</div></td>
+        <td class="stock-thesis-cell" data-label="核心内容"><div class="stock-cell-value">同属新云基建与算力租赁赛道，近期股价走势跑输NBIS，反映市场资金在同类标的中更青睐具备确定性落地的企业。</div></td>
+      </tr></tbody>
+      </table>
+    </div>
+  </section>
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="x-serenity" data-sub="x-posts" data-cat="finance">
+    <article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061596599588114444" target="_blank" rel="noopener noreferrer">$GOOGL 拟筹资 $800亿 押注AI资本开支，巴菲特 $BRK.A 同步巨资注资</a></h3>
+  
+  <p class="article-meta">06/02 07:51</p>
+  <p class="article-excerpt">令人惊讶的是 $GOOGL 为AI基建资本开支拟筹集高达 $800亿 的资金，其中包含 $400亿 的ATM增发与 $300亿 发行。巴菲特的 $BRK.A 亦同步投入 $100亿 参与注资。博主指出，此举将直接利好上游核心供应链，全面带动 $LITE、$AVGO、联发科、$TSM 及 $MU 等相关企业的产能与业绩增长。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> $GOOGL 拟筹资 $800亿 用于AI资本开支，$BRK.A 同步注资 $100亿 。看好AI上游供应链 $LITE、$AVGO、$TSM、$MU 等标的的产能扩张与订单催化。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061545299055882675" target="_blank" rel="noopener noreferrer">马克龙官宣 $NBIS 将在法国投资超 €80亿 部署AI云基建</a></h3>
+  
+  <p class="article-meta">06/02 04:27</p>
+  <p class="article-excerpt">法国总统马克龙正式对外宣布，$NBIS 将斥资超过 €80亿 在法国本土大规模部署人工智能云基础设施。该重磅合作迅速引发市场热议，同时亦有评论尖锐指出数据中心建设背后潜在的水资源消耗隐忧。此举标志着欧洲AI算力网络正式迈入实质性建设与落地阶段。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 马克龙官宣 $NBIS 将在法国投资超 €80亿 部署AI云基建。项目标志欧洲算力网络落地，同时引发市场对数据中心水资源消耗的担忧。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061538735595069534" target="_blank" rel="noopener noreferrer">$SIVE 成光子学激光核心瓶颈，静待CPO技术爆发获产业链验证</a></h3>
+  
+  <p class="article-meta">06/02 04:01</p>
+  <p class="article-excerpt">博主指出 $SIVE 掌握光子学关键激光器技术，是目前CPO共封装光学领域的核心瓶颈标的。其技术路径已获产业链多方公开验证：$GFS 在演示中明确将其列为两大激光供应商之一，$JBL 也强调采用其方案的模块具备深厚护城河。叠加产业政策扶持，后市空间广阔。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 博主看好 $SIVE 作为CPO激光核心瓶颈标的，获 $GFS 与 $JBL 产业链验证，技术护城河显著。叠加芯片法案催化，静待光子学需求放量。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061498698098708676" target="_blank" rel="noopener noreferrer">博主重申 $AAOI 为最看好美股光通信标的，单日大涨 +20.1%</a></h3>
+  
+  <p class="article-meta">06/02 01:22</p>
+  <p class="article-excerpt">博主再次强调 $AAOI 是其最看好的美股光通信多头标的，该股当日录得 +20.1% 的强势涨幅。他认为该股有望复刻 $SNDK 的历史爆发走势。预计至2027年下半年，光子学赛道将迎来关键业绩拐点。当前产业仍处产能爬坡初期，逢低布局胜率较高。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 博主长期看好美股光通信标的 $AAOI ，当日大涨 +20.1% ，认为其走势有望对标 $SNDK 。预计2027年中期行业将迎来业绩拐点，当前属左侧布局阶段。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061486607870652876" target="_blank" rel="noopener noreferrer">$ARM 股价2.5个月内从 $134 飙升至 $413 ，AGI CPU预期年收 $150亿</a></h3>
+  
+  <p class="article-meta">06/02 00:34</p>
+  <p class="article-excerpt">$ARM 股价走势极为凌厉，短短两个半月内便由 $134 径直飙升至 $413 ，累计涨幅达三倍。博主坦言若搭配期权操作获利将更为丰厚。公司最新指引显示，其新一代AGI CPU芯片业务未来每年有望贡献超 $150亿 营收，强劲的业绩预期正持续推动估值扩张。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> $ARM 股价2.5个月自 $134 飙升至 $413 。核心催化剂为新一代AGI CPU业务，公司预期该业务年营收将超 $150亿 ，基本面强劲支撑估值扩张。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061479663181189201" target="_blank" rel="noopener noreferrer">$NBIS 走势强势获「主角光环」确认，剑指千亿美元市值</a></h3>
+  
+  <p class="article-meta">06/02 00:07</p>
+  <p class="article-excerpt">博主调侃 $NBIS 走势仿佛自带「主角光环」，持续大幅跑赢大盘以及 $IREN 与 $CIFR 等新云基建组合。其曾基于微软财报后的行业景气度做出前瞻推演，明确给出 $NBIS 市值有望冲击 $1000亿 的预期。当前行情正逐步兑现该判断，资金做多意愿强烈。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 博主称 $NBIS 走势强势，持续跑赢 $IREN 与 $CIFR 等同行。此前预测其市值可达 $1000亿 ，目前正逐步兑现，看好其云基建赛道长期逻辑。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061470490083143996" target="_blank" rel="noopener noreferrer">$EWY 看涨期权数月内飙升 485%，存储芯片做多策略获丰厚回报</a></h3>
+  
+  <p class="article-meta">06/01 23:30</p>
+  <p class="article-excerpt">几个月来，$EWY 长期看涨期权收益率已达 485%。这主要得益于隐含波动率扩张及存储芯片板块的方向性做多策略。尽管此前因伊朗局势引发的市场恐慌导致大量抛售，但长期做多三星、SK 海力士及 $MU 等存储龙头的策略已展现出强劲回报。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 存储芯片做多策略见效，$EWY 期权收益达 485%。受波动率扩张推动，无视地缘恐慌，三星、SK 海力士及 $MU 等标的表现强劲。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061466217911853429" target="_blank" rel="noopener noreferrer">$IQE 四个月内从 12-13 美元涨至 54 美元，领跑今日欧洲市场</a></h3>
+  
+  <p class="article-meta">06/01 23:13</p>
+  <p class="article-excerpt">感谢今日唯一收涨的欧洲股票 $IQE。自四个月前于 12-13 美元区间建仓以来，该股已攀升至 54 美元。相比之下 $LPK、$SOI、$XFAB 及 $ALRIB 等标的波动较大。作者表示对光子供应链更为熟悉，未受整体波动影响策略。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 欧洲光子股 $IQE 四个月参考价由 12-13 美元升至 54 美元。相较 $LPK 等标的剧烈波动，作者基于光子供应链认知坚定持有，凸显基本面支撑。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061456212303221196" target="_blank" rel="noopener noreferrer">反驳 $SIVE 看空观点：$MRVL 或直接采购激光器，基本面未变</a></h3>
+  
+  <p class="article-meta">06/01 22:33</p>
+  <p class="article-excerpt">针对近期 $SIVE 的看空观点，作者指出其缺乏产业认知。自 2023 年起，$MRVL 项目已被视为 $SIVE 的直接激光器采购方，而非通过 $POET 中转。供应链地位稳固，企业基本面持续改善，短期看空言论与事实严重不符。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 驳斥 $SIVE 看空言论，指出 $MRVL 自 2023 年起或直接向其采购激光器。核心逻辑在于直接供应链地位稳固，基本面持续向好。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061442981102764171" target="_blank" rel="noopener noreferrer">$NVDA、西门子与 $FLNC 联合开发 Vera Rubin N72 供电架构</a></h3>
+  
+  <p class="article-meta">06/01 21:41</p>
+  <p class="article-excerpt">$NVDA、西门子与 $FLNC 正共同研发 Vera Rubin N72 参考供电架构。此举恰逢 $FLNC 有望斩获两笔大型云厂商订单。受合作落地预期推动，该股已强势上涨 36%，反映 AI 基建供应链逻辑正持续兑现。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> $FLNC 联合 $NVDA 开发新供电架构。叠加两笔云厂商订单预期，催化股价大涨 36%，凸显 AI 基建供应链合作价值。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061425895307608561" target="_blank" rel="noopener noreferrer">$NBIS 市值逼近千亿美元预期，跑赢云基建板块与大盘</a></h3>
+  
+  <p class="article-meta">06/01 20:33</p>
+  <p class="article-excerpt">作者称赞 $NBIS 具备强劲韧性，显著跑赢大盘及 $IREN、$CIFR 等云基建板块。此前曾预测其市值将迈向 1000 亿美元，当前已达 600 亿美元。随着业务推进，估值正逐步向长期目标靠拢。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> $NBIS 表现持续跑赢大盘及 $IREN、$CIFR。此前预测市值触及 1000 亿美元，当前约 600 亿美元，长期成长逻辑清晰。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061395355695226960" target="_blank" rel="noopener noreferrer">光子板块现算法联动抛售，$LITE 走势掩盖个股基本面改善</a></h3>
+  
+  <p class="article-meta">06/01 18:32</p>
+  <p class="article-excerpt">当前光子板块主要受「跟随龙头」的算法抛售拖累。从 $AAOI 到 $SIVE 等激光光学企业走势均绑定 $LITE。尽管 $AAOI 与 $AMD、$NVDA 的洽谈等基本面持续改善，但量化交易缺乏区分能力，导致板块错杀。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 光子板块受算法联动抛售拖累，$AAOI 至 $SIVE 走势绑定 $LITE。但个股基本面持续改善，当前回调属技术性错杀。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061384495576789401" target="_blank" rel="noopener noreferrer">$SIVE最大潜在市场扩张与收入驱动力，市场尚未察觉</a></h3>
+  
+  <p class="article-meta">06/01 17:48</p>
+  <p class="article-excerpt">作者指出$SIVE正迎来巨大的潜在市场扩张与收入增长机会，但市场尚未充分定价。该公司正积极与新型可插拔光模块厂商展开合作。此前捷普的1.6T线性驱动接收光学组件采用$SIVE激光器，成功构建了「相对深厚的护城河」。目前「积极合作」意味着双方正处于联合开发与资格认证阶段，有望带来实质性业务增量。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 关注$SIVE，指出其正与新型光模块厂商联合开发，捷普1.6T产品已采用其激光器构建护城河，当前处于合作认证期，市场尚未充分定价其潜在市场扩张潜力。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061365325741101442" target="_blank" rel="noopener noreferrer">瑞典本土市场对成长股态度保守，$SIVE控制权或向美国基金转移</a></h3>
+  
+  <p class="article-meta">06/01 16:32</p>
+  <p class="article-excerpt">作者分析称，瑞典本土文化倾向于排斥特殊或成长型资产，部分观点甚至劝投资者「放弃市场」。作者认为此现象无需在意，反而具有积极意义。本土资金的撤离将促使公司控制权逐步转移至美国基金手中，长期来看有望推动Sivers最终转型为一家美国公司，从而更契合北美资本市场的偏好。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 针对瑞典本土对成长股的保守态度，作者认为资金外流反将促使$SIVE控制权向美国基金转移，长期有望推动公司架构向美股靠拢。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061348882685243497" target="_blank" rel="noopener noreferrer">围绕$XFAB的推演：$NVDA 800VDC推动下的功率半导体与代工机会</a></h3>
+  
+  <p class="article-meta">06/01 15:27</p>
+  <p class="article-excerpt">作者分享关于$XFAB的投资逻辑链条：首先，$NVDA推动的800V直流架构将直接利好氮化镓或碳化硅及功率半导体厂商；其次，$NVTS等受益于该趋势的无晶圆厂企业大概率将采用代工模式；最后，相较于亚洲供应链，市场更看重并有意扶持西方本土产能建设，代工需求有望持续释放。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 推演$XFAB逻辑：$NVDA发力800VDC将带动功率半导体需求，$NVTS等无晶圆厂倾向采用代工模式，西方本土供应链产能建设受青睐。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061333906226614403" target="_blank" rel="noopener noreferrer">$NVDA CPO供应链标的讯芯(6451)表现复盘，市值约14亿美元</a></h3>
+  
+  <p class="article-meta">06/01 14:27</p>
+  <p class="article-excerpt">作者复盘台湾$NVDA光电共封装供应链头号标的讯芯（6451 TWSE）走势。该公司为富士康子公司，主营光子封装业务，市值约14亿美元。作者坦言，尽管该股在近一个半月内已累计上涨39.96%，但个人预期原本更高。此评论反映其对台湾光通讯相关标的波动节奏的重新审视。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 关注台湾CPO概念股讯芯（6451），富士康子公司，市值约14亿美元。近一个半月涨39.96%，作者表示实际涨幅略低于个人预期，正重新评估光通讯标的。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061302974123753944" target="_blank" rel="noopener noreferrer">专注AI供应链垂直见解，距X平台财经赛道订阅榜首仅差4000</a></h3>
+  
+  <p class="article-meta">06/01 12:25</p>
+  <p class="article-excerpt">作者分享个人频道运营进展，表示距离登顶X平台财经领域订阅量榜首仅差最后4000名用户。作者感慨，自身内容聚焦于分享AI产业链深度见解，属于极为垂直且小众的财经细分方向。能够在该领域获得如此高度的关注并冲击头把交椅，实属难得，侧面印证了专业垂直内容在社交媒体上的稀缺价值。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 个人频道分享进展：专注AI供应链垂直深度见解，内容偏小众，距X平台财经赛道订阅量榜首仅差4000人，印证专业垂直内容的市场关注度。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061265938612465817" target="_blank" rel="noopener noreferrer">台北$NVDA GTC/Computex前瞻：下一轮AI瓶颈或藏于日本老牌企业</a></h3>
+  
+  <p class="article-meta">06/01 09:57</p>
+  <p class="article-excerpt">作者出席台北$NVDA GTC及Computex展会前预判，大会或将揭示下一代AI算力瓶颈。该瓶颈相关的核心资产归属于一家日本企业，该公司拥有180年历史，目前市净率仅0.6倍。其主业传统上涉及农业设备，创始人甚至还在夜市以160日元单价售卖自产产品，但同一套生产设备或技术正被转型应用于尖端领域。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 展望$NVDA台北展会，作者指出下一轮AI瓶颈技术由一家日本老牌企业掌握。该公司拥有180年历史，当前P/B仅0.6倍，传统农业设备技术正向AI关键领域转化。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061252644195504239" target="_blank" rel="noopener noreferrer">$AAOI 成当前美股光子领域首选，$28 低位建仓</a></h3>
+  
+  <p class="article-meta">06/01 09:05</p>
+  <p class="article-excerpt">该帖作者认为 $AAOI 是目前美国市场最具潜力的光子学标的。作者去年以 $28 的价格小仓位做多，当时预判其正在争取 $AMZN 和 $MSFT 的供应商认证。在股价约 $70 时，因公司宣布获得 1.6T 光模块及其他超大规模云厂商的批量订单，作者于财报后显著提升了投资信心。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 看好 $AAOI 在美股光子领域的增长潜力。作者于 $28 建仓，在 $70 左右确认 $AMZN 与 $MSFT 认证及 1.6T 批量订单后提高信心。核心催化剂为超大规模客户的光模块采购需求。</p>
+</article>
+  </div>
+    </div>
+  </div>
+  </section>
+  <section class="panel" data-panel="tech">
     <nav class="sub-tabs"><button class="sub-tab active" data-sub="github-trending" data-cat="tech">GitHub Trending<span class="count">17</span></button><button class="sub-tab" data-sub="x-viral" data-cat="tech">X 推文<span class="count">13</span></button><button class="sub-tab" data-sub="ai-news" data-cat="tech">AI 媒体<span class="count">15</span></button></nav>
 <div class="sub-contents"><div class="sub-content active" data-sub-content="github-trending" data-cat="tech">
     
@@ -724,122 +1179,122 @@
       <div class="source-content active" data-source-content="github-trending" data-sub="github-trending" data-cat="tech">
     <article class="article">
   <h3 class="article-title"><a href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener noreferrer">microsoft/markitdown</a></h3>
-  <p class="article-stats">Python · ★ 138,262 · 🍴 9,417 · 📈 3,086 stars today</p>
+  <p class="article-stats">Python · ★ 138,461 · 🍴 9,431 · 📈 3,034 stars today</p>
   
   <p class="article-excerpt">Python tool for converting files and office documents to Markdown.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 专为 AI 数据处理设计的 Python 工具，支持将 PDF、Office 文档、图片及音视频高效转换为结构化 Markdown。通过统一文本表征，简化大模型 RAG 知识库构建与文档预处理流程，适合开发者与数据工程师用于语料清洗与内容迁移。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 基于 Python 的文档格式转换工具，支持将 PDF、Word、Excel 及音频等本地文件一键转为 Markdown。通过统一非结构化数据格式，为 AI 知识库构建、LLM 上下文注入提供高效清洗方案，适合开发者与数据处理人员批量办公。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/nesquena/hermes-webui" target="_blank" rel="noopener noreferrer">nesquena/hermes-webui</a></h3>
-  <p class="article-stats">Python · ★ 11,225 · 🍴 1,447 · 📈 984 stars today</p>
+  <p class="article-stats">Python · ★ 11,331 · 🍴 1,452 · 📈 945 stars today</p>
   
   <p class="article-excerpt">Hermes WebUI: The best way to use Hermes Agent from the web or from your phone!</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 为 Hermes Agent 打造的跨平台 Web 交互界面，支持通过浏览器或移动端直接调用 AI 智能体。提供直观对话与管理面板，降低本地部署使用门槛，适合希望通过手机或网页随时调试与体验 Hermes 大模型能力的用户。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 为 Hermes AI Agent 打造的跨平台 Web 交互界面，支持桌面与移动端无缝访问。通过响应式架构将后端智能体能力可视化，降低调用门槛。适合需在多设备快速触发任务、监控执行状态的 AI 开发者与终端用户。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/supermemoryai/supermemory" target="_blank" rel="noopener noreferrer">supermemoryai/supermemory</a></h3>
-  <p class="article-stats">TypeScript · ★ 23,939 · 🍴 2,141 · 📈 660 stars today</p>
+  <p class="article-stats">TypeScript · ★ 23,985 · 🍴 2,145 · 📈 647 stars today</p>
   
   <p class="article-excerpt">Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向 AI 时代的高性能可扩展记忆引擎与 API，为大语言模型提供快速读写、持久化的上下文服务。通过底层优化解决长对话丢失历史状态的问题，适合智能体开发者构建具备长期记忆与个性化交互能力的 AI 应用。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向 AI 时代的高性能记忆引擎与 Memory API，提供极低延迟读写与水平扩展架构。解决大模型上下文缺失与长期记忆管理难题，支持快速集成至 Agent。适合需为 LLM 赋予持久化记忆的全栈开发者与产品团队。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener noreferrer">harry0703/MoneyPrinterTurbo</a></h3>
-  <p class="article-stats">Python · ★ 76,782 · 🍴 10,893 · 📈 3,325 stars today</p>
+  <p class="article-stats">Python · ★ 76,848 · 🍴 10,905 · 📈 3,375 stars today</p>
   
   <p class="article-excerpt">利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 基于 AI 大模型的自动化短视频生成工具，整合文案撰写、语音合成、素材匹配与剪辑流程，实现一键输出高清视频。通过串联多个 AI 组件降低创作门槛，适合自媒体运营者与营销团队快速批量生产社交媒体内容。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 基于大语言模型的自动化短视频生成工具，输入主题即可完成文案编写、语音合成、素材匹配与高清渲染。解决视频创作门槛高问题，提升内容营销效率。适合自媒体运营者及需批量产出视频内容的创作者使用。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/D4Vinci/Scrapling" target="_blank" rel="noopener noreferrer">D4Vinci/Scrapling</a></h3>
-  <p class="article-stats">Python · ★ 57,975 · 🍴 5,626 · 📈 1,475 stars today</p>
+  <p class="article-stats">Python · ★ 58,057 · 🍴 5,635 · 📈 1,486 stars today</p>
   
   <p class="article-excerpt">🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 具备自适应能力的网页数据抓取框架，内置反爬对抗、动态渲染解析与高并发调度，无缝衔接单页请求到全站爬取。提供灵活路由与重试策略，适合数据分析师与安全研究员构建稳定高效的 Web 数据采集流水线。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 轻量自适应 Web 爬取框架，内置智能反爬与动态解析机制，覆盖从单页提取到大规模抓取全流程。自动处理 JS 渲染与结构变化，降低维护成本。适合数据采集工程师快速构建高可用数据管道。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener noreferrer">pbakaus/impeccable</a></h3>
-  <p class="article-stats">JavaScript · ★ 32,656 · 🍴 1,779 · 📈 612 stars today</p>
+  <p class="article-stats">JavaScript · ★ 32,713 · 🍴 1,782 · 📈 485 stars today</p>
   
   <p class="article-excerpt">The design language that makes your AI harness better at design.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 专为 AI 辅助设计优化的结构化设计语言规范，通过定义清晰的 UI 组件层级与样式标记，提升 AI 代码生成工具在前端构建中的准确率与一致性。降低提示词调试成本，适合前端开发者用于 AI 驱动的界面快速原型开发。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向 AI 生成工具的专用设计语言与指令规范，通过结构化语法约束绘图与布局模型输出，提升生成准确性。解决 AI 随机性强、排版难控痛点，适合 UI 设计师与前端开发者在自动化界面生成流中集成。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/p-e-w/heretic" target="_blank" rel="noopener noreferrer">p-e-w/heretic</a></h3>
-  <p class="article-stats">Python · ★ 23,015 · 🍴 2,465 · 📈 241 stars today</p>
+  <p class="article-stats">Python · ★ 23,038 · 🍴 2,466 · 📈 249 stars today</p>
   
   <p class="article-excerpt">Fully automatic censorship removal for language models</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 提供全自动的大语言模型内容审查移除方案，通过自动化脚本与权重调整技术解除主流开源模型的安全过滤。支持快速恢复原始生成能力，适合 AI 研究人员与开发者进行模型对齐测试或特定垂直领域的无限制推理。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 针对大语言模型的全自动审查解除工具，通过对抗性提示注入调整输出策略，绕过内置过滤机制以恢复原始生成能力。旨在突破过度安全对齐限制，适用于 AI 安全研究人员与需无限制 API 的极客。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/EveryInc/compound-engineering-plugin" target="_blank" rel="noopener noreferrer">EveryInc/compound-engineering-plugin</a></h3>
-  <p class="article-stats">TypeScript · ★ 19,085 · 🍴 1,428 · 📈 428 stars today</p>
+  <p class="article-stats">TypeScript · ★ 19,113 · 🍴 1,428 · 📈 417 stars today</p>
   
   <p class="article-excerpt">Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向 Claude Code、Cursor 等 AI 编程助手的官方插件，将标准化工程规范与工作流集成至智能编辑器。自动应用脚手架与代码审查规则，帮助开发者在使用 AI 辅助编码时保持企业级质量与项目一致性。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 专为 Claude Code、Cursor 等 AI 编程环境开发的官方插件，深度集成 Compound Engineering 规范。提供结构化提示词、代码审查与自动化脚手架，降低多模块协同配置门槛，适合研发团队提升辅助编码质量。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/TauricResearch/TradingAgents" target="_blank" rel="noopener noreferrer">TauricResearch/TradingAgents</a></h3>
-  <p class="article-stats">Python · ★ 81,735 · 🍴 15,888 · 📈 284 stars today</p>
+  <p class="article-stats">Python · ★ 81,783 · 🍴 15,896 · 📈 299 stars today</p>
   
   <p class="article-excerpt">TradingAgents: Multi-Agents LLM Financial Trading Framework</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 基于大语言模型的多智能体金融交易框架，协同调度市场分析、风险管理与执行下单的独立 Agent，实现自动化策略决策。内置回测引擎与市场接口，适合量化研究员构建可解释的 AI 辅助量化投资系统。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 基于 LLM 的多智能体金融交易框架，将分析、风控、执行等角色拆分为独立 Agent 协同决策。通过信息共享模拟真实链路，解决单模型多目标优化难题。适合量化研究员构建自动化交易与策略回测系统。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/revfactory/harness" target="_blank" rel="noopener noreferrer">revfactory/harness</a></h3>
-  <p class="article-stats">HTML · ★ 5,124 · 🍴 688 · 📈 527 stars today</p>
+  <p class="article-stats">HTML · ★ 5,153 · 🍴 691 · 📈 524 stars today</p>
   
   <p class="article-excerpt">A meta-skill that designs domain-specific agent teams, defines specialized agents, and generates the skills they use.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向多智能体系统的元编排框架，支持按垂直领域自动设计 Agent 团队架构、定义专业角色，并动态生成所需技能与工作流。通过抽象协作逻辑降低构建门槛，适合开发者快速落地行业定制化智能体集群。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向智能体开发的元技能编排框架，支持按垂直领域自动设计 Agent 团队、定义专家角色并动态生成工具技能。通过声明式配置解决职责划分难题，适合 AI 工程师快速构建复杂业务自动化工作流。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/godotengine/godot" target="_blank" rel="noopener noreferrer">godotengine/godot</a></h3>
-  <p class="article-stats">C++ · ★ 111,620 · 🍴 25,509 · 📈 121 stars today</p>
+  <p class="article-stats">C++ · ★ 111,644 · 🍴 25,511 · 📈 77 stars today</p>
   
   <p class="article-excerpt">Godot Engine – Multi-platform 2D and 3D game engine</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 开源跨平台 2D/3D 游戏引擎，采用节点场景树架构，内置 GDScript 与高性能渲染管线。支持一次开发多端发布，提供完整物理与音频系统，凭借轻量体积与免版税特性，成为独立开发者与小型工作室的主流创作平台。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 开源跨平台 2D/3D 游戏引擎，采用节点树架构与 GDScript，提供从编辑、物理模拟到多端导出的完整工作流。免授权费且生态开放，解决商业引擎成本痛点，适合独立开发者与教育团队。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/can1357/oh-my-pi" target="_blank" rel="noopener noreferrer">can1357/oh-my-pi</a></h3>
-  <p class="article-stats">TypeScript · ★ 9,440 · 🍴 759 · 📈 333 stars today</p>
+  <p class="article-stats">TypeScript · ★ 9,473 · 🍴 760 · 📈 335 stars today</p>
   
   <p class="article-excerpt">⌥ AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 专为终端设计的 AI 编程智能体，支持哈希锚点精准编辑、LSP 集成、浏览器交互与子智能体协同。通过轻量命令行交互摆脱 GUI 依赖，适合习惯 CLI 工作流的开发者在服务器或本地终端进行高效代码重构与调试。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 终端原生 AI 编程智能体，集成 LSP、哈希锚定精准编辑、子智能体调度与多语言工具链。优化底层调用实现无 GUI 下的高精度代码重构，适合偏好 CLI 的开发者在服务器高效完成全栈任务。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener noreferrer">OpenBMB/VoxCPM</a></h3>
-  <p class="article-stats">Python · ★ 24,196 · 🍴 2,786 · 📈 880 stars today</p>
+  <p class="article-stats">Python · ★ 24,253 · 🍴 2,797 · 📈 888 stars today</p>
   
   <p class="article-excerpt">VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 采用无分词器架构的端到端语音合成模型，支持多语言语音生成、创意音色设计与高保真克隆。通过直接建模波形与语义特征突破传统离散 Token 限制，适合开发者构建跨语言语音交互及虚拟数字人系统。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 基于无分词架构的端到端语音合成模型，直接处理原始特征，支持多语言语音生成与高保真人声克隆。摆脱传统分词瓶颈提升韵律自然度。适合语音交互产品与多语言播报应用开发。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/FareedKhan-dev/train-llm-from-scratch" target="_blank" rel="noopener noreferrer">FareedKhan-dev/train-llm-from-scratch</a></h3>
-  <p class="article-stats">Jupyter Notebook · ★ 3,687 · 🍴 515 · 📈 860 stars today</p>
+  <p class="article-stats">Jupyter Notebook · ★ 3,725 · 🍴 516 · 📈 861 stars today</p>
   
   <p class="article-excerpt">A straightforward method for training your LLM, from downloading data to generating text.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 提供从零训练大语言模型的完整实践指南，涵盖数据清洗、模型架构搭建、训练循环配置到文本生成全链路。剥离冗余代码聚焦核心算法，适合初学者与研究人员深入理解 Transformer 训练机制与底层原理。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 提供从数据清洗、模型预训练到文本生成的完整 LLM 训练流水线代码。剥离复杂依赖，采用透明实现降低大模型底层门槛，帮助透彻理解架构与训练动力学。适合算法工程师搭建本地基座。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/stefan-jansen/machine-learning-for-trading" target="_blank" rel="noopener noreferrer">stefan-jansen/machine-learning-for-trading</a></h3>
-  <p class="article-stats">Jupyter Notebook · ★ 17,826 · 🍴 5,183 · 📈 82 stars today</p>
+  <p class="article-stats">Jupyter Notebook · ★ 17,875 · 🍴 5,184 · 📈 93 stars today</p>
   
   <p class="article-excerpt">Code for Machine Learning for Algorithmic Trading, 2nd edition.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 《机器学习算法交易（第 2 版）》配套代码库，完整实现金融数据预处理、特征工程到模型训练与回测的量化流水线。涵盖统计模型与深度学习在时序预测中的应用，适合量化分析师复现策略或搭建算法交易系统。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 《机器学习算法交易（第二版）》配套代码，涵盖特征工程、时序预测及强化学习策略回测。提供传统模型到深度学习在资产定价的工业示例，适合量化研究员系统掌握金融 AI 实战。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/dmtrKovalenko/fff" target="_blank" rel="noopener noreferrer">dmtrKovalenko/fff</a></h3>
-  <p class="article-stats">Rust · ★ 7,155 · 🍴 298 · 📈 121 stars today</p>
+  <p class="article-stats">Rust · ★ 7,181 · 🍴 298 · 📈 135 stars today</p>
   
   <p class="article-excerpt">The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向 AI 智能体与开发者的极速文件检索工具，针对代码结构语法优化，提供毫秒级精准定位。深度适配 Neovim 生态并原生解析多语言项目，适合集成至 Agent 工作流或编辑器插件，大幅提升大型代码库导航效率。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 专为 AI Agent 构建的高性能文件搜索工具包，底层采用 C/Rust 混合架构实现极致解析加速。提供精准语法感知匹配，降低模型上下文加载延迟。适合代码库检索与 AI 辅助编程集成。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank" rel="noopener noreferrer">codecrafters-io/build-your-own-x</a></h3>
-  <p class="article-stats">Markdown · ★ 510,366 · 🍴 48,388 · 📈 1,194 stars today</p>
+  <p class="article-stats">Markdown · ★ 510,434 · 🍴 48,392 · 📈 1,212 stars today</p>
   
   <p class="article-excerpt">Master programming by recreating your favorite technologies from scratch.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 收录海量从零复现主流技术的实战教程合集，涵盖数据库、编译器、操作系统等核心基础设施。通过分步拆解底层架构与手写关键模块，帮助开发者跳出 API 调用深入掌握系统设计，适合工程师进阶夯实计算机基础。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向程序员的系统级项目实战合集，涵盖从零手写数据库、编译器、Web 服务器等核心设施的步骤。通过底层复现打破黑盒依赖，适合有基础希望进阶全栈或底层开发的工程师自学。</p>
 </article>
   </div>
     </div>
@@ -854,91 +1309,91 @@
   <p class="article-stats">@AskVenice · 66.9K 粉丝 · 6.9M 阅 · 1.0K 赞 · 119 转</p>
   <p class="article-meta">05/22 09:24</p>
   <p class="article-excerpt">Venice&#39;s default chat is now an agent that breaks complex tasks into steps, selects the right tool for each step, and delivers results across text, images, video, search, and more in a single</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> Venice 平台上线 Agentic Chat 默认模式，将基础聊天升级为任务拆解与工具路由工作流。支持单次交互调度文本、图像、视频及搜索能力，实现多模态长链路任务的自动化交付。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> Venice 默认聊天界面正式升级为智能体架构。该功能可自动拆解复杂任务、按需调用对应工具，并在单次会话中输出文本、图像、视频及搜索结果。旨在降低多工具切换成本，实现一站式工作流闭环。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/sairahul1/status/2057740928908161461" target="_blank" rel="noopener noreferrer">20 AI Concepts You Must Understand in 2026</a></h3>
-  <p class="article-stats">@sairahul1 · 106.0K 粉丝 · 6.5M 阅 · 2.4K 赞 · 421 转</p>
+  <p class="article-stats">@sairahul1 · 106.0K 粉丝 · 6.5M 阅 · 2.4K 赞 · 420 转</p>
   <p class="article-meta">05/22 16:30</p>
   <p class="article-excerpt">Everyone uses AI. Almost nobody understands how it actually works. People throw around words like transformers, embeddings, RAG, agents, RLHF… …as if everyone already knows. Most don&#39;t. And</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向 AI 日常使用者普及底层原理的系统科普。梳理 transformers、embeddings、RAG、智能体与 RLHF 等核心概念，拆解技术黑盒，帮助业务人员跨越只会用不懂原理的认知门槛。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 针对术语滥用与认知缺失现状，系统梳理 20 个 AI 核心概念。涵盖 Transformer、RAG、智能体等机制，拆解底层技术原理，帮助开发者跳出调用黑盒，建立扎实的工程认知体系。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/sairahul1/status/2058832033628241931" target="_blank" rel="noopener noreferrer">How to Build a Software Factory with Claude Code That Ships Features While You Sleep</a></h3>
   <p class="article-stats">@sairahul1 · 106.0K 粉丝 · 2.8M 阅 · 1.5K 赞 · 207 转</p>
   <p class="article-meta">05/25 16:46</p>
   <p class="article-excerpt">I thought I was using AI to code. I was actually just typing faster. Here is the difference — and the 7-agent system that changed everything. Save this. It will save you months. THE PROBLEM NOBODY</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 分享基于 Claude Code 构建自动化软件工厂的工作流。突破单点提示词辅助编程模式，详细设计包含 7 个协同智能体的多 Agent 架构，实现需求拆解到代码交付的全流程自动化。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 分享基于 Claude Code 构建自动化开发流水线的 7 智能体协作架构。通过明确分工实现从需求解析到代码交付的闭环，突破单纯提示词驱动的瓶颈，显著降低人工干预成本。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/eng_khairallah1/status/2057393717657374813" target="_blank" rel="noopener noreferrer">How to Actually Set Up Claude. 40 Features Most Users Have Never Touched</a></h3>
   <p class="article-stats">@eng_khairallah1 · 61.9K 粉丝 · 1.9M 阅 · 753 赞 · 94 转</p>
   <p class="article-meta">05/21 17:31</p>
   <p class="article-excerpt">Most people download Claude and start typing questions immediately. Save this :) They treat it like a chatbot. They get decent answers. They think that is all it does. Meanwhile a small group of users</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 深度挖掘 Claude 隐藏功能配置指南。汇总 40 项多数用户未触达的高级特性，指导如何将默认问答交互升级为定制化工作流，涵盖系统指令预设、上下文管理与外部工具调用等进阶玩法。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 纠正将 Claude 仅作日常问答的误区，盘点 40 项高阶配置与隐藏功能。涵盖长上下文管理、自定义指令、多模态解析及 API 级调用，指导用户完成从基础聊天到专业工作流的深度调优。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/eng_khairallah1/status/2058116763372453997" target="_blank" rel="noopener noreferrer">How to Build Your First Team of AI Agents Using Claude (Full Course)</a></h3>
-  <p class="article-stats">@eng_khairallah1 · 61.9K 粉丝 · 1.8M 阅 · 856 赞 · 119 转</p>
+  <p class="article-stats">@eng_khairallah1 · 61.9K 粉丝 · 1.8M 阅 · 857 赞 · 119 转</p>
   <p class="article-meta">05/23 17:24</p>
   <p class="article-excerpt">Everyone is talking about AI agents. Save this :) Build an agent. Deploy an agent. Agent this. Agent that. But when you actually sit down to build one, you hit a wall. The tutorials assume you already</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 面向新手的 Claude 多智能体团队实战全课。从环境配置到编排逻辑，提供从零搭建 Agent 集群的完整路径。重点解决教程假设前置知识导致的落地断层，涵盖角色分工与部署避坑指南。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 针对智能体教程门槛高的痛点，提供基于 Claude 的团队协作搭建路径。从环境配置、角色定义到生产部署，提供零前置知识的实操指南，帮助新手跨越从概念到工程落地的鸿沟。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/sairahul1/status/2056665329305256232" target="_blank" rel="noopener noreferrer">20 Claude Skills Most Builders Don&#39;t Know Exist</a></h3>
   <p class="article-stats">@sairahul1 · 106.0K 粉丝 · 908.0K 阅 · 506 赞 · 66 转</p>
   <p class="article-meta">05/19 17:16</p>
   <p class="article-excerpt">A prompt is a one-time thing. You write it. Claude uses it. The session ends. Next time you open Claude, it is gone. You write it again. Slightly different. Slightly worse. You spend the first five</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 针对 Claude 开发者总结的效能提升指南。指出单次 Prompt 易丢失、迭代效率低的痛点，系统介绍 20 项可持久化调用的 Claude Skills 配置方案，实现上下文记忆与标准化指令复用。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 解决提示词跨会话丢失痛点，梳理 20 项 Claude 内置 Skills 进阶用法。通过持久化配置与指令模块化，将临时对话转化为可复用标准工作流，大幅降低上下文重建与沟通成本。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/XDevelopers/status/2056871280599847054" target="_blank" rel="noopener noreferrer">X API + Hermes via xurl skill</a></h3>
   <p class="article-stats">@XDevelopers · 682.5K 粉丝 · 207.6K 阅 · 569 赞 · 67 转</p>
   <p class="article-meta">05/20 06:55</p>
   <p class="article-excerpt">Hermes is an open-source AI agent from Nous Research that runs in your terminal. Out of the box it comes with a skill called xurl that lets the agent read and write to X on your behalf — posting,</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> Nous Research 开源终端智能体 Hermes 的实操集成案例。演示如何调用内置 xurl 技能对接 X API，实现命令行环境下的推文发布与自动交互，提供轻量级社交平台自动化代理方案。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 开源终端智能体 Hermes 新增 xurl 模块，支持直接调用 X API 进行读写。无需图形界面即可实现自动发帖、信息抓取与交互管理，提供轻量级、可编程的社媒自动化方案。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/sairahul1/status/2058464422306443766" target="_blank" rel="noopener noreferrer">AI Agents: The Complete Course</a></h3>
   <p class="article-stats">@sairahul1 · 106.0K 粉丝 · 203.2K 阅 · 500 赞 · 82 转</p>
   <p class="article-meta">05/24 16:25</p>
   <p class="article-excerpt">Everyone is talking about AI agents in 2026. Most people have no idea how they actually work. This changes today. I spent weeks distilling everything: courses, books, real builds, production failures.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 2026 年 AI 智能体开发全景实战课。作者耗时数周整合学术资料、开源项目与生产级失败经验，从架构设计、记忆管理、工具调用到线上部署进行系统拆解，提供避开理论陷阱的技术路线图。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 剥离行业营销包装，浓缩技术文档与踩坑记录，系统梳理 AI 智能体架构指南。涵盖底层原理、框架选型到真实部署避坑，提供端到端知识体系，适合寻求生产级方案的工程师。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/nateberkopec/status/2058014104854626490" target="_blank" rel="noopener noreferrer">Thoughts on LLMs, May 2026</a></h3>
   <p class="article-stats">@nateberkopec · 29.8K 粉丝 · 166.7K 阅 · 500 赞 · 51 转</p>
   <p class="article-meta">05/23 10:36</p>
   <p class="article-excerpt">In May 2026, we are now five months post-Opus-4.5 and the great “Christmas Break Revolution” that saw us all hunkered down in front of our laptops over the new year. I’m now about nine to twelve</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 针对 Opus 4.5 发布后半年 LLM 生态演进的开发者复盘。结合个人近一年的实战数据与行业观察，剖析模型能力跃迁对编码范式、产品迭代周期及人机协作边界的具体影响，提供效能评估参考。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 基于 Opus-4.5 发布后的实战观察，复盘大模型性能瓶颈与本地推理趋势。结合高强度使用数据，客观评估算力需求、延迟表现与成本收益，提供去泡沫化的冷静参考。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/TheAhmadOsman/status/2057183854444843202" target="_blank" rel="noopener noreferrer">Inference Engines for LLMs &amp; Local AI Hardware (2026 Edition)</a></h3>
   <p class="article-stats">@TheAhmadOsman · 59.9K 粉丝 · 162.6K 阅 · 512 赞 · 83 转</p>
   <p class="article-meta">05/21 03:37</p>
   <p class="article-excerpt">You don&#39;t pick an inference engine first. You pick a hardware strategy, a workload shape, and a serving model. The engine follows. That is the most useful way to think about LLM inference engines.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> LLM 推理引擎选型底层逻辑指南。打破先挑框架的误区，提出以硬件算力策略、业务负载特征与服务架构为核心的决策路径。通过对比主流引擎适配场景，指导开发者按实际需求匹配最优方案。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 纠正先选推理引擎的常见误区，确立硬件策略、负载特征与服务模式的倒推决策链路。拆解不同算力约束下的适配逻辑，指导架构师依据业务吞吐量科学规划本地部署。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/cyrilXBT/status/2058749052712276332" target="_blank" rel="noopener noreferrer">How to Build a Claude Research Agent That Reads the Internet Every Morning and Briefs You in 5 Mins</a></h3>
   <p class="article-stats">@cyrilXBT · 181.7K 粉丝 · 127.8K 阅 · 533 赞 · 80 转</p>
   <p class="article-meta">05/25 11:16</p>
   <p class="article-excerpt">Most people start their day the same way. They open Twitter and spend 20 minutes scrolling through noise looking for the three things that actually matter. They open their email and get pulled into</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 基于 Claude 打造自动化晨间研究智能体工作流。针对信息过载痛点，设计网络抓取、邮件解析与噪声过滤流水线，每日自动生成高价值摘要，帮助高效获取行业动态与关键数据，重构信息输入习惯。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 针对手动筛选资讯低效痛点，分享搭建自动化晨间情报工作流。利用 Claude 联网抓取与结构化摘要能力，每日自动聚合高价值内容并生成速读报告，实现精准决策跃升。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/SebastienBubeck/status/2057187978720719114" target="_blank" rel="noopener noreferrer">Unit Distance</a></h3>
   <p class="article-stats">@SebastienBubeck · 75.8K 粉丝 · 101.3K 阅 · 605 赞 · 74 转</p>
   <p class="article-meta">05/21 03:53</p>
   <p class="article-excerpt">Claim: AI can make scientific breakthroughs. Proof: An internal OpenAI model resolved the most famous conjecture in discrete geometry, namely the optimality (or lack thereof) of the grid for the unit</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> OpenAI 内部模型实现离散几何学突破的案例通报。该模型成功攻克单位距离问题中关于网格最优性的著名猜想，验证大模型在复杂数学推理与理论证明中的潜力，为 AI 辅助基础科学研究提供实证。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 公布 OpenAI 内部模型在离散几何领域的突破。该模型成功验证单位距离猜想的最优性难题，展示 AI 在复杂数学推理上的硬核能力，标志大模型向底层理论发现跨越。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://x.com/poteto/status/2058975157503570132" target="_blank" rel="noopener noreferrer">How I Use Cursor</a></h3>
   <p class="article-stats">@poteto · 26.6K 粉丝 · 86.5K 阅 · 540 赞 · 48 转</p>
   <p class="article-meta">05/26 02:15</p>
   <p class="article-excerpt">I need to get something off my chest. Before my interview @cursor_ai, I had never actually used Cursor. At Meta, Claude Code was explosively taking off. I even paid for a personal $200 a month plan</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 开发者分享从重度 Claude Code 转向 Cursor 的真实迁移体验。对比两者在代码补全、上下文理解与团队协作中的实际表现，提供高月费方案下的效能数据与 IDE 适配建议，辅助开发者工具选型。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 坦诚对比 Cursor 与 Claude Code 的实际编码体验。基于高频使用数据，拆解两者在生成精度、上下文管理与工程集成上的差异，还原真实开发场景的效率表现。</p>
 </article>
   </div>
     </div>
@@ -949,109 +1404,109 @@
     <div class="source-contents">
       <div class="source-content active" data-source-content="_merged" data-sub="ai-news" data-cat="tech">
     <article class="article">
+  <h3 class="article-title"><a href="https://openai.com/index/our-views-on-ai-policy-and-political-advocacy" target="_blank" rel="noopener noreferrer">Our views on AI policy and political advocacy</a></h3>
+  
+  <p class="article-meta">OpenAI News · 06/02 01:00</p>
+  <p class="article-excerpt">Our approach to AI policy and political advocacy, transparency, support for thoughtful regulation and AI safety, and that no outside political group speaks on the company’s behalf.</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> OpenAI发布关于人工智能政策与政治倡导的立场声明。公司强调政策制定透明度，支持审慎行业监管与AI安全，并明确无任何外部政治团体可代表该公司发声。</p>
+</article>
+<article class="article">
   <h3 class="article-title"><a href="https://huggingface.co/blog/JetBrains/mellum2-launch" target="_blank" rel="noopener noreferrer">Introducing Mellum2: A 12B Mixture-of-Experts Model by JetBrains</a></h3>
   
   <p class="article-meta">Hugging Face Blog · 06/01 23:45</p>
   
-  <p class="article-summary"><span class="summary-label">中文介绍</span> JetBrains正式发布120亿参数混合专家架构模型Mellum2。该开源模型旨在优化代码生成与开发者工作流，为软件工程提供底层AI能力支持。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 软件开发商JetBrains正式发布Mellum2模型。该架构采用混合专家模式，参数规模达120亿，专注于提升代码开发与复杂逻辑推理能力。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.latent.space/p/video-agents" target="_blank" rel="noopener noreferrer">Why Video Agent models are next — Ethan He, xAI Grok Imagine</a></h3>
   
   <p class="article-meta">Latent Space · 06/01 23:41</p>
   <p class="article-excerpt">Inside xAI: Building Grok Imagine in 3 Months, Videogen vs World Models, and why Grok Imagine is so underrated. For the first time, we do a deep dive with the guy who led it!</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> xAI团队负责人Ethan He详解Grok Imagine视频模型的开发历程。该项目历时三个月完成，探讨了视频智能体与世界模型的技术差异及潜在应用。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> xAI负责人Ethan He深度解析Grok Imagine视频生成模型。该项目历时3个月完成，团队对比视频生成与物理世界模型差异，并探讨视频智能体模型的应用前景。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption" target="_blank" rel="noopener noreferrer">Beyond LLMs: Why Scalable Enterprise AI Adoption Depends on Agent Logic</a></h3>
   
   <p class="article-meta">Hugging Face Blog · 06/01 21:51</p>
   
-  <p class="article-summary"><span class="summary-label">中文介绍</span> IBM研究团队指出，企业级AI的大规模落地已超越大语言模型，核心转向智能体逻辑。该架构通过任务规划与自动化执行，显著提升复杂业务的部署效率。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> IBM Research指出企业AI规模化落地需超越单一的大语言模型。文章强调引入具备自主规划与执行能力的智能体逻辑，是解决复杂业务流程的关键。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://openai.com/index/stargate-michigan-data-center" target="_blank" rel="noopener noreferrer">Building the infrastructure for the Intelligence Age in Michigan</a></h3>
   
   <p class="article-meta">OpenAI News · 06/01 20:00</p>
   <p class="article-excerpt">OpenAI breaks ground on a 1GW data center project in Michigan as part of Stargate, building AI infrastructure to expand access, create jobs, and support communities.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> OpenAI在密歇根州正式启动星际之门项目，开工建设1GW算力数据中心。该基础设施旨在扩大AI服务覆盖范围，预计将为当地创造就业并带动区域经济。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> OpenAI在密歇根州启动「星门」计划下数据中心项目，规划算力达1吉瓦。该设施旨在完善AI基础设施，扩大算力覆盖并创造就业。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws" target="_blank" rel="noopener noreferrer">OpenAI frontier models and Codex are now available on AWS</a></h3>
   
   <p class="article-meta">OpenAI News · 06/01 18:00</p>
   <p class="article-excerpt">OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new path to build with OpenAI through the AWS environments, controls, and procurement workflows they already use. Customers can get started with OpenAI on AWS and move faster from evaluation to production.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> OpenAI宣布其前沿模型与Codex工具已全面上线AWS。企业现可通过现有云平台管控流程直接调用服务，从而加速模型评估与业务集成部署。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> OpenAI前沿模型与Codex编程工具已在AWS全面上线。企业客户可通过现有云环境直接调用，缩短模型评估周期，加速应用商业化部署。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai" target="_blank" rel="noopener noreferrer">Welcome NVIDIA Cosmos 3: The First Open Omni-model for Physical AI Reasoning and Action</a></h3>
   
   <p class="article-meta">Hugging Face Blog · 06/01 12:44</p>
   
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 英伟达发布Cosmos 3，定位为首款面向具身智能的开源全模态模型。该模型整合物理推理与决策能力，旨在加速机器人及自动驾驶等实体AI应用研发。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 英伟达发布Cosmos 3模型，为首个面向物理AI推理与行动的开源全能模型。该工具旨在为机器人控制与具身智能研发提供统一底层算法。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://tldr.tech/ai/2026-06-01" target="_blank" rel="noopener noreferrer">Copilot super app leaks 🤖, Minimax M3 ➕, Nvidia N1X ⚡️</a></h3>
   
   <p class="article-meta">TLDR AI · 06/01 08:00</p>
   
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 行业动态更新：微软Copilot超级应用架构泄露；MiniMax公布M3模型迭代计划；英伟达推出N1X芯片方案。多家科技企业密集发布进展，聚焦端侧部署升级。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 科技简讯汇总多项动态：微软Copilot超级应用信息披露，MiniMax推出M3模型，英伟达同步发布N1X芯片。进展涵盖生成式应用迭代与底层算力升级。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.latent.space/p/ainews-founders-and-forward-deployed" target="_blank" rel="noopener noreferrer">[AINews] Founders and Forward Deployed Engineers</a></h3>
   
   <p class="article-meta">Latent Space · 05/30 09:57</p>
   <p class="article-excerpt">a quiet day lets us highlight the new AIE WF focuses</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 行业简报聚焦AI创始人及前沿部署工程师，梳理人工智能工程化最新重心。报告强调技术团队在实际业务落地与底层架构优化中的关键支撑作用。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 本期简报重点梳理AI工程领域的最新工作流关注点，为创始人及前线部署工程师提供技术参考。当日暂无重大产品发布或融资动态披露。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://openai.com/index/boston-childrens-hospital" target="_blank" rel="noopener noreferrer">Boston Children’s uses AI to unlock new diagnoses</a></h3>
   
   <p class="article-meta">OpenAI News · 05/29 20:00</p>
   <p class="article-excerpt">Boston Children’s Hospital uses OpenAI technology to improve patient care, reduce operational burden, and help diagnose more than 40 rare disease cases.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 波士顿儿童医院引入OpenAI技术优化诊疗流程。该系统在减轻运营负担的同时，已辅助确诊超40例罕见疾病，标志生成式AI在专科诊断取得进展。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 波士顿儿童医院引入OpenAI技术优化诊疗流程。该技术降低运营负担，并在辅助诊断方面取得进展，已成功识别超40例罕见疾病病例。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://openai.com/index/braintrust" target="_blank" rel="noopener noreferrer">How Braintrust turns customer requests into code with Codex</a></h3>
   
   <p class="article-meta">OpenAI News · 05/29 20:00</p>
   <p class="article-excerpt">How Braintrust engineers use Codex with GPT-5.5 to run experiments and code faster.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> Braintrust工程团队将Codex与GPT-5.5模型结合，用于自动化处理需求并生成代码。该工作流显著缩短实验周期，提升产品开发与迭代效率。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> Braintrust团队结合Codex与GPT-5.5优化开发流程。该技术组合用于快速响应客户需求并开展实验，显著提升代码编写效率与产品迭代速度。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.technologyreview.com/2026/05/29/1138107/how-the-popes-magnifica-humanitas-offers-a-template-for-individuals-to-meet-the-ai-moment/" target="_blank" rel="noopener noreferrer">How the Pope’s Magnifica Humanitas offers a template for individuals to meet the AI moment</a></h3>
   
   <p class="article-meta">MIT Tech Review AI · 05/29 18:00</p>
   <p class="article-excerpt">Pope Leo XIV’s new encyclical on artificial intelligence includes a statement that warrants serious attention from technologists and policymakers: “Technology is never neutral.” Magnifica Humanitas (“Magnificent Humanity”) is a clarion call to all people to act with courage and solidarity as we ente</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> 教宗良十四世发布AI通谕「Magnifica Humanitas」，指出「技术绝非中立」。文件呼吁科技从业者保持审慎，倡导在技术变革中采取负责任应对策略。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> 教皇利奥十四世发布「Magnifica Humanitas」AI通谕。文中强调「技术绝非中立」，呼吁技术界正视伦理风险，以审慎态度应对变革。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://news.smol.ai/issues/26-05-29-not-much/" target="_blank" rel="noopener noreferrer">not much happened today</a></h3>
   
   <p class="article-meta">Smol AI News · 05/29 13:44</p>
   <p class="article-excerpt">**Anthropic** rolled out **Claude Opus 4.8**, which shows incremental improvements but mixed benchmark results, including better cooperation and coding behavior but some regressions in document parsing. Platform updates include mid-conversation system instructions enhancing long agent sessions, thou</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> Anthropic发布Claude Opus 4.8模型，测试显示其协作与编码能力提升，但文档解析部分回落。平台同步更新对话中系统指令功能以优化长文本处理。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> Anthropic发布Claude Opus 4.8模型。基准测试显示其编程与协同能力提升，但文档解析出现部分回落。平台新增中途系统指令功能优化长对话。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense" target="_blank" rel="noopener noreferrer">Strengthening societal resilience with Rosalind Biodefense</a></h3>
   
   <p class="article-meta">OpenAI News · 05/29 11:00</p>
   <p class="article-excerpt">OpenAI launches Rosalind Biodefense, expanding trusted access to GPT-Rosalind for vetted developers and U.S. government partners advancing biodefense, public health, and pandemic preparedness through frontier AI.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> OpenAI推出Rosalind生物防御计划，向审核开发者及美国政府开放GPT-Rosalind访问权限。项目旨在利用前沿AI强化生物防御与公共卫生能力。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> OpenAI推出「Rosalind Biodefense」计划，向审查通过的开发者与美国政府开放GPT-Rosalind权限，旨在利用前沿AI强化生物防御与公共卫生应急能力。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.latent.space/p/ainews-anthropic-raises-965b-series" target="_blank" rel="noopener noreferrer">[AINews] Anthropic raises $965B Series H, releases Opus 4.8 and Dynamic Workflows/ultracode</a></h3>
   
   <p class="article-meta">Latent Space · 05/29 10:07</p>
   <p class="article-excerpt">Total Anthropic victory!</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> Anthropic完成9650亿美元H轮融资，同步发布Opus 4.8及Dynamic Workflows工具。资金将用于大模型研发与基建扩容，推动企业级应用。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://openai.com/index/trustworthy-third-party-evaluations-foundations" target="_blank" rel="noopener noreferrer">A shared playbook for trustworthy third party evaluations</a></h3>
-  
-  <p class="article-meta">OpenAI News · 05/29 08:00</p>
-  <p class="article-excerpt">OpenAI shares guidance on third-party AI evaluations, covering how to assess model capabilities, safeguards, and validity for frontier systems.</p>
-  <p class="article-summary"><span class="summary-label">中文介绍</span> OpenAI发布第三方AI评估指南，为前沿系统的能力测试、安全防护及有效性验证提供框架。文件旨在推动建立透明可复现的测评机制，促进行业合规。</p>
+  <p class="article-summary"><span class="summary-label">中文介绍</span> Anthropic宣布完成H轮融资，披露规模9650亿美元。公司同步发布Opus 4.8模型及动态工作流工具，拓展企业级代码生成与自动化产品线。</p>
 </article>
   </div>
     </div>
@@ -1059,7 +1514,7 @@
   </section>
   <section class="panel" data-panel="trading"><section class="trading-overview-card">
     <span class="eyebrow">市场总览</span>
-    <p class="overview-text trading-overview-text">美股整体呈现结构性分化，科技权重标的多数站稳中长期均线之上，指数ETF与半导体板块MACD金叉扩散，RSI普遍步入60至80强势区间，部分品种逼近52周高点，但局部已现超买预警。加密市场情绪显著降温，恐慌贪婪指数录得29的恐慌读数，总市值回落至2.52万亿美元，主流币种全面运行于SMA20/50/200空头排列下方，MACD绿柱持续扩张，短线缺乏底部背离信号。中概股内部走势分化明显，代工与封测类标的依托均线多头格局延续动量，而部分互联网巨头受制于中长期均线压制，趋势指标转弱。商品与宏观层面，美元指数DXY在99.18附近维持多头均线支撑，黄金ETF受制于SMA50压制呈现震荡收敛格局，VIX指标位于16中位水平，宏观风险溢价暂时平稳，市场整体处于技术性盘整期。</p>
+    <p class="overview-text trading-overview-text">美股技术面整体呈现强势多头格局，宽基指数与半导体链普遍站上二十、五十及二百日均线，多头排列配合 MACD 零轴上方金叉，短期上涨动量充沛，但多个权重股 RSI 读数突破七十，显示技术面已逼近超买区。加密资产板块受情绪面拖累显著，主流币价格全面跌破短期均线且均线呈标准空头排列，配合加密恐慌贪婪指数 = 23（极度恐慌），日线 RSI 集体落入超卖区间，下行惯性尚未扭转。中概股走势出现技术性分化，代工与设备龙头维持上行通道，部分互联网标的受压于五十日均线，反弹阻力显著。商品与宏观资产方面，黄金价格于二百日均线附近反复测试支撑，美元指数贴近周期高位运行，十年期美债收益率在均线上方窄幅整理。四大板块技术状态差异明显，资金呈现高低切换与避险特征。</p>
   </section>
 
   <section class="trading-watchlist">
@@ -1073,17 +1528,17 @@
       </div>
       <span class="pick-stance pick-stance-bull">偏上行</span>
     </header>
-    <p class="pick-rationale">当前报价459.97美元，站稳20/50/200日均线(424.84/388.50/353.06)上方形成多头排列。MACD指标录得金叉信号(12.04&gt;11.08)，红柱扩张支撑上升动量。RSI14报69.7处于健康强势区间，未现极端超买。近5日累计上涨11.07%，价格距52周高点仅1.29%，短期技术形态偏多。</p>
+    <p class="pick-rationale">当前价四百五十九点九七美元稳居二十、五十及二百日均线上方，呈典型多头排列。MACD 指标录得十二点零四，高于信号线十一点零八并维持金叉状态，上行趋势动量明确。RSI14 读数为六十九点七尚未触及极端超买区，距五十二周高点仅差百分之一点二九，技术结构整体偏上行。</p>
   </article>
 <article class="trading-pick stance-bear">
     <header class="pick-head">
       <div class="pick-symbol-block">
-        <span class="pick-symbol">BABA</span>
-        <span class="pick-name">阿里巴巴 (BABA)</span>
+        <span class="pick-symbol">BTC-USD</span>
+        <span class="pick-name">Bitcoin</span>
       </div>
       <span class="pick-stance pick-stance-bear">偏下行</span>
     </header>
-    <p class="pick-rationale">现价125.4美元已跌破20/50/200日均线组(133.87/131.08/149.62)，均线系统呈空头排列。MACD位于零轴下方且DIF(-2.17)下穿DEA(-0.78)形成绿柱，抛压主导。RSI14回落至39.8，尚未进入超卖区，缺乏反转支撑。5日跌幅3.54%，趋势偏弱。</p>
+    <p class="pick-rationale">现价七万一千一百七十点八一已跌破二十日均线七万六千二百八十三点二二，各周期均线呈空头排列。RSI14 降至二十九点九进入超卖区间，MACD 柱状图为负值且显著低于信号线，显示空头动能主导。五十二周高点回撤幅度达百分之四十三点六，短期技术面承压，下行惯性明显。</p>
   </article>
 <article class="trading-pick stance-neutral">
     <header class="pick-head">
@@ -1093,14 +1548,14 @@
       </div>
       <span class="pick-stance pick-stance-neutral">中性</span>
     </header>
-    <p class="pick-rationale">当前价位411.26美元运行于200日均线(402.68)与50日均线(424.84)之间，上下均线构成双重约束。RSI14录得41，处于中轴下方未触超卖，动量偏缓。MACD持续为负(-5.01&lt;-4.55)且柱状图无明显方向。1日与5日微跌，整体处于区间震荡格局。</p>
+    <p class="pick-rationale">价格报四百一十一点二六位于二十日均线下方但贴近二百日均线四百零二点六八寻求支撑，均线系统交织未发散。RSI14 读数为四十一处于中性偏弱区间，MACD 录得负值与信号线接近，绿柱收窄。多空力量在当前位置趋于均衡，震荡整理特征显著，方向选择尚未明朗。</p>
   </article>
     </div>
   </section>
 
   <section class="trading-tickers">
     <h2 class="category-title trading-section-title">全部资产</h2>
-    <nav class="trading-group-tabs"><button class="trading-group-tab active" data-group="macro">宏观信号<span class="count">3</span></button><button class="trading-group-tab" data-group="us-equity">美股 / ADR / ETF<span class="count">22</span></button><button class="trading-group-tab" data-group="crypto">加密货币<span class="count">3</span></button><button class="trading-group-tab" data-group="china-equity">中概 / 港股<span class="count">4</span></button><button class="trading-group-tab" data-group="commodity-fx">商品 / 外汇<span class="count">1</span></button></nav>
+    <nav class="trading-group-tabs"><button class="trading-group-tab active" data-group="macro">宏观信号<span class="count">3</span></button><button class="trading-group-tab" data-group="us-equity">美股 / ADR / ETF<span class="count">21</span></button><button class="trading-group-tab" data-group="crypto">加密货币<span class="count">3</span></button><button class="trading-group-tab" data-group="china-equity">中概 / 港股<span class="count">4</span></button><button class="trading-group-tab" data-group="commodity-fx">商品 / 外汇<span class="count">1</span></button></nav>
     <div class="trading-group-contents"><div class="trading-group-content active" data-group="macro">
       
       <article class="ticker-card">
@@ -1151,16 +1606,16 @@
       </div>
       <div class="ticker-price-block">
         <span class="ticker-price">$99.18</span>
-        <span class="ticker-pct positive">+0.27%</span>
+        <span class="ticker-pct negative">-0.02%</span>
       </div>
     </header>
     <dl class="ticker-indicators">
-      <div><dt>5 日</dt><dd class="negative">-0.14%</dd></div>
-      <div><dt>距 52w 高</dt><dd>-1.4%</dd></div>
-      <div><dt>RSI(14)</dt><dd class="rsi-normal">55.4</dd></div>
+      <div><dt>5 日</dt><dd class="positive">+0.01%</dd></div>
+      <div><dt>距 52w 高</dt><dd>-1.5%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">55.3</dd></div>
       <div><dt>趋势</dt><dd class="trend-bullish">多头</dd></div>
-      <div><dt>SMA 20 / 50 / 200</dt><dd>98.77 / 98.90 / 98.57</dd></div>
-      <div><dt>MACD / 信号</dt><dd>0.143 / 0.105</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>98.80 / 98.89 / 98.58</dd></div>
+      <div><dt>MACD / 信号</dt><dd>0.147 / 0.114</dd></div>
     </dl>
     <div class="ticker-signals"><span class="signal-pill tone-bull">接近 52 周高</span><span class="signal-pill tone-bull">多头排列</span></div>
   </article>
@@ -1226,26 +1681,6 @@
       <div><dt>MACD / 信号</dt><dd>8.500 / 7.281</dd></div>
     </dl>
     <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超买</span><span class="signal-pill tone-bull">多头排列</span></div>
-  </article><article class="ticker-card">
-    <header class="ticker-head">
-      <div class="ticker-id">
-        <h3 class="ticker-symbol">BB</h3>
-        <p class="ticker-name">黑莓 (BB)</p>
-      </div>
-      <div class="ticker-price-block">
-        <span class="ticker-price">$9.72</span>
-        <span class="ticker-pct positive">+8.00%</span>
-      </div>
-    </header>
-    <dl class="ticker-indicators">
-      <div><dt>5 日</dt><dd class="positive">+22.88%</dd></div>
-      <div><dt>距 52w 高</dt><dd>-1.2%</dd></div>
-      <div><dt>RSI(14)</dt><dd class="rsi-overbought">91.3</dd></div>
-      <div><dt>趋势</dt><dd class="trend-bullish">多头</dd></div>
-      <div><dt>SMA 20 / 50 / 200</dt><dd>6.92 / 5.29 / 4.34</dd></div>
-      <div><dt>MACD / 信号</dt><dd>1.064 / 0.796</dd></div>
-    </dl>
-    <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超买</span><span class="signal-pill tone-bull">接近 52 周高</span><span class="signal-pill tone-bull">多头排列</span></div>
   </article><article class="ticker-card">
     <header class="ticker-head">
       <div class="ticker-id">
@@ -1608,22 +2043,10 @@
     <div class="ticker-signals"><span class="signal-pill tone-bull">多头排列</span></div>
   </article>
     </div><div class="trading-group-content" data-group="crypto">
-      <div class="crypto-widgets"><div class="crypto-widget fg-fear">
+      <div class="crypto-widgets"><div class="crypto-widget fg-fear-extreme">
       <div class="widget-label">加密恐慌贪婪</div>
-      <div class="widget-value">29</div>
-      <div class="widget-sub">恐慌</div>
-    </div><div class="crypto-widget">
-      <div class="widget-label">加密总市值</div>
-      <div class="widget-value">$2.52 T</div>
-      <div class="widget-sub negative">-2.06% / 24h</div>
-    </div><div class="crypto-widget">
-      <div class="widget-label">BTC 主导率</div>
-      <div class="widget-value">56.6%</div>
-      <div class="widget-sub">ETH 9.6%</div>
-    </div><div class="crypto-widget">
-      <div class="widget-label">24h 成交量</div>
-      <div class="widget-value">$117.6 B</div>
-      <div class="widget-sub">活跃币 17,401</div>
+      <div class="widget-value">23</div>
+      <div class="widget-sub">极度恐慌</div>
     </div></div>
       <article class="ticker-card">
     <header class="ticker-head">
@@ -1632,19 +2055,19 @@
         <p class="ticker-name">Bitcoin</p>
       </div>
       <div class="ticker-price-block">
-        <span class="ticker-price">$71,414.27</span>
-        <span class="ticker-pct negative">-2.94%</span>
+        <span class="ticker-price">$71,170.81</span>
+        <span class="ticker-pct negative">-3.27%</span>
       </div>
     </header>
     <dl class="ticker-indicators">
-      <div><dt>5 日</dt><dd class="negative">-3.94%</dd></div>
-      <div><dt>距 52w 高</dt><dd>-43.4%</dd></div>
-      <div><dt>RSI(14)</dt><dd class="rsi-normal">30.5</dd></div>
+      <div><dt>5 日</dt><dd class="negative">-4.27%</dd></div>
+      <div><dt>距 52w 高</dt><dd>-43.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-oversold">29.9</dd></div>
       <div><dt>趋势</dt><dd class="trend-bearish">空头</dd></div>
-      <div><dt>SMA 20 / 50 / 200</dt><dd>76,295.39 / 77,244.47 / 79,381.18</dd></div>
-      <div><dt>MACD / 信号</dt><dd>-1,334.736 / -737.061</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>76,283.22 / 77,239.60 / 79,379.96</dd></div>
+      <div><dt>MACD / 信号</dt><dd>-1,354.157 / -740.946</dd></div>
     </dl>
-    <div class="ticker-signals"><span class="signal-pill tone-bear">空头排列</span></div>
+    <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超卖</span><span class="signal-pill tone-bear">空头排列</span></div>
   </article><article class="ticker-card">
     <header class="ticker-head">
       <div class="ticker-id">
@@ -1652,17 +2075,17 @@
         <p class="ticker-name">Ethereum</p>
       </div>
       <div class="ticker-price-block">
-        <span class="ticker-price">$2,002.28</span>
-        <span class="ticker-pct negative">-0.10%</span>
+        <span class="ticker-price">$1,993.97</span>
+        <span class="ticker-pct negative">-0.52%</span>
       </div>
     </header>
     <dl class="ticker-indicators">
-      <div><dt>5 日</dt><dd class="negative">-0.98%</dd></div>
-      <div><dt>距 52w 高</dt><dd>-59.6%</dd></div>
-      <div><dt>RSI(14)</dt><dd class="rsi-normal">31.5</dd></div>
+      <div><dt>5 日</dt><dd class="negative">-1.40%</dd></div>
+      <div><dt>距 52w 高</dt><dd>-59.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">30.8</dd></div>
       <div><dt>趋势</dt><dd class="trend-bearish">空头</dd></div>
-      <div><dt>SMA 20 / 50 / 200</dt><dd>2,104.74 / 2,237.81 / 2,491.26</dd></div>
-      <div><dt>MACD / 信号</dt><dd>-67.074 / -59.385</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>2,104.32 / 2,237.64 / 2,491.22</dd></div>
+      <div><dt>MACD / 信号</dt><dd>-67.737 / -59.518</dd></div>
     </dl>
     <div class="ticker-signals"><span class="signal-pill tone-bear">空头排列</span></div>
   </article><article class="ticker-card">
@@ -1672,17 +2095,17 @@
         <p class="ticker-name">Solana</p>
       </div>
       <div class="ticker-price-block">
-        <span class="ticker-price">$81.25</span>
-        <span class="ticker-pct negative">-1.27%</span>
+        <span class="ticker-price">$80.76</span>
+        <span class="ticker-pct negative">-1.87%</span>
       </div>
     </header>
     <dl class="ticker-indicators">
-      <div><dt>5 日</dt><dd class="negative">-1.36%</dd></div>
-      <div><dt>距 52w 高</dt><dd>-67.9%</dd></div>
-      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.4</dd></div>
+      <div><dt>5 日</dt><dd class="negative">-1.95%</dd></div>
+      <div><dt>距 52w 高</dt><dd>-68.1%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">36.3</dd></div>
       <div><dt>趋势</dt><dd class="trend-bearish">空头</dd></div>
-      <div><dt>SMA 20 / 50 / 200</dt><dd>85.15 / 86.35 / 104.12</dd></div>
-      <div><dt>MACD / 信号</dt><dd>-1.565 / -1.083</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>85.13 / 86.34 / 104.12</dd></div>
+      <div><dt>MACD / 信号</dt><dd>-1.604 / -1.091</dd></div>
     </dl>
     <div class="ticker-signals"><span class="signal-pill tone-bear">空头排列</span></div>
   </article>
@@ -1797,7 +2220,7 @@
 
   <section class="trading-risk">
     <span class="eyebrow">风险提示</span>
-    <p>本报告基于公开数据计算指标作客观陈述。过去走势不代表未来表现，技术形态存在滞后性与失效概率，资金面变化可能打破常规结构。本内容仅供技术指标解读参考，不构成任何投资建议或决策依据。</p>
+    <p>技术指标仅反映历史数据统计状态，过去走势不代表未来表现。本报告基于公开行情计算的客观指标进行复述，仅供技术指标解读参考。市场运行受多重突发变量影响，单一形态无法涵盖全部风险，投资者应结合资金管理独立评估并审慎决策。</p>
   </section></section>
   <section class="panel" data-panel="politics">
     <div class="sub-content active" data-sub-content="world" data-cat="politics">
@@ -1806,419 +2229,207 @@
     <div class="source-contents">
       <div class="source-content active" data-source-content="_merged" data-sub="world" data-cat="politics">
     <article class="article">
-  <h3 class="article-title"><a href="https://www.nytimes.com/2026/06/01/world/europe/denmark-mette-frederiksen.html" target="_blank" rel="noopener noreferrer">Mette Frederiksen Forms New Government in Denmark</a></h3>
-  
-  <p class="article-meta">NYT World · 06/02 07:27</p>
-  <p class="article-excerpt">Mette Frederiksen may not be nearly as popular as she once was, but she remains the Danes’ most dominant leader in decades.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 丹麦首相梅特·弗雷泽里克森宣布组建新政府。尽管其民意支持率较以往有所下滑，但她仍是丹麦近几十年来最具主导力的政治领导人，此次组阁进一步巩固了其执政地位。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.theguardian.com/world/live/2026/jun/01/iran-war-live-news-updates-kuwait-missile-drone-attack-us-strikes-iran-radar-sites" target="_blank" rel="noopener noreferrer">Middle East crisis live: Lebanon’s US embassy says Hezbollah has agreed to ‘reciprocal’ ceasefire with Israel under US proposal</a></h3>
-  
-  <p class="article-meta">The Guardian · 06/02 07:15</p>
-  <p class="article-excerpt">Israeli prime minister Benjamin Netanyahu has meanwhile threatened to strike Beirut and says IDF will continue operations in southern Lebanon Iran suspends all peace talks in protest at Israeli offensive in Lebanon The exchange of strikes between the US and Iran reflects the fragility of the current</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 美国驻黎使馆称真主党同意在美提议下与以色列「对等」停火。以总理内塔尼亚胡警告将空袭贝鲁特并继续黎南部军事行动。伊朗则因以方攻势宣布暂停全部和平谈判。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.theguardian.com/australia-news/live/2026/jun/02/australia-politics-live-one-nation-minimum-wage-case-labor-coalition-anthony-albanese-angus-taylor-question-time-senate-estimates-ntwnfb" target="_blank" rel="noopener noreferrer">Australia politics live: Chalmers says economic woes driving voters to One Nation; Wong sanctions Israelis over West Bank violence</a></h3>
-  
-  <p class="article-meta">The Guardian · 06/02 07:13</p>
-  <p class="article-excerpt">Treasurer says Labor wants to address economic frustration whereas One Nation wants to benefit politically from it. Follow today’s news live Get our breaking news email, free app or daily news podcast The foreign minister, Penny Wong, has announced new sanctions by the commonwealth over three Israel</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 澳大利亚财长查默斯指经济困境促使选民转向单一民族党，工党致力于解决民生问题。外长黄英贤宣布，针对约旦河西岸暴力事件，澳联邦政府将对相关以色列实体实施新制裁。</p>
-</article>
-<article class="article">
   <h3 class="article-title"><a href="https://www.nytimes.com/2026/06/01/world/asia/japan-crested-ibis.html" target="_blank" rel="noopener noreferrer">Crested Ibises Get the Royal Treatment in Japan as They Fly Again</a></h3>
   
-  <p class="article-meta">NYT World · 06/02 07:09</p>
+  <p class="article-meta">NYT World · 06/02 09:08</p>
   <p class="article-excerpt">Once widespread in Japan, the colorful birds went from being fairly commonplace in the country to being on the verge of extinction.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本通过人工繁育与栖息地修复，使曾濒临灭绝的朱鹮种群逐步恢复并重返自然。该保育项目投入大量资源，标志着日本在濒危物种生态重建方面取得阶段性成果。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本曾一度濒临灭绝的朱鹮种群正逐步恢复。随着生态保护措施推进，这一曾遍布日本的珍稀鸟类数量回升，当地政府与保护机构为其提供高规格保育支持，助力其重新适应野外生存环境。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.nytimes.com/2026/06/01/world/trump-colombia-election-abelardo-de-la-espriella.html" target="_blank" rel="noopener noreferrer">Trump Stands to Gain a Key Ally in Colombia’s Upcoming Election</a></h3>
+  <h3 class="article-title"><a href="https://www.theguardian.com/australia-news/live/2026/jun/02/australia-politics-live-one-nation-minimum-wage-case-labor-coalition-anthony-albanese-angus-taylor-question-time-senate-estimates-ntwnfb" target="_blank" rel="noopener noreferrer">Australia politics live: nearly 3 million workers to receive a 4.75% pay rise under minimum wage decision; Chalmers says economic woes driving voters to One Nation</a></h3>
   
-  <p class="article-meta">NYT World · 06/02 07:07</p>
-  <p class="article-excerpt">Abelardo De La Espriella, a hard-line candidate on the right facing a left-wing rival in a presidential runoff, has pledged to crush drug traffickers.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 哥伦比亚总统选举进入决选，右翼候选人阿韦拉多·德拉斯普列亚承诺严打毒品走私。分析指出，若其当选有望成为特朗普政府在该地区的关键盟友。</p>
+  <p class="article-meta">The Guardian · 06/02 09:05</p>
+  <p class="article-excerpt">Unions had demanded a higher 6% pay increase after last month’s budget projected inflation reaching 5% in the year to June. Follow today’s news live Get our breaking news email, free app or daily news podcast The foreign minister, Penny Wong, has announced new sanctions by the commonwealth over thre</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 澳大利亚公平工作委员会裁定，近三百万名最低薪资劳动者将获得四点七五的加薪，低于工会此前提出的百分之六要求。财政部长查默斯指出，当前经济压力正促使部分选民转向单一民族党。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.theguardian.com/world/live/2026/jun/01/iran-war-live-news-updates-kuwait-missile-drone-attack-us-strikes-iran-radar-sites" target="_blank" rel="noopener noreferrer">Middle East crisis live: Israel says rockets fired at country’s north after Trump announced shooting would ‘stop’</a></h3>
+  
+  <p class="article-meta">The Guardian · 06/02 09:03</p>
+  <p class="article-excerpt">The US president said Benjamin Netanyahu had promised not to send troops to Beirut, while Hezbollah had agreed that ‘all shooting will stop’ The exchange of strikes between the US and Iran reflects the fragility of the current ceasefire, which has seen repeated violations even as American and Irania</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美国总统特朗普宣布以色列总理内塔尼亚胡承诺不向贝鲁特派兵，且真主党同意停火。但以色列北部随即遭火箭弹袭击，美伊之间的交火凸显当前中东停火协议的脆弱性及违约风险。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/6/2/celebration-shock-and-scepticism-follow-colombias-presidential-election?traffic_source=rss" target="_blank" rel="noopener noreferrer">Celebration, shock and scepticism follow Colombia’s presidential election</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/02 09:00</p>
+  <p class="article-excerpt">Far-right lawyer Abelardo de la Espriella beat left-wing Senator Ivan Cepeda in the first round, upending expectations.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 哥伦比亚总统选举首轮投票结果出人意料，极右翼律师阿韦拉多·德拉埃斯普列拉击败左翼参议员伊万·塞佩达胜出。此次选举结果打破外界预期，引发国内各界的庆祝、震惊与质疑声浪。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/06/01/science/ebola-vaccines-treatments.html" target="_blank" rel="noopener noreferrer">As Ebola Spreads, Scientists Race to Find Vaccines and Treatments</a></h3>
+  
+  <p class="article-meta">NYT World · 06/02 08:57</p>
+  <p class="article-excerpt">The Bundibugyo virus, a little known type, previously had caused just two small outbreaks. Now it’s at the center of a rapidly widening epidemic in Africa.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 非洲正面临由本迪布焦型病毒引发的埃博拉疫情快速扩散。该病毒此前仅引发过两次小规模暴发，如今已成为公共卫生焦点。各国科研人员正加紧研发针对该型病毒的疫苗与治疗方案。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.nytimes.com/live/2026/06/01/world/iran-war-us-trump-israel-lebanon" target="_blank" rel="noopener noreferrer">Iran War Live Updates: Israel and Iran Step Back From Threats After Day of Tension</a></h3>
   
-  <p class="article-meta">NYT World · 06/02 06:23</p>
+  <p class="article-meta">NYT World · 06/02 08:41</p>
   <p class="article-excerpt">President Trump wrote on social media that Israel and Hezbollah had “agreed” not to attack each other. Prime Minister Benjamin Netanyahu later distanced himself from talks of a cease-fire in Lebanon.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 特朗普在社交媒体称以色列与真主党已达成互不攻击协议。但以色列总理内塔尼亚胡随后与黎巴嫩停火表态保持距离。经历一日紧张对峙后，双方军事威胁有所降温。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美国总统特朗普在社交媒体称以色列与黎巴嫩真主党已达成互不攻击协议。但以色列总理内塔尼亚胡随后否认参与黎巴嫩停火谈判。中东局势在经历一日紧张对峙后，各方表态出现分歧。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.nytimes.com/2026/06/01/us/politics/trump-iran-negotiations-boring.html" target="_blank" rel="noopener noreferrer">Trump Finds High-Wire Iran Negotiations ‘Very Boring’</a></h3>
+  <h3 class="article-title"><a href="https://www.theguardian.com/australia-news/2026/jun/02/about-3-million-workers-on-minimum-wage-to-receive-475-pay-rise-in-fair-work-commission-ruling" target="_blank" rel="noopener noreferrer">About 3 million workers on minimum wage to receive 4.75% pay rise in Fair Work Commission ruling</a></h3>
   
-  <p class="article-meta">NYT World · 06/02 06:23</p>
-  <p class="article-excerpt">President Trump told CNBC that he “couldn’t care less” if the negotiations with Iran break down.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 特朗普向媒体表示，对与伊朗谈判破裂「毫不在意」，并称磋商过程「非常乏味」。此番言论凸显美方在后续外交博弈中可能采取的冷淡立场。</p>
+  <p class="article-meta">The Guardian · 06/02 08:26</p>
+  <p class="article-excerpt">Unions had demanded 6% pay increase for lowest paid after war in Middle East pushed inflation higher Follow our Australia news live blog for latest updates Get our breaking news email, free app or daily news podcast Nearly 3 million workers will receive a 4.75% pay rise, while about 100,000 of the c</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 澳大利亚公平工作委员会正式裁定，约三百万名最低薪资劳动者将获得四点七五的薪资上调。工会曾因中东局势推高通胀而要求百分之六的涨幅。该决定旨在缓解低收入群体的生活成本压力。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.nytimes.com/2026/05/31/world/americas/us-boat-strikes-colombia-ecuador.html" target="_blank" rel="noopener noreferrer">As Deaths From U.S. Boat Strikes Pass 200, Locals Tally an Even Greater Cost</a></h3>
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/liveblog/2026/6/2/iran-war-live-trump-talks-to-hezbollah-israel-as-lebanon-fighting-surges?traffic_source=rss" target="_blank" rel="noopener noreferrer">Iran war live: Trump talks to Hezbollah, Israel as Lebanon fighting surges</a></h3>
   
-  <p class="article-meta">NYT World · 06/02 06:17</p>
-  <p class="article-excerpt">Residents of coastal communities in Colombia and Ecuador said the airstrike campaign was making many reconsider anything involving the ocean as a livelihood.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 美方在哥伦比亚与厄瓜多尔沿海的船只打击行动已致超两百人死亡。当地居民指出，持续空袭严重冲击渔业等涉海生计，迫使社区重新评估传统谋生方式。</p>
+  <p class="article-meta">Al Jazeera · 06/02 08:00</p>
+  <p class="article-excerpt">Death toll from Israel&#39;s attacks on Lebanon since March has reached 3,433, with 10,395 injured, says Health Ministry.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 黎巴嫩卫生部通报，自今年三月以来以色列的军事行动已导致三千四百三十三人死亡、一万零三百九十五人受伤。与此同时，美国总统特朗普正就黎巴嫩局势升级与真主党及以色列进行紧急沟通。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.nytimes.com/2026/06/01/world/middleeast/trump-iran-israel-hezbollah.html" target="_blank" rel="noopener noreferrer">Trump Says Israel and Hezbollah Will Hold Off on New Military Action</a></h3>
+  <h3 class="article-title"><a href="https://www.nytimes.com/live/2026/06/01/world/iran-war-us-trump-israel-lebanon/heres-the-latest" target="_blank" rel="noopener noreferrer">Here’s the latest.</a></h3>
   
-  <p class="article-meta">NYT World · 06/02 05:54</p>
-  <p class="article-excerpt">A statement from Prime Minister Benjamin Netanyahu of Israel did not mention a new cease-fire, but the Lebanese government said one was taking shape.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 特朗普表示以方与真主党将暂缓新军事行动。内塔尼亚胡声明未提及停火安排，但黎巴嫩政府确认双方正推动停火机制落地，地区局势显现缓和迹象。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.nytimes.com/2026/06/01/world/asia/taiwan-china-new-york-times-expulsion.html" target="_blank" rel="noopener noreferrer">Taiwan Criticizes China’s Expulsion of New York Times Reporter</a></h3>
+  <p class="article-meta">NYT World · 06/02 07:56</p>
   
-  <p class="article-meta">NYT World · 06/02 05:54</p>
-  <p class="article-excerpt">The Taiwan president’s spokeswoman said China used “baseless pretexts” to punish journalists, which she called evidence that Beijing was a “troublemaker.”</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 台湾地区总统府发言人就中国大陆驱逐《纽约时报》记者表态，指责中方以「无端借口」惩罚新闻工作者，并称此举印证北京是地区「麻烦制造者」。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bbc.com/news/articles/cedp3lee059o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Bowen: Trump needs this war to end but Iran is not backing down</a></h3>
-  
-  <p class="article-meta">BBC World · 06/02 05:50</p>
-  <p class="article-excerpt">Under pressure from the polls and Gulf allies, the White House is pushing for a deal but Iran wants concessions, writes BBC&#39;s international editor.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 英广编辑分析指，受选情与海湾盟友压力，白宫正推动结束冲突；但伊朗在核心诉求上拒绝让步，坚持要求美方提供实质性政策妥协。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bbc.com/news/articles/c99lzgxzx2do?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Two possible Ebola cases in Brazil ruled out as patients test negative</a></h3>
-  
-  <p class="article-meta">BBC World · 06/02 05:40</p>
-  <p class="article-excerpt">The two patients had recently returned from the DR Congo and Uganda respectively.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 巴西卫生部确认，两名近期分别自刚果（金）与乌干达返巴的旅客埃博拉病毒检测呈阴性，疑似病例已排除，当地公共卫生警报解除。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.npr.org/2026/06/01/g-s1-125285/iran-israel-us-lebanon-gaza" target="_blank" rel="noopener noreferrer">Iran halts talks with U.S. over Israeli actions in Lebanon, Gaza</a></h3>
-  
-  <p class="article-meta">NPR World · 06/02 05:28</p>
-  <p class="article-excerpt">Trumps says Israel and Hezbollah will stop fighting after Iran stops talks with U.S. over Israeli operations in southern Lebanon, Gaza</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 因抗议以色列在黎巴嫩南部及加沙地带的军事行动，伊朗宣布暂停对美谈判。特朗普随后宣称以方与真主党有望停止交火，但局势走向仍待观察。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 该条目为实时新闻聚合页面，仅含标题提示，正文摘要字段为空，缺乏具体事件、数据及机构信息，暂无法生成实质性事实摘要。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.bbc.com/news/articles/c202rxp1z15o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Lebanon says Hezbollah agrees reciprocal halt to attacks on Israel</a></h3>
   
-  <p class="article-meta">BBC World · 06/02 05:27</p>
-  <p class="article-excerpt">Israel&#39;s PM Netanyahu warns that strikes on Beirut will go ahead if Hezbollah does not abide by the US proposal.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 黎政府宣布真主党同意在美斡旋下与以色列对等停火。以总理内塔尼亚胡警告，若真主党不遵守美方方案，以军将继续对贝鲁特实施打击。</p>
+  <p class="article-meta">BBC World · 06/02 07:50</p>
+  <p class="article-excerpt">Hours after the pause was announced, the Israeli military said it had intercepted projectiles fired from Lebanon.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 黎巴嫩方面宣布真主党同意与以色列相互停止攻击。但停火声明发布数小时后，以色列军方表示拦截了来自黎巴嫩方向的火箭弹袭击，显示该地区停火协议的实际执行面临严峻考验。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.aljazeera.com/video/newsfeed/2026/6/1/who-attended-this-years-israel-day-parade-in-new-york?traffic_source=rss" target="_blank" rel="noopener noreferrer">Who attended this year’s Israel Day Parade in New York?</a></h3>
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/06/01/world/americas/trump-colombia-election-abelardo-de-la-espriella.html" target="_blank" rel="noopener noreferrer">Trump Stands to Gain a Key Ally in Colombia’s Upcoming Election</a></h3>
   
-  <p class="article-meta">Al Jazeera · 06/02 05:15</p>
-  <p class="article-excerpt">Al Jazeera’s Ava Warriner takes a look at the Israeli and US officials who joined the annual Israel Day parade.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 纽约年度以色列日游行近日举行，媒体记录了出席活动的以色列代表与美国政要。该活动旨在展示美以双边关系及当地犹太社区的文化影响力。</p>
+  <p class="article-meta">NYT World · 06/02 07:37</p>
+  <p class="article-excerpt">Abelardo De La Espriella, a hard-line candidate on the right facing a left-wing rival in a presidential runoff, has pledged to crush drug traffickers.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 哥伦比亚总统选举即将进入第二轮投票，极右翼候选人阿韦拉多·德拉埃斯普列拉承诺严厉打击毒品贩运集团。若其胜选，有望成为美国总统特朗普在该地区的关键政治盟友。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/video/newsfeed/2026/6/1/ultra-orthodox-protesters-clash-with-israeli-police-over-army-draft?traffic_source=rss" target="_blank" rel="noopener noreferrer">Ultra-Orthodox protesters clash with Israeli police over army draft</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/02 07:36</p>
+  <p class="article-excerpt">Police seen dragging ultra-Orthodox protesters from under a bus after they blocked roads in Jerusalem over conscription.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 耶路撒冷爆发极端正统派犹太人与警方冲突。抗议者因反对强制征兵法案堵塞城市主干道，警方随后采取清场行动。此次对峙折射出以色列国内在兵役制度与社会融合议题上的深层分歧。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/05/31/world/americas/colombia-election-president-candidates.html" target="_blank" rel="noopener noreferrer">Colombia Presidential Election Heads to a Runoff</a></h3>
+  
+  <p class="article-meta">NYT World · 06/02 07:35</p>
+  <p class="article-excerpt">The candidate, Abelardo de la Espriella, will face a senator from the left-wing party of the departing president, Gustavo Petro, in a June runoff.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 哥伦比亚总统选举确认进入六月第二轮投票。极右翼候选人阿韦拉多·德拉埃斯普列拉将与现任总统古斯塔沃·佩罗所属左翼政党推出的参议员候选人展开最终角逐。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/06/01/world/europe/denmark-mette-frederiksen.html" target="_blank" rel="noopener noreferrer">Mette Frederiksen Forms New Government in Denmark</a></h3>
+  
+  <p class="article-meta">NYT World · 06/02 07:27</p>
+  <p class="article-excerpt">Mette Frederiksen may not be nearly as popular as she once was, but she remains the Danes’ most dominant leader in decades.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 丹麦首相梅特·弗雷泽里克森正式组建新一届政府。尽管其民意支持率较任期初期有所下滑，但分析指出她仍是近几十年来丹麦政坛最具主导权的领导人，新内阁政策走向将聚焦国内议题。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/video/newsfeed/2026/6/1/aje-onl-nf_clip_violent-protests-erupt-in-chile-010626?traffic_source=rss" target="_blank" rel="noopener noreferrer">Violent protests erupt in Chile over government cuts of social programmes</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/02 07:22</p>
+  <p class="article-excerpt">Labour unions and student groups protested in Chile as President Kast delivered his first State of the Nation.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 智利总统卡斯特发表首份国情咨文之际，工会与学生团体因政府削减社会福利项目计划发起大规模抗议并引发局部冲突。此次示威反映出该国执政党与民众在财政紧缩政策上的矛盾激化。</p>
 </article>
   </div>
     </div>
   </div>
   </section>
   <section class="panel" data-panel="finance">
-    <nav class="sub-tabs"><button class="sub-tab active" data-sub="x-posts" data-cat="finance">X 选股<span class="count">19</span></button><button class="sub-tab" data-sub="news" data-cat="finance">财经新闻<span class="count">12</span></button></nav>
-<div class="sub-contents"><div class="sub-content active" data-sub-content="x-posts" data-cat="finance">
-    <section class="stock-summary">
-    <h2 class="stock-summary-title">X 推送当日总结</h2>
-    <div class="stock-table-wrap">
-      <table class="stock-table">
-        <thead>
-          <tr>
-            <th>股票</th>
-            <th>来源</th>
-            <th>观点</th>
-            <th>目标价/参考价</th>
-            <th>核心内容</th>
-          </tr>
-        </thead>
-        <tbody><tr>
-        <td class="stock-symbol-cell"><a href="https://x.com/aleabitoreddit/status/2061479663181189201" target="_blank" rel="noopener noreferrer">NBIS</a><span class="stock-company">Nebius Group</span></td>
-        <td class="stock-source-cell">X Serenity (@aleabitoreddit)</td>
-        <td class="stock-view-cell">看多</td>
-        <td class="stock-target-cell">逼近$100B市值 / €8B投资</td>
-        <td class="stock-thesis-cell">获法国80亿欧元AI云基建投资，市场韧性极强持续跑赢同侪。博主预测其四季度财报后市值将触及千亿美元目标，目前正稳步逼近，基本面与情绪共振。</td>
-      </tr><tr>
-        <td class="stock-symbol-cell"><a href="https://x.com/aleabitoreddit/status/2061538735595069534" target="_blank" rel="noopener noreferrer">SIVE</a><span class="stock-company">Sivers Semiconductors</span></td>
-        <td class="stock-source-cell">X Serenity (@aleabitoreddit)</td>
-        <td class="stock-view-cell">看多</td>
-        <td class="stock-target-cell">未提及</td>
-        <td class="stock-thesis-cell">光子CPO技术爆发核心激光节点，获GFS/JBL/MRVL验证且1.6T护城河深厚。正迎TAM扩张与新订单落地，瑞典情绪低迷反催化美资控制权转移。</td>
-      </tr><tr>
-        <td class="stock-symbol-cell"><a href="https://x.com/aleabitoreddit/status/2061252644195504239" target="_blank" rel="noopener noreferrer">AAOI</a><span class="stock-company">Applied Optoelectronics</span></td>
-        <td class="stock-source-cell">X Serenity (@aleabitoreddit)</td>
-        <td class="stock-view-cell">持仓/看多</td>
-        <td class="stock-target-cell">~$28建仓 / $70确认 / +20.1%</td>
-        <td class="stock-thesis-cell">重申最看好美国光通信标的，押注AMZN/MSFT认证并获1.6T批量订单，产能快速爬坡。虽遭算法错杀，但基本面持续改善，拐点预期明确。</td>
-      </tr><tr>
-        <td class="stock-symbol-cell"><a href="https://x.com/aleabitoreddit/status/2061486607870652876" target="_blank" rel="noopener noreferrer">ARM</a><span class="stock-company">Arm Holdings</span></td>
-        <td class="stock-source-cell">X Serenity (@aleabitoreddit)</td>
-        <td class="stock-view-cell">看多/复盘</td>
-        <td class="stock-target-cell">$134至$413 / 预期年收&gt;$150亿</td>
-        <td class="stock-thesis-cell">股价两半月内自134美元飙升至413美元，核心驱动力为AGI CPU业务每年超150亿美元的强劲营收预期，基本面支撑后续增长空间。</td>
-      </tr><tr>
-        <td class="stock-symbol-cell"><a href="https://x.com/aleabitoreddit/status/2061470490083143996" target="_blank" rel="noopener noreferrer">EWY</a><span class="stock-company">iShares MSCI South Korea ETF</span></td>
-        <td class="stock-source-cell">X Serenity (@aleabitoreddit)</td>
-        <td class="stock-view-cell">持仓/做多</td>
-        <td class="stock-target-cell">LEAPS +485%</td>
-        <td class="stock-thesis-cell">长期看涨期权数月内飙升485%，收益源于隐含波动率扩张及三星、SK海力士等存储芯片多头布局，地缘恐慌中存储板块回报强劲。</td>
-      </tr><tr>
-        <td class="stock-symbol-cell"><a href="https://x.com/aleabitoreddit/status/2061466217911853429" target="_blank" rel="noopener noreferrer">IQE</a><span class="stock-company">IQE plc</span></td>
-        <td class="stock-source-cell">X Serenity (@aleabitoreddit)</td>
-        <td class="stock-view-cell">持仓/看多</td>
-        <td class="stock-target-cell">$12-$13建仓 / 现价$54</td>
-        <td class="stock-thesis-cell">四个月前在12至13美元区间建仓，现价已升至54美元实现翻倍收益。凭借对光子供应链的深入理解精准把握核心资产，表现逆势突出。</td>
-      </tr><tr>
-        <td class="stock-symbol-cell"><a href="https://x.com/aleabitoreddit/status/2061442981102764171" target="_blank" rel="noopener noreferrer">FLNC</a><span class="stock-company">Fluence Energy</span></td>
-        <td class="stock-source-cell">X Serenity (@aleabitoreddit)</td>
-        <td class="stock-view-cell">看多</td>
-        <td class="stock-target-cell">+36%</td>
-        <td class="stock-thesis-cell">携手英伟达与西门子联合开发Vera Rubin新架构，叠加预期斩获两项超大规模数据中心订单，利好共振推动股价单日大涨36%。</td>
-      </tr><tr>
-        <td class="stock-symbol-cell"><a href="https://x.com/aleabitoreddit/status/2061442981102764171" target="_blank" rel="noopener noreferrer">NVDA</a><span class="stock-company">NVIDIA</span></td>
-        <td class="stock-source-cell">X Serenity (@aleabitoreddit)</td>
-        <td class="stock-view-cell">仅提及/合作催化</td>
-        <td class="stock-target-cell">未提及</td>
-        <td class="stock-thesis-cell">联合西门子与FLNC开发新电源架构，推动800V直流架构及光子供应链需求，作为行业核心引擎持续溢出订单与技术催化。</td>
-      </tr><tr>
-        <td class="stock-symbol-cell"><a href="https://x.com/aleabitoreddit/status/2061348882685243497" target="_blank" rel="noopener noreferrer">XFAB</a><span class="stock-company">X-FAB</span></td>
-        <td class="stock-source-cell">X Serenity (@aleabitoreddit)</td>
-        <td class="stock-view-cell">看多</td>
-        <td class="stock-target-cell">未提及</td>
-        <td class="stock-thesis-cell">英伟达推动800V直流架构利好功率半导体，资本正向西方供应链转移，本土代工厂产能建设有望加速，具备地缘与技术双重催化逻辑。</td>
-      </tr></tbody>
-      </table>
-    </div>
-  </section>
-    
-    <div class="source-contents">
-      <div class="source-content active" data-source-content="x-serenity" data-sub="x-posts" data-cat="finance">
-    <article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061545299055882675" target="_blank" rel="noopener noreferrer">马克龙宣布$NBIS投资€8B在法国建设AI云基建</a></h3>
-  
-  <p class="article-meta">06/02 04:27</p>
-  <p class="article-excerpt">法国总统马克龙宣布，$NBIS将投资€8B在法国建设人工智能云基础设施。原文中有一条备受关注的评论问道：「水资源问题怎么解决？」$NBIS此次大规模投资旨在部署先进的AI云端基建，但数据中心耗水等能源配套消耗仍是市场关注的焦点。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 马克龙宣布$NBIS投资€8B建设法国AI云基础设施。观点关注其基建扩张规模，同时指出数据中心耗水等配套问题可能成为潜在制约因素。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061538735595069534" target="_blank" rel="noopener noreferrer">光子CPO即将起飞，$SIVE成激光技术核心瓶颈</a></h3>
-  
-  <p class="article-meta">06/02 04:01</p>
-  <p class="article-excerpt">随着光子共封装光学（CPO）技术即将起飞，$SIVE被视为激光技术的关键节点。其市场地位已获多家巨头验证：$GFS在演示中将其列为CPO仅有的两家公共激光供应商之一；$JBL也认可采用Sivers激光器构建的可插拔光模块具备「显著护城河」；叠加CHIPS法案支持。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> $SIVE被视为光子CPO领域的激光核心供应商。观点指出其获$GFS与$JBL公开验证，叠加芯片法案支持，正等待CPO技术放量作为核心催化剂。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061498698098708676" target="_blank" rel="noopener noreferrer">重申$AAOI为最看好的美国光通信标的，单日涨+20.1%</a></h3>
-  
-  <p class="article-meta">06/02 01:22</p>
-  <p class="article-excerpt">博主重申$AAOI是其最看好的美国光通信做多标的，当日大涨+20.1%。若寻找下一个$SNDK级别的标的，$AAOI值得关注。预计2026下半年至2027上半年将是光子学企业的重大拐点，目前行业正处产能建设初期，布局略偏早期。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 博主将$AAOI视为最看好的美国光通信标的，当日涨+20.1%。观点认为2026下半年至2027上半年为行业拐点，当前属产能建设早期。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061486607870652876" target="_blank" rel="noopener noreferrer">$ARM股价两个半月从$134飙至$413，AGI CPU预期强劲</a></h3>
-  
-  <p class="article-meta">06/02 00:34</p>
-  <p class="article-excerpt">$ARM股价表现惊人，仅用两个半月从$134飙升至$413。若使用期权收益将远超3倍。公司预计其AGI CPU业务每年将带来超$150亿营收，强劲的基本面预期是股价快速上行的核心驱动力，后续增长空间依然可观。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> $ARM股价两个半月内从$134涨至$413。核心催化剂为其AGI CPU业务预计带来超$150亿年营收，基本面强劲推动估值跃升。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061479663181189201" target="_blank" rel="noopener noreferrer">$NBIS展现极强「主角光环」，市值逼近$100B预测目标</a></h3>
-  
-  <p class="article-meta">06/02 00:07</p>
-  <p class="article-excerpt">$NBIS展现出极强的市场韧性，持续跑赢大盘及$IREN、$CIFR等新型云厂商。博主在去年微软财报后曾预测，$NBIS在四季度财报后市值将触及$100B。当前市值已逼近该目标，整体表现超出市场预期。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> $NBIS持续跑赢大盘及同板块$IREN与$CIFR。博主此前预测其市值将触及$100B，当前市值正稳步逼近该目标，表现强劲。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061470490083143996" target="_blank" rel="noopener noreferrer">$EWY的LEAPS期权数月飙升485%，存储周期多头获利丰厚</a></h3>
-  
-  <p class="article-meta">06/01 23:30</p>
-  <p class="article-excerpt">博主持有的$EWY长期看涨期权数月内上涨485%。收益来源于隐含波动率扩张及存储芯片多头头寸。尽管地缘局势引发市场恐慌抛售，但做多三星、SK海力士及$MU等存储板块的回报表现极为强劲。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 博主做多$EWY的LEAPS期权数月内上涨485%。收益受波动率扩张及存储周期驱动，尽管遭遇恐慌抛售，$MU等存储巨头仍表现强势。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061466217911853429" target="_blank" rel="noopener noreferrer">欧股独苗$IQE涨至$54，四个月建仓翻倍收益显著</a></h3>
-  
-  <p class="article-meta">06/01 23:13</p>
-  <p class="article-excerpt">$IQE成为当日唯一收涨的欧洲股票，股价已升至$54。博主4个月前在$12-$13区间建仓，获利丰厚。尽管$LPK、$SOI、$XFAB及$ALRIB等个股波动较大，但博主对光子供应链的熟悉度使其能精准把握核心资产。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 博主4个月前于$12-$13做多$IQE，现价升至$54。该股为当日唯一收涨欧股，对比$LPK、$XFAB等同行波动更为稳健。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061456212303221196" target="_blank" rel="noopener noreferrer">驳斥$SIVE看空逻辑，$MRVL项目直采确立供应链地位</a></h3>
-  
-  <p class="article-meta">06/01 22:33</p>
-  <p class="article-excerpt">针对$SIVE的新空头缺乏基本常识。$MRVL的Celestial项目大概率直接向$SIVE采购激光器，而非通过$POET。自2023年起$SIVE即被认定为直接客户。供应链结构清晰，空头的质疑在产业验证面前站不住脚。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 驳斥对$SIVE的看空观点，指出$MRVL的Celestial项目自2023年起直接向$SIVE采购激光器。供应链路径清晰，空方论据不成立。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061442981102764171" target="_blank" rel="noopener noreferrer">$NVDA携手西门子与$FLNC开发新架构，订单预期催化涨36%</a></h3>
-  
-  <p class="article-meta">06/01 21:41</p>
-  <p class="article-excerpt">$NVDA、西门子与$FLNC正联合为Vera Rubin N72开发参考电源架构。恰逢$FLNC预计将拿下两项超大规模数据中心订单，市场利好叠加推动其股价当日大幅上涨36%。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> $NVDA与西门子携手$FLNC为Vera Rubin N72开发电源架构。叠加$FLNC潜在的两项超算中心订单，催化其股价大涨36%。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061425895307608561" target="_blank" rel="noopener noreferrer">$NBIS走势强势，$60B市值正向$100B目标迈进</a></h3>
-  
-  <p class="article-meta">06/01 20:33</p>
-  <p class="article-excerpt">$NBIS走势犹如拥有「主角光环」，持续跑赢大盘及$IREN、$CIFR等新型云厂商组合。博主去年在微软财报后预测，$NBIS市值将达$100B。目前其市值位于$60B，正稳步向该目标迈进。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> $NBIS表现强势，跑赢$IREN与$CIFR等同类股。博主预测其市值将从当前$60B迈向$100B目标，业绩兑现预期明确。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061395355695226960" target="_blank" rel="noopener noreferrer">光子学板块遭算法错杀，$AAOI与$SIVE基本面实际改善</a></h3>
-  
-  <p class="article-meta">06/01 18:32</p>
-  <p class="article-excerpt">当前光子学市场的下跌主要是算法程序「跟随龙头」引发的抛售。从$AAOI到$SIVE的激光与光学企业走势多被$LITE绑定，尽管各公司基本面持续改善，如AOI与$AMD及$NVDA的接洽，但算法模型缺乏区分能力，导致板块错杀。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 光子学板块遭算法程序跟随$LITE抛售，导致$AAOI与$SIVE等被错杀。观点强调个股基本面实际持续改善，估值具备修复空间。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061384495576789401" target="_blank" rel="noopener noreferrer">$SIVE迎最大TAM扩张，新光模块合作验证1.6T护城河</a></h3>
-  
-  <p class="article-meta">06/01 17:48</p>
-  <p class="article-excerpt">$SIVE正迎来市场尚未察觉的最大总可寻址市场扩张与收入驱动。公司正积极与新可插拔光模块厂商展开联合开发。继$JBL采用其激光器构建1.6T LRO并获得「显著护城河」后，新订单有望持续落地。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 观点认为$SIVE的TAM扩张未被市场充分定价。其正与新光模块厂商合作研发，且$JBL已验证其1.6T激光器护城河，催化长期增长。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061365325741101442" target="_blank" rel="noopener noreferrer">瑞典本土文化偏见反成$SIVE控制权向美资转移利好</a></h3>
-  
-  <p class="article-meta">06/01 16:32</p>
-  <p class="article-excerpt">瑞典本土文化倾向于排斥成长型资产，市场情绪低迷劝人「放弃投资」。但博主认为无需在意，这种情绪反而利于控制权向美国资金转移，未来可能促使Sivers逐步转型为美国公司，对长期发展属积极信号。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 指出瑞典市场对成长股存在文化性偏见。观点认为该情绪反而利好$SIVE控制权向美资转移，长期有望推动公司完成美股化转型。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061348882685243497" target="_blank" rel="noopener noreferrer">$XFAB三大推演逻辑：$NVDA推动800V架构与供应链西移</a></h3>
-  
-  <p class="article-meta">06/01 15:27</p>
-  <p class="article-excerpt">围绕$XFAB的投资推演：$NVDA推动800V直流架构，利好GaN/SiC及功率半导体；$NVTS等轻晶圆厂模式企业将受益于$NVDA需求外溢；资本正从亚洲转向西方供应链，$XFAB等本土代工厂产能建设有望加速。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 围绕$XFAB推演三大逻辑：$NVDA推动800V架构利好功率半导体；$NVTS等轻晶圆厂受益；资金倾向西方供应链，加速$XFAB产能布局。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061333906226614403" target="_blank" rel="noopener noreferrer">台股Shunsin涨幅未达预期，CPO光子封装地位稳固</a></h3>
-  
-  <p class="article-meta">06/01 14:27</p>
-  <p class="article-excerpt">博主对台股Shunsin（6451）的一个半月涨幅+39.96%未达预期。该股为$NVDA CPO供应链核心标的，主打光子封装，市值约$1.4B，系鸿海子公司。尽管短期涨幅一般，但其产业地位依然稳固。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 台股Shunsin（6451）作为$NVDA的CPO光子封装标的，市值约$1.4B，为鸿海子公司。一个半月涨幅+39.96%未达博主预期。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061302974123753944" target="_blank" rel="noopener noreferrer">距X平台订阅榜首仅差4000，垂直AI供应链内容受追捧</a></h3>
-  
-  <p class="article-meta">06/01 12:25</p>
-  <p class="article-excerpt">博主表示距离X平台订阅量第一名仅差4000关注。作为专注垂直小众「AI供应链见解」的财经创作者，能取得如此关注实属难得，感谢社区对其深度产业分析内容的长期支持。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 博主距离X平台订阅榜首仅差4000关注。作为垂直深耕AI供应链见解的财经创作者，其深度内容获得市场高度认可。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061265938612465817" target="_blank" rel="noopener noreferrer">台北$NVDA大会将揭晓新AI瓶颈，日本百年传统企业被低估</a></h3>
-  
-  <p class="article-meta">06/01 09:57</p>
-  <p class="article-excerpt">在台北$NVDA大会期间，博主预判下一个AI瓶颈将揭晓。该瓶颈由一家日本市净率仅.6倍、拥有180年历史的传统企业掌握。其设备与技术正跨界应用于高端材料制造，估值存在巨大重估潜力。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 预判台北$NVDA大会将揭晓新AI瓶颈。标的为日本一家市净率.6倍、180年历史的传统企业，技术跨界应用带来估值重塑预期。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061252644195504239" target="_blank" rel="noopener noreferrer">博主首选$AAOI为光子标的，获大厂1.6T订单催化</a></h3>
-  
-  <p class="article-meta">06/01 09:05</p>
-  <p class="article-excerpt">$AAOI是当前博主最看好的美国光子学标的。去年于$28轻仓布局，押注其通过$AMZN与$MSFT认证；财报公布约$70价位时确认高确定性，因公司宣布获得超大规模客户1.6T等批量订单，产能正在快速爬坡。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 博主将$AAOI视为首选美国光子标的。于$28建仓，~$70加仓，核心逻辑为获$AMZN/$MSFT认证及超大规模客户1.6T订单落地。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://x.com/aleabitoreddit/status/2061245108427935752" target="_blank" rel="noopener noreferrer">日铁化学（4092）涨幅近100%，高纯度磷供应成行业命门</a></h3>
-  
-  <p class="article-meta">06/01 08:35</p>
-  <p class="article-excerpt">还记得博主关于日铁化学（4092）红磷的投资逻辑吗？目前涨幅已近100%。仅需$169m即可收购该公司，从而卡住西方超大规模基建的命门。作为磷化铟衬底核心，其高纯度磷供应比$AXTI更关键，是真正的行业瓶颈资产。</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 日铁化学（4092）涨幅近100%。观点指出仅需$169m即可收购，其高纯度磷供应是磷化铟衬底核心瓶颈，比$AXTI更具战略卡位价值。</p>
-</article>
-  </div>
-    </div>
-  </div>
-<div class="sub-content" data-sub-content="news" data-cat="finance">
+    <div class="sub-content active" data-sub-content="news" data-cat="finance">
     
     
     <div class="source-contents">
       <div class="source-content active" data-source-content="_merged" data-sub="news" data-cat="finance">
     <article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-02/congo-reopens-airport-in-ebola-epicenter-as-officials-brace-for-long-outbreak" target="_blank" rel="noopener noreferrer">Congo Reopens Main Airport in Ebola Epicenter as Officials Brace for Long Outbreak</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/02 08:47</p>
+  <p class="article-excerpt">Congo reopened the main airport in the eastern province hardest hit by Ebola, after health officials reported tentative signs the outbreak may be slowing despite a continuing struggle to trace exposed contacts and investigate suspected cases.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 刚果重开埃博拉疫情重灾区主要机场，卫生官员指扩散态势或现放缓，但追踪接触者仍存挑战，官方预计疫情将持续较长时间。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-02/optimum-pushes-apollo-ares-debt-feud-to-brink-with-asset-shift" target="_blank" rel="noopener noreferrer">Optimum Pushes Apollo, Ares Debt Feud to Brink With Asset Shift</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/02 08:41</p>
+  <p class="article-excerpt">One of the most bitter feuds in distressed-debt investing, between billionaire Patrick Drahi and some of the world’s biggest investors, has suddenly gotten even more contentious.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 亿万富翁德拉希旗下公司通过资产调整，将阿波罗与阿瑞斯管理公司在不良债务领域的纠纷推向临界点，双方利益冲突进一步激化。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-02/s-korea-surpasses-india-as-world-s-sixth-largest-stock-market" target="_blank" rel="noopener noreferrer">South Korea Overtakes India as World’s Sixth-Largest Stock Market</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/02 08:34</p>
+  <p class="article-excerpt">South Korea’s equity market has overtaken India’s as the world’s sixth largest, driven by a relentless surge in chip heavyweights powering the global artificial intelligence buildout.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 受芯片巨头股价持续走强推动，韩国股市总市值正式超越印度，跃升为全球第六大股票市场，主要得益于人工智能建设带来的算力需求。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/f5f3046c-4024-4ab9-927c-46b22c7fc43a" target="_blank" rel="noopener noreferrer">China’s housing market could have further to fall</a></h3>
+  
+  <p class="article-meta">Financial Times · 06/02 08:00</p>
+  <p class="article-excerpt">To make real estate attractive for investors, prices must go lower</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 分析指出中国房地产价格仍需进一步下行以恢复投资吸引力，市场筑底过程或尚未结束，购房者与投资者对资产估值回归合理水平仍存预期。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-02/chinese-curbs-risk-derailing-record-hong-kong-home-buying-spree" target="_blank" rel="noopener noreferrer">Chinese Curbs Risk Derailing Record Hong Kong Home-Buying Spree</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/02 08:00</p>
+  <p class="article-excerpt">Chinese buyers who spent more than ever on Hong Kong real estate in the first quarter now face a hurdle from tighter rules on wealthy people in the mainland taking cash overseas.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 内地资金首季创纪录购入香港房产，但新规收紧高净值人群跨境资金流动，可能为近期香港楼市热潮带来阻力，影响后续买家资金安排。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/short-seller-andrew-left-found-guilty-of-securities-fraud" target="_blank" rel="noopener noreferrer">Short Seller Andrew Left Found Guilty of Securities Fraud</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/02 07:59</p>
+  <p class="article-excerpt">Andrew Left, one of the world’s most prominent short sellers, was found guilty of securities fraud by a federal jury after a landmark trial that scrutinized his use of social media to move the price of stocks.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 知名做空机构创始人莱夫特经联邦陪审团裁定证券欺诈罪名成立，该案重点审查其利用社交媒体干预股价的行为，创下资本市场司法先例。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/bloom-ceo-has-no-plans-to-sell-shares-after-ai-investor-run-up" target="_blank" rel="noopener noreferrer">Bloom CEO Has No Plans to Sell Shares After AI Investor Run-up</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/02 07:58</p>
+  <p class="article-excerpt">Bloom Energy Corp., a supplier to Oracle Corp. that’s seen its stock price double in the past two months, doesn’t see a need to sell shares to meet surging demand from data centers, its chief executive officer says.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 布隆能源股价近两月翻倍，其首席执行官表示暂无减持计划，认为公司现有资本结构足以应对激增的数据中心能源设备订单需求。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/99dd712a-3900-46af-bd63-3f10adc6d1e4" target="_blank" rel="noopener noreferrer">Aspiration Partners’ co-founder Joe Sanberg gets 14-year fraud sentence</a></h3>
+  
+  <p class="article-meta">Financial Times · 06/02 07:36</p>
+  <p class="article-excerpt">Case has thrown spotlight on dealings with Wall Street and Hollywood elites including billionaire Steve Ballmer</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 金融科技企业联合创始人桑伯格因欺诈罪被判处十四年监禁，案件审理披露其与华尔街及好莱坞多名精英、亿万富翁鲍尔默的商业往来。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/cavity-fighting-curadont-owner-vvardis-is-preparing-for-us-ipo" target="_blank" rel="noopener noreferrer">Swiss Dental Startup vVardis Is Preparing for US IPO</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/02 07:30</p>
+  <p class="article-excerpt">vVardis Holding AG, a Swiss dental startup, is working with banks for a US initial public offering that could come this year, according to people familiar with the matter.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 瑞士牙科企业vVardis正与多家投行推进美股上市筹备，若审批顺利，预计将于年内完成首次公开募股并登陆美国资本市场。</p>
+</article>
+<article class="article">
   <h3 class="article-title"><a href="https://www.ft.com/content/341f151b-f472-4530-8579-d4b803519257" target="_blank" rel="noopener noreferrer">Alphabet to sell $80bn in stock to fund AI spending spree</a></h3>
   
   <p class="article-meta">Financial Times · 06/02 07:22</p>
   <p class="article-excerpt">Landmark fundraising plans include $10bn private placement to Berkshire Hathaway</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> Alphabet计划出售价值800亿美元股票，为人工智能支出筹集资金。该融资计划包含向伯克希尔·哈撒韦定向增发100亿美元，旨在为其AI基础设施建设提供支持。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> Alphabet宣布发行八百亿美元股票为人工智能支出融资，其中包含向伯克希尔哈撒韦定向配售一百亿美元的专项认购计划。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/gold-holds-fall-as-traders-digest-confusion-over-us-iran-talks" target="_blank" rel="noopener noreferrer">Gold Holds Decline as Traders Weigh Confusion Over US-Iran Talks</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/02 07:11</p>
+  <p class="article-excerpt">Gold held a decline as conflicting signals from the US and Iran cast doubt over a diplomatic resolution to the war, fanning concerns over inflation and prolonged trade disruptions.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 受美伊外交谈判信号混乱影响，市场对局势缓和存疑并加剧通胀与贸易中断担忧，国际金价承压维持跌势，交易员密切关注后续进展。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.bbc.com/news/articles/c74d1ydv01eo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">How &#39;confused&#39; AI rollout hurts firms and baffles staff</a></h3>
   
   <p class="article-meta">BBC Business · 06/02 07:05</p>
   <p class="article-excerpt">Some firms are putting pressure on staff to use AI, but have not thought through their AI rollout.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 部分企业强制员工使用人工智能，但缺乏周密的落地战略。盲目的推广导致内部管理混乱与员工困惑，反而对运营效率造成负面影响，凸显技术应用规划不足。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/60927948-eb62-4415-bc33-5ba3cef6e3d7" target="_blank" rel="noopener noreferrer">UK cancer services left ‘fragile’ by the pandemic</a></h3>
-  
-  <p class="article-meta">Financial Times · 06/02 06:30</p>
-  <p class="article-excerpt">More than one in five cases were missed during lockdowns according to new research</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 新研究显示，英国封锁期间漏诊的癌症病例超五分之一，致医疗体系依然脆弱。疫情对早期筛查与常规诊疗的长期冲击持续显现，系统重建面临严峻挑战。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/oil-holds-gains-us-futures-slip-on-war-confusion-markets-wrap" target="_blank" rel="noopener noreferrer">S&amp;amp;P 500 Futures Dip With No Iran Deal, Oil Steady: Markets Wrap</a></h3>
-  
-  <p class="article-meta">Bloomberg Markets · 06/02 06:12</p>
-  <p class="article-excerpt">US equity-index futures edged lower and oil held gains as efforts to revive a peace deal with Iran showed little progress.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 美国标普500指数期货小幅下跌，原油价格持稳。因美伊和平谈判进展甚微，市场对中东局势的担忧限制油价上行，同时拖累美股期货表现，情绪等待局势明朗。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/latest-oil-market-news-and-analysis-for-june-2" target="_blank" rel="noopener noreferrer">Oil Holds Biggest Gain in a Month on Standoff in US-Iran Talks</a></h3>
-  
-  <p class="article-meta">Bloomberg Markets · 06/02 06:01</p>
-  <p class="article-excerpt">Oil steadied after its biggest gain in about a month, as uncertainty about the state of US-Iran peace talks raised the risk that energy flows from the Persian Gulf could be curtailed for longer.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 原油在创近一个月最大涨幅后持稳。美伊和谈僵局引发担忧，波斯湾能源供应或面临长期中断风险。地缘不确定性支撑油价，投资者密切关注谈判对供应链的影响。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/australian-wheat-crop-expected-to-drop-26-on-weather-war-costs" target="_blank" rel="noopener noreferrer">Australian Wheat Crop Expected to Drop 26% on Weather, War Costs</a></h3>
-  
-  <p class="article-meta">Bloomberg Markets · 06/02 06:00</p>
-  <p class="article-excerpt">Australia’s winter wheat crop is forecast to fall by more than a quarter in the 2026/27 season due to unusually dry weather, low global prices and higher input costs resulting from the war in the Middle East.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 受异常干旱、全球粮价低迷及中东冲突推高成本影响，澳大利亚2026至2027产季冬小麦产量预计下滑逾26%。气候与地缘因素叠加，对全球小麦供给构成压力。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/anthropic-s-first-mover-ipo-edge-set-to-widen-lead-over-openai" target="_blank" rel="noopener noreferrer">Anthropic’s First-Mover IPO Edge Set to Widen Lead Over OpenAI</a></h3>
-  
-  <p class="article-meta">Bloomberg Markets · 06/02 05:55</p>
-  <p class="article-excerpt">Anthropic PBC pulled ahead of OpenAI with its confidential IPO filing Monday, as the free-spending artificial intelligence startups battle for a fundraising edge that’s set to determine who will win the ultimate battle for computing power.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> Anthropic已于周一提交秘密IPO申请，上市进度领先于OpenAI。双方正激烈争夺融资优势以支撑算力竞争，资本投入将决定未来人工智能算力格局的主导权。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/3ddf001d-d7f6-40f1-8fe4-1cc577868da0" target="_blank" rel="noopener noreferrer">HPE shares soar 37% on booming demand for AI infrastructure</a></h3>
-  
-  <p class="article-meta">Financial Times · 06/02 05:48</p>
-  <p class="article-excerpt">Data centre equipment provider says sales of servers and networking equipment are rising rapidly</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 受AI基础设施需求激增推动，数据中心供应商HPE股价大涨37%。公司服务器与网络设备销售额快速攀升，凸显全球科技企业在AI算力硬件领域的强劲采购需求。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/elliott-takes-stake-in-miner-northern-star-pushing-for-review" target="_blank" rel="noopener noreferrer">Elliott Takes Stake in Miner Northern Star, Pushing for Review</a></h3>
-  
-  <p class="article-meta">Bloomberg Markets · 06/02 05:42</p>
-  <p class="article-excerpt">Elliott Investment Management LP has built a large stake in Northern Star Resources Ltd. and is pushing for a strategic review and leadership changes at the Australian mining company.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 对冲基金Elliott已增持澳洲矿企Northern Star股份，正推动战略审查与管理层调整。此举旨在优化企业运营架构，提升资产回报，激进资本介入引发市场关注。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/cftc-awards-five-whistleblowers-8-million-for-enforcement-tips" target="_blank" rel="noopener noreferrer">CFTC Awards Five Whistleblowers $8 Million for Enforcement Tips</a></h3>
-  
-  <p class="article-meta">Bloomberg Markets · 06/02 05:32</p>
-  <p class="article-excerpt">The US Commodity Futures Trading Commission said it will award more than $8 million to five whistleblowers who provided information that helped agency investigators recover funds for defrauded investors.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 美国商品期货交易委员会向五名吹哨人发放逾800万美元奖励。相关线索协助调查人员成功追回被欺诈投资者资金，彰显监管高压执法及举报人激励机制的有效性。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/videos/2026-06-01/return-stacked-etf-outpaces-s-p-500-video" target="_blank" rel="noopener noreferrer">Return Stacked ETF Outpaces S&amp;P 500</a></h3>
-  
-  <p class="article-meta">Bloomberg Markets · 06/02 05:05</p>
-  <p class="article-excerpt">Corey Hoffstein, CEO and CIO of Newfound Research, joins Katie Greifeld and Eric Balchunas on &quot;Bloomberg ETF IQ.&quot; They drill down into the Return Stacked US Stocks and Managed Futures ETF (ticker: RSST). (Source: Bloomberg)</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 专业节目深入解析了「Return Stacked美国股票与量化期货ETF」代码RSST。该基金近期表现跑赢标普500指数，其叠加策略实现多元收益的投资逻辑受市场关注。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-06-01/can-openai-and-anthropic-ipos-live-up-to-expectations" target="_blank" rel="noopener noreferrer">Can the OpenAI and Anthropic IPOs Live Up to Expectations?</a></h3>
-  
-  <p class="article-meta">Bloomberg Markets · 06/02 05:01</p>
-  <p class="article-excerpt">The AI dynamos are eyeing the public markets, but some wonder whether SpaceX’s planned June listing will steal their thunder.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> OpenAI与Anthropic正筹备上市，市场关注SpaceX六月IPO是否分流资金。业内对科技巨头密集竞逐资本市场的募资效应与估值消化能力持审慎观望态度。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 调研显示部分企业未制定清晰落地战略便强制员工接入人工智能系统，导致工作流程混乱与内部抵触，实际运营效率反受损。</p>
 </article>
   </div>
     </div>
-  </div></div>
+  </div>
   </section>
   <section class="panel" data-panel="community">
     <div class="sub-content active" data-sub-content="cn-community" data-cat="tech">
@@ -2230,7 +2441,7 @@
   <h3 class="article-title"><a href="https://www.v2ex.com/t/1217154" target="_blank" rel="noopener noreferrer">Codex 免费账号 重置周期变为一个月！</a></h3>
   
   <p class="article-meta">06/01 23:23</p>
-  <p class="article-excerpt">10 回复 · 程序员 节点</p>
+  <p class="article-excerpt">20 回复 · 程序员 节点</p>
   
 </article>
 <article class="article">
@@ -2241,17 +2452,17 @@
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.v2ex.com/t/1217088" target="_blank" rel="noopener noreferrer">企业微信工具开发的话，大家有需求吗？</a></h3>
+  <h3 class="article-title"><a href="https://www.v2ex.com/t/1217090" target="_blank" rel="noopener noreferrer">感觉重构代码老是会引入新的问题，有什么比较好的方法吗</a></h3>
   
-  <p class="article-meta">06/01 17:28</p>
-  <p class="article-excerpt">6 回复 · 程序员 节点</p>
+  <p class="article-meta">06/01 17:34</p>
+  <p class="article-excerpt">4 回复 · 程序员 节点</p>
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.v2ex.com/t/1217061" target="_blank" rel="noopener noreferrer">Codex 用户达到 500 万了, 但是...</a></h3>
+  <h3 class="article-title"><a href="https://www.v2ex.com/t/1217088" target="_blank" rel="noopener noreferrer">企业微信工具开发的话，大家有需求吗？</a></h3>
   
-  <p class="article-meta">06/01 16:26</p>
-  <p class="article-excerpt">5 回复 · 程序员 节点</p>
+  <p class="article-meta">06/01 17:28</p>
+  <p class="article-excerpt">9 回复 · 程序员 节点</p>
   
 </article>
 <article class="article">
@@ -2259,13 +2470,6 @@
   
   <p class="article-meta">06/01 16:20</p>
   <p class="article-excerpt">4 回复 · Apple 节点</p>
-  
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.v2ex.com/t/1217026" target="_blank" rel="noopener noreferrer">饮料洒到 Mac 的键盘上了， Caps, Shift 两个键黏糊糊，该怎么处理 🥲</a></h3>
-  
-  <p class="article-meta">06/01 15:03</p>
-  <p class="article-excerpt">11 回复 · Apple 节点</p>
   
 </article>
 <article class="article">
@@ -2294,6 +2498,13 @@
   
   <p class="article-meta">05/30 08:38</p>
   <p class="article-excerpt">4 回复 · Apple 节点</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.v2ex.com/t/1216531" target="_blank" rel="noopener noreferrer">美区礼品卡被连着砍单 3 次</a></h3>
+  
+  <p class="article-meta">05/29 17:40</p>
+  <p class="article-excerpt">20 回复 · Apple 节点</p>
   
 </article>
   </div>
@@ -2344,7 +2555,7 @@
   <h3 class="article-title"><a href="https://linux.do/t/topic/2285999" target="_blank" rel="noopener noreferrer">现在公益站 codex 用不了了，可申请退款</a></h3>
   
   <p class="article-meta">06/01 18:58</p>
-  <p class="article-excerpt">需要申请退款，直接在小店申请即可，无需说明原因，5月10日之后购买的我都会同意退款。 12 个帖子 - 9 位参与者 阅读完整话题</p>
+  <p class="article-excerpt">需要申请退款，直接在小店申请即可，无需说明原因，5月10日之后购买的我都会同意退款。 14 个帖子 - 11 位参与者 阅读完整话题</p>
   
 </article>
 <article class="article">
@@ -2358,14 +2569,14 @@
   <h3 class="article-title"><a href="https://linux.do/t/topic/2285262" target="_blank" rel="noopener noreferrer">【CHY公益站】服务器集群中新增一台8核16G服务器</a></h3>
   
   <p class="article-meta">06/01 16:53</p>
-  <p class="article-excerpt">发现学校里有台校长不要的电脑，直接就把它搬到家里云里好吧 26 个帖子 - 24 位参与者 阅读完整话题</p>
+  <p class="article-excerpt">发现学校里有台校长不要的电脑，直接就把它搬到家里云里好吧 27 个帖子 - 25 位参与者 阅读完整话题</p>
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://linux.do/t/topic/2284963" target="_blank" rel="noopener noreferrer">中国移动 6月话费流量汇总 领随机话费流量券</a></h3>
+  <h3 class="article-title"><a href="https://linux.do/t/topic/2284911" target="_blank" rel="noopener noreferrer">free账号周限变月限！！！！！！！！！！！</a></h3>
   
-  <p class="article-meta">06/01 16:12</p>
-  <p class="article-excerpt">1、【一豆油好礼 赢88元话费券】即日起至2026年至6月30日，移动用户登录页面参与抽奖可赢1元/2元/10元/88元话费兑换券、100MB/200MB/1GB流量日包券等；https://dev.coc.10086.cn/coc3/canvas/rightsmarket-h5-canvas/online/ydyhl?channelCode=P00000145029&amp;pageRecorded=true 2、【和包 话费狂欢季】即日起至2026年至6月30日，移动用户登陆可领2元话费优惠券、5元话费优惠券，均为满20元可用。https://ump.cmpay.com/front-msa/mak</p>
+  <p class="article-meta">06/01 16:06</p>
+  <p class="article-excerpt">-------------------------------二编--------------------------------- CPA Usage Keeper。跑了一个20x pro 179刀掉了39% 5h（有fast有standard，有5.5也有5.4） 188 个帖子 - 118 位参与者 阅读完整话题</p>
   
 </article>
   </div>
