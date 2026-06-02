@@ -396,7 +396,7 @@ export async function enrichXStockPickSummaries(
     const { text } = await runLlm({
       systemPrompt: PROMPTS.xStock,
       userPrompt,
-      timeoutMs: 240_000,
+      timeoutMs: 360_000,
     });
     const cleaned = extractJson(text);
     let parsed: { items?: LocalizedXStockPick[] };

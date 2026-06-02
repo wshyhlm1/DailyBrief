@@ -24,9 +24,9 @@ import type { SourceDef } from "./types";
  * `enabled: false` entries stay in the config for visibility; disable
  * rather than delete so the "why we don't use this" history is preserved.
  *
- * Subcategory determines L2 grouping in the rendered HTML:
+ * Subcategory determines grouping in the rendered HTML:
  *   tech    → github-trending / ai-news / x-viral (cn-community renders as L1)
- *   finance → news
+ *   finance → news renders flat; x-posts is promoted to the S’elected L1 tab
  *   politics → no L2 split (subcategory omitted)
  */
 

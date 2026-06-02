@@ -6,6 +6,7 @@ import type { StockHighlight } from "./stock-highlights";
 import { REPORT_LOCALE } from "../sources/registry";
 import type { Category, RawArticle } from "../sources/types";
 import { todayKey } from "../utils";
+import type { WeatherSnapshot } from "../weather/shanghai";
 
 const SYSTEM_PROMPT_DIGEST =
   REPORT_LOCALE === "en" ? SYSTEM_PROMPT_DIGEST_EN : SYSTEM_PROMPT_DIGEST_ZH;
@@ -30,6 +31,8 @@ export interface DailyReport {
   stock_highlights?: StockHighlight[];
   /** Optional trading-signals section, present when scripts/daily.ts ran successfully. */
   trading?: TradingSection;
+  /** Optional city weather snapshot rendered next to the report date. */
+  weather?: WeatherSnapshot;
 }
 
 import type { TickerAnalysis } from "../trading/signals";

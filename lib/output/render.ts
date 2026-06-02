@@ -25,6 +25,7 @@ import {
  */
 const TEXTS_ZH = {
   siteTitle: "每日简报",
+  catSelected: "S’elected",
   catTech: "技术动态",
   catFinance: "财经要点",
   catPolitics: "时政观察",
@@ -69,17 +70,20 @@ const TEXTS_ZH = {
   mdTodayKeywords: "今日关键词",
   mdImportance: "重要度",
   archiveLink: "← 历史归档",
-  stockSummaryTitle: "X 推送当日总结",
+  stockSummaryTitle: "S’elected 精选总结",
   stockSymbol: "股票",
   stockSource: "来源",
   stockView: "观点",
   stockTarget: "目标价/参考价",
   stockThesis: "核心内容",
   stockNotMentioned: "未提及",
+  weatherAqi: "空气",
+  weatherFeelsLike: "体感",
 };
 
 const TEXTS_EN: typeof TEXTS_ZH = {
   siteTitle: "Daily Brief",
+  catSelected: "S’elected",
   catTech: "Tech",
   catFinance: "Finance",
   catPolitics: "World",
@@ -125,13 +129,15 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   mdTodayKeywords: "Keywords",
   mdImportance: "Importance",
   archiveLink: "← Archive",
-  stockSummaryTitle: "X Stock-Pick Summary",
+  stockSummaryTitle: "S’elected Highlights",
   stockSymbol: "Symbol",
   stockSource: "Source",
   stockView: "View",
   stockTarget: "Target / Reference",
   stockThesis: "Core Point",
   stockNotMentioned: "Not stated",
+  weatherAqi: "AQI",
+  weatherFeelsLike: "Feels",
 };
 
 const STR = REPORT_LOCALE === "en" ? TEXTS_EN : TEXTS_ZH;
@@ -188,6 +194,7 @@ const SUBCATEGORY_ORDER: Partial<Record<Category, string[]>> = {
   politics: ["world"],
 };
 
+const SELECTED_FINANCE_SUBS = new Set(["x-posts"]);
 const TECH_MAIN_SUBS = new Set(["github-trending", "x-viral", "ai-news"]);
 const TECH_COMMUNITY_SUBS = new Set(["cn-community", "overseas-community"]);
 
@@ -197,7 +204,7 @@ const SUBCATEGORY_LABELS: Record<string, string> = {
   "overseas-community": STR.subOverseasCommunity,
   "ai-news": STR.subAiNews,
   "x-viral": STR.subXViral,
-  "x-posts": REPORT_LOCALE === "en" ? "X Stock Picks" : "X 选股",
+  "x-posts": "S’elected",
   "blog-weekly": STR.subBlogWeekly,
   news: STR.subFinanceNews,
   world: STR.subWorld,
@@ -449,6 +456,114 @@ function formatDate(d: Date | undefined): string {
   }
 }
 
+function aqiTone(aqi: number | undefined): "good" | "moderate" | "sensitive" | "unhealthy" | "hazardous" {
+  if (aqi === undefined || !Number.isFinite(aqi)) return "moderate";
+  if (aqi <= 50) return "good";
+  if (aqi <= 100) return "moderate";
+  if (aqi <= 150) return "sensitive";
+  if (aqi <= 200) return "unhealthy";
+  return "hazardous";
+}
+
+function renderWeatherPill(report: DailyReport): string {
+  const w = report.weather;
+  if (!w) return "";
+  const temp =
+    w.temperature_min_c !== undefined &&
+    w.temperature_max_c !== undefined &&
+    w.temperature_min_c !== w.temperature_max_c
+      ? `${w.temperature_min_c}-${w.temperature_max_c}°C`
+      : `${w.temperature_c}°C`;
+  const aqi =
+    w.aqi === undefined
+      ? ""
+      : `<span class="weather-aqi aqi-${aqiTone(w.aqi)}">${STR.weatherAqi} ${w.aqi}${w.aqi_label ? ` · ${escapeHtml(w.aqi_label)}` : ""}</span>`;
+  const feels =
+    w.apparent_temperature_c === undefined
+      ? ""
+      : `<span class="weather-muted">${STR.weatherFeelsLike} ${w.apparent_temperature_c}°</span>`;
+  const observed = w.observed_at ? ` title="${escapeHtml(`${w.source} · ${w.observed_at}`)}"` : "";
+  return `<aside class="weather-pill"${observed} aria-label="${escapeHtml(`${w.city} ${w.condition} ${temp}`)}">
+    <span class="weather-icon" aria-hidden="true">${escapeHtml(w.emoji)}</span>
+    <span class="weather-city">${escapeHtml(w.city)}</span>
+    <strong class="weather-temp">${temp}</strong>
+    <span class="weather-condition">${escapeHtml(w.condition)}</span>
+    ${feels}
+    ${aqi}
+  </aside>`;
+}
+
+const STOCK_COMPANY_ZH: Record<string, string> = {
+  "AAOI": "应用光电",
+  "ARM": "安谋",
+  "AVGO": "博通",
+  "BRK.A": "伯克希尔哈撒韦",
+  "CIFR": "赛弗矿业",
+  "EWY": "韩国股票基金",
+  "GFS": "格芯",
+  "GOOGL": "谷歌母公司",
+  "IREN": "艾瑞斯算力",
+  "JBL": "捷普",
+  "LITE": "鲁门特姆",
+  "MU": "美光",
+  "NBIS": "尼比乌斯云计算",
+  "NVDA": "英伟达",
+  "NVTS": "纳微半导体",
+  "SIVE": "赛弗斯半导体",
+  "SNDK": "闪迪",
+  "TSM": "台积电",
+};
+
+function containsCjk(s: string): boolean {
+  return /[\u3400-\u9fff]/.test(s);
+}
+
+function localizedCompany(symbol: string, company?: string): string {
+  if (REPORT_LOCALE !== "zh") return company ?? "";
+  const mapped = STOCK_COMPANY_ZH[symbol.toUpperCase()];
+  if (mapped) return mapped;
+  if (company && containsCjk(company)) {
+    const cjkPart = company
+      .split(/[\/|｜]/)
+      .map((part) => part.trim())
+      .find((part) => containsCjk(part));
+    if (cjkPart) return cjkPart;
+  }
+  return company ?? mapped ?? "";
+}
+
+function localizedSourceLabel(source: string): string {
+  if (REPORT_LOCALE === "zh" && /X Serenity/i.test(source)) {
+    return "Serenity 选股（@aleabitoreddit）";
+  }
+  return source;
+}
+
+function stockViewTone(view: string): "bull" | "bear" | "watch" | "neutral" {
+  if (/看空|做空|下行|bear|short/i.test(view)) return "bear";
+  if (/看多|做多|持仓|优选|上行|bull|long/i.test(view)) return "bull";
+  if (/观察|观望|提及|复盘|对标|watch|recap/i.test(view)) return "watch";
+  return "neutral";
+}
+
+function stockViewEmoji(view: string): string {
+  const hasBull = /看多|做多|持仓|优选|上行|bull|long/i.test(view);
+  const hasBear = /看空|做空|下行|bear|short/i.test(view);
+  const hasWatch = /观察|观望|提及|复盘|对标|watch|recap/i.test(view);
+  if (hasBull && hasBear) return "⚖️";
+  if (hasBull && hasWatch) return "👀📈";
+  if (hasBear && hasWatch) return "👀📉";
+  if (hasBull) return "📈";
+  if (hasBear) return "📉";
+  if (hasWatch) return "👀";
+  return "•";
+}
+
+function renderStockView(view: string): string {
+  const tone = stockViewTone(view);
+  return `<span class="stock-view-badge view-${tone}"><span aria-hidden="true">${stockViewEmoji(view)}</span>${escapeHtml(view)}</span>`;
+}
+
 // ----- raw article renderers -----
 
 function renderArticleHtml(a: ArticleInput, showSource = false): string {
@@ -561,8 +676,8 @@ function stockRows(report: DailyReport): StockTableRow[] {
   for (const h of report.stock_highlights ?? []) {
     rows.push({
       symbol: h.symbol,
-      company: h.company,
-      source: h.source,
+      company: localizedCompany(h.symbol, h.company),
+      source: localizedSourceLabel(h.source),
       url: h.url,
       view: h.view,
       target: h.target_price || h.reference_price || STR.stockNotMentioned,
@@ -587,11 +702,11 @@ function renderStockSummaryTable(report: DailyReport): string {
         ? `<span class="stock-company">${escapeHtml(r.company)}</span>`
         : "";
       return `<tr>
-        <td class="stock-symbol-cell">${symbolHtml}${company}</td>
-        <td class="stock-source-cell">${escapeHtml(r.source)}</td>
-        <td class="stock-view-cell">${escapeHtml(r.view)}</td>
-        <td class="stock-target-cell">${escapeHtml(r.target)}</td>
-        <td class="stock-thesis-cell">${escapeHtml(r.thesis)}</td>
+        <td class="stock-symbol-cell" data-label="${STR.stockSymbol}"><div class="stock-cell-value">${symbolHtml}${company}</div></td>
+        <td class="stock-source-cell" data-label="${STR.stockSource}"><div class="stock-cell-value">${escapeHtml(r.source)}</div></td>
+        <td class="stock-view-cell" data-label="${STR.stockView}"><div class="stock-cell-value">${renderStockView(r.view)}</div></td>
+        <td class="stock-target-cell" data-label="${STR.stockTarget}"><div class="stock-cell-value">${escapeHtml(r.target)}</div></td>
+        <td class="stock-thesis-cell" data-label="${STR.stockThesis}"><div class="stock-cell-value">${escapeHtml(r.thesis)}</div></td>
       </tr>`;
     })
     .join("");
@@ -630,6 +745,8 @@ export function renderHtml(
   // forums as their own top-level tab per UX preference.
   const techMainSubs = raw.tech.filter((s) => TECH_MAIN_SUBS.has(s.id));
   const techCommunitySubs = raw.tech.filter((s) => TECH_COMMUNITY_SUBS.has(s.id));
+  const selectedSubs = raw.finance.filter((s) => SELECTED_FINANCE_SUBS.has(s.id));
+  const financeNewsSubs = raw.finance.filter((s) => !SELECTED_FINANCE_SUBS.has(s.id));
 
   const sumItems = (subs: SubGroup[]) =>
     subs.reduce(
@@ -637,8 +754,9 @@ export function renderHtml(
       0,
     );
   const counts = {
+    selected: sumItems(selectedSubs),
     tech: sumItems(techMainSubs),
-    finance: sumItems(raw.finance),
+    finance: sumItems(financeNewsSubs),
     politics: sumItems(raw.politics),
     community: sumItems(techCommunitySubs),
   };
@@ -651,16 +769,19 @@ export function renderHtml(
 <title>${STR.siteTitle} · ${date}</title>
 <style>
   :root {
-    --bg: #fafaf9;
+    --bg: #f6f7f9;
     --bg-elevated: #ffffff;
-    --fg: #18181b;
-    --fg-soft: #3f3f46;
-    --muted: #71717a;
-    --rule: #e4e4e7;
-    --card: #f4f4f5;
-    --link: #1d4ed8;
-    --accent: #18181b;
-    --accent-fg: #fafaf9;
+    --fg: #171717;
+    --fg-soft: #3d4351;
+    --muted: #737987;
+    --rule: #dde2ea;
+    --card: #eef1f5;
+    --link: #2563eb;
+    --accent: #111827;
+    --accent-fg: #ffffff;
+    --selected: #0f766e;
+    --selected-soft: #d9f4ef;
+    --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.08);
     --rank-high-bg: #fee2e2;
     --rank-high-fg: #991b1b;
     --rank-mid-bg: #fef3c7;
@@ -682,6 +803,9 @@ export function renderHtml(
       --link: #93c5fd;
       --accent: #fafafa;
       --accent-fg: #0a0a0a;
+      --selected: #5eead4;
+      --selected-soft: rgba(20, 184, 166, 0.16);
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.28);
       --rank-high-bg: rgba(239,68,68,0.18);
       --rank-high-fg: #fca5a5;
       --rank-mid-bg: rgba(245,158,11,0.18);
@@ -720,6 +844,48 @@ export function renderHtml(
     letter-spacing: -0.02em;
     line-height: 1.1;
   }
+  .title-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0.4rem 0 1.2rem;
+  }
+  .title-row h1.report-title { margin: 0; }
+  .weather-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.45rem;
+    padding: 0.46rem 0.7rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    background: var(--bg-elevated);
+    box-shadow: 0 5px 16px rgba(15, 23, 42, 0.06);
+    color: var(--fg-soft);
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  .weather-icon { font-size: 1.25rem; line-height: 1; }
+  .weather-city,
+  .weather-temp {
+    color: var(--fg);
+    font-weight: 700;
+  }
+  .weather-condition { color: var(--fg-soft); }
+  .weather-muted { color: var(--muted); }
+  .weather-aqi {
+    padding: 0.12rem 0.38rem;
+    border-radius: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .aqi-good { background: rgba(22, 163, 74, 0.13); color: #166534; }
+  .aqi-moderate { background: rgba(217, 119, 6, 0.15); color: #92400e; }
+  .aqi-sensitive { background: rgba(234, 88, 12, 0.16); color: #9a3412; }
+  .aqi-unhealthy,
+  .aqi-hazardous { background: rgba(220, 38, 38, 0.14); color: #991b1b; }
   .archive-link {
     display: inline-block;
     margin-bottom: 1rem;
@@ -769,34 +935,47 @@ export function renderHtml(
   /* ===== primary tabs ===== */
   .tabs {
     display: flex;
-    gap: 0.25rem;
+    gap: 0.35rem;
     margin: 1.25rem 0 0.75rem;
-    border-bottom: 1px solid var(--rule);
+    padding: 0.35rem;
+    background: color-mix(in srgb, var(--bg-elevated) 88%, transparent);
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-soft);
     flex-wrap: wrap;
+    position: sticky;
+    top: 0.5rem;
+    z-index: 10;
+    backdrop-filter: blur(14px);
   }
   .tab {
     background: none;
     border: none;
-    padding: 0.7rem 1.1rem;
-    font-size: 0.95rem;
-    font-weight: 500;
+    padding: 0.6rem 0.95rem;
+    font-size: 0.92rem;
+    font-weight: 650;
     color: var(--muted);
     cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
+    border-radius: 0.4rem;
     font-family: inherit;
-    transition: color 0.15s;
+    transition: background 0.15s, color 0.15s, transform 0.15s;
   }
-  .tab:hover { color: var(--fg); }
+  .tab:hover { color: var(--fg); background: var(--card); }
   .tab.active {
-    color: var(--fg);
-    border-bottom-color: var(--accent);
+    color: var(--accent-fg);
+    background: var(--accent);
+    transform: translateY(-1px);
+  }
+  .tab[data-tab="selected"] { color: var(--selected); }
+  .tab[data-tab="selected"].active {
+    color: #ffffff;
+    background: var(--selected);
   }
   .tab .count {
     font-size: 0.72rem;
-    color: var(--muted);
     margin-left: 0.4rem;
     font-weight: 400;
+    opacity: 0.72;
   }
   .panel { display: none; }
   .panel.active { display: block; }
@@ -909,17 +1088,26 @@ export function renderHtml(
   /* ===== top stock summary ===== */
   .stock-summary {
     margin: 0.9rem 0 1.25rem;
-    padding: 0.9rem 0 1rem;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
+    padding: 1rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--selected);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-soft);
   }
   .stock-summary-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin: 0 0 0.65rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem;
     letter-spacing: 0.05em;
+    color: var(--fg);
   }
-  .stock-table-wrap { overflow-x: auto; }
+  .stock-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    background: var(--bg);
+  }
   .stock-table {
     width: 100%;
     min-width: 760px;
@@ -930,6 +1118,7 @@ export function renderHtml(
   .stock-table th {
     text-align: left;
     color: var(--muted);
+    background: var(--card);
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -944,6 +1133,7 @@ export function renderHtml(
     border-bottom: 1px solid var(--rule);
     color: var(--fg-soft);
   }
+  .stock-table tbody tr:hover td { background: color-mix(in srgb, var(--selected-soft) 48%, transparent); }
   .stock-table tr:last-child td { border-bottom: none; }
   .stock-symbol-cell {
     min-width: 7rem;
@@ -960,9 +1150,35 @@ export function renderHtml(
     font-weight: 400;
     font-size: 0.74rem;
     color: var(--muted);
+    overflow-wrap: anywhere;
   }
-  .stock-source-cell { min-width: 8rem; color: var(--muted); }
+  .stock-cell-value { min-width: 0; overflow-wrap: anywhere; }
+  .stock-source-cell { min-width: 8.8rem; color: var(--muted); }
   .stock-view-cell { min-width: 7rem; color: var(--fg); }
+  .stock-view-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    max-width: 100%;
+    padding: 0.18rem 0.48rem;
+    border-radius: 0.4rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .stock-view-badge.view-bull { background: rgba(22, 163, 74, 0.12); color: #166534; }
+  .stock-view-badge.view-bear { background: rgba(220, 38, 38, 0.12); color: #991b1b; }
+  .stock-view-badge.view-watch { background: rgba(100, 116, 139, 0.14); color: #334155; }
+  .stock-view-badge.view-neutral { background: var(--card); color: var(--fg-soft); }
+  @media (prefers-color-scheme: dark) {
+    .aqi-good,
+    .stock-view-badge.view-bull { color: #4ade80; }
+    .aqi-moderate,
+    .aqi-sensitive { color: #fcd34d; }
+    .aqi-unhealthy,
+    .aqi-hazardous,
+    .stock-view-badge.view-bear { color: #fca5a5; }
+    .stock-view-badge.view-watch { color: #cbd5e1; }
+  }
   .stock-target-cell {
     min-width: 7.5rem;
     font-variant-numeric: tabular-nums;
@@ -979,7 +1195,7 @@ export function renderHtml(
   }
   .sub-tab {
     background: var(--card);
-    border: 1px solid transparent;
+    border: 1px solid var(--rule);
     padding: 0.5rem 1.05rem;
     border-radius: 0.5rem;
     font-size: 0.9rem;
@@ -993,6 +1209,7 @@ export function renderHtml(
   .sub-tab.active {
     background: var(--accent);
     color: var(--accent-fg);
+    border-color: var(--accent);
   }
   .sub-tab .count {
     font-size: 0.7rem;
@@ -1039,11 +1256,20 @@ export function renderHtml(
 
   /* ===== article cards in raw panels ===== */
   .article {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--rule);
+    padding: 1rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    background: var(--bg-elevated);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    margin-bottom: 0.75rem;
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
   }
-  .article:first-child { padding-top: 0; }
-  .article:last-child { border-bottom: none; }
+  .article:hover {
+    border-color: color-mix(in srgb, var(--selected) 42%, var(--rule));
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    transform: translateY(-1px);
+  }
+  .article:last-child { margin-bottom: 0; }
   .article-title {
     font-size: 1rem;
     margin: 0 0 0.3rem;
@@ -1335,6 +1561,93 @@ export function renderHtml(
   .trading-risk .eyebrow { display: block; margin-bottom: 0.35rem; }
   .trading-risk p { margin: 0; font-size: 0.82rem; line-height: 1.65; color: var(--fg-soft); }
 
+  @media (max-width: 680px) {
+    main { padding: 2rem 1rem 3rem; }
+    h1.report-title { font-size: 2.35rem; }
+    .title-row {
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+    .weather-pill {
+      width: 100%;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      row-gap: 0.28rem;
+      white-space: normal;
+    }
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.28rem;
+      top: 0.35rem;
+      margin-top: 1rem;
+    }
+    .tab {
+      width: 100%;
+      padding: 0.58rem 0.35rem;
+      font-size: 0.84rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tab .count { display: block; margin: 0.1rem 0 0; font-size: 0.68rem; }
+    .stock-summary { padding: 0.85rem; }
+    .stock-table-wrap {
+      overflow: visible;
+      border: none;
+      background: transparent;
+    }
+    .stock-table {
+      min-width: 0;
+      display: block;
+      font-size: 0.86rem;
+    }
+    .stock-table thead { display: none; }
+    .stock-table tbody,
+    .stock-table tr,
+    .stock-table td {
+      display: block;
+      width: 100%;
+    }
+    .stock-table tr {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .stock-table tr:first-child { padding-top: 0; }
+    .stock-table tr:last-child { border-bottom: none; padding-bottom: 0; }
+    .stock-table td {
+      border-bottom: none;
+      padding: 0.22rem 0;
+      display: grid;
+      grid-template-columns: 5.5rem minmax(0, 1fr);
+      gap: 0.65rem;
+      align-items: start;
+    }
+    .stock-table td::before {
+      content: attr(data-label);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+    }
+    .stock-symbol-cell,
+    .stock-source-cell,
+    .stock-view-cell,
+    .stock-target-cell,
+    .stock-thesis-cell {
+      min-width: 0;
+    }
+    .article {
+      padding: 0.85rem;
+      margin-bottom: 0.65rem;
+    }
+    .article-title { font-size: 0.96rem; }
+    .article-excerpt,
+    .article-summary { font-size: 0.86rem; }
+    .ticker-head { gap: 0.7rem; }
+    .ticker-indicators { grid-template-columns: 1fr; }
+  }
+
   footer {
     margin-top: 2.5rem;
     border-top: 1px solid var(--rule);
@@ -1348,19 +1661,26 @@ export function renderHtml(
 <main>
   <header class="report-header">
     <span class="eyebrow">${STR.siteTitle}</span>
-    <h1 class="report-title">${date}</h1>
+    <div class="title-row">
+      <h1 class="report-title">${date}</h1>
+      ${renderWeatherPill(report)}
+    </div>
     ${process.env.WEB_MODE === "true" ? `<a class="archive-link" href="../archive.html">${STR.archiveLink}</a>` : ""}
   </header>
 
   <nav class="tabs" role="tablist">
-    <button class="tab active" data-tab="tech">${CATEGORY_LABELS.tech}<span class="count">${counts.tech}</span></button>
+    <button class="tab active" data-tab="selected">${STR.catSelected}<span class="count">${counts.selected}</span></button>
+    <button class="tab" data-tab="tech">${CATEGORY_LABELS.tech}<span class="count">${counts.tech}</span></button>
     ${trading ? `<button class="tab" data-tab="trading">${STR.catTrading}<span class="count">${trading.tickers.length}</span></button>` : ""}
     <button class="tab" data-tab="politics">${CATEGORY_LABELS.politics}<span class="count">${counts.politics}</span></button>
     <button class="tab" data-tab="finance">${CATEGORY_LABELS.finance}<span class="count">${counts.finance}</span></button>
     ${techCommunitySubs.length > 0 ? `<button class="tab" data-tab="community">${STR.catCommunity}<span class="count">${counts.community}</span></button>` : ""}
   </nav>
 
-  <section class="panel active" data-panel="tech">
+  <section class="panel active" data-panel="selected">
+    ${renderRawCategoryPanel("finance", selectedSubs, report)}
+  </section>
+  <section class="panel" data-panel="tech">
     ${renderRawCategoryPanel("tech", techMainSubs)}
   </section>
   ${trading ? `<section class="panel" data-panel="trading">${renderTradingPanel(trading)}</section>` : ""}
@@ -1368,7 +1688,7 @@ export function renderHtml(
     ${renderRawCategoryPanel("politics", raw.politics)}
   </section>
   <section class="panel" data-panel="finance">
-    ${renderRawCategoryPanel("finance", raw.finance, report)}
+    ${renderRawCategoryPanel("finance", financeNewsSubs)}
   </section>
   ${techCommunitySubs.length > 0 ? `<section class="panel" data-panel="community">
     ${renderRawCategoryPanel("tech", techCommunitySubs)}
@@ -1670,7 +1990,7 @@ function renderXStockSummaryMarkdown(report: DailyReport): string {
     .map((r) => {
       const symbol = r.url ? `[${mdCell(r.symbol)}](${r.url})` : mdCell(r.symbol);
       const company = r.company ? `<br>${mdCell(r.company)}` : "";
-      return `| ${symbol}${company} | ${mdCell(r.source)} | ${mdCell(r.view)} | ${mdCell(r.target)} | ${mdCell(r.thesis)} |`;
+      return `| ${symbol}${company} | ${mdCell(r.source)} | ${stockViewEmoji(r.view)} ${mdCell(r.view)} | ${mdCell(r.target)} | ${mdCell(r.thesis)} |`;
     })
     .join("\n");
   return `${header}\n${body}\n`;
@@ -1679,10 +1999,26 @@ function renderXStockSummaryMarkdown(report: DailyReport): string {
 export function renderMarkdown(report: DailyReport, date: string): string {
   const blocks: string[] = [];
   blocks.push(`# ${STR.siteTitle} · ${date}\n`);
+  if (report.weather) {
+    const w = report.weather;
+    const temp =
+      w.temperature_min_c !== undefined &&
+      w.temperature_max_c !== undefined &&
+      w.temperature_min_c !== w.temperature_max_c
+        ? `${w.temperature_min_c}-${w.temperature_max_c}°C`
+        : `${w.temperature_c}°C`;
+    blocks.push(
+      `> ${w.city} ${w.emoji} ${w.condition} · ${temp}` +
+        (w.apparent_temperature_c === undefined ? "" : ` · ${STR.weatherFeelsLike} ${w.apparent_temperature_c}°`) +
+        (w.aqi === undefined ? "" : ` · ${STR.weatherAqi} ${w.aqi}${w.aqi_label ? ` ${w.aqi_label}` : ""}`) +
+        `\n`,
+    );
+  }
   if (report.hero_headline) blocks.push(`> ${report.hero_headline}\n`);
   if (report.daily_overview) {
     blocks.push(`## ${STR.mdTodayOverview}\n\n${report.daily_overview}\n`);
   }
+  blocks.push(renderXStockSummaryMarkdown(report));
   blocks.push(
     renderSectionMarkdown(CATEGORY_DIGEST_LABELS.tech, report.tech_briefs),
   );
@@ -1692,7 +2028,6 @@ export function renderMarkdown(report: DailyReport, date: string): string {
       report.finance_briefs,
     ),
   );
-  blocks.push(renderXStockSummaryMarkdown(report));
   blocks.push(
     renderSectionMarkdown(
       CATEGORY_DIGEST_LABELS.politics,

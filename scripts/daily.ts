@@ -16,6 +16,7 @@ import {
   enrichGithubTrendingSummaries,
   enrichXStockPickSummaries,
   enrichXViralSummaries,
+  type LocalizedXStockPick,
 } from "../lib/ai/enrich";
 import { generateStockHighlights } from "../lib/ai/stock-highlights";
 import {
@@ -31,11 +32,13 @@ import { fetchCryptoGlobal } from "../lib/trading/coingecko";
 import { generateTradingCommentary } from "../lib/ai/trading-commentary";
 import type { TradingSection } from "../lib/ai/pipeline";
 import { todayKey } from "../lib/utils";
+import { fetchShanghaiWeather } from "../lib/weather/shanghai";
 
 const OUTPUT_DIR = "daily_reports";
 const SOURCE_HEALTH_PATH = path.join("logs", "source-health.json");
 const SOURCE_FAILURE_LOG_PATH = path.join("logs", "source-failures.jsonl");
 const X_STOCK_POST_LIMIT = 20;
+const X_STOCK_LOCALIZE_BATCH_SIZE = 6;
 
 const SOURCE_FETCH_RETRIES = parsePositiveIntEnv("SOURCE_FETCH_RETRIES", 3);
 const SOURCE_SKIP_AFTER_FAILURES = parsePositiveIntEnv(
@@ -310,11 +313,8 @@ async function enrichXViral(articles: ArticleInput[]): Promise<void> {
   );
 }
 
-function xStockPickArticles(
-  articles: ArticleInput[],
-  reportDayKey: string = todayKey(),
-): ArticleInput[] {
-  const xStockSourceIds = new Set(
+function xStockSourceIds(): Set<string> {
+  return new Set(
     sources
       .filter(
         (s) =>
@@ -324,13 +324,12 @@ function xStockPickArticles(
       )
       .map((s) => s.id),
   );
-  // Accept articles from the last 2 days — Serenity tweets are fetched via
-  // RSSHub which may have timezone/date mismatches with the report day key.
-  const reportDate = new Date(reportDayKey.replace(/-/g, "/"));
-  const twoDaysAgo = new Date(reportDate.getTime() - 2 * 86400000);
+}
+
+function xStockFeedArticles(articles: ArticleInput[]): ArticleInput[] {
+  const sourceIds = xStockSourceIds();
   return articles
-    .filter((a) => xStockSourceIds.has(a.sourceId))
-    .filter((a) => !a.publishedAt || a.publishedAt >= twoDaysAgo)
+    .filter((a) => sourceIds.has(a.sourceId))
     .sort(
       (a, b) =>
         (b.publishedAt?.getTime() ?? 0) - (a.publishedAt?.getTime() ?? 0),
@@ -338,11 +337,27 @@ function xStockPickArticles(
     .slice(0, X_STOCK_POST_LIMIT);
 }
 
-async function enrichXStockPicks(
+function xStockPickArticles(
   articles: ArticleInput[],
-  reportDayKey: string,
-): Promise<void> {
-  const xPosts = xStockPickArticles(articles, reportDayKey);
+  reportDayKey: string = todayKey(),
+): ArticleInput[] {
+  // Serenity tweets are fetched via RSSHub and can land on the adjacent
+  // calendar day, so stock highlights use a short rolling window.
+  const reportDate = new Date(reportDayKey.replace(/-/g, "/"));
+  const twoDaysAgo = new Date(reportDate.getTime() - 2 * 86400000);
+  return xStockFeedArticles(articles).filter(
+    (a) => !a.publishedAt || a.publishedAt >= twoDaysAgo,
+  );
+}
+
+function chunksOf<T>(items: T[], size: number): T[][] {
+  const chunks: T[][] = [];
+  for (let i = 0; i < items.length; i += size) chunks.push(items.slice(i, i + size));
+  return chunks;
+}
+
+async function enrichXStockPicks(articles: ArticleInput[]): Promise<void> {
+  const xPosts = xStockFeedArticles(articles);
   if (xPosts.length === 0) return;
   const sourceById = new Map(sources.map((s) => [s.id, s]));
   const toEnrich = xPosts.filter((a) => {
@@ -354,14 +369,31 @@ async function enrichXStockPicks(
     `[daily] localizing ${toEnrich.length}/${xPosts.length} X stock-pick posts with ${REPORT_LOCALE} text…`,
   );
   const t0 = Date.now();
-  const localized = await enrichXStockPickSummaries(
-    toEnrich.map((a) => ({
+  const toPayload = (items: ArticleInput[]) =>
+    items.map((a) => ({
       url: a.url,
       title: a.title,
       excerpt: a.excerpt,
       source: a.source,
-    })),
-  );
+    }));
+  const localized = new Map<string, LocalizedXStockPick>();
+  const batches = chunksOf(toEnrich, X_STOCK_LOCALIZE_BATCH_SIZE);
+  for (let i = 0; i < batches.length; i++) {
+    const batch = batches[i];
+    console.log(
+      `[daily] X stock-pick localization batch ${i + 1}/${batches.length} (${batch.length} items)…`,
+    );
+    const partial = await enrichXStockPickSummaries(toPayload(batch));
+    for (const [url, item] of partial.entries()) localized.set(url, item);
+    const missing = batch.filter((a) => !partial.has(a.url));
+    if (missing.length > 0 && missing.length < batch.length) {
+      console.log(
+        `[daily] retrying ${missing.length} missing X stock-pick localization items in batch ${i + 1}…`,
+      );
+      const retry = await enrichXStockPickSummaries(toPayload(missing));
+      for (const [url, item] of retry.entries()) localized.set(url, item);
+    }
+  }
   for (const a of toEnrich) {
     const item = localized.get(a.url);
     if (!item) continue;
@@ -468,6 +500,11 @@ async function runTrading(): Promise<TradingSection | null> {
   };
 }
 
+async function runWeather(date: string) {
+  console.log(`[daily] fetching Shanghai weather + AQI…`);
+  return fetchShanghaiWeather(date);
+}
+
 async function main() {
   const date = todayKey();
   console.log(`[daily] ${date} — fetching sources…\n`);
@@ -483,7 +520,7 @@ async function main() {
   await enrichPolitics(articles);
   await enrichAiNews(articles);
   await enrichXViral(articles);
-  await enrichXStockPicks(articles, date);
+  await enrichXStockPicks(articles);
 
   // Trading signals: Yahoo fetch + indicators + commentary. Non-fatal —
   // if it errors, we still ship the news digest.
@@ -519,6 +556,8 @@ async function main() {
   }
 
   if (trading) report.trading = trading;
+  const weather = await runWeather(date);
+  if (weather) report.weather = weather;
 
   const dateDir = path.join(OUTPUT_DIR, date);
   fs.mkdirSync(dateDir, { recursive: true });
