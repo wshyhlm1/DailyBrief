@@ -494,24 +494,36 @@ function renderWeatherPill(report: DailyReport): string {
 }
 
 const STOCK_COMPANY_ZH: Record<string, string> = {
+  "688017": "绿的谐波",
   "AAOI": "应用光电",
+  "AMZN": "亚马逊",
   "ARM": "安谋",
   "AVGO": "博通",
   "BRK.A": "伯克希尔哈撒韦",
   "CIFR": "赛弗矿业",
+  "COIN": "Coinbase",
+  "CRCL": "Circle",
+  "CRWV": "CoreWeave",
   "EWY": "韩国股票基金",
   "GFS": "格芯",
   "GOOGL": "谷歌母公司",
+  "HOOD": "Robinhood",
   "IREN": "艾瑞斯算力",
   "JBL": "捷普",
   "LITE": "鲁门特姆",
+  "META": "Meta",
   "MU": "美光",
   "NBIS": "尼比乌斯云计算",
+  "NOK": "诺基亚",
   "NVDA": "英伟达",
   "NVTS": "纳微半导体",
+  "POET": "POET Technologies",
+  "RDDT": "Reddit",
+  "RPI": "Raspberry Pi",
   "SIVE": "赛弗斯半导体",
   "SNDK": "闪迪",
   "TSM": "台积电",
+  "XFAB": "X-FAB",
 };
 
 function containsCjk(s: string): boolean {
@@ -629,9 +641,14 @@ function renderSubContent(
     category === "finance" && sub.id === "x-posts" && report
       ? renderStockSummaryTable(report)
       : "";
+  const xEvidenceTitle =
+    category === "finance" && sub.id === "x-posts"
+      ? `<h2 class="selected-section-heading selected-evidence-heading">${REPORT_LOCALE === "en" ? "Source Feed" : "原文追踪"}</h2>`
+      : "";
   return `<div class="sub-content${isActive ? " active" : ""}" data-sub-content="${escapeHtml(sub.id)}" data-cat="${category}">
     ${xStockSummary}
     ${renderSourceTabs(category, sub.id, sub.sources)}
+    ${xEvidenceTitle}
     <div class="source-contents">
       ${sub.sources.map((s, i) => renderSourceContent(category, sub.id, s, i === 0)).join("\n")}
     </div>
@@ -688,10 +705,156 @@ function stockRows(report: DailyReport): StockTableRow[] {
   return rows.filter((r) => r.symbol && r.thesis);
 }
 
-function renderStockSummaryTable(report: DailyReport): string {
-  const rows = stockRows(report);
-  if (rows.length === 0) return "";
+function uniqueStockSymbols(rows: StockTableRow[]): Set<string> {
+  return new Set(rows.map((r) => r.symbol.toUpperCase()));
+}
 
+function matchingSymbols(rows: StockTableRow[], candidates: string[]): string {
+  const symbols = uniqueStockSymbols(rows);
+  const matches = candidates.filter((s) => symbols.has(s));
+  return (matches.length > 0 ? matches : candidates.slice(0, 4)).join(", ");
+}
+
+function selectedCoreThesis(rows: StockTableRow[]): string {
+  if (REPORT_LOCALE === "en") {
+    return "The latest Selected view is rotating from raw AI compute into scarce chokepoints: optical interconnects, CPO lasers, physical-AI components, and upstream infrastructure where small supply constraints can reprice quickly.";
+  }
+  const symbols = uniqueStockSymbols(rows);
+  const focus: string[] = [];
+  if (["AAOI", "SIVE", "LITE", "COHR", "AVGO", "SOI", "XFAB"].some((s) => symbols.has(s))) {
+    focus.push("光互连/CPO");
+  }
+  if (["688017", "RPI"].some((s) => symbols.has(s))) {
+    focus.push("Physical AI 与机器人零部件");
+  }
+  if (["NBIS", "GOOGL", "META", "AMZN", "MSFT", "AVGO"].some((s) => symbols.has(s))) {
+    focus.push("AI 基建资本开支");
+  }
+  if (["RDDT", "COIN", "HOOD", "CRCL"].some((s) => symbols.has(s))) {
+    focus.push("被低估的平台/交易弹性");
+  }
+  const focusText = focus.length > 0 ? focus.join("、") : "AI 上游稀缺瓶颈";
+  return `最新 Selected 观点继续围绕“未被充分定价的 chokepoint”展开，焦点从单纯算力扩展到 ${focusText}。阅读顺序建议先看赛道轮动，再看个股催化，最后回到原帖核对证据。`;
+}
+
+function selectedSector(row: StockTableRow): { label: string; tone: string } {
+  const symbol = row.symbol.toUpperCase();
+  const text = `${row.company ?? ""} ${row.thesis}`;
+  if (/AAOI|SIVE|LITE|COHR|CIEN|AVGO|MRVL|POET|SOI|XFAB|GFS|JBL/.test(symbol) || /光|CPO|互连|硅光|laser|photon/i.test(text)) {
+    return { label: REPORT_LOCALE === "en" ? "Optical / CPO" : "光互连/CPO", tone: "blue" };
+  }
+  if (/688017|RPI|TSLA|UBTECH|FIGURE/.test(symbol) || /机器人|physical AI|humanoid|robot/i.test(text)) {
+    return { label: REPORT_LOCALE === "en" ? "Physical AI" : "Physical AI", tone: "purple" };
+  }
+  if (/NBIS|NVDA|TSM|GOOGL|META|AMZN|MSFT|MU/.test(symbol) || /算力|云|capex|AI 基建/i.test(text)) {
+    return { label: REPORT_LOCALE === "en" ? "AI Infra" : "AI 基建", tone: "green" };
+  }
+  if (/RDDT|COIN|HOOD|CRCL/.test(symbol)) {
+    return { label: REPORT_LOCALE === "en" ? "Platform / Beta" : "平台/交易弹性", tone: "orange" };
+  }
+  return { label: REPORT_LOCALE === "en" ? "Watchlist" : "观察名单", tone: "slate" };
+}
+
+function selectedCatalystBadge(row: StockTableRow): { label: string; tone: string } {
+  const text = `${row.view} ${row.target} ${row.thesis}`;
+  if (/目标|target|PT|\$|\d+%|倍|triple|double/i.test(text)) {
+    return { label: REPORT_LOCALE === "en" ? "Repricing" : "重估", tone: "green" };
+  }
+  if (/风险|看空|short|bear|下行/i.test(text)) {
+    return { label: REPORT_LOCALE === "en" ? "Risk" : "风险", tone: "orange" };
+  }
+  if (/政策|CHIPS|法案|capex|订单|earnings|营收|需求/i.test(text)) {
+    return { label: REPORT_LOCALE === "en" ? "Catalyst" : "催化", tone: "blue" };
+  }
+  return { label: REPORT_LOCALE === "en" ? "Signal" : "信号", tone: stockViewTone(row.view) === "bull" ? "green" : "slate" };
+}
+
+function renderSelectedTimeline(rows: StockTableRow[]): string {
+  const symbols = uniqueStockSymbols(rows);
+  const stages = [
+    {
+      period: "2023-24",
+      title: REPORT_LOCALE === "en" ? "Compute / HBM" : "算力/HBM",
+      tickers: matchingSymbols(rows, ["NVDA", "TSM", "MU", "SMCI"]),
+      note: REPORT_LOCALE === "en" ? "validated" : "已验证",
+      state: "done",
+    },
+    {
+      period: "2025-26",
+      title: REPORT_LOCALE === "en" ? "Optical Interconnect" : "光互连",
+      tickers: matchingSymbols(rows, ["AAOI", "LITE", "COHR", "CIEN", "AVGO"]),
+      note: REPORT_LOCALE === "en" ? "repricing now" : "正在重估",
+      state: "active",
+    },
+    {
+      period: "2026-27",
+      title: REPORT_LOCALE === "en" ? "Physical AI" : "Physical AI/机器人",
+      tickers: matchingSymbols(rows, ["688017", "RPI", "TSLA", "UBTECH"]),
+      note: symbols.has("688017") || symbols.has("RPI") ? (REPORT_LOCALE === "en" ? "new signal" : "最新增量") : (REPORT_LOCALE === "en" ? "watch" : "观察"),
+      state: symbols.has("688017") || symbols.has("RPI") ? "active" : "watch",
+    },
+    {
+      period: "2027+",
+      title: REPORT_LOCALE === "en" ? "CPO / Materials" : "CPO/材料",
+      tickers: matchingSymbols(rows, ["SIVE", "SOI", "XFAB", "POET", "GFS"]),
+      note: REPORT_LOCALE === "en" ? "institutional buildout" : "机构潜伏期",
+      state: "future",
+    },
+  ];
+  return `<section class="selected-block">
+    <h2 class="selected-section-heading">${REPORT_LOCALE === "en" ? "Rotation Timeline" : "赛道轮动时间轴"}</h2>
+    <div class="selected-timeline">
+      ${stages
+        .map(
+          (stage) => `<article class="selected-timeline-card ${stage.state}">
+        <span class="timeline-period">${escapeHtml(stage.period)}</span>
+        <h3>${escapeHtml(stage.title)}</h3>
+        <p class="timeline-tickers">${escapeHtml(stage.tickers)}</p>
+        <p class="timeline-note">${escapeHtml(stage.note)}</p>
+      </article>`,
+        )
+        .join("")}
+    </div>
+  </section>`;
+}
+
+function renderSelectedSignalCards(rows: StockTableRow[]): string {
+  const cards = rows.slice(0, 6);
+  if (cards.length === 0) return "";
+  return `<section class="selected-block">
+    <h2 class="selected-section-heading">${REPORT_LOCALE === "en" ? "Key Signals" : "关键信号"}</h2>
+    <div class="selected-signal-grid">
+      ${cards
+        .map((row) => {
+          const sector = selectedSector(row);
+          const badge = selectedCatalystBadge(row);
+          const symbol = escapeHtml(row.symbol);
+          const symbolHtml = row.url
+            ? `<a href="${escapeHtml(row.url)}" target="_blank" rel="noopener noreferrer">${symbol}</a>`
+            : symbol;
+          const title = [symbolHtml, row.company ? escapeHtml(row.company) : ""]
+            .filter(Boolean)
+            .join(" · ");
+          return `<article class="selected-signal-card tone-${sector.tone}">
+        <div class="signal-card-head">
+          <span class="signal-tag">${escapeHtml(sector.label)}</span>
+          <span class="signal-badge badge-${badge.tone}">${escapeHtml(badge.label)}</span>
+        </div>
+        <h3>${title}</h3>
+        <p>${escapeHtml(row.thesis)}</p>
+        <div class="signal-meta">
+          ${renderStockView(row.view)}
+          <span>${escapeHtml(row.target)}</span>
+        </div>
+      </article>`;
+        })
+        .join("")}
+    </div>
+  </section>`;
+}
+
+function renderSelectedMatrix(rows: StockTableRow[]): string {
+  if (rows.length === 0) return "";
   const body = rows
     .map((r) => {
       const symbol = escapeHtml(r.symbol);
@@ -703,7 +866,6 @@ function renderStockSummaryTable(report: DailyReport): string {
         : "";
       return `<tr>
         <td class="stock-symbol-cell" data-label="${STR.stockSymbol}"><div class="stock-cell-value">${symbolHtml}${company}</div></td>
-        <td class="stock-source-cell" data-label="${STR.stockSource}"><div class="stock-cell-value">${escapeHtml(r.source)}</div></td>
         <td class="stock-view-cell" data-label="${STR.stockView}"><div class="stock-cell-value">${renderStockView(r.view)}</div></td>
         <td class="stock-target-cell" data-label="${STR.stockTarget}"><div class="stock-cell-value">${escapeHtml(r.target)}</div></td>
         <td class="stock-thesis-cell" data-label="${STR.stockThesis}"><div class="stock-cell-value">${escapeHtml(r.thesis)}</div></td>
@@ -711,14 +873,13 @@ function renderStockSummaryTable(report: DailyReport): string {
     })
     .join("");
 
-  return `<section class="stock-summary">
-    <h2 class="stock-summary-title">${STR.stockSummaryTitle}</h2>
+  return `<section class="selected-block selected-matrix">
+    <h2 class="selected-section-heading">${REPORT_LOCALE === "en" ? "Structured View Matrix" : "结构化观点矩阵"}</h2>
     <div class="stock-table-wrap">
       <table class="stock-table">
         <thead>
           <tr>
             <th>${STR.stockSymbol}</th>
-            <th>${STR.stockSource}</th>
             <th>${STR.stockView}</th>
             <th>${STR.stockTarget}</th>
             <th>${STR.stockThesis}</th>
@@ -727,6 +888,80 @@ function renderStockSummaryTable(report: DailyReport): string {
         <tbody>${body}</tbody>
       </table>
     </div>
+  </section>`;
+}
+
+function renderSelectedChokepoints(rows: StockTableRow[]): string {
+  const groups = [
+    {
+      label: REPORT_LOCALE === "en" ? "Optical / CPO" : "光互连/CPO",
+      tickers: matchingSymbols(rows, ["AAOI", "SIVE", "LITE", "COHR", "AVGO", "SOI", "XFAB"]),
+      note:
+        REPORT_LOCALE === "en"
+          ? "800G/1.6T demand and CPO laser scarcity remain the highest-signal bottleneck cluster."
+          : "800G/1.6T 需求与 CPO 激光供给稀缺仍是最高密度的瓶颈组合。",
+    },
+    {
+      label: REPORT_LOCALE === "en" ? "AI Capex" : "AI 资本开支",
+      tickers: matchingSymbols(rows, ["GOOGL", "META", "AMZN", "MSFT", "AVGO", "NBIS"]),
+      note:
+        REPORT_LOCALE === "en"
+          ? "Hyperscaler capex visibility pushes demand upstream into networking, optical modules, and neocloud capacity."
+          : "超大厂 capex 可见度继续向上游传导，带动网络、光模块与新云基建容量重估。",
+    },
+    {
+      label: REPORT_LOCALE === "en" ? "Physical AI" : "Physical AI",
+      tickers: matchingSymbols(rows, ["688017", "RPI", "TSLA", "UBTECH"]),
+      note:
+        REPORT_LOCALE === "en"
+          ? "Humanoid and robotics components are becoming the next physical-AI chokepoint map."
+          : "人形机器人零部件开始进入 Selected 观察核心，重点是量产后单机 BOM 占比与供应链控制力。",
+    },
+    {
+      label: REPORT_LOCALE === "en" ? "Platform Mispricing" : "平台错价",
+      tickers: matchingSymbols(rows, ["RDDT", "COIN", "HOOD", "CRCL"]),
+      note:
+        REPORT_LOCALE === "en"
+          ? "High-growth platforms and trading beta appear when narrative and fundamentals temporarily diverge."
+          : "当叙事与基本面短期错位时，高增长平台和交易弹性标的会被重新纳入观察。",
+    },
+  ];
+  return `<section class="selected-block">
+    <h2 class="selected-section-heading">${REPORT_LOCALE === "en" ? "Chokepoint Map" : "产业链 Chokepoint 追踪"}</h2>
+    <div class="selected-chokepoints">
+      ${groups
+        .map(
+          (group) => `<article class="chokepoint-row">
+        <div class="chokepoint-label">${escapeHtml(group.label)}</div>
+        <div class="chokepoint-tickers">${escapeHtml(group.tickers)}</div>
+        <div class="chokepoint-note">${escapeHtml(group.note)}</div>
+      </article>`,
+        )
+        .join("")}
+    </div>
+  </section>`;
+}
+
+function renderStockSummaryTable(report: DailyReport): string {
+  const rows = stockRows(report);
+  if (rows.length === 0) return "";
+
+  return `<section class="stock-summary selected-intel">
+    <div class="selected-hero">
+      <div>
+        <span class="selected-kicker">${REPORT_LOCALE === "en" ? "Selected Intelligence" : "精选情报 Selected Intelligence"}</span>
+        <h2>${STR.stockSummaryTitle}</h2>
+        <p>${escapeHtml(selectedCoreThesis(rows))}</p>
+      </div>
+      <div class="selected-hero-stats">
+        <span><strong>${rows.length}</strong>${REPORT_LOCALE === "en" ? "signals" : "条信号"}</span>
+        <span><strong>${matchingSymbols(rows, ["AAOI", "SIVE", "LITE", "AVGO"])}</strong>${REPORT_LOCALE === "en" ? "active cluster" : "活跃主线"}</span>
+      </div>
+    </div>
+    ${renderSelectedTimeline(rows)}
+    ${renderSelectedSignalCards(rows)}
+    ${renderSelectedChokepoints(rows)}
+    ${renderSelectedMatrix(rows)}
   </section>`;
 }
 
@@ -1085,32 +1320,254 @@ export function renderHtml(
     font-size: 0.8rem;
   }
 
-  /* ===== top stock summary ===== */
+  /* ===== Selected intelligence ===== */
   .stock-summary {
-    margin: 0.9rem 0 1.25rem;
-    padding: 1rem;
+    margin: 0.9rem 0 1.35rem;
+  }
+  .selected-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.2rem;
+    align-items: end;
+    padding: 1rem 1.15rem;
     background: var(--bg-elevated);
     border: 1px solid var(--rule);
     border-left: 4px solid var(--selected);
-    border-radius: 0.5rem;
+    border-radius: 0.55rem;
     box-shadow: var(--shadow-soft);
   }
-  .stock-summary-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    margin: 0 0 0.8rem;
-    letter-spacing: 0.05em;
+  .selected-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.35rem;
+    color: var(--selected);
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .selected-kicker::before { content: "📌"; letter-spacing: 0; }
+  .selected-hero h2 {
+    margin: 0;
+    font-size: 1.22rem;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+  .selected-hero p {
+    margin: 0.55rem 0 0;
+    color: var(--fg-soft);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  .selected-hero-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    min-width: 9.5rem;
+  }
+  .selected-hero-stats span {
+    display: block;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.45rem;
+    background: var(--card);
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+  .selected-hero-stats strong {
+    display: block;
+    margin-bottom: 0.08rem;
     color: var(--fg);
+    font-size: 0.96rem;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+  }
+  .selected-block {
+    margin-top: 1.05rem;
+  }
+  .selected-section-heading {
+    margin: 0 0 0.7rem;
+    padding-left: 0.7rem;
+    border-left: 4px solid var(--selected);
+    color: var(--fg);
+    font-size: 0.92rem;
+    font-weight: 750;
+    letter-spacing: 0;
+  }
+  .selected-evidence-heading { margin-top: 1.25rem; }
+  .selected-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+  .selected-timeline-card {
+    min-width: 0;
+    padding: 0.75rem 0.8rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--rule);
+    border-radius: 0.5rem;
+  }
+  .selected-timeline-card.done { border-top-color: #64748b; }
+  .selected-timeline-card.active {
+    border-top-color: #16a34a;
+    background: color-mix(in srgb, #dcfce7 46%, var(--bg-elevated));
+  }
+  .selected-timeline-card.future {
+    border-top-color: #7c3aed;
+    background: color-mix(in srgb, #ede9fe 42%, var(--bg-elevated));
+  }
+  .selected-timeline-card.watch {
+    border-top-color: #d97706;
+    background: color-mix(in srgb, #fef3c7 36%, var(--bg-elevated));
+  }
+  .timeline-period {
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .selected-timeline-card h3 {
+    margin: 0.2rem 0 0.2rem;
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+  .timeline-tickers {
+    margin: 0;
+    color: var(--fg);
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size: 0.76rem;
+    overflow-wrap: anywhere;
+  }
+  .timeline-note {
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+    font-size: 0.72rem;
+  }
+  .selected-signal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .selected-signal-card {
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--selected);
+    border-radius: 0.55rem;
+    background: var(--bg-elevated);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  }
+  .selected-signal-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  }
+  .selected-signal-card.tone-blue { border-left-color: #2563eb; }
+  .selected-signal-card.tone-green { border-left-color: #16a34a; }
+  .selected-signal-card.tone-orange { border-left-color: #d97706; }
+  .selected-signal-card.tone-purple { border-left-color: #7c3aed; }
+  .selected-signal-card.tone-slate { border-left-color: #64748b; }
+  .signal-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.55rem;
+  }
+  .signal-tag,
+  .signal-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.35rem;
+    padding: 0.16rem 0.46rem;
+    border-radius: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 750;
+    line-height: 1.25;
+  }
+  .signal-tag {
+    color: #1d4ed8;
+    background: rgba(37, 99, 235, 0.1);
+  }
+  .signal-badge.badge-green { color: #166534; background: rgba(22, 163, 74, 0.12); }
+  .signal-badge.badge-blue { color: #1d4ed8; background: rgba(37, 99, 235, 0.12); }
+  .signal-badge.badge-orange { color: #92400e; background: rgba(217, 119, 6, 0.14); }
+  .signal-badge.badge-slate { color: #334155; background: rgba(100, 116, 139, 0.13); }
+  .selected-signal-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .selected-signal-card h3 a {
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .selected-signal-card h3 a:hover { color: var(--link); text-decoration: underline; }
+  .selected-signal-card p {
+    margin: 0.55rem 0 0;
+    color: var(--fg-soft);
+    font-size: 0.86rem;
+    line-height: 1.62;
+  }
+  .signal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    margin-top: 0.75rem;
+    padding-top: 0.65rem;
+    border-top: 1px dashed var(--rule);
+    color: var(--muted);
+    font-size: 0.76rem;
+  }
+  .selected-chokepoints {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 0.55rem;
+    overflow: hidden;
+  }
+  .chokepoint-row {
+    display: grid;
+    grid-template-columns: 7.2rem 12rem minmax(0, 1fr);
+    gap: 0.8rem;
+    align-items: center;
+    padding: 0.75rem 0.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .chokepoint-row:last-child { border-bottom: none; }
+  .chokepoint-label {
+    font-size: 0.84rem;
+    font-weight: 750;
+    color: var(--fg);
+  }
+  .chokepoint-tickers {
+    color: var(--link);
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+  }
+  .chokepoint-note {
+    color: var(--fg-soft);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+  .selected-matrix .stock-table-wrap {
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
   }
   .stock-table-wrap {
     overflow-x: auto;
     border: 1px solid var(--rule);
     border-radius: 0.5rem;
-    background: var(--bg);
+    background: var(--bg-elevated);
   }
   .stock-table {
     width: 100%;
-    min-width: 760px;
+    min-width: 720px;
     border-collapse: collapse;
     font-size: 0.82rem;
     line-height: 1.45;
@@ -1185,6 +1642,16 @@ export function renderHtml(
     color: var(--fg);
   }
   .stock-thesis-cell { min-width: 18rem; }
+  @media (prefers-color-scheme: dark) {
+    .selected-timeline-card.active { background: rgba(22, 163, 74, 0.12); }
+    .selected-timeline-card.future { background: rgba(124, 58, 237, 0.14); }
+    .selected-timeline-card.watch { background: rgba(217, 119, 6, 0.13); }
+    .signal-tag,
+    .signal-badge.badge-blue { color: #93c5fd; }
+    .signal-badge.badge-green { color: #4ade80; }
+    .signal-badge.badge-orange { color: #fcd34d; }
+    .signal-badge.badge-slate { color: #cbd5e1; }
+  }
 
   /* ===== L2 sub-tabs ===== */
   .sub-tabs {
@@ -1591,7 +2058,39 @@ export function renderHtml(
       white-space: nowrap;
     }
     .tab .count { display: block; margin: 0.1rem 0 0; font-size: 0.68rem; }
-    .stock-summary { padding: 0.85rem; }
+    .selected-hero {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      padding: 0.9rem;
+    }
+    .selected-hero h2 { font-size: 1.08rem; }
+    .selected-hero p { font-size: 0.88rem; }
+    .selected-hero-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      min-width: 0;
+    }
+    .selected-timeline {
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 0.15rem;
+      scroll-snap-type: x proximity;
+    }
+    .selected-timeline-card {
+      min-width: 11.2rem;
+      scroll-snap-align: start;
+    }
+    .selected-signal-grid {
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+    }
+    .selected-signal-card { padding: 0.85rem; }
+    .signal-card-head { align-items: flex-start; }
+    .chokepoint-row {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+      padding: 0.8rem;
+    }
+    .chokepoint-tickers { font-size: 0.78rem; }
     .stock-table-wrap {
       overflow: visible;
       border: none;

@@ -22,6 +22,7 @@ export interface StockHighlight {
 }
 
 const SYMBOL_RE = /\$([A-Za-z]{1,5}(?:\.[A-Za-z]{1,2})?)/g;
+const CN_STOCK_CODE_RE = /(?:^|[^\d])(\d{6})(?:[^\d]|$)/g;
 
 const SYSTEM_PROMPT_ZH = `你是一名中文财经研究助理，负责把 X（Twitter）选股帖抽取成顶部速览表。
 
@@ -106,26 +107,57 @@ function normalizeSymbol(symbol: string): string {
 }
 
 function inferFallbackView(text: string): string {
-  if (/long|took positions?|position|compelling|conviction|bull|upside|看多|做多|持仓/i.test(text)) {
-    return REPORT_LOCALE === "en" ? "mentioned with positive/long framing" : "偏多/持仓语境";
+  if (/short(?:ing)? .*lost|underwater|infinite losses|空头.*亏|空头.*挤|逼空/i.test(text)) {
+    return REPORT_LOCALE === "en" ? "bullish / short squeeze" : "看多/空头挤压";
+  }
+  if (/long|averaging up|took positions?|position|compelling|conviction|bull|bullish|upside|mispriced|going much higher|double|triple|看多|看好|做多|持仓|加仓|低估|错价|重估|最青睐|方向性做多/i.test(text)) {
+    return REPORT_LOCALE === "en" ? "positive/long framing" : "看多";
   }
   if (/short|selloff|risk|cut|down|bear|看空|风险|减仓/i.test(text)) {
-    return REPORT_LOCALE === "en" ? "risk / downside mention" : "风险/下行提及";
+    return REPORT_LOCALE === "en" ? "risk / downside mention" : "风险提示";
   }
   return REPORT_LOCALE === "en" ? "mentioned; no clear view" : "仅提及/无明确观点";
 }
 
 function extractReferencePrices(text: string): string {
-  const matches = text.match(/~?\$[\d,.]+(?:\s?[-–]\s?\$?[\d,.]+)?(?:\s?[MBT])?|\b\d+(?:\.\d+)?%/gi) ?? [];
+  const matches =
+    text.match(
+      /~?\$[\d,.]+(?:\s?[-–]\s?\$?[\d,.]+)?(?:\s?[KMBT万亿]*)?|\b\d+(?:\.\d+)?%|\b\d+(?:\.\d+)?\s?[万亿]人民币/gi,
+    ) ?? [];
   return Array.from(new Set(matches)).slice(0, 4).join(", ");
+}
+
+function fallbackSymbols(text: string): string[] {
+  const symbols = new Set<string>();
+  for (const match of text.matchAll(SYMBOL_RE)) {
+    symbols.add(normalizeSymbol(match[1]));
+  }
+  for (const match of text.matchAll(CN_STOCK_CODE_RE)) {
+    symbols.add(normalizeSymbol(match[1]));
+  }
+  return Array.from(symbols);
+}
+
+function fallbackThesis(symbol: string, item: StockHighlightInput): string {
+  const source = (item.excerpt || item.title)
+    .replace(/\s+/g, " ")
+    .replace(/<[^>]+>/g, "")
+    .trim();
+  if (REPORT_LOCALE === "en") {
+    const snippet = source.slice(0, 260);
+    return snippet || `Source post mentions ${symbol}; open the original post for the full context.`;
+  }
+  const snippet = source.slice(0, 118);
+  return snippet
+    ? `${symbol}：${snippet}`
+    : `原帖提及 ${symbol}；请打开原文查看完整上下文。`;
 }
 
 function fallbackHighlights(items: StockHighlightInput[]): StockHighlight[] {
   const bySymbol = new Map<string, StockHighlight>();
   for (const item of items) {
     const text = `${item.title}\n${item.excerpt ?? ""}`;
-    for (const match of text.matchAll(SYMBOL_RE)) {
-      const symbol = normalizeSymbol(match[1]);
+    for (const symbol of fallbackSymbols(text)) {
       if (bySymbol.has(symbol)) continue;
       bySymbol.set(symbol, {
         symbol,
@@ -135,10 +167,7 @@ function fallbackHighlights(items: StockHighlightInput[]): StockHighlight[] {
         view: inferFallbackView(text),
         target_price: "",
         reference_price: extractReferencePrices(text),
-        thesis:
-          REPORT_LOCALE === "en"
-            ? (item.excerpt ?? item.title).slice(0, 220)
-            : `原帖提及 ${symbol}，结构化抽取失败；请查看原文确认完整观点。`,
+        thesis: fallbackThesis(symbol, item),
       });
     }
   }
