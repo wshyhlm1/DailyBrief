@@ -1,68 +1,269 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN" data-daily-brief-encrypted="v1">
 <head>
 <meta charset="utf-8">
-<title>daily-brief — archive</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Daily Brief · Locked</title>
 <style>
   :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    max-width: 720px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
-    line-height: 1.5;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 32rem),
+      linear-gradient(135deg, #f8fafc, #eef2ff);
+    color: #111827;
   }
-  h1 { margin-bottom: 0.2rem; font-size: 1.5rem; }
-  .meta { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
-  ul { list-style: none; padding: 0; }
-  li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+  .card {
+    width: min(100%, 28rem);
+    padding: 1.7rem;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
+    backdrop-filter: blur(14px);
+  }
+  .eyebrow {
+    margin: 0 0 0.35rem;
+    color: #64748b;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0;
+    font-size: 1.65rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+  .hint {
+    margin: 0.8rem 0 1.2rem;
+    color: #475569;
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+  label { display: block; margin-bottom: 0.4rem; font-size: 0.9rem; font-weight: 650; }
+  input[type="password"] {
+    width: 100%;
+    padding: 0.82rem 0.9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.7rem;
+    background: #fff;
+    color: #111827;
+    font: inherit;
+  }
+  input[type="password"]:focus {
+    outline: 2px solid rgba(37, 99, 235, 0.26);
+    border-color: #2563eb;
+  }
+  .remember {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
+    margin: 0.85rem 0 1rem;
+    color: #475569;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .remember input { width: 1rem; height: 1rem; }
+  button {
+    width: 100%;
+    border: 0;
+    border-radius: 0.7rem;
+    padding: 0.82rem 1rem;
+    background: #111827;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+  }
+  button:disabled { cursor: wait; opacity: 0.7; }
+  .status {
+    min-height: 1.4rem;
+    margin-top: 0.85rem;
+    color: #64748b;
+    font-size: 0.86rem;
+  }
+  .status.error { color: #b91c1c; }
+  .fine-print {
+    margin: 1rem 0 0;
+    color: #94a3b8;
+    font-size: 0.76rem;
+    line-height: 1.55;
   }
   @media (prefers-color-scheme: dark) {
-    li { border-bottom-color: #2a2a2a; }
-  }
-  li a { text-decoration: none; }
-  li a:hover { text-decoration: underline; }
-  .size { color: #999; font-size: 0.85rem; }
-  .top {
-    margin-bottom: 2rem;
-    padding: 0.75rem 1rem;
-    background: #f6f6f6;
-    border-radius: 6px;
-  }
-  @media (prefers-color-scheme: dark) {
-    .top { background: #1e1e1e; }
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 32rem),
+        linear-gradient(135deg, #020617, #111827);
+      color: #f8fafc;
+    }
+    .card {
+      border-color: rgba(148, 163, 184, 0.22);
+      background: rgba(15, 23, 42, 0.82);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+    .eyebrow,
+    .hint,
+    .remember,
+    .status { color: #cbd5e1; }
+    input[type="password"] {
+      border-color: #334155;
+      background: #020617;
+      color: #f8fafc;
+    }
+    button { background: #f8fafc; color: #020617; }
+    .fine-print { color: #94a3b8; }
+    .status.error { color: #fca5a5; }
   }
 </style>
 </head>
 <body>
-  <h1>daily-brief — archive</h1>
-  <p class="meta">16 reports · newest first · generated 2026-06-05</p>
-  <div class="top">
-    <a href="./index.html">→ Latest report (2026-06-06)</a>
-  </div>
-  <ul>
-      <li><a href="./2026-06-06/2026-06-06.html">2026-06-06</a> <span class="size">176 KB</span></li>
-      <li><a href="./2026-06-05/2026-06-05.html">2026-06-05</a> <span class="size">170 KB</span></li>
-      <li><a href="./2026-06-04/2026-06-04.html">2026-06-04</a> <span class="size">158 KB</span></li>
-      <li><a href="./2026-06-03/2026-06-03.html">2026-06-03</a> <span class="size">174 KB</span></li>
-      <li><a href="./2026-06-02/2026-06-02.html">2026-06-02</a> <span class="size">165 KB</span></li>
-      <li><a href="./2026-06-01/2026-06-01.html">2026-06-01</a> <span class="size">142 KB</span></li>
-      <li><a href="./2026-05-31/2026-05-31.html">2026-05-31</a> <span class="size">152 KB</span></li>
-      <li><a href="./2026-05-30/2026-05-30.html">2026-05-30</a> <span class="size">138 KB</span></li>
-      <li><a href="./2026-05-29/2026-05-29.html">2026-05-29</a> <span class="size">135 KB</span></li>
-      <li><a href="./2026-05-28/2026-05-28.html">2026-05-28</a> <span class="size">112 KB</span></li>
-      <li><a href="./2026-05-27/2026-05-27.html">2026-05-27</a> <span class="size">114 KB</span></li>
-      <li><a href="./2026-05-26/2026-05-26.html">2026-05-26</a> <span class="size">115 KB</span></li>
-      <li><a href="./2026-05-25/2026-05-25.html">2026-05-25</a> <span class="size">111 KB</span></li>
-      <li><a href="./2026-05-24/2026-05-24.html">2026-05-24</a> <span class="size">110 KB</span></li>
-      <li><a href="./2026-05-23/2026-05-23.html">2026-05-23</a> <span class="size">106 KB</span></li>
-      <li><a href="./2026-05-22/2026-05-22.html">2026-05-22</a> <span class="size">113 KB</span></li>
-  </ul>
+  <form class="card" id="unlock-form">
+    <p class="eyebrow">Daily Brief</p>
+    <h1>输入共享密码</h1>
+    <p class="hint">这份简报已在发布前静态加密。首次输入后，此设备会记住 45 天。</p>
+    <label for="password">密码</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" autofocus required>
+    <label class="remember">
+      <input id="remember" type="checkbox" checked>
+      <span>在这台设备上记住 45 天</span>
+    </label>
+    <button id="unlock-button" type="submit">打开简报</button>
+    <div class="status" id="status" aria-live="polite"></div>
+    <p class="fine-print">这是基础访问验证：密码不会发送到服务器，只在浏览器本地用于解密页面。</p>
+  </form>
+<script>
+(function () {
+  "use strict";
+  var encrypted = {"v":1,"sourcePath":"archive.html","rememberDays":45,"iterations":150000,"salt":"rLoV8H+B/KXNEv5ygKOYCw==","iv":"jNZlfJGYdlbvJmKB","payload":"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"};
+  var storageKey = "daily-brief:password:v1";
+  var form = document.getElementById("unlock-form");
+  var input = document.getElementById("password");
+  var remember = document.getElementById("remember");
+  var button = document.getElementById("unlock-button");
+  var status = document.getElementById("status");
+  var decoder = new TextDecoder();
+  var encoder = new TextEncoder();
+
+  function setStatus(message, isError) {
+    status.textContent = message || "";
+    status.classList.toggle("error", Boolean(isError));
+  }
+
+  function b64ToBytes(value) {
+    var binary = atob(value);
+    var bytes = new Uint8Array(binary.length);
+    for (var i = 0; i < binary.length; i += 1) {
+      bytes[i] = binary.charCodeAt(i);
+    }
+    return bytes;
+  }
+
+  function readRememberedPassword() {
+    try {
+      var raw = localStorage.getItem(storageKey);
+      if (!raw) return "";
+      var saved = JSON.parse(raw);
+      if (!saved || !saved.password || !saved.expiresAt || saved.expiresAt <= Date.now()) {
+        localStorage.removeItem(storageKey);
+        return "";
+      }
+      return saved.password;
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function rememberPassword(password) {
+    if (!remember.checked) return;
+    try {
+      localStorage.setItem(
+        storageKey,
+        JSON.stringify({
+          password: password,
+          expiresAt: Date.now() + encrypted.rememberDays * 24 * 60 * 60 * 1000,
+        }),
+      );
+    } catch (_) {
+      // Browsers can disable localStorage; unlocking should still work.
+    }
+  }
+
+  async function deriveKey(password) {
+    var baseKey = await crypto.subtle.importKey(
+      "raw",
+      encoder.encode(password),
+      "PBKDF2",
+      false,
+      ["deriveKey"],
+    );
+    return crypto.subtle.deriveKey(
+      {
+        name: "PBKDF2",
+        salt: b64ToBytes(encrypted.salt),
+        iterations: encrypted.iterations,
+        hash: "SHA-256",
+      },
+      baseKey,
+      { name: "AES-GCM", length: 256 },
+      false,
+      ["decrypt"],
+    );
+  }
+
+  async function decrypt(password) {
+    var key = await deriveKey(password);
+    var plain = await crypto.subtle.decrypt(
+      { name: "AES-GCM", iv: b64ToBytes(encrypted.iv) },
+      key,
+      b64ToBytes(encrypted.payload),
+    );
+    return decoder.decode(plain);
+  }
+
+  async function unlock(password, automatic) {
+    if (!window.crypto || !crypto.subtle) {
+      setStatus("当前浏览器不支持 Web Crypto，无法解密页面。", true);
+      return;
+    }
+    button.disabled = true;
+    setStatus(automatic ? "正在使用已保存的密码打开…" : "正在解密…", false);
+    try {
+      var html = await decrypt(password);
+      rememberPassword(password);
+      document.open();
+      document.write(html);
+      document.close();
+    } catch (error) {
+      if (automatic) {
+        try { localStorage.removeItem(storageKey); } catch (_) {}
+      }
+      button.disabled = false;
+      setStatus("密码不对，或者这份简报使用了不同的旧密码。", true);
+      input.focus();
+      input.select();
+    }
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    unlock(input.value, false);
+  });
+
+  var savedPassword = readRememberedPassword();
+  if (savedPassword) {
+    unlock(savedPassword, true);
+  }
+})();
+</script>
 </body>
 </html>
