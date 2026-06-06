@@ -112,9 +112,13 @@
    - `REPORT_TZ` —— IANA 时区名（默认 UTC），例 `Asia/Shanghai` / `America/Los_Angeles`。**同时影响触发时间和日期标签**
    - `REPORT_HOUR` —— 触发的小时（基于 `REPORT_TZ`），默认 `8`（早 8 点）。逗号分隔可多次触发，如 `8,18` = 早 8 + 晚 6
    - `REPORT_DAYS` —— 触发的星期（cron 风格，`0`=周日 ... `6`=周六），默认 `*`（每天）。例 `1-5` = 工作日；`1,3,5` = 周一三五
+   - `DAILY_BRIEF_PASSWORD` —— **放 Secrets 标签，不要放 Variables**。设置后发布到 Pages 的 HTML 会先静态加密；朋友首次打开输入这个共享密码，之后同一浏览器默认 45 天内直接打开
+   - `DAILY_BRIEF_REMEMBER_DAYS` —— 可选 Variable，默认 `45`，控制共享密码在浏览器本地记住多久
 6. **Actions 标签 → 选 "Daily Brief" workflow → Run workflow** 手动触发一次
 
 跑完后报告在 `https://<你的用户名>.github.io/<repo-名字>/`。之后**默认每天 `REPORT_TZ` 时区的 08:00 自动更新**（不设 `REPORT_TZ` 就是 UTC 08:00）。
+
+> 🔐 **轻量密码门**：`DAILY_BRIEF_PASSWORD` 不是 GitHub Pages 登录，而是构建时把 `index.html`、`archive.html` 和每日归档页用 AES-GCM 加密成静态页面。密码不会发到服务器；验证通过后存在访问者浏览器的 localStorage，到期自动失效。它适合“别被随手传播/搜索引擎发现”，不适合承载真正敏感信息。
 
 > ⏰ **触发机制**：GitHub Actions 的 cron 只接受 UTC，所以工作流 cron 设置为**每小时跑一次**，里面有一个 `gate` 任务用 `REPORT_TZ` 把当前小时和 `REPORT_HOUR/REPORT_DAYS` 对照——匹配才往下跑 build，否则秒退。这样不论你在哪个时区都能精准命中本地时间，**夏令时也自动跟着切换**（IANA 时区数据库内置）。
 
@@ -141,6 +145,7 @@
 - **第一次跑完才能选 Pages source** —— Pages 设置页要求选已存在的分支，但 `gh-pages` 是首次 workflow 跑成功后才创建出来。顺序：配 secret → 触发 workflow → 跑完 → 回 Settings → Pages 选 `gh-pages`
 - **Action 红 X 怎么看具体原因** —— 点失败的 build → 左边列出每个 step → 找有红 X 的那步点开看 log。最常见两类：`401/402` = API key 拼错或没余额；`403` = workflow permissions 没设成 Read and write
 - **跑了 30 秒就挂** —— 多半是 secret/variable 没配对（光填了 secret 没填 `LLM_BACKEND` variable）或者 LLM API 返 400。看 step "Generate today's report" 的 log
+- **设置了密码但页面还是直接打开** —— 确认名字是 Actions **Secret** `DAILY_BRIEF_PASSWORD`，然后重新 Run workflow；旧的浏览器缓存可以强刷一次
 
 ### B. 本地一键装
 
@@ -571,9 +576,13 @@ MIT
    - `REPORT_TZ` — IANA timezone name (default UTC); e.g. `Asia/Shanghai` / `America/Los_Angeles`. **Drives both the trigger time and the date label.**
    - `REPORT_HOUR` — hour(s) to fire in `REPORT_TZ`, default `8` (08:00). Comma-separated for multiple, e.g. `8,18` = 8 AM and 6 PM
    - `REPORT_DAYS` — day-of-week filter (cron-style, `0`=Sunday ... `6`=Saturday), default `*` (every day). E.g. `1-5` = weekdays; `1,3,5` = Mon/Wed/Fri
+   - `DAILY_BRIEF_PASSWORD` — add this as an Actions **Secret**, not a Variable. When set, the published Pages HTML is statically encrypted; visitors enter the shared password once and the same browser opens directly for 45 days by default
+   - `DAILY_BRIEF_REMEMBER_DAYS` — optional Variable, default `45`, controls how long the browser remembers the shared password
 6. **Actions tab → "Daily Brief" workflow → Run workflow** to trigger manually for the first time
 
 Once the workflow turns green, your report lives at `https://<your-username>.github.io/<repo-name>/`. After that, **it refreshes daily at 08:00 in `REPORT_TZ`** (or 08:00 UTC if `REPORT_TZ` is unset).
+
+> 🔐 **Lightweight password gate**: `DAILY_BRIEF_PASSWORD` is not GitHub Pages auth. During `build-site`, `index.html`, `archive.html`, and each daily report are AES-GCM encrypted into static unlock pages. The password is not sent to a server; after a successful unlock it is kept in the visitor's browser localStorage until it expires. This is good for “don't spread casually / don't index it”, not for highly sensitive data.
 
 > ⏰ **How the schedule works**: GitHub Actions cron is UTC-only, so the workflow runs **hourly** and uses a `gate` job to check if the current hour in `REPORT_TZ` matches `REPORT_HOUR` / `REPORT_DAYS`. If so, the build job proceeds; otherwise it exits in seconds. This lets the schedule track any local timezone precisely, and **handles DST transitions automatically** (via the IANA tz database).
 
@@ -600,6 +609,7 @@ If you just want the default (08:00 local daily), **set only `REPORT_TZ`** (e.g.
 - **Pages source dropdown doesn't show `gh-pages`** — that branch only exists after the first successful workflow run. Order: configure secret → trigger workflow → wait for green → go back to Settings → Pages.
 - **Where to read a failed run** — Actions tab → click the red X → left sidebar lists each step → click the failing one to expand its log. Most common causes: `401`/`402` (API key wrong or out of credit), `403` (workflow permissions still set to "Read only").
 - **Fails after ~30 seconds** — usually a secret/variable mismatch (added a secret but didn't add the matching `LLM_BACKEND` variable) or the LLM API returned 400. Check the "Generate today's report" step.
+- **Set a password but the page still opens directly** — make sure the name is the Actions **Secret** `DAILY_BRIEF_PASSWORD`, then rerun the workflow; hard-refresh if your browser cached the old page.
 
 ### B. Local one-liner install
 

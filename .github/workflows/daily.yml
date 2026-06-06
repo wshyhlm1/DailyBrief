@@ -276,6 +276,9 @@ jobs:
         run: npm run daily
 
       - name: Build static site (index + archive)
+        env:
+          DAILY_BRIEF_PASSWORD: ${{ secrets.DAILY_BRIEF_PASSWORD }}
+          DAILY_BRIEF_REMEMBER_DAYS: ${{ vars.DAILY_BRIEF_REMEMBER_DAYS || '45' }}
         run: npm run build-site
 
       - name: Publish to gh-pages
