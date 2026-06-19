@@ -118,7 +118,9 @@
 
 跑完后报告在 `https://<你的用户名>.github.io/<repo-名字>/`。之后**默认每天 `REPORT_TZ` 时区的 08:00 自动更新**（不设 `REPORT_TZ` 就是 UTC 08:00）。
 
-> 🔐 **轻量密码门**：`DAILY_BRIEF_PASSWORD` 不是 GitHub Pages 登录，而是构建时把 `index.html`、`archive.html` 和每日归档页用 AES-GCM 加密成静态页面。密码不会发到服务器；验证通过后存在访问者浏览器的 localStorage，到期自动失效。它适合“别被随手传播/搜索引擎发现”，不适合承载真正敏感信息。
+历史归档页会按“年 → 月”组织日报，并提供跨日报全文搜索。可输入普通关键词、公司名称或股票代码（如 `NVDA` / `$NVDA`），结果会返回匹配日期、内容片段和对应日报链接。搜索索引按需加载，并在启用共享密码时使用同一密码加密。
+
+> 🔐 **轻量密码门**：`DAILY_BRIEF_PASSWORD` 不是 GitHub Pages 登录，而是构建时把 `index.html`、`archive.html`、每日归档页和跨日报搜索索引用 AES-GCM 加密。密码不会发到服务器；验证通过后存在访问者浏览器的 localStorage，到期自动失效。它适合“别被随手传播/搜索引擎发现”，不适合承载真正敏感信息。
 
 > ⏰ **触发机制**：GitHub Actions 的 cron 只接受 UTC，所以工作流 cron 设置为**每小时跑一次**，里面有一个 `gate` 任务用 `REPORT_TZ` 把当前小时和 `REPORT_HOUR/REPORT_DAYS` 对照——匹配才往下跑 build，否则秒退。这样不论你在哪个时区都能精准命中本地时间，**夏令时也自动跟着切换**（IANA 时区数据库内置）。
 
@@ -582,7 +584,9 @@ MIT
 
 Once the workflow turns green, your report lives at `https://<your-username>.github.io/<repo-name>/`. After that, **it refreshes daily at 08:00 in `REPORT_TZ`** (or 08:00 UTC if `REPORT_TZ` is unset).
 
-> 🔐 **Lightweight password gate**: `DAILY_BRIEF_PASSWORD` is not GitHub Pages auth. During `build-site`, `index.html`, `archive.html`, and each daily report are AES-GCM encrypted into static unlock pages. The password is not sent to a server; after a successful unlock it is kept in the visitor's browser localStorage until it expires. This is good for “don't spread casually / don't index it”, not for highly sensitive data.
+The archive groups reports by year and month and provides full-text search across reports. Search for a keyword, company name, or ticker such as `NVDA` / `$NVDA` to get matching dates, snippets, and report links. The index loads on demand and is encrypted with the same shared password when password protection is enabled.
+
+> 🔐 **Lightweight password gate**: `DAILY_BRIEF_PASSWORD` is not GitHub Pages auth. During `build-site`, `index.html`, `archive.html`, each daily report, and the cross-report search index are encrypted with AES-GCM. The password is not sent to a server; after a successful unlock it is kept in the visitor's browser localStorage until it expires. This is good for “don't spread casually / don't index it”, not for highly sensitive data.
 
 > ⏰ **How the schedule works**: GitHub Actions cron is UTC-only, so the workflow runs **hourly** and uses a `gate` job to check if the current hour in `REPORT_TZ` matches `REPORT_HOUR` / `REPORT_DAYS`. If so, the build job proceeds; otherwise it exits in seconds. This lets the schedule track any local timezone precisely, and **handles DST transitions automatically** (via the IANA tz database).
 
