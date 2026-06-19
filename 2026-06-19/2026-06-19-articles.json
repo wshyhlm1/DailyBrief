@@ -6,176 +6,176 @@
       "title": "google-research/timesfm",
       "url": "https://github.com/google-research/timesfm",
       "excerpt": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
-      "meta": "Python · ★ 23,109 · 🍴 2,213 · 📈 858 stars today",
+      "meta": "Python · ★ 23,133 · 🍴 2,216 · 📈 844 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "TimesFM 是 Google Research 开源的时间序列基础模型，专为高精度预测设计。采用预训练架构，无需微调即可实现跨领域零样本推断。适用于金融量化、供应链及 IoT 监控，为算法工程师提供开箱即用的时序分析工具。"
+      "summary": "Google Research 预训练时序基础模型，解决传统预测需针对特定任务微调的痛点。基于 Transformer 架构支持零样本推理，开箱即用。适用于金融零售销量预估、物联网流量监控，无需额外训练即可实现高精度时序预测。"
     },
     {
       "sourceId": "github-trending",
       "title": "n0-computer/iroh",
       "url": "https://github.com/n0-computer/iroh",
       "excerpt": "IP addresses break, dial keys instead. Modular networking stack in Rust.",
-      "meta": "Rust · ★ 9,996 · 🍴 461 · 📈 369 stars today",
+      "meta": "Rust · ★ 9,998 · 🍴 461 · 📈 369 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "iroh 是基于 Rust 构建的模块化网络通信栈，摒弃易失效的 IP 寻址，改用持久化密钥进行端到端连接。内置 NAT 穿透与加密传输，解决复杂网络直连难题。适用于 P2P 应用、分布式系统及物联网安全通信开发。"
+      "summary": "Rust 编写的模块化网络栈，摒弃易中断的 IP 寻址，采用密钥直连提升连接可靠性。适用于 P2P 应用与分布式系统，开发者可将其嵌入实现高容错、低延迟的端到端数据传输与去中心化节点发现。"
     },
     {
       "sourceId": "github-trending",
       "title": "freeCodeCamp/freeCodeCamp",
       "url": "https://github.com/freeCodeCamp/freeCodeCamp",
       "excerpt": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
-      "meta": "TypeScript · ★ 449,529 · 🍴 45,125 · 📈 417 stars today",
+      "meta": "TypeScript · ★ 449,534 · 🍴 45,127 · 📈 417 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "freeCodeCamp 是知名开源编程教育平台，提供涵盖前端、数据结构与机器学习的实战课程。通过交互式编码挑战与开源贡献，帮助学习者低成本掌握计算机科学核心技能。适合自学者与转行开发者用于体系化技能构建。"
+      "summary": "知名编程学习平台开源代码库，提供数学、编程与计科完整免费课程。适合零基础转行者与学生，通过交互式练习与实战项目系统掌握前端开发与算法数据结构，助力求职与工程能力提升。"
     },
     {
       "sourceId": "github-trending",
       "title": "obra/superpowers",
       "url": "https://github.com/obra/superpowers",
       "excerpt": "An agentic skills framework & software development methodology that works.",
-      "meta": "Shell · ★ 232,374 · 🍴 20,642 · 📈 1,435 stars today",
+      "meta": "Shell · ★ 232,387 · 🍴 20,643 · 📈 1,429 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Superpowers 是面向智能体开发的技能框架与工程方法论，旨在规范 AI 代理工作流。通过模块化封装与标准化协议，解决多智能体协同中的代码一致性问题。适用于 AI 辅助研发团队、自动化测试及复杂任务编排场景。"
+      "summary": "AI Agent 技能框架与配套开发方法论，解决大模型复杂任务中能力发散与不可控问题。通过标准化技能定义与工作流编排，帮助构建可复用自动化编程工具，适用于规模化集成 AI 辅助开发的企业项目。"
     },
     {
       "sourceId": "github-trending",
       "title": "zai-org/GLM-5",
       "url": "https://github.com/zai-org/GLM-5",
       "excerpt": "GLM-5: From Vibe Coding to Agentic Engineering",
-      "meta": "★ 4,107 · 🍴 429 · 📈 286 stars today",
+      "meta": "★ 4,115 · 🍴 429 · 📈 202 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "GLM-5 是智谱 AI 推出的新一代大语言模型，聚焦向智能体工程化升级。强化代码生成、逻辑推理与自主规划，支持工具调用与多轮迭代。面向软件工程师，用于构建高可靠的自动化编程助手与企业级 Agentic 工作流。"
+      "summary": "大语言模型，推动开发范式从直觉提示向结构化智能体工程演进。具备强代码生成、逻辑推理与工具调用能力，适合全栈开发者构建自动化工作流、复杂业务应用及企业级 AI 解决方案。"
     },
     {
       "sourceId": "github-trending",
       "title": "DeusData/codebase-memory-mcp",
       "url": "https://github.com/DeusData/codebase-memory-mcp",
       "excerpt": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
-      "meta": "C · ★ 6,985 · 🍴 563 · 📈 2,308 stars today",
+      "meta": "C · ★ 7,002 · 🍴 563 · 📈 2,322 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "codebase-memory-mcp 是高性能代码智能 MCP 服务器，将多语言代码库毫秒级索引为持久化知识图谱。采用单二进制部署与亚毫秒查询优化，大幅降低 LLM 上下文开销。为 AI 编程助手提供精准的跨文件代码检索。"
+      "summary": "高性能代码智能 MCP 服务端，毫秒级将代码库索引为持久化知识图谱。支持百余种语言与亚毫秒查询，大幅降低 LLM Token 消耗，适用于 AI 编码助手、IDE 插件与自动化代码审计。"
     },
     {
       "sourceId": "github-trending",
       "title": "yifanfeng97/Hyper-Extract",
       "url": "https://github.com/yifanfeng97/Hyper-Extract",
       "excerpt": "Transform unstructured text into structured knowledge with LLMs. Graphs, hypergraphs, and spatio-temporal extractions — with one command.",
-      "meta": "Python · ★ 1,747 · 🍴 201 · 📈 124 stars today",
+      "meta": "Python · ★ 1,755 · 🍴 202 · 📈 124 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Hyper-Extract 基于 LLM 实现非结构化文本到结构化知识的一键转换，支持图、超图及时空关系抽取。优化解析流程以解决复杂文本结构丢失问题。适用于 NLP 研究员与知识图谱构建场景，快速沉淀行业语料与关系数据。"
+      "summary": "基于大模型的非结构化文本转结构化数据工具，一键提取知识图谱、超图及时空关系。解决传统抽取规则复杂、泛化差难题，适用于情报分析、舆情监控与知识管理系统，加速数据清洗流程。"
     },
     {
       "sourceId": "github-trending",
       "title": "alibaba/zvec",
       "url": "https://github.com/alibaba/zvec",
       "excerpt": "A lightweight, lightning-fast, in-process vector database",
-      "meta": "C++ · ★ 11,203 · 🍴 648 · 📈 344 stars today",
+      "meta": "C++ · ★ 11,208 · 🍴 649 · 📈 259 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "zvec 是阿里巴巴开源的轻量级嵌入式向量数据库，以进程内方式运行，无需独立服务。凭借零拷贝架构与 SIMD 优化，实现微秒级检索与极低内存占用。适合边缘设备、本地 AI 应用及对延迟敏感的 RAG 系统开发者。"
+      "summary": "阿里开源轻量级进程内向量数据库，以低内存开销实现闪电级相似度检索。无需独立部署外部服务，直接嵌入应用进程。适用于推荐系统召回、大模型本地 RAG 知识库与特征匹配等低延迟场景。"
     },
     {
       "sourceId": "github-trending",
       "title": "withastro/flue",
       "url": "https://github.com/withastro/flue",
       "excerpt": "The sandbox agent framework.",
-      "meta": "TypeScript · ★ 5,482 · 🍴 299 · 📈 164 stars today",
+      "meta": "TypeScript · ★ 5,489 · 🍴 299 · 📈 162 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Flue 是专为 AI 代理设计的沙盒执行框架，提供安全隔离的运行环境。通过容器化与动态权限管控，防范模型生成代码带来的越权与环境风险。适用于 AI 编码工具、自动化测试及需安全执行脚本的 SaaS 服务。"
+      "summary": "专为 AI 智能体设计的沙箱运行框架，提供安全隔离执行环境与标准化工具链。解决 Agent 在不可信代码执行与网络请求时的安全隐患，适用于自动化测试、代码生成验证及权限严格的 AI 部署。"
     },
     {
       "sourceId": "github-trending",
       "title": "Kilo-Org/kilocode",
       "url": "https://github.com/Kilo-Org/kilocode",
       "excerpt": "Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent.",
-      "meta": "TypeScript · ★ 22,095 · 🍴 2,705 · 📈 1,339 stars today",
+      "meta": "TypeScript · ★ 22,109 · 🍴 2,705 · 📈 1,345 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "KiloCode 是一站式智能体开发平台，集成代码生成、版本管理与自动化部署。作为开源 AI 编程代理，支持复杂项目搭建与多步任务编排，减少上下文切换。面向全栈工程师，显著提升代码构建、迭代与交付效率。"
+      "summary": "一站式智能体工程平台，集成开源 AI 编程助手。覆盖代码生成、调试、版本控制与部署迭代全流程，解决工具链割裂问题。适合全栈团队加速产品原型构建、持续集成与敏捷开发。"
     },
     {
       "sourceId": "github-trending",
       "title": "makeplane/plane",
       "url": "https://github.com/makeplane/plane",
       "excerpt": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
-      "meta": "TypeScript · ★ 51,815 · 🍴 4,599 · 📈 610 stars today",
+      "meta": "TypeScript · ★ 51,824 · 🍴 4,599 · 📈 613 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Plane 是现代化开源项目管理平台，旨在替代 Jira 与 Linear。提供任务看板、敏捷迭代与文档协作，采用模块化架构降低私有化部署门槛。适合技术团队与创业公司，解决数据不透明问题，支持高效敏捷开发。"
+      "summary": "现代化开源项目管理平台，作为商业工具平替提供任务分配、迭代冲刺、文档管理与需求分类工作流。支持私有化部署，适合中小技术团队与开源社区，在统一看板中高效推进敏捷开发。"
     },
     {
       "sourceId": "github-trending",
       "title": "Kong/insomnia",
       "url": "https://github.com/Kong/insomnia",
       "excerpt": "The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.",
-      "meta": "TypeScript · ★ 38,665 · 🍴 2,291 · 📈 13 stars today",
+      "meta": "TypeScript · ★ 38,671 · 🍴 2,291 · 📈 18 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Insomnia 是跨平台开源 API 调试客户端，全面支持 REST、GraphQL、gRPC 等协议。提供可视化请求构建、自动化测试与多环境管理，支持云端同步与 Git 集成。为前后端开发者提供高效的接口联调与协作方案。"
+      "summary": "开源跨平台 API 调试客户端，全面支持 GraphQL、REST、WebSockets 等协议。提供云同步与 Git 集成，解决接口调试碎片化痛点，前后端开发者可在统一界面完成请求校验与自动化文档管理。"
     },
     {
       "sourceId": "github-trending",
       "title": "Universal-Debloater-Alliance/universal-android-debloater-next-generation",
       "url": "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation",
       "excerpt": "Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices. Improve your privacy, the security and battery life of your device.",
-      "meta": "Rust · ★ 7,913 · 🍴 339 · 📈 247 stars today",
+      "meta": "Rust · ★ 7,916 · 🍴 339 · 📈 244 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "UAD-ng 是基于 Rust 与 ADB 的跨平台安卓精简工具，提供可视化界面。无需 Root 即可安全禁用厂商预装应用，释放内存并阻断数据上报。适用于普通用户，有效延长设备续航、提升隐私安全与系统流畅度。"
+      "summary": "基于 Rust 的跨平台安卓精简 GUI 工具，免 Root 通过 ADB 安全卸载预装软件。解决系统臃肿耗电与隐私泄露问题，普通用户可快速优化手机性能、提升续航并降低后台追踪风险。"
     },
     {
       "sourceId": "github-trending",
       "title": "dotnet/aspnetcore",
       "url": "https://github.com/dotnet/aspnetcore",
       "excerpt": "ASP.NET Core is a cross-platform .NET framework for building modern cloud-based web applications on Windows, Mac, or Linux.",
-      "meta": "C# · ★ 38,091 · 🍴 10,709 · 📈 22 stars today",
+      "meta": "C# · ★ 38,094 · 🍴 10,709 · 📈 14 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "ASP.NET Core 是跨平台高性能 Web 框架，专为构建云原生应用设计。支持 MVC、微服务与 gRPC，内置依赖注入与 Kestrel 服务器。广泛应用于企业后端与高并发 API，解决传统框架部署冗余与跨平台兼容性难题。"
+      "summary": "微软开源跨平台 Web 框架，专为云原生场景优化。提供高性能中间件与依赖注入体系，解决传统环境绑定与高并发瓶颈。适用于构建企业级微服务、实时通信应用及现代化后端系统。"
     },
     {
       "sourceId": "github-trending",
       "title": "owainlewis/awesome-artificial-intelligence",
       "url": "https://github.com/owainlewis/awesome-artificial-intelligence",
       "excerpt": "A curated list of Artificial Intelligence (AI) courses, books, video lectures and papers.",
-      "meta": "★ 14,373 · 🍴 2,334 · 📈 33 stars today",
+      "meta": "★ 14,383 · 🍴 2,334 · 📈 40 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "该高质量 AI 资源导航列表系统收录顶尖高校课程、经典教材与前沿论文。按机器学习与深度学习等方向分类整理，帮助研究者快速定位权威资料，解决知识迭代快与资源分散问题，适合作为入门至进阶的学习索引。"
+      "summary": "AI 领域高质量学习资源清单，系统收录课程、教材、讲座与核心论文。解决初学者资料分散、质量参差不齐痛点，为算法工程师、数据科学家与师生提供一站式知识导航，覆盖主流 AI 方向。"
     },
     {
       "sourceId": "github-trending",
       "title": "Lightricks/LTX-2",
       "url": "https://github.com/Lightricks/LTX-2",
       "excerpt": "Official Python inference and LoRA trainer package for the LTX-2 audio–video generative model.",
-      "meta": "Python · ★ 7,482 · 🍴 1,207 · 📈 47 stars today",
+      "meta": "Python · ★ 7,486 · 🍴 1,207 · 📈 51 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "LTX-2 是开源的音视频生成模型官方套件，提供高效推理管线与 LoRA 微调工具。采用流匹配架构，支持文本与音频驱动的高质量视频生成，降低自定义训练门槛。适用于 AIGC 创作者、视频后期团队与多媒体研究。"
+      "summary": "LTX-2 音视频生成模型官方 Python 包，提供高效生成管线与 LoRA 微调方案。解决商业多模态模型闭源、定制成本高问题，适用于数字内容创作、短视频自动生成及垂直领域定制研究。"
     },
     {
       "sourceId": "github-trending",
       "title": "LibreTranslate/LibreTranslate",
       "url": "https://github.com/LibreTranslate/LibreTranslate",
       "excerpt": "Free and Open Source Machine Translation API. Self-hosted, offline capable and easy to setup.",
-      "meta": "Python · ★ 14,964 · 🍴 1,531 · 📈 83 stars today",
+      "meta": "Python · ★ 14,969 · 🍴 1,532 · 📈 51 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "LibreTranslate 是免费开源机器翻译 API，支持 30 余种语言互译。采用自部署架构，支持离线运行与 Docker 快速搭建，规避第三方服务数据泄露风险。适合企业内网集成、隐私敏感应用及离线翻译工具开发。"
+      "summary": "免费开源机器翻译 API，支持私有化部署与离线运行。彻底消除对商业接口依赖与数据隐私顾虑，提供标准 RESTful 接口。适合内网翻译企业、独立开发者及注重数据合规的 AI 应用集成。"
     },
     {
       "sourceId": "v2ex-hot",
       "title": "🔥「送码」高颜值的截图/录屏应用，开发会喜欢吗？",
       "url": "https://www.v2ex.com/t/1221276",
-      "excerpt": "136 回复 · Apple 节点",
+      "excerpt": "138 回复 · Apple 节点",
       "publishedAt": "2026-06-18T03:08:20.000Z",
       "category": "tech",
       "source": "V2EX"
@@ -236,19 +236,19 @@
     },
     {
       "sourceId": "v2ex-hot",
-      "title": "把电脑伪装成电视，用 DLNA 投屏拿到视频号直播流地址",
-      "url": "https://www.v2ex.com/t/1206122",
-      "excerpt": "17 回复 · Python 节点",
-      "publishedAt": "2026-04-15T08:34:50.000Z",
+      "title": "目前 glm 的 coding plan 抢不到，还有哪些大厂的含有 glm5.2 的套餐值得买的？",
+      "url": "https://www.v2ex.com/t/1221398",
+      "excerpt": "17 回复 · 程序员 节点",
+      "publishedAt": "2026-06-18T09:40:56.000Z",
       "category": "tech",
       "source": "V2EX"
     },
     {
       "sourceId": "v2ex-hot",
-      "title": "目前 glm 的 coding plan 抢不到，还有哪些大厂的含有 glm5.2 的套餐值得买的？",
-      "url": "https://www.v2ex.com/t/1221398",
-      "excerpt": "16 回复 · 程序员 节点",
-      "publishedAt": "2026-06-18T09:40:56.000Z",
+      "title": "把电脑伪装成电视，用 DLNA 投屏拿到视频号直播流地址",
+      "url": "https://www.v2ex.com/t/1206122",
+      "excerpt": "17 回复 · Python 节点",
+      "publishedAt": "2026-04-15T08:34:50.000Z",
       "category": "tech",
       "source": "V2EX"
     },
@@ -308,6 +308,15 @@
     },
     {
       "sourceId": "v2ex-hot",
+      "title": "一个自用的 golang 的 web 应用要部署到公网，国内哪个云服务最便宜",
+      "url": "https://www.v2ex.com/t/1221447",
+      "excerpt": "7 回复 · 程序员 节点",
+      "publishedAt": "2026-06-18T14:58:58.000Z",
+      "category": "tech",
+      "source": "V2EX"
+    },
+    {
+      "sourceId": "v2ex-hot",
       "title": "小白求推荐人工智能学习的网课",
       "url": "https://www.v2ex.com/t/1214517",
       "excerpt": "7 回复 · Python 节点",
@@ -330,15 +339,6 @@
       "url": "https://www.v2ex.com/t/1216920",
       "excerpt": "7 回复 · Linux 节点",
       "publishedAt": "2026-06-01T02:04:55.000Z",
-      "category": "tech",
-      "source": "V2EX"
-    },
-    {
-      "sourceId": "v2ex-hot",
-      "title": "一个自用的 golang 的 web 应用要部署到公网，国内哪个云服务最便宜",
-      "url": "https://www.v2ex.com/t/1221447",
-      "excerpt": "6 回复 · 程序员 节点",
-      "publishedAt": "2026-06-18T14:58:58.000Z",
       "category": "tech",
       "source": "V2EX"
     },
@@ -443,15 +443,6 @@
     },
     {
       "sourceId": "linuxdo",
-      "title": "【开源已死？】AI时代做开源项目真的寒心，被人用AI“洗稿”重构发了外网",
-      "url": "https://linux.do/t/topic/2425564",
-      "excerpt": "今天早上刚睡醒，看到有佬友私信我，说外网有个叫 CodexPro 的 MCP 项目跟我之前写的Coding-Tools-MCP项目不能说一模一样，只能说宛如双胞胎，实在太像了。我心想不至于吧，点进去一看，好家伙，天塌了。 上个月 22 号和 27 号，我在Linux.do发了两个帖子，给各位佬友介绍了如何用 Coding-Tools-MCP 接入 ChatGPT 和 Claude 网页版，实现突破限制无限 Vibe Coding 的玩法，这两个帖子热度还挺高，总共积累了4.4k+3.1k=7.5k的浏览量： 【首发】白嫖Anthropic，免费用户也能够使用Claude进行编程… Codex ",
-      "publishedAt": "2026-06-17T23:11:57.000Z",
-      "category": "tech",
-      "source": "LinuxDo"
-    },
-    {
-      "sourceId": "linuxdo",
       "title": "明天上班的兄弟们有福了",
       "url": "https://linux.do/t/topic/2429504",
       "excerpt": "明天还上班的兄弟们有福了 明天没人用模型 写代码和出图都嘎嘎快 27 个帖子 - 26 位参与者 阅读完整话题",
@@ -479,19 +470,19 @@
     },
     {
       "sourceId": "linuxdo",
-      "title": "[暑期实习]坐标阿里，招几个暑期实习生的师弟",
-      "url": "https://linux.do/t/topic/2427662",
-      "excerpt": "佬们，我们组目前有5个暑期实习生名额（1个前端+4个Java），昨天集中看了一批简历，整体感觉和预期有偏差，所以来linuxdo碰碰运气，看看有没有更匹配的同学。 面向对象：2028年1月1日-2029年12月31日毕业的大学生、研究生 最近看简历有一个明显感受，简历中全篇都是AI Agent相关经历，全是RAG、Memory、SFT、多 Agent、工作流编排等等，甚至都没有会的技术栈。一问就是没有实际研发经验、不懂技术的底层原理，停留在Vibe Coding的层面上。 我们这边招暑期实习生的核心诉求是希望同学进来能真正一起干活，会带着你在真实业务里交付东西。AI Agent经验加分，但纵向",
-      "publishedAt": "2026-06-18T04:49:31.000Z",
+      "title": "分享一下我现在用的比较舒服的一套claudecode等agent vibe coding工作流~2026/6/18",
+      "url": "https://linux.do/t/topic/2430684",
+      "excerpt": "算下来使用 claudecode 两个月了，直到最近才有了一套自己用下来比较舒服的一套工作流，来跟佬友们分享一下哈 首先使用 plan 模式先把需求想法给到 agent，可以畅所欲言想到啥说啥，但注意要跟它说一句先交流交流或者先听听你的想法，不然它有可能听完需求直接开干了哈 然后等它听完我一开始给它的需求并进行初步思考后，我就会用最近非常爱用的 grill-me 这个 skills 让它开始连环询问，帮我思考项目细节。因为跟它一开始表达的时候很难把所有细节都考虑到，也不容易把内心中那个需求的模样给说清楚。 然后它就开始不断在我的想法框架基础上问我问题，大部分情况下它给的建议都挺不错了，只需要做",
+      "publishedAt": "2026-06-18T11:38:15.000Z",
       "category": "tech",
       "source": "LinuxDo"
     },
     {
       "sourceId": "linuxdo",
-      "title": "分享一下我现在用的比较舒服的一套claudecode等agent vibe coding工作流~2026/6/18",
-      "url": "https://linux.do/t/topic/2430684",
-      "excerpt": "算下来使用 claudecode 两个月了，直到最近才有了一套自己用下来比较舒服的一套工作流，来跟佬友们分享一下哈 首先使用 plan 模式先把需求想法给到 agent，可以畅所欲言想到啥说啥，但注意要跟它说一句先交流交流或者先听听你的想法，不然它有可能听完需求直接开干了哈 然后等它听完我一开始给它的需求并进行初步思考后，我就会用最近非常爱用的 grill-me 这个 skills 让它开始连环询问，帮我思考项目细节。因为跟它一开始表达的时候很难把所有细节都考虑到，也不容易把内心中那个需求的模样给说清楚。 然后它就开始不断在我的想法框架基础上问我问题，大部分情况下它给的建议都挺不错了，只需要做",
-      "publishedAt": "2026-06-18T11:38:15.000Z",
+      "title": "[暑期实习]坐标阿里，招几个暑期实习生的师弟",
+      "url": "https://linux.do/t/topic/2427662",
+      "excerpt": "佬们，我们组目前有5个暑期实习生名额（1个前端+4个Java），昨天集中看了一批简历，整体感觉和预期有偏差，所以来linuxdo碰碰运气，看看有没有更匹配的同学。 面向对象：2028年1月1日-2029年12月31日毕业的大学生、研究生 最近看简历有一个明显感受，简历中全篇都是AI Agent相关经历，全是RAG、Memory、SFT、多 Agent、工作流编排等等，甚至都没有会的技术栈。一问就是没有实际研发经验、不懂技术的底层原理，停留在Vibe Coding的层面上。 我们这边招暑期实习生的核心诉求是希望同学进来能真正一起干活，会带着你在真实业务里交付东西。AI Agent经验加分，但纵向",
+      "publishedAt": "2026-06-18T04:49:31.000Z",
       "category": "tech",
       "source": "LinuxDo"
     },
@@ -587,15 +578,6 @@
     },
     {
       "sourceId": "linuxdo",
-      "title": "端午节你们单位都发啥了2026年",
-      "url": "https://linux.do/t/topic/2426269",
-      "excerpt": "我们除了常规的粽子啥的 198 个帖子 - 179 位参与者 阅读完整话题",
-      "publishedAt": "2026-06-18T01:56:16.000Z",
-      "category": "tech",
-      "source": "LinuxDo"
-    },
-    {
-      "sourceId": "linuxdo",
       "title": "对公益站祛魅了",
       "url": "https://linux.do/t/topic/2432101",
       "excerpt": "感觉公益站本来很有意思很吸引人 自己开一个公益站果然就祛魅了，不过如此 开站！hlool公益站启动！（已允许注册，深夜福利） 开发调优 本帖使用社区公益推广，符合推广要求。我申明并遵循社区要求的以下内容 本站不保证使用，这波到什么时候封了就没了，目前测试200个号左右暂时不死，也可能随时就死 站点很小是小鸡，后面看看如果撑得久就再优化下，撑不住就就此告别 登录送100刀，看情况再继续优化 不会发渠道方案方式，希望可以活的久一点 仅gpt站点 上号太慢了太低估佬友们的速率了，加大下注册机封车，稍等优化完毕 稍微等下，L… 公益站Token滞销，救救我们 这回真睡了，希望可以帮到熬夜的佬们，严肃 ",
@@ -605,10 +587,28 @@
     },
     {
       "sourceId": "linuxdo",
+      "title": "端午节你们单位都发啥了2026年",
+      "url": "https://linux.do/t/topic/2426269",
+      "excerpt": "我们除了常规的粽子啥的 198 个帖子 - 179 位参与者 阅读完整话题",
+      "publishedAt": "2026-06-18T01:56:16.000Z",
+      "category": "tech",
+      "source": "LinuxDo"
+    },
+    {
+      "sourceId": "linuxdo",
       "title": "毕业原来是这种感觉",
       "url": "https://linux.do/t/topic/2427943",
       "excerpt": "今天办完手续正式离校，看着空荡荡的宿舍，孤独感涌上心头，原来难得的不是相遇，而是重逢。。。 26 个帖子 - 26 位参与者 阅读完整话题",
       "publishedAt": "2026-06-18T05:41:03.000Z",
+      "category": "tech",
+      "source": "LinuxDo"
+    },
+    {
+      "sourceId": "linuxdo",
+      "title": "CLI没了，酒馆玩家该何去何从…😭",
+      "url": "https://linux.do/t/topic/2431209",
+      "excerpt": "目前知道的办法收集 1.搞十几个谷歌号build轮询（一个号十几条但我感觉一天不太够，我roll都能几十次…） 2.GCP增金300美刀第一个月企业cli免费，同样要不停的换号（不喜欢折腾的可以不用看了） 3.相信公益站站长会带我们冲锋陷阵 4.反重力（好难吃甲很厚） 该怎么办啊啊啊哭死我了，想退坑了 155 个帖子 - 45 位参与者 阅读完整话题",
+      "publishedAt": "2026-06-18T13:58:18.000Z",
       "category": "tech",
       "source": "LinuxDo"
     },
@@ -629,7 +629,7 @@
       "publishedAt": "2026-06-18T17:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI为ChatGPT企业版推出费用控制与数据分析功能，协助企业精准管控AI服务支出，优化资源分配以保障业务高效扩展。"
+      "summary": "OpenAI为ChatGPT企业版推出全新数据分析与支出控制功能，旨在帮助机构优化AI部署成本，提升预算管理透明度，支持企业更稳健地扩大技术应用规模。"
     },
     {
       "sourceId": "openai-news",
@@ -639,7 +639,7 @@
       "publishedAt": "2026-06-18T11:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI宣布通过新模型升级ChatGPT医疗咨询功能。新版本强化逻辑推理与上下文理解，并引入医师参与评估机制以提升健康回复准确性。"
+      "summary": "OpenAI宣布通过GPT-5.5 Instant模型升级ChatGPT健康咨询能力。新版增强逻辑推理与上下文理解，引入执业医师评估机制，提供更准确的健康建议。"
     },
     {
       "sourceId": "openai-news",
@@ -649,7 +649,7 @@
       "publishedAt": "2026-06-18T08:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "研究团队利用OpenAI推理模型辅助筛查罕见遗传病。在未确诊儿科病例中，该系统成功识别出十八例新结果，为辅助诊断提供技术验证。"
+      "summary": "研究人员利用OpenAI推理模型辅助诊断儿童罕见遗传疾病，在过往未确诊病例中成功识别18例新结果，验证AI技术在罕见病精准医疗领域的辅助诊断价值。"
     },
     {
       "sourceId": "openai-news",
@@ -659,7 +659,7 @@
       "publishedAt": "2026-06-17T10:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI联合药企开发自主AI化学家，依托GPT-5.4优化高难度药物合成路径，提升反应产率并为医药研发自动化提供解决方案。"
+      "summary": "OpenAI与Molecule.one合作推出近自主AI化学家系统，利用GPT-5.4模型优化关键药物合成反应，提升反应效率与纯度，加速医药化学研发进程。"
     },
     {
       "sourceId": "openai-news",
@@ -1173,7 +1173,7 @@
       "publishedAt": "2026-06-18T18:13:13.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "Hugging Face联合ServiceNow发布MosaicLeaks评测基准，旨在测试AI研究智能体在复杂任务中的隐私保护能力，评估模型自主执行时能否严格防泄露。"
+      "summary": "Hugging Face发布「MosaicLeaks」技术探讨，评估当前AI研究智能体处理敏感数据时的保密机制，指出其在实际应用中可能面临的信息泄露风险与安全合规挑战。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1183,7 +1183,7 @@
       "publishedAt": "2026-06-18T00:00:00.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "Hugging Face发文探讨LoRA之外的大模型微调替代方案。文章对比多项新算法的训练效率与精度差异，为开发者优化模型性能提供选型参考。"
+      "summary": "Hugging Face发布技术报告探讨LoRA微调之外的替代方案，分析当前大模型高效微调方法的局限性，并评估其他参数优化策略在性能与算力消耗上的综合表现。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1193,7 +1193,7 @@
       "publishedAt": "2026-06-18T00:00:00.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "Hugging Face推出开源模型工具链适配评测，检验大模型调用外部API及多步任务执行能力，旨在帮助开发者依据实际业务匹配最优智能体模型。"
+      "summary": "Hugging Face推出开源模型智能体能力评估指南，指导开发者利用自有工具链进行实测，以验证大模型在复杂任务执行、外部工具调用及自主决策环节的实际水平。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1203,7 +1203,7 @@
       "publishedAt": "2026-06-17T15:26:44.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "AllenAI发布MolmoMotion模型实现语言引导的三维运动预测。该技术结合视觉大模型，旨在提升机器人在复杂环境中的动态规划精度。"
+      "summary": "AllenAI发布MolmoMotion模型，支持通过自然语言指令引导三维动作预测。该技术为具身智能控制与虚拟人动画生成提供跨模态交互与高精度运动规划方案。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1213,7 +1213,7 @@
       "publishedAt": "2026-06-17T10:18:05.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "亚马逊与Hugging Face合作展示将AI智能体框架部署至实体机器人硬件，简化开发流程并加速具身智能技术向物理制造场景落地。"
+      "summary": "Amazon联合Hugging Face开源框架LeRobot，通过Strands Agents智能体实现从云端模型库到实体机器人硬件的直接部署，简化具身AI适配流程。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1223,7 +1223,7 @@
       "publishedAt": "2026-06-17T09:01:25.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "智谱AI发布GLM-5.2模型，专为长周期多步骤任务优化。该版本在上下文记忆与任务规划方面显著提升，适用于企业级自动化工作流。"
+      "summary": "智谱AI在Hugging Face发布GLM-5.2模型技术报告。该版本针对长程复杂任务优化架构，强化跨步骤推理与长上下文处理能力，提升多阶段任务执行的连贯性。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1449,7 +1449,7 @@
       "publishedAt": "2026-06-18T00:00:00.000Z",
       "category": "tech",
       "source": "TLDR AI",
-      "summary": "行业简报显示ChatGPT近期市场份额下滑。Vercel举办活动聚焦AI部署，编程平台Replit宣布与Claude模型完成底层技术对接。"
+      "summary": "行业简报显示ChatGPT市场份额出现下滑，云开发平台Vercel举办AI开发者活动，代码平台Replit宣布与Anthropic旗下Claude模型完成系统级集成。"
     },
     {
       "sourceId": "tldr-ai",
@@ -1900,7 +1900,7 @@
       "publishedAt": "2026-06-18T17:30:00.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "知名投资人安杰尼·米德哈自新加坡起步，主导投资Anthropic等前沿AI企业。访谈回顾其职业路径，并披露AMP基金在生成式人工智能领域的核心战略。"
+      "summary": "新加坡投资人Anjney Midha分享其主导Anthropic、Mistral、Black Forest Labs及Periodic Labs等多轮融资的经验，并披露AMP机构的未来布局策略。"
     },
     {
       "sourceId": "latent-space",
@@ -1910,7 +1910,7 @@
       "publishedAt": "2026-06-18T04:23:05.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "独立实验室Midjourney发布第二款医疗产品，主打高精度器官扫描技术，致力于将复杂影像分析流程简化，拓展AI在便携诊断中的应用。"
+      "summary": "自研型前沿实验室Midjourney公布第二款医疗影像产品，聚焦便捷器官扫描服务。该产品旨在将复杂的医学检测流程简化，拓展AI技术在个人健康管理场景的应用。"
     },
     {
       "sourceId": "latent-space",
@@ -1920,7 +1920,7 @@
       "publishedAt": "2026-06-17T17:58:06.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "Radical AI负责人指出材料科学壁垒在于实体实验室而非算法。公司正构建自主迭代实验系统，以硬件自动化能力加速新材料研发流程。"
+      "summary": "Radical AI创始人Joseph Krause指出材料科学领域的核心壁垒在于实体实验室的硬件积累与实验数据，而非单纯依赖大模型算法，强调物理验证的关键作用。"
     },
     {
       "sourceId": "latent-space",
@@ -1930,7 +1930,7 @@
       "publishedAt": "2026-06-17T05:37:40.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "评测显示GLM-5.2登顶开源前端代码生成榜首。配套投机解码技术大幅提升推理吞吐量，有效降低复杂开发场景的算力与部署成本。"
+      "summary": "行业资讯显示GLM-5.2模型在全球前端代码生成基准测试中位列第一，同时业界推出IndexShare投机解码技术，进一步降低推理延迟并提升大模型生成速度。"
     },
     {
       "sourceId": "latent-space",
@@ -2175,7 +2175,7 @@
       "category": "tech",
       "meta": "@zodchiii · 22.7K 粉丝 · 1.2M 阅 · 500 赞 · 71 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "分享基于 Claude Code 的循环智能体团队搭建方案。通过 3 个配置文件实现多智能体持续执行，直到任务达标才停止。突破单次运行局限，显著提升复杂自动化工作流的稳定性。"
+      "summary": "分享基于 Claude Code 的「多智能体循环工作流」搭建指南。针对单次执行易失败的问题，通过 3 个核心配置文件构建持续运行的 Agent 团队，让任务自动迭代直至达标。提供可复现的底层架构。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2186,7 +2186,7 @@
       "category": "tech",
       "meta": "@0xMovez · 26.7K 粉丝 · 208.0K 阅 · 504 赞 · 59 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "实测 Kimi K2.6 驱动的自进化循环。单提示词调度 300 个智能体完成 4000 步协同，经 Opus 4.8 验证，研究得分反超高价模型，为低成本自动化研究提供新路径。"
+      "summary": "实测 Kimi K2.6 开源模型驱动 300 个并行 Agent，单提示词完成 4000 步协同任务。研究场景表现超越高价闭源模型，经 Opus 4.8 验证。展示低成本大模型在自我迭代循环架构下的性能极限。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2197,18 +2197,7 @@
       "category": "tech",
       "meta": "@jxnlco · 105.9K 粉丝 · 204.4K 阅 · 504 赞 · 47 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "梳理 Codex 操控电脑的三种路径：原生 Computer Use、Chrome 插件与内置浏览器。对比三者权限边界与交互逻辑，指导开发者按实际需求选择方案，避免功能重叠与配置冲突。"
-    },
-    {
-      "sourceId": "attentionvc-ai",
-      "title": "Zen and the Art of AI Research ",
-      "url": "https://x.com/jxmnop/status/2066668040557867368",
-      "excerpt": "So you want to do AI research? It's true that no one really teaches you how. Not directly, anyway. But it turns out that the way to get started is pretty simple: some combination of (i) reading and",
-      "publishedAt": "2026-06-15T23:43:52.000Z",
-      "category": "tech",
-      "meta": "@jxmnop · 50.7K 粉丝 · 114.1K 阅 · 504 赞 · 57 转",
-      "source": "X 推文 (AttentionVC)",
-      "summary": "探讨 AI 领域科研入门方法论。指出高效起步无需依赖复杂框架，核心在于精读前沿论文、复现开源实验与高频动手实践。为从理论转向实际研发的从业者提供清晰执行路径。"
+      "summary": "梳理 OpenAI Codex 控制电脑的 3 种交互路径：原生 Computer Use、Chrome 插件与内置浏览器。对比各方案权限重叠区与适用场景，同步 EU 地区可用性更新。为桌面自动化选型提供清晰对照。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2219,7 +2208,7 @@
       "category": "tech",
       "meta": "@OracleMindAI · 21.0K 粉丝 · 105.0K 阅 · 2.8K 赞 · 582 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "解析自主 AI 智能体在 Polymarket 预测市场的交易策略。数据显示平台超 30% 交易量由算法钱包贡献，揭示自动化博弈在金融预测领域的渗透现状，为量化交易提供趋势参考。"
+      "summary": "揭秘 AI 智能体在 Polymarket 预测市场的实战表现。数据显示超 30% 交易量已由 AI 钱包驱动，自主决策代理成为核心交易策略。解析智能体通过概率建模与信息差套利的逻辑，提供自动化交易范式。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2230,7 +2219,7 @@
       "category": "tech",
       "meta": "@sydneyrunkle · 7.9K 粉丝 · 74.7K 阅 · 565 赞 · 87 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "深入讲解循环工程设计原则。指出智能体可靠输出不只依赖底层模型，更需精心构建任务拆解、状态监控与反馈修正机制。提供提升自动化工作流鲁棒性的思路，适用于生产级系统开发。"
+      "summary": "深入探讨 Agent 开发中的循环工程设计哲学。指出可靠自动化不仅依赖底层模型，更需精心编排任务循环、状态校验与容错机制。总结构建高稳定性智能体工作流的核心原则，适合希望提升 AI 落地成功率的开发者。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2241,7 +2230,7 @@
       "category": "tech",
       "meta": "@0xCodez · 8.2K 粉丝 · 72.8K 阅 · 508 赞 · 79 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "发布基于 Claude 的智能体框架调优指南。通过 14 步路线图，演示如何将默认环境升级为集成规则约束、子智能体调度与记忆管理的自进化系统，直击忽视底层架构的工程痛点。"
+      "summary": "拆解 Claude Code 智能体底座工程的 14 步演进路线。针对多数开发者仅用默认配置的痛点，讲解如何引入规则约束、子代理、钩子与长期记忆。将单点工具升级为自我进化系统的实操指南。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2252,7 +2241,7 @@
       "category": "tech",
       "meta": "@heynavtoor · 143.5K 粉丝 · 47.7K 阅 · 538 赞 · 70 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "介绍斯坦福 STORM 框架在 Claude 中的落地。突破单轮问答模式，通过多视角追问与交叉验证，将大模型转化为深度学术调研工具，大幅提升复杂信息的结构化处理效率。"
+      "summary": "分享斯坦福 STORM 研究框架在 Claude 上的落地配置。突破传统问答模式，通过结构化提示与多视角信息聚合，实现类博士深度的自动化文献调研。提供经同行评审验证的 Prompt 模板，适合学术分析场景。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2263,7 +2252,7 @@
       "category": "tech",
       "meta": "@zachlloydtweets · 10.6K 粉丝 · 43.5K 阅 · 512 赞 · 53 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "辨析 AI 智能体驱动中循环机制的本质定义。拆解自循环在技能迭代中的运行逻辑与数据反馈链路，为探讨循环架构但缺乏实操方向的开发者提供清晰的理论锚点与系统设计基准。"
+      "summary": "厘清 AI 领域热议的循环机制本质，并将其迁移至个人技能提升场景。跳出代码开发语境，详细拆解如何设定反馈节点、自动评估与迭代触发器，构建可持续进化的个人学习闭环。提供可量化成长的实践框架。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2274,7 +2263,7 @@
       "category": "tech",
       "meta": "@kvnkld · 7.2K 粉丝 · 42.0K 阅 · 531 赞 · 25 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "总结使用 Claude 交付高完成度 UI 的 10 条核心准则。明确指出界面精细感无法仅靠单次提示词生成，需依赖多轮迭代、组件规范约束与细节微调，提供可复用的 AI 辅助设计流。"
+      "summary": "总结用 Claude 交付高完成度 UI 的 10 条核心准则。指出精致界面无法靠单次 Prompt 生成，需依赖分层约束、组件原子化与多轮校验。提供可直接套用的设计规范，解决 AI 生成前端代码视觉粗糙的痛点。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2285,7 +2274,7 @@
       "category": "tech",
       "meta": "@Just_sharon7 · 44.1K 粉丝 · 32.5K 阅 · 502 赞 · 18 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "演示 Arcads 接入 MCP 协议后与 Claude 的联动工作流。整合素材生成、数据复盘与迭代环节，实现端到端自动化广告内容生产，显著降低营销团队的多工具切换成本。"
+      "summary": "盘点 Arcads 接入 MCP 协议后的短视频广告工作流升级。通过对接 Claude 模型，打通 UGC 素材制作、数据归因与自动迭代链路，替代传统多工具切换模式。展示标准化协议如何重塑营销效率。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2296,7 +2285,7 @@
       "category": "tech",
       "meta": "@ActionModelAI · 57.8K 粉丝 · 5.7K 阅 · 501 赞 · 366 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "盘点 AI 领域的 10 个关键产业数据与趋势。援引机构预测指出 AI 有望在 2030 年前贡献超 15 万亿美元经济增量，结合技术演进现状，为从业者提供宏观产业格局参考。"
+      "summary": "汇总 10 项 AI 产业关键数据，引用 PwC 报告指出 2030 年 AI 将为全球经济贡献 15.7 万亿美元增量。梳理算力成本曲线、能力边界与商业化节点，用客观数据锚定行业发展阶段，提供宏观趋势参考。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2307,7 +2296,7 @@
       "category": "tech",
       "meta": "@OptimaiNetwork · 99.4K 粉丝 · 5.3K 阅 · 511 赞 · 360 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "探讨面向智能体时代的自主互联网基础设施需求。指出传统人类交互架构已不适用，未来需构建实时上下文感知、信号验证与授权执行协议层，为大规模 AI 协同提供底层思路。"
+      "summary": "探讨自主互联网时代的基础设施重构逻辑。对比传统网页交互，提出新架构需具备实时上下文感知、可验证信号源与权限管控执行能力。描绘 Agent 间通信网络的底层标准，为下一代 AI 原生协议提供架构参考。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2318,7 +2307,55 @@
       "category": "tech",
       "meta": "@Trade_OracleAI · 21.1K 粉丝 · 60 阅 · 2.8K 赞 · 584 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "解析 Polymarket 平台上 AI 代理交易策略的实战表现。指出超三成流水由算法钱包驱动，验证自主智能体在金融博弈中的有效性，并分享其底层交易逻辑与自动化部署架构。"
+      "summary": "追踪预测市场交易策略的 AI 化转型。数据显示 Polymarket 超三成链上交互已迁移至 AI 驱动钱包，自主代理凭借高频信息处理能力成为主流资金载体。解析算法做市与自动化对冲的运作机制与链上特征。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "MSCI Flags Indonesia Market Accessibility Concerns in Review",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-18/msci-sees-worsening-information-flow-in-indonesia-before-verdict",
+      "excerpt": "MSCI Inc. highlighted concerns over market accessibility in Indonesia in an annual report ahead of a potential downgrade that could further weigh on the world’s worst-performing equity market.",
+      "publishedAt": "2026-06-18T21:52:14.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Gold Set for Weekly Loss as Hawkish Fed Outweighs Peace Deal",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-18/gold-set-for-weekly-loss-as-hawkish-fed-outweighs-peace-deal",
+      "excerpt": "Gold is on track for a third weekly loss, as a hawkish Federal Reserve and rate-hike bets outweigh the signing of an interim peace deal between the US and Iran.",
+      "publishedAt": "2026-06-18T23:46:23.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets",
+      "summary": "黄金预计将录得连续第三周下跌。美联储鹰派立场及市场加息预期占据主导，抵消了美国与伊朗签署临时和平协议带来的避险降温影响，金价短期承压。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Extenet Warns Cash to Run Out in Days Without ABS Holder Relief",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-18/extenet-warns-cash-to-run-out-in-days-without-abs-holder-relief",
+      "excerpt": "Telecom-infrastructure firm Extenet is facing a cash crunch that could force it to cease operations before the end of the month, according to a letter shared with the company’s bond investors.",
+      "publishedAt": "2026-06-18T23:45:46.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets",
+      "summary": "电信基础设施公司Extenet致函债券投资者警告，若资产支持证券持有人未能提供流动性支持，公司面临资金枯竭风险，可能于本月底前停止运营。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Japan Push for Corporate Growth Over Value Sets Off Skepticism",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-18/japan-push-for-corporate-growth-over-value-sets-off-skepticism",
+      "excerpt": "The Japanese government’s new push to encourage companies to use their cash for longer-term growth is raising concerns it will lead to unprofitable investments and erode corporate value.",
+      "publishedAt": "2026-06-18T23:39:54.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets",
+      "summary": "日本政府推动企业将现金用于长期增长而非提升股东价值，此举引发市场质疑。投资者担忧该政策可能促使企业进行低效投资，进而损害企业整体估值。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Asia Stocks Set to Rise as US-Iran Deal Lifts Mood: Markets Wrap",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-18/asian-stocks-to-rise-as-us-iran-deal-lifts-mood-markets-wrap",
+      "excerpt": "Stocks in Asia were poised to rise Friday after a peace deal between the US and Iran boosted optimism that the reopening of the Strait of Hormuz will ease inflation pressures by restoring oil flows.",
+      "publishedAt": "2026-06-18T22:05:20.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2340,13 +2377,23 @@
     },
     {
       "sourceId": "bloomberg-markets",
+      "title": "CFTC Not Ready for Prediction Market Social Cost, State AGs Say",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-18/cftc-not-ready-for-prediction-market-social-cost-state-ags-say",
+      "excerpt": "Attorneys general for California and Minnesota said the Commodity Futures Trading Commission isn’t equipped to handle gambling-associated issues like addiction, highlighting challenges the federal regulator faces as it aims to assert authority over prediction markets.",
+      "publishedAt": "2026-06-18T23:18:48.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets",
+      "summary": "加州与明尼苏达州总检察长指出，商品期货交易委员会缺乏应对赌博成瘾等社会问题的能力。该表态凸显了联邦监管机构在试图管辖预测市场时面临的合规挑战。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
       "title": "Philippine, Thai Earnings Southeast Asia’s Worst Hit by Iran War",
       "url": "https://www.bloomberg.com/news/articles/2026-06-18/philippine-thai-earnings-southeast-asia-s-worst-hit-by-iran-war",
       "excerpt": "Philippine and Thai companies are bearing the brunt of earnings downgrades across Southeast Asia, as their economies rely heavily oil and gas choked off by the closure of the Strait of Hormuz.",
       "publishedAt": "2026-06-18T23:00:00.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "受伊朗冲突致霍尔木兹海峡航运受阻影响，菲律宾与泰国企业对油气进口依赖度较高，正承受东南亚最严重的盈利下调压力，相关业绩面临显著冲击。"
+      "summary": "受伊朗冲突及霍尔木兹海峡关闭导致油气供应中断影响，东南亚企业盈利普遍遭下调。其中菲律宾与泰国对能源进口依赖度高，盈利修正幅度居区域首位。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2356,7 +2403,7 @@
       "publishedAt": "2026-06-18T22:57:57.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "投资机构Elliott与SVP Global近期购入巴西石化企业Braskem债务。该公司正推进债权人谈判以敲定重组方案，相关交易被视作押注重组成功。"
+      "summary": "知情人士表示，Elliott Investment Management与SVP Global近期购入巴西石化企业Braskem债券。该公司正加速推进债权人协商，以期达成债务重组方案。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2365,8 +2412,7 @@
       "excerpt": "Oil headed for a substantial weekly drop as the US-Iran interim peace deal saw shipping through the Strait of Hormuz start to return to normal, easing the global crude market’s biggest ever supply shock.",
       "publishedAt": "2026-06-18T22:04:17.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets",
-      "summary": "受美伊临时和平协议推动，霍尔木兹海峡航运逐步恢复正常，全球原油市场严重供应冲击得到缓解，国际油价本周料将出现实质性大幅回落。"
+      "source": "Bloomberg Markets"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2376,27 +2422,7 @@
       "publishedAt": "2026-06-18T22:25:46.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "核反应堆燃料制造商Standard Nuclear已提交美国首次公开募股申请。此举旨在顺应人工智能产业爆发带动的电力需求激增趋势，扩大核能燃料产能。"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "MSCI Says Flow of Market Information Worsening in Indonesia",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-18/msci-sees-worsening-information-flow-in-indonesia-before-verdict",
-      "excerpt": "Information flow has deteriorated in Indonesian markets, MSCI Inc. said ahead of a potential downgrade that could further compound issues for the world’s worst-performing equities.",
-      "publishedAt": "2026-06-18T21:52:14.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets",
-      "summary": "明晟公司指出印尼市场信息透明度正在恶化。在潜在评级下调窗口期前，信息流动受阻或将进一步加剧本已表现垫底的印尼股市面临的流动性压力。"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Asian Stocks to Rise as US-Iran Deal Lifts Mood: Markets Wrap",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-18/asian-stocks-to-rise-as-us-iran-deal-lifts-mood-markets-wrap",
-      "excerpt": "Stocks in Asia were poised to rise Friday after a peace deal between the US and Iran boosted optimism that the reopening of the Strait of Hormuz will ease inflation pressures by restoring oil flows.",
-      "publishedAt": "2026-06-18T22:05:20.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets",
-      "summary": "美伊达成和平协议提振市场情绪，亚洲股市有望走高。市场普遍预期霍尔木兹海峡将恢复原油运输，此举有助于缓解全球通胀压力及能源供应链紧张局面。"
+      "summary": "核反应堆燃料制造商Standard Nuclear Inc.已正式提交赴美首次公开募股申请。随着人工智能产业扩张带动电力需求激增，核电企业正加速进入资本市场融资。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2414,8 +2440,7 @@
       "excerpt": "Charles Schwab Corp. is imposing new margin requirements for clients using long-short investment strategies, adding more guardrails around a fast-growing tax-management trade.",
       "publishedAt": "2026-06-18T21:23:52.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets",
-      "summary": "嘉信理财针对采用多空策略客户上调保证金要求，为快速扩张的税务管理类交易增设风控护栏，以防范市场波动引发的追加保证金及违约风险。"
+      "source": "Bloomberg Markets"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2558,42 +2583,6 @@
       "url": "https://www.bloomberg.com/news/articles/2026-06-17/gold-holds-decline-after-bets-increase-on-fed-hike-this-year",
       "excerpt": "Gold slipped as the Federal Reserve’s hawkish stance outweighed an interim peace deal between the US and Iran that eased inflation risks.",
       "publishedAt": "2026-06-17T22:57:44.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Deep Fission Opens At $16 a Share As The US Turns To Nuclear Energy",
-      "url": "https://www.bloomberg.com/news/videos/2026-06-18/us-looks-to-expand-nuclear-as-ai-drives-up-energy-demand-video",
-      "excerpt": "Liz Muller, Co-Founder and CEO of Deep Fission AND Will Wade, Bloomberg News Energy Reporter join Bloomberg Businessweek Daily to discuss Deep Fission's Nasdaq trading debut and the states of the nuclear industry in the US. Nuclear has regained public support in the AI era. The fuel source is capabl",
-      "publishedAt": "2026-06-18T19:52:20.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "US Running Above Breakeven Employment: BofA's Caban",
-      "url": "https://www.bloomberg.com/news/videos/2026-06-18/us-running-above-breakeven-employment-bofa-s-caban",
-      "excerpt": "Mark Cabana, co-head of global rates research at BofA Securities, and Jamie Patton, co-head of global rates at TCW, join Scarlet Fu on \"Real Yield.\" They discuss the Fed and Citigroup's Fed policy forecast of interest-rate cuts beginning in October, a month later than previously, based on the centra",
-      "publishedAt": "2026-06-18T20:02:36.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Seth Klarman on the Importance of Venture Capital",
-      "url": "https://www.bloomberg.com/news/videos/2026-06-18/seth-klarman-on-the-importance-of-venture-capital-video",
-      "excerpt": "Barry sits down with Munger disciple Seth Klarman, CEO of Baupost Group, a Boston-based investment manager with a multi-strategy approach. They discuss Seth's start as a 25 year-old and journey to CEO. They also discuss his approach to risk, IPOs, and sectors along with his sports passions including",
-      "publishedAt": "2026-06-18T20:01:21.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Oil Dips as US-Iran Deal Takes Effect, Ships Return to Hormuz",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-17/latest-oil-market-news-and-analysis-for-june-18",
-      "excerpt": "Oil dipped as the US and Iran’s interim peace deal took effect and a flurry of tankers began transiting the Strait of Hormuz, paving the way to restart the flow of millions of barrels shut in by the conflict.",
-      "publishedAt": "2026-06-17T22:03:01.000Z",
       "category": "finance",
       "source": "Bloomberg Markets"
     },
@@ -2779,13 +2768,49 @@
     },
     {
       "sourceId": "ft-companies",
+      "title": "Asics could run faster if it unshackled Onitsuka Tiger",
+      "url": "https://www.ft.com/content/21de3c07-86b2-4cf9-b7f9-879ae5fd27aa",
+      "excerpt": "Sportswear group is separating out its coolest brand but a sale or proper spin-off might be a better fit for shareholders",
+      "publishedAt": "2026-06-18T23:00:07.000Z",
+      "category": "finance",
+      "source": "Financial Times",
+      "summary": "运动品牌集团亚瑟士正推进旗下复古品牌「鬼冢虎」的业务剥离。市场分析认为，相较于当前分离举措，彻底出售或独立分拆将更有效释放资产价值，契合股东利益。"
+    },
+    {
+      "sourceId": "ft-companies",
+      "title": "EU set to remove barriers to banks’ cross-border capital flows",
+      "url": "https://www.ft.com/content/bec1c122-04d6-4eab-b69c-c33d874cfa5b",
+      "excerpt": "Draft report by European Commission aims to boost performance of lenders in bloc compared to US rivals",
+      "publishedAt": "2026-06-18T22:04:28.000Z",
+      "category": "finance",
+      "source": "Financial Times"
+    },
+    {
+      "sourceId": "ft-companies",
+      "title": "SpaceX plots $20bn bond deal after record IPO",
+      "url": "https://www.ft.com/content/8b73b4ce-3855-4b89-9110-3d892567f28a",
+      "excerpt": "AI and rocket group is tapping debt markets after raising $86bn in stock market debut",
+      "publishedAt": "2026-06-18T22:01:21.000Z",
+      "category": "finance",
+      "source": "Financial Times"
+    },
+    {
+      "sourceId": "ft-companies",
+      "title": "SpaceX warns EU satellite plan risks undermining connectivity in Ukraine",
+      "url": "https://www.ft.com/content/0b012610-8132-4549-afd9-14bacd9db8cb",
+      "excerpt": "Elon Musk’s group hits out at proposal by bloc to reserve part of spectrum band for European operators",
+      "publishedAt": "2026-06-18T22:00:06.000Z",
+      "category": "finance",
+      "source": "Financial Times"
+    },
+    {
+      "sourceId": "ft-companies",
       "title": "UK government to overhaul ‘outdated’ home-selling process",
       "url": "https://www.ft.com/content/d8a1edfa-5e9b-4193-839f-08e49ca04e5e",
       "excerpt": "Vendors will need to produce ‘sales packs’ containing information on the property’s condition prior to listing",
       "publishedAt": "2026-06-18T21:30:06.000Z",
       "category": "finance",
-      "source": "Financial Times",
-      "summary": "英国政府计划改革二手房交易流程，要求卖方挂牌前必须提前编制包含房屋详情的「销售资料包」，以提升交易透明度并缩短传统房产买卖周期。"
+      "source": "Financial Times"
     },
     {
       "sourceId": "ft-companies",
@@ -2968,42 +2993,6 @@
       "source": "Financial Times"
     },
     {
-      "sourceId": "ft-companies",
-      "title": "How Uzbekistan could liberalise its economy with a push into green energy | FT Film",
-      "url": "https://www.ft.com/content/b0ee093b-fbd4-4ca9-b087-a270ac88769a",
-      "excerpt": "Will the former soviet state liberalise its economy with a push into green energy?",
-      "publishedAt": "2026-06-18T09:30:40.000Z",
-      "category": "finance",
-      "source": "Financial Times"
-    },
-    {
-      "sourceId": "ft-companies",
-      "title": "More than a million landlords unprepared for tougher energy efficiency rules",
-      "url": "https://www.ft.com/content/4532549f-d6d3-4e17-b352-68acb6c65c5a",
-      "excerpt": "Buy-to-let lender to offer discounted loans to help borrowers fund improvements before rules tighten in 2030",
-      "publishedAt": "2026-06-18T09:30:01.000Z",
-      "category": "finance",
-      "source": "Financial Times"
-    },
-    {
-      "sourceId": "ft-companies",
-      "title": "Intertek board agrees £11bn takeover by private equity group EQT",
-      "url": "https://www.ft.com/content/08b846c5-6671-4f0e-bc3c-6d17f968879d",
-      "excerpt": "Swedish group is investing alongside Emirati sovereign investors ADIA and Mubadala",
-      "publishedAt": "2026-06-18T09:25:37.000Z",
-      "category": "finance",
-      "source": "Financial Times"
-    },
-    {
-      "sourceId": "ft-companies",
-      "title": "BBC cuts will damage broadcaster’s crown jewels",
-      "url": "https://www.ft.com/content/43801254-9be8-4db4-9742-c00a21d38ac0",
-      "excerpt": "Government should consider direct licence fee increases or give corporation greater freedom to monetise its content",
-      "publishedAt": "2026-06-18T08:34:35.000Z",
-      "category": "finance",
-      "source": "Financial Times"
-    },
-    {
       "sourceId": "bbc-business",
       "title": "Brexit cost 6% of UK economy, Bank of England company data suggests",
       "url": "https://www.bbc.com/news/articles/cvg75npqkq4o?at_medium=RSS&at_campaign=rss",
@@ -3011,7 +3000,7 @@
       "publishedAt": "2026-06-18T23:05:05.000Z",
       "category": "finance",
       "source": "BBC Business",
-      "summary": "英格兰银行企业数据分析显示，英国脱欧致其经济规模缩水约6%。研究量化了实际增长与假设留欧情境的差距，揭示脱欧对宏观经济的长期拖累效应。"
+      "summary": "英国央行企业数据分析显示，脱欧使英国经济规模较未退出欧盟的情景缩减约百分之六。测算表明脱欧对英国潜在增长造成显著拖累，相关影响持续显现。"
     },
     {
       "sourceId": "bbc-business",
@@ -3021,7 +3010,7 @@
       "publishedAt": "2026-06-18T23:09:19.000Z",
       "category": "finance",
       "source": "BBC Business",
-      "summary": "针对首次约会结账礼仪，公众观点存在分歧：部分主张费用均摊，部分认为发起方应买单，亦有观点保留男方付款的传统印象，反映消费观念演变。"
+      "summary": "针对首次约会买单礼仪的讨论显示公众观念分化。部分人群坚持费用均摊或邀请方付款，亦有相当比例延续传统观念，认为特定性别承担费用更具社交礼仪属性。"
     },
     {
       "sourceId": "bbc-business",
@@ -3031,7 +3020,7 @@
       "publishedAt": "2026-06-18T23:06:20.000Z",
       "category": "finance",
       "source": "BBC Business",
-      "summary": "近期燃料与天然气价格随伊朗和平协议达成而回落。报道分析停火将如何传导至个人财务，涵盖能源成本下降、通胀预期缓和及资产配置调整等维度。"
+      "summary": "近期燃油与天然气价格已现回落。随着美伊停火协议达成，分析指出该和平进程将通过能源成本下降等渠道，对家庭日常开支与个人投资组合产生多维影响。"
     },
     {
       "sourceId": "bbc-business",
@@ -3059,7 +3048,7 @@
       "publishedAt": "2026-06-18T23:11:07.000Z",
       "category": "finance",
       "source": "BBC Business",
-      "summary": "喜马拉雅山区的印度村庄正通过建造人工冰川储存冬季水源，以保障春季农作物灌溉需求，应对气候变化导致的水资源短缺问题。"
+      "summary": "印度喜马拉雅山区村庄正修建人工冰川，以保障春季农业灌溉用水。该工程旨在通过人工蓄冰缓解高海拔地区水资源季节性短缺，维持当地农作物产量。"
     },
     {
       "sourceId": "bbc-business",
@@ -3555,7 +3544,7 @@
       "publishedAt": "2026-06-18T21:34:28.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "美国宣布解除对伊朗海军封锁。伊朗最高领袖公开表示反对该协议，并批评特朗普是在「出于绝望」的境地下才同意签署。"
+      "summary": "美国正式解除对伊朗的海上封锁。伊朗最高领袖表示反对该协议，并称特朗普签署协议是「出于绝望」。双方关系与协议后续执行仍存不确定性。"
     },
     {
       "sourceId": "bbc-world",
@@ -3592,7 +3581,7 @@
       "publishedAt": "2026-06-18T21:47:25.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "武装分子袭击尼日尔最大机场，造成35人死亡。该国与伊斯兰武装冲突已持续十年，今年1月该机场曾遭疑似圣战分子袭击。"
+      "summary": "尼日尔最大机场遭武装分子袭击，事件导致35人遇难。该国与伊斯兰武装的冲突已持续十年，今年1月该机场曾遭遇疑似极端分子袭击。"
     },
     {
       "sourceId": "bbc-world",
@@ -3644,9 +3633,10 @@
       "title": "Obamas host star-studded opening of Chicago presidential centre",
       "url": "https://www.bbc.com/news/articles/cly91eqyd0ko?at_medium=RSS&at_campaign=rss",
       "excerpt": "The campus opens to the public this weekend with a museum, community amenities and more to honour the 44th US president.",
-      "publishedAt": "2026-06-18T21:02:18.000Z",
+      "publishedAt": "2026-06-19T00:01:27.000Z",
       "category": "politics",
-      "source": "BBC World"
+      "source": "BBC World",
+      "summary": "第44任美国总统奥巴马于芝加哥主持其总统中心开幕式，该园区本周末正式向公众开放。中心内设博物馆及社区配套设施，旨在纪念其公共服务历程。"
     },
     {
       "sourceId": "bbc-world",
@@ -3959,10 +3949,10 @@
       "title": "Australia news live: Jim Chalmers admits losing ‘political paint’ over tax reform; NSW quake near goldmine",
       "url": "https://www.theguardian.com/australia-news/live/2026/jun/19/news-live-australia-ukraine-jim-chalmers-anthony-albanese-capital-gains-tax-concessions-business-pauline-hanson-one-nation-ntwnfb",
       "excerpt": "Treasurer says carve-outs to capital gains tax discount came after ‘getting the consultation right’. Follow today’s news live • Get our breaking news email, free app or daily news podcast There were two small earthquakes in New South Wales this morning, according to Geoscience Australia. A 3.4 magni",
-      "publishedAt": "2026-06-18T23:23:53.000Z",
+      "publishedAt": "2026-06-18T23:49:02.000Z",
       "category": "politics",
       "source": "The Guardian",
-      "summary": "澳大利亚财长吉姆·查尔默斯坦言资本利得税改革方案因听取意见而作出调整，承认引发政治反弹；新南威尔士州今晨发生两次小型地震。"
+      "summary": "澳大利亚财长吉姆·查默斯坦言，资本利得税减免条款调整使其面临政治压力，称相关方案系经充分协商后制定。同日，新南威尔士州金矿附近发生两次小型地震。"
     },
     {
       "sourceId": "guardian-world",
@@ -3993,9 +3983,9 @@
     },
     {
       "sourceId": "guardian-world",
-      "title": "Guardian Australia’s Matilda Boseley wins major award at 2026 Walkley mid-year media prizes",
+      "title": "Guardian Australia’s Matilda Boseley among journalists recognised at 2026 Walkley mid-year media prizes",
       "url": "https://www.theguardian.com/media/2026/jun/18/guardian-australias-matilda-boseley-wins-major-award-at-2026-walkley-mid-year-media-prizes",
-      "excerpt": "Boseley won for her high-profile, multiplatform political explainer series, Parliamen-Tea: explaining the chaos of Australian politics Follow our Australia news live blog for latest updates Get our breaking news email, free app or daily news podcast Guardian Australia’s Matilda Boseley has taken out",
+      "excerpt": "Boseley won for her high-profile, multiplatform political explainer series, Parliamen-Tea: explaining the chaos of Australian politics Follow our Australia news live blog for latest updates Get our breaking news email, free app or daily news podcast Guardian Australia’s Matilda Boseley’s political e",
       "publishedAt": "2026-06-18T11:00:02.000Z",
       "category": "politics",
       "source": "The Guardian"
@@ -4047,13 +4037,23 @@
     },
     {
       "sourceId": "guardian-world",
+      "title": "JD Vance tells Iran deal critics in Israel: Trump is your only ally left in the world",
+      "url": "https://www.theguardian.com/us-news/2026/jun/19/jd-vance-israel-iran-deal-critics",
+      "excerpt": "In a sharp rebuke to critics of Trump’s deal with Iran, the vice-president referenced the billions in defence aid Israel recieves from the US News: Iran announces plans to bring in maritime fees for strait of Hormuz Analysis: Iran peace deal makes clear how far US has been forced to retreat since 20",
+      "publishedAt": "2026-06-18T23:52:54.000Z",
+      "category": "politics",
+      "source": "The Guardian",
+      "summary": "美国副总统万斯回应以色列国内对特朗普与伊朗协议的批评，强调美方是以色列最核心盟友。万斯提及美国每年向以方提供巨额防务援助，警告以方勿疏远关键支持。"
+    },
+    {
+      "sourceId": "guardian-world",
       "title": "Iran announces plans to bring in maritime fees for strait of Hormuz",
       "url": "https://www.theguardian.com/world/2026/jun/18/iran-announces-plans-to-bring-in-maritime-fees-for-strait-of-hormuz",
       "excerpt": "As US lifts its blockade, Tehran says fees to cover cost of managing waterway will come into effect at end of 60-day negotiation period Iran has announced plans to introduce a system of maritime fees in the strait of Hormuz in two months, after the 60-day period of negotiation that has been triggere",
       "publishedAt": "2026-06-18T21:50:46.000Z",
       "category": "politics",
       "source": "The Guardian",
-      "summary": "伊朗宣布计划在霍尔木兹海峡实施航运费，费用用于水道管理，将在60天谈判期结束后生效。此举正值美国解除对伊朗港口封锁之际。"
+      "summary": "随着美国解除海上封锁，伊朗宣布计划在霍尔木兹海峡征收航运管理费。德黑兰表示该收费旨在覆盖航道运营成本，并将于60天谈判期结束后正式生效。"
     },
     {
       "sourceId": "guardian-world",
@@ -4083,23 +4083,14 @@
       "source": "The Guardian"
     },
     {
-      "sourceId": "guardian-world",
-      "title": "Iran peace deal makes clear how far US has been forced to retreat since 2025",
-      "url": "https://www.theguardian.com/world/2026/jun/18/iran-peace-deal-us-trump",
-      "excerpt": "Plan is admission US could not achieve what it sought through war as red line after red line has been erased Only a man with an unparalleled ignorance of history such as Donald Trump would have signed America’s peace treaty with Iran at Versailles, the byword for national humiliation. And only a man",
-      "publishedAt": "2026-06-18T15:41:03.000Z",
-      "category": "politics",
-      "source": "The Guardian"
-    },
-    {
       "sourceId": "nyt-world",
       "title": "Vance Issues Blunt Warning to Israel as He Defends Trump’s Deal",
       "url": "https://www.nytimes.com/live/2026/06/18/world/iran-war-trump-us-deal",
       "excerpt": "The vice president delivered a rebuke to Israeli critics of the agreement, warning them not to alienate their most important ally, as the administration sought to rebut mounting criticism of the deal.",
-      "publishedAt": "2026-06-18T23:29:35.000Z",
+      "publishedAt": "2026-06-18T23:37:40.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "美国副总统万斯为特朗普的伊朗协议辩护，警告以色列批评者勿疏远其最重要盟友美国政府，以回应该协议面临的日益增多的批评。"
+      "summary": "美国副总统万斯为特朗普政府的伊朗协议辩护，明确警告以色列批评者勿疏远其最重要盟友。美方此举旨在应对外界对该协议日益增加的质疑声音。"
     },
     {
       "sourceId": "nyt-world",
@@ -4109,7 +4100,7 @@
       "publishedAt": "2026-06-18T22:24:28.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "俄罗斯导演亚历山大·索科洛夫曾就政府镇压问题向总统普京提出质疑，但其立场仍在本国流亡群体中引发争议。"
+      "summary": "俄罗斯知名导演亚历山大·索科洛夫曾就政府镇压问题向俄总统提出质疑，但其立场与言论在俄罗斯流亡群体中仍引发争议，被指批评力度不足。"
     },
     {
       "sourceId": "nyt-world",
@@ -4136,8 +4127,7 @@
       "excerpt": "A militant group claimed responsibility for the early-morning assault on Niamey airport, the second such attack in the West African country this year.",
       "publishedAt": "2026-06-18T21:15:20.000Z",
       "category": "politics",
-      "source": "NYT World",
-      "summary": "一武装组织宣称对尼日尔尼亚美机场清晨遇袭事件负责，系该国今年第二次遭遇同类袭击，西非地区安全局势受关注。"
+      "source": "NYT World"
     },
     {
       "sourceId": "nyt-world",
@@ -4225,10 +4215,10 @@
       "title": "Vance’s Defense of Iran Deal Rests on Vague and Misleading Claims",
       "url": "https://www.nytimes.com/2026/06/18/us/politics/vances-iran-deal-misleading-claims.html",
       "excerpt": "The vice president said the United States had leverage to dictate the outcome of the next round of negotiations. But he claimed incorrectly that Iran got no new benefit from the lifting of oil sanctions.",
-      "publishedAt": "2026-06-18T23:29:33.000Z",
+      "publishedAt": "2026-06-18T23:29:34.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "美国副总统万斯为伊朗协议辩护称美方在下一轮谈判中拥有主导权，但其关于取消石油制裁未给伊朗带来新利益的言论被指不实。"
+      "summary": "美媒指出，副总统万斯在为伊朗协议辩护时引用模糊数据。万斯声称美方主导下轮谈判，但其关于伊朗未从解除石油制裁中获益的说法与事实不符。"
     },
     {
       "sourceId": "nyt-world",
@@ -4238,7 +4228,7 @@
       "publishedAt": "2026-06-18T22:12:01.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "英国剑桥附近动物园发生鳄鱼池伤人事件，一名3岁男童重伤。警方以谋杀未遂罪名拘留一名涉嫌将男童强行推入鳄鱼围栏的男子。"
+      "summary": "英国剑桥附近一动物园发生袭击事件，一名男子将3岁男童强行推入鳄鱼围栏致其重伤。警方已以涉嫌谋杀未遂将该男子拘留，案件正深入调查。"
     },
     {
       "sourceId": "nyt-world",
@@ -4247,8 +4237,7 @@
       "excerpt": "Trump’s agreement reads like a list of concessions to Iran. Will it damage him politically?",
       "publishedAt": "2026-06-18T21:21:55.000Z",
       "category": "politics",
-      "source": "NYT World",
-      "summary": "特朗普签署的伊朗协议被外界视为对伊方的系列让步，分析人士关注该协议是否将对其国内政治支持率造成实质性负面影响。"
+      "source": "NYT World"
     },
     {
       "sourceId": "nyt-world",
@@ -4375,7 +4364,7 @@
       "publishedAt": "2026-06-18T21:50:22.000Z",
       "category": "politics",
       "source": "NPR World",
-      "summary": "美国国防部长皮特·赫格塞斯批评北约盟国是「纸老虎」，启动为期六个月的美军驻欧洲部队部署评估，并敦促欧洲承担自身防务主导权。"
+      "summary": "美国国防部长赫格塞斯批评北约盟友犹如「纸老虎」，宣布启动为期六个月的驻欧美军部署审查。美方敦促欧洲国家承担更多防务责任，主导自身安全。"
     },
     {
       "sourceId": "npr-world",
@@ -4732,11 +4721,11 @@
       "sourceId": "aljazeera",
       "title": "US judge orders release of Palestinian rights advocate detained by ICE",
       "url": "https://www.aljazeera.com/news/2026/6/18/us-judge-orders-release-of-palestinian-rights-advocate-detained-by-ice?traffic_source=rss",
-      "excerpt": "Mosque leader says he was arrested and detained by immigration authorities in retaliation for his Palestine advocacy.",
+      "excerpt": "Mosque leader says he was arrested and detained by immigration authorities for his Palestine advocacy.",
       "publishedAt": "2026-06-18T23:01:26.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "美国法官下令释放遭移民及海关执法局拘留的巴勒斯坦权益倡导者兼清真寺负责人，该人士称遭羁押系对其支持巴勒斯坦立场的报复。"
+      "summary": "美国联邦法官下令释放一名被移民及海关执法局拘留的巴勒斯坦权益倡导者。该伊玛目表示，其系因从事巴勒斯坦维权活动而遭当局逮捕与拘押。"
     },
     {
       "sourceId": "aljazeera",
@@ -4764,7 +4753,7 @@
       "publishedAt": "2026-06-18T21:30:41.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "特朗普在社交媒体宣称，自签署和平协议备忘录以来，石油流通恢复且物价正在下降，该说法引发外界对实际价格走势的质疑。"
+      "summary": "特朗普在社交媒体宣称，自签署和平协议备忘录以来石油流通恢复，美国物价正持续下降。市场机构与经济学家正对其说法进行数据核实与评估。"
     },
     {
       "sourceId": "aljazeera",
@@ -4774,7 +4763,7 @@
       "publishedAt": "2026-06-18T21:28:00.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "古巴共产党批准一项前所未有的经济开放紧急方案。此举出台之际，美国持续施压已使该岛国经济承受巨大压力。"
+      "summary": "古巴共产党批准一项史无前例的经济开放方案，推出紧急经济一揽子计划。该举措旨在应对美国持续施压给该国宏观经济造成的严重冲击。"
     },
     {
       "sourceId": "aljazeera",
@@ -5234,9 +5223,9 @@
       "publishedAt": "2026-06-18T17:18:34.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "寻找具备独立AI增长潜力且NAV折价显著的标的，以 $ACMR 与 WUS (2316) 为例",
-      "displayExcerpt": "帖子探讨寻找同时具备大幅NAV折价与独立AI增长潜力的投资机会。作者提及 $ACMR 与 WUS (2316) 是比 SK Square 更极端的折价案例。目前作者已持有相关头寸，正进一步挖掘类似机会，并指出该类标的近期正逐渐受到市场关注。",
-      "summary": "关注 $ACMR 与 WUS (2316) 等高NAV折价且具独立AI增长潜力的标的。作者已持仓并寻找同类机会，指出近期市场关注度正逐步提升。"
+      "displayTitle": "寻找高NAV折价且具独立AI成长潜力的标的，如$ACMR与WUS（2316）对比SK Square",
+      "displayExcerpt": "正在寻找具有大幅净资产价值折价、且具备独立AI业务成长潜力的投资标的。目前关注到折价幅度较极端的$ACMR和WUS（2316），并与SK Square进行对比。作者已配置上述标的，现希望挖掘更多类似机会，指出该策略近期正逐渐受到市场关注。",
+      "summary": "关注高NAV折价与独立AI成长性标的，提及$ACMR、WUS（2316）及SK Square为参考。认为该策略近期受关注，旨在挖掘被低估的AI相关投资机会。"
     },
     {
       "sourceId": "x-serenity",
@@ -5246,9 +5235,9 @@
       "publishedAt": "2026-06-18T15:06:08.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "特朗普宣布英特尔与苹果合作，$INTC 单日上涨 8%，高管称对 $AAPL 合作消息感到意外",
-      "displayExcerpt": "特朗普公开宣布 $INTC 与 $AAPL 达成合作，推动英特尔股价当日上涨 8%。据透露，英特尔高管对该合作公告感到意外。作者调侃称总统应接管英特尔营销团队，认为其言论正强力带动股价表现。",
-      "summary": "受特朗普宣布的 $INTC 与 $AAPL 合作消息提振，英特尔股价当日大涨 8%。市场关注高管意外反应及外部言论对股价的短期催化作用。"
+      "displayTitle": "特朗普宣布英特尔与苹果合作推动$INTC单日大涨8%，高管对$AAPL消息公布感意外",
+      "displayExcerpt": "特朗普宣布英特尔与苹果达成合作，消息带动$INTC单日大涨8%。据悉英特尔高管对特朗普直接宣布$AAPL合作事宜感到意外。作者调侃称，总统目前俨然已成为英特尔的营销推手，凭借政策预期强势提振该股走势。",
+      "summary": "特朗普宣布英特尔与苹果合作，催化$INTC单日上涨8%。作者认为总统言论正强力支撑股价，高管对公布方式感意外，市场情绪受预期提振。"
     },
     {
       "sourceId": "x-serenity",
@@ -5258,9 +5247,9 @@
       "publishedAt": "2026-06-18T14:54:06.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "存储芯片板块三月内大幅反弹，$MU 与 $SNDK 涨幅均超 195%，提醒勿盲目看多后续预测",
-      "displayExcerpt": "帖子回顾三个月前市场普遍看空存储芯片，随后 $MU 从 380 美元涨至 1122 美元（+195.26%），$SNDK 从 565 美元涨至 2155 美元（+281.42%）。$EWY、SK海力士与三星亦录得逾 65% 至 215% 涨幅。作者借此提醒投资者警惕对三星等存储股的后续过度预测。",
-      "summary": "$MU、$SNDK 等存储股三个月内暴涨逾 195%。作者回顾此前市场极度看空情绪，提醒理性看待后续行情与机构预测。"
+      "displayTitle": "三个月前市场普遍看空存储，如今$MU涨近两倍、$SNDK暴涨281%、SK海力士与三星翻倍",
+      "displayExcerpt": "提醒投资者，三个月前社交平台几乎全员看空存储芯片。期间$MU从$380涨至$1122（+195.26%），$SNDK从$565涨至$2155（+281.42%），$EWY从$132涨至$219（+65.91%），SK海力士与三星股价亦分别暴涨逾两倍与一倍。若当前市场充斥看多预测，需保持理性。",
+      "summary": "存储板块三个月内强势反转，$MU、$SNDK涨幅近两倍，SK海力士与三星股价翻倍。提醒警惕当前过度乐观预期，板块情绪易由空转多。"
     },
     {
       "sourceId": "x-serenity",
@@ -5270,9 +5259,9 @@
       "publishedAt": "2026-06-18T13:45:08.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "吉姆·克莱默「反向定律」引热议：$SPCX 亦难承受其公开看好的影响",
-      "displayExcerpt": "作者调侃财经评论员吉姆·克莱默的「反向定律」堪称历史课题。文中指出，即便如 $SPCX 这样的标的，在其公开给予「祝福」（即公开看好）后也难以维持走势。该帖以幽默口吻提醒市场关注知名媒体人言论可能带来的反向催化效应。",
-      "summary": "借吉姆·克莱默的「反向定律」调侃 $SPCX 在其公开看好后走势承压，提示知名分析师言论可能引发的反向市场反应。"
+      "displayTitle": "吉姆·克莱默「反向定律」引热议，$SPCX亦难挡其公开表态带来的情绪波动",
+      "displayExcerpt": "作者认为吉姆·克莱默的「反向投资定律」足以载入史册。即便是$SPCX，也难以抵挡其公开「祝福」后的市场反向作用力。该言论暗示市场情绪易受知名分析师观点影响，投资者对其表态需保持警惕，留意资金情绪面扰动。",
+      "summary": "调侃吉姆·克莱默「反向定律」具历史性影响力，指出$SPCX同样受其公开表态波及。强调知名分析师观点常引发情绪反向波动，需留意资金面扰动。"
     },
     {
       "sourceId": "x-serenity",
@@ -5282,9 +5271,9 @@
       "publishedAt": "2026-06-18T09:38:11.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "聚焦光子学与激光器龙头：看好 $AAOI、$SIVE 营收拓展潜力，$COHR 上游整合提升 TAM",
-      "displayExcerpt": "作者感谢社区对其投资思路的剖析，明确表示看好 $AAOI 与 $SIVE 等激光企业。认为其营收空间广阔，可从单一激光器销售延伸至完整光模块、光引擎及 ELS 组件制造。同时提及 $COHR 通过进军上游衬底制造实现垂直整合，有望提升毛利率与总潜在市场规模 TAM。作者强调当前光子学赛道仍处极早期阶段。",
-      "summary": "长期看好 $AAOI 与 $SIVE 的光模块及组件拓展潜力，提及 $COHR 通过垂直整合提升 TAM。认为光子学赛道仍处极早期。"
+      "displayTitle": "深度解析最看好标的：激光与光模块公司如$AAOI、$SIVE、$COHR具垂直整合潜力",
+      "displayExcerpt": "作者明确最偏好$AAOI与$SIVE等激光企业，指出其营收拓展空间巨大，可突破单一激光器销售，向完整光模块、光引擎或外部光源组件延伸。同时提及$COHR可通过向上游延伸进军衬底制造实现垂直整合，提升毛利率与总潜在市场规模。认为光子学赛道仍处极早期。",
+      "summary": "重点看好$AAOI、$SIVE等激光企业，认为可向组件制造延伸拓展营收。提及$COHR垂直整合潜力，观点强调光子学赛道仍处极早期阶段。"
     },
     {
       "sourceId": "x-serenity",
@@ -5294,9 +5283,9 @@
       "publishedAt": "2026-06-18T07:43:15.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$ALRIB 股东大会纪要出炉：第二套 ROSIE 系统将交付美国量子计算龙头，光子学产品获强烈兴趣",
-      "displayExcerpt": "$ALRIB 今日公布股东大会纪要。纪要显示，第二套 ROSIE 系统预计短期内交付给美国某头部量子计算企业。公司正加紧推进 BTO/STO 光子学产品的商务拓展，并记录到强烈的市场兴趣。背景信息显示，该公司在 MBE 领域处于双寡头地位。",
-      "summary": "$ALRIB 纪要披露第二套 ROSIE 系统将交付美国量子计算龙头，光子学商务拓展获热烈反馈。该公司在 MBE 领域具双寡头地位。"
+      "displayTitle": "$ALRIB股东大会纪要：第二台ROSIE系统即将交付美国量子计算头部企业，光子学BD积极",
+      "displayExcerpt": "$ALRIB今日公布股东大会纪要，披露第二台ROSIE系统预计不久将交付给美国领先量子计算企业。公司正积极拓展光子学产品在BTO/STO层面的业务开发，并获强烈兴趣。背景显示，该公司系分子束外延技术领域双寡头之一。",
+      "summary": "$ALRIB纪要显示第二台ROSIE系统即将交付美国量子计算头部企业。光子学产品获BTO/STO强烈关注，公司系技术双寡头，业务推进积极。"
     },
     {
       "sourceId": "x-serenity",
@@ -5306,9 +5295,9 @@
       "publishedAt": "2026-06-18T02:10:26.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "X平台首次大规模股市净值调研结果出炉：超6000份金融圈用户反馈数据公布",
-      "displayExcerpt": "X平台首次针对金融活跃用户的大规模股市净值调研已完成。在超6000份回复中，资产分布情况如下：5.8%用户净资产超1000万美元，15%在100万至1000万美元之间，35.9%在10万至100万美元之间，43.3%低于10万美元。该数据更能反映活跃投资者的真实资产结构，为市场情绪提供了量化参考。",
-      "summary": "本次调研覆盖超6000名金融活跃用户，揭示其资产净值分布：近半数低于10万美元，约5.8%超千万美元。数据为理解社交平台投资者结构提供量化参考，无特定个股指向。"
+      "displayTitle": "X平台金融用户净资产规模首份大型调查出炉：$10M以上仅占5.8%",
+      "displayExcerpt": "首份针对X平台金融领域活跃用户的大规模股票市场净资产调查已完成。在超6000份有效回复中，净值超$10M者占5.8%，$1M至$10M者占15%，$100k至$1M者占35.9%，低于$100k者占43.3%。该数据或更能反映平台活跃投资者的真实资产分布状况。",
+      "summary": "调查覆盖6000+活跃用户，显示$100k以下散户占43.3%，超$10M资金体量仅占5.8%。反映社交平台财经圈层以中小资金为主，高净值占比偏低。"
     },
     {
       "sourceId": "x-serenity",
@@ -5318,9 +5307,9 @@
       "publishedAt": "2026-06-18T01:01:57.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "赞同Palliser Capital观点：华新（WUS/2316 TW）市值约10亿美元被严重低估，持有昆山华新股权价值超44亿美元",
-      "displayExcerpt": "作为股东，华新（WUS/2316 TW）当前约10亿美元的市值显得极不合理。该公司持有昆山华新11.26%的股份，而后者市值高达393亿美元（约2820亿人民币），税前价值达44.2亿美元。建议管理层出售部分持股以释放流动性，所获约11亿美元可反哺PCB业务增长，显著改善估值错配。",
-      "summary": "指出WUS（2316 TW）约10亿美元市值严重低估，其持有的昆山华新股权税前价值达44.2亿美元。建议出售部分持股套现约11亿美元用于PCB业务扩张，修复估值。"
+      "displayTitle": "WUS（2316 TW）市值仅~$1B引股东质疑：持股昆山工厂税前价值达$4.42B",
+      "displayExcerpt": "博主赞同Palliser Capital观点，对WUS（2316 TW）当前市值仅~$1B表示不解。该公司持有WUS昆山11.26%股权，而后者作为市值$39.3B（约¥282B人民币）的企业，对应税前价值高达$4.42B。若减持四分之一股份，即可获~$1.1B资金用于PCB业务扩张。",
+      "summary": "观点：WUS（2316 TW）市值~$1B严重低估。依据：其持股的WUS昆山对应税前价值达$4.42B，减持部分股权可获~$1.1B反哺主业。"
     },
     {
       "sourceId": "x-serenity",
@@ -5330,9 +5319,9 @@
       "publishedAt": "2026-06-17T15:46:21.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "知名主持人Jim Cramer对$SPCX表态认可，称SpaceX估值正以每小时1点的速度攀升",
-      "displayExcerpt": "财经评论员Jim Cramer对$SPCX给予正面背书。他在评论中指出，SpaceX的市场热度持续走高，个人测算其估值正呈现每小时上涨1个点的强劲势头。该言论反映了传统金融媒体对航天科技赛道短期情绪的高度关注，可能带动相关资金跟进。",
-      "summary": "Jim Cramer公开认可$SPCX，指出SpaceX估值呈现每小时上涨1点的强劲势头。该表态反映市场对航天科技赛道情绪高涨，或提振短期资金关注度。"
+      "displayTitle": "名嘴Jim Cramer表态力挺$SPCX，称SpaceX估值每小时攀升一个点",
+      "displayExcerpt": "知名财经主持人Jim Cramer公开对$SPCX表达看好立场。他指出：「我观察SpaceX的估值正以每小时一个点的速度持续攀升。」该言论被视为对该标的的明确背书，引发市场对其航天与太空商业板块短期热度的关注。",
+      "summary": "标的：$SPCX。观点：Jim Cramer明确看好并背书。催化剂：SpaceX估值据称正以每小时一单位的速度上升，短期情绪偏强。"
     },
     {
       "sourceId": "x-serenity",
@@ -5342,9 +5331,9 @@
       "publishedAt": "2026-06-17T15:24:06.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$AEHR获硅光大客户晶圆级老化测试系统追加订单，股价单日涨11.29%至116美元，市值逼近11亿美元",
-      "displayExcerpt": "$AEHR宣布获得某主要硅光客户针对晶圆级老化测试系统的追加量产订单。受此消息提振，该股当日大涨11.29%，报收116美元。两个月前其股价尚在30美元区间，估值修复迅速。分析指出，$AEHR目前约11亿美元的市值极具潜力，其发展轨迹正逐步显现出早期$TER的混合半导体设备龙头特征。",
-      "summary": "$AEHR获硅光客户追加晶圆级老化测试订单，股价单日飙升11.29%至116美元。目前市值约11亿美元，被视作具备早期$TER潜力的半导体设备标的。"
+      "displayTitle": "$AEHR获硅光大客户追加晶圆级老化系统订单，日内涨11.29%至$116",
+      "displayExcerpt": "半导体测试设备商$AEHR宣布获得主要硅光客户对晶圆级老化测试系统的追加生产订单，股价日内大涨11.29%至$116。两个月前该股尚在$30区间徘徊。博主指出，$AEHR在~$1.1B市值水平极具潜力，其发展路径或复刻早期$TER的走势。",
+      "summary": "标的：$AEHR。催化剂：获硅光大客户晶圆级老化系统追加订单。参考价：$116，市值~$1.1B。观点：走势强劲，或复制早期$TER行情。"
     },
     {
       "sourceId": "x-serenity",
@@ -5354,9 +5343,9 @@
       "publishedAt": "2026-06-17T14:57:10.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$NBIS创下历史新高，$IREN股价仍陷11月低位，两者AI基建赛道表现分化",
-      "displayExcerpt": "时隔七个月，$NBIS股价已突破历史新高，报86.69美元，被视为当前市场最纯粹的Neocloud与AI基础设施不对称投资机会。相比之下，$IREN的投资者仍在为高达60亿美元的ATM增发计划提供资金，股价却仍被困在11月的水平。两者的股价走势差异，清晰印证了不同AI算力底层资产的市场定价逻辑。",
-      "summary": "$NBIS股价达86.69美元创新高，被视作纯正AI基建标的。对比之下，$IREN受60亿美元ATM计划拖累，股价停滞于11月水平，凸显算力资产定价分化。"
+      "displayTitle": "$NBIS创历史新高对比$IREN陷停滞，博主称$86.69为最纯粹AI基建标的",
+      "displayExcerpt": "时隔七个月$NBIS刷新历史新高，对比$IREN持股者仍在承接$6,000,000,000的ATM增发且股价滞留于11月水平。博主指出，$NBIS在$86.69价位是当下最纯粹的Neocloud与AI基建投资不对称机会，营收增速极具看点。",
+      "summary": "标的：$NBIS。参考价：$86.69（历史新高）。观点：属最纯粹Neocloud与AI基建标的。对比$IREN承接$6,000,000,000增发股价停滞，凸显$NBIS强势。"
     },
     {
       "sourceId": "x-serenity",
@@ -5366,9 +5355,9 @@
       "publishedAt": "2026-06-17T13:18:06.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$XFAB暂无新消息，但作为欧洲硅光产业链龙头，市场对其光AI数据中心及功率半导体曝光度认知不足",
-      "displayExcerpt": "$XFAB近期并无重大新动态，但市场普遍认为其营销材料需进一步优化。目前多数资金未将其视作光AI数据中心或功率半导体相关标的，存在认知偏差。实际上，该公司作为欧洲硅光产业链的领军企业，在细分领域具备扎实的技术壁垒，若能加强市场沟通，有望重新获得与其业务实质匹配的估值溢价。",
-      "summary": "$XFAB暂无新催化，但作为欧洲硅光产业链龙头，市场低估了其在光AI数据中心及功率半导体领域的曝光度，建议关注营销改善带来的估值修复机会。"
+      "displayTitle": "$XFAB暂无新消息，但欧洲硅光链龙头地位被市场低估，亟需改善宣发",
+      "displayExcerpt": "博主表示$XFAB近期暂无新增催化剂，但指出公司营销材料亟需改进。目前市场尚未将其识别为光学AI数据中心或功率半导体的关联标的。事实上，$XFAB作为欧洲硅光子价值链的领军企业，其业务协同与产业链地位被严重低估，期待公司加强对外沟通。",
+      "summary": "标的：$XFAB。观点：暂无新催化剂，但作为欧洲硅光链龙头，其在光学AI与功率半导体领域的曝光被市场忽视，建议公司优化营销以重估价值。"
     },
     {
       "sourceId": "x-serenity",
@@ -5378,9 +5367,9 @@
       "publishedAt": "2026-06-17T12:01:32.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "玻璃基板封装转型在即，$LPK 宣称获全球主要玩家 80% 客户认可",
-      "displayExcerpt": "原文指出，$LPK 曾声明「全球主要厂商中有 80% 的客户已选用 LPKF 设备」，明确预示透明玻璃基板将成为下一代先进封装的核心方向。从产业时间表来看，Absolics 等头部企业将于 2026 年下半年启动扩产，三星电机及合作伙伴则规划在 2027 年跟进，设备订单与技术升级趋势已十分清晰。",
-      "summary": "观点强调 $LPK 设备在玻璃基板领域的领先份额，称 80% 全球大厂已采用其技术。预计 2026 至 2027 年 Absolics 与三星电机将推动量产，产业催化路径明确。"
+      "displayTitle": "$LPK玻璃基板封装趋势：称80%全球主要客户已选用其设备",
+      "displayExcerpt": "作者推测，$LPK此前宣称全球主要客户中已有80%选用其设备，清晰显示玻璃基板将是下一代封装技术的重要转向。根据预估时间表，Absolics等龙头企业将于2026年下半年开始扩产，三星电机及其合作伙伴则计划于2027年跟进。这一产业链动态表明玻璃基板技术正加速落地。",
+      "summary": "看好$LPK在玻璃基板封装的先发优势。催化剂为Absolics与三星电机等大厂将于2026至2027年相继扩产。$LPK已获主要客户80%订单份额，技术替代趋势明确。"
     },
     {
       "sourceId": "x-serenity",
@@ -5390,9 +5379,9 @@
       "publishedAt": "2026-06-17T11:24:26.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "Trendforce 披露 $AMD 正大举采购连续波激光器，供应链产能成瓶颈",
-      "displayExcerpt": "集邦咨询报道，$AMD 正通过多笔大型采购单积极锁定连续波激光器供应，此举或仅是产能紧缺的开端。目前西方供应链中保有独立产能的厂商仅剩 $SIVE、$AAOI 及 Macom 等少数企业。在主流供应商产能受限的背景下，上述具备稀缺产能的公司有望持续承接超额订单。",
-      "summary": "观点指出 $AMD 正通过大单锁定连续波激光器产能，供应链瓶颈初现。西方独立产能仅余 $SIVE、$AAOI 与 Macom，供应紧张为相关标的带来明确需求催化。"
+      "displayTitle": "Trendforce报告：$AMD积极采购连续波激光器，供应链瓶颈或初现",
+      "displayExcerpt": "Trendforce报告显示，$AMD正通过多项大额采购订单积极锁定连续波激光器供应。作者认为这可能仅是供应链瓶颈的开始。目前西方供应链中，除$SIVE、$AAOI及Macom外，已缺乏足够的独立产能，尤其在Lumentum相关变动之后，稀缺产能的竞争或将加剧。",
+      "summary": "观点指出$AMD正大额采购连续波激光器，供应链瓶颈或刚起步。西方独立产能稀缺，除$SIVE和$AAOI外选择有限。该帖认为激光器产能争夺将推高相关标的价值。"
     },
     {
       "sourceId": "x-serenity",
@@ -5402,9 +5391,9 @@
       "publishedAt": "2026-06-17T06:40:09.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "欧洲金融资讯套路揭秘：同质化研报仅需 $2000 门槛费",
-      "displayExcerpt": "帖子以调侃口吻指出，当前欧洲部分财经媒体常将市场上常见的投资逻辑与分析框架包装成高价内容，读者只需跨越 $2000 的付费墙即可获取。作者意在提醒市场参与者，诸多机构专栏与研报的核心观点实则高度趋同，投资者无需过度迷信高价资讯所营造的信息差壁垒。",
-      "summary": "观点指出欧洲部分媒体将常见投资逻辑包装进 $2000 付费墙，内容实则高度同质。提醒投资者理性看待高价研报，警惕信息溢价，未涉及具体股票标的。"
+      "displayTitle": "欧洲媒体高价付费墙现象：相同观点标价高达2000美元",
+      "displayExcerpt": "作者讽刺欧洲财经媒体将相同的市场分析或投资逻辑设置高昂的付费门槛。相同的内容与观点在公开渠道可能免费，但欧洲媒体却将其包装在高达2000美元的付费墙后，暗示投资者在获取研报时需警惕信息溢价与重复内容。",
+      "summary": "观点批评欧洲媒体将常规投资逻辑与市场分析设置高达2000美元的付费墙。该帖提醒投资者关注信息成本差异，避免为重复观点支付过高溢价，强调独立研判的重要性。"
     },
     {
       "sourceId": "x-serenity",
@@ -5414,9 +5403,9 @@
       "publishedAt": "2026-06-17T05:31:46.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "抨击 Bernstein 研报失准：曾看错 $INTC，又唱空铠侠 50%",
-      "displayExcerpt": "作者严厉质疑 Bernstein 机构研报的预测准确性，指出该机构近期预测铠侠市值将出现 50% 暴跌，但其历史判断屡有失误：年初该机构给予 $INTC 的 $36 目标价，早已被当前 $118 的市价大幅超越。作者借此警示散户，机构面向公众发布的公开报告往往缺乏实操参考价值。",
-      "summary": "观点批评 Bernstein 研报频繁误判，指出其唱空铠侠 50% 缺乏依据，且年初给予 $INTC 的 $36 目标价远偏离当前 $118 市价。建议散户勿盲从公开机构报告。"
+      "displayTitle": "质疑Bernstein看空Kioxia：曾严重低估$INTC至36美元",
+      "displayExcerpt": "作者强烈批评Bernstein机构，称其预测Kioxia股价将暴跌50%极为荒谬。该机构曾在1月给予$INTC仅36美元目标价，而该股现已涨至118美元。帖文以此为例，提醒散户勿轻信面向公众发布的机构研报，彭博社亦有相关报道提及Kioxia市值表现。",
+      "summary": "观点质疑机构研报可信度。以Bernstein为例，其曾给$INTC开出36美元目标价，现价已达118美元。该帖驳斥其对Kioxia暴跌50%的预测，建议理性看待卖方观点。"
     },
     {
       "sourceId": "x-serenity",
@@ -5426,9 +5415,9 @@
       "publishedAt": "2026-06-17T04:21:12.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "关注 $WUS 激进投资者报告：潜在公司治理或估值重估催化",
-      "displayExcerpt": "帖子简要透露作者正在研读一份针对 $WUS 的激进投资者报告。尽管详细内容受限于付费订阅门槛未完全公开，但此类文件通常聚焦于敦促企业优化治理结构、调整资本配置或剥离非核心资产。若诉求落地，往往能成为触发股价短期波动与价值重估的关键催化剂。",
-      "summary": "观点提及正关注针对 $WUS 的激进投资者报告。此类文件通常聚焦治理优化或资本配置诉求，可能带来股价催化。因属付费内容摘要，暂无具体财务目标。"
+      "displayTitle": "关于WUS激进投资者报告的内部分析（订阅内容）",
+      "displayExcerpt": "该帖为订阅者专享内容，主要聚焦于一份针对WUS公司的激进投资者报告。作者正在研读该报告细节并分享其初步看法。由于涉及付费专区与内部资料，公开摘要未披露具体财务数据或行动策略，仅提示市场关注WUS近期可能面临的股东结构与治理变动。",
+      "summary": "观点聚焦于针对WUS的激进投资者报告。作者正评估报告内容并准备分享详细分析。该帖属付费订阅专享，提示关注WUS可能面临的治理结构变化及潜在资本运作动向。"
     },
     {
       "sourceId": "x-serenity",
@@ -5438,9 +5427,9 @@
       "publishedAt": "2026-06-17T02:26:55.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "坚定看多 $AAOI：稀缺激光器产能获 $AMD 等大厂追捧，价格由 $30 升至 $170",
-      "displayExcerpt": "作者明确表达对 $AAOI 的高确信看多立场，其参考股价已从 $30 稳步攀升至 $170。核心逻辑在于该公司掌握稀缺的激光器制造产能，正精准对接 $AMD 及其他超大规模数据中心企业的迫切需求。在全行业面临产能瓶颈的宏观背景下，公司订单能见度与溢价能力预计持续走强。",
-      "summary": "观点坚定看多 $AAOI，参考股价由 $30 升至 $170。核心逻辑在于其稀缺激光器产能正被 $AMD 等大厂争抢，行业供应瓶颈为业绩提供明确催化。"
+      "displayTitle": "坚定做多$AAOI：从30美元至170美元，稀缺激光器产能受$AMD青睐",
+      "displayExcerpt": "作者对$AAOI保持高度看涨立场，自30美元起持续布局，目前股价已升至170美元，并坚信看空者判断失误。帖文指出，$AAOI掌握着$AMD等超大规模数据中心厂商急需的稀缺激光器产能。在行业面临整体供应链瓶颈的背景下，其核心资产价值凸显。",
+      "summary": "观点坚定做多$AAOI，股价已从30美元攀升至170美元。催化剂为该公司拥有$AMD等大厂亟需的稀缺激光器产能。在行业产能瓶颈期，作者认为看空逻辑不成立。"
     },
     {
       "sourceId": "x-serenity",
@@ -5450,9 +5439,9 @@
       "publishedAt": "2026-06-16T23:57:48.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "瑞穗研究：CPO或800V直流供电无延期，上调$NVDA需求带动的光学引擎预测",
-      "displayExcerpt": "瑞穗研究指出，CPO与800V直流供电技术推进均未延期。受$NVDA需求增长推动，机构上调了光学引擎出货预测。长期来看，CPO下一阶段将聚焦InP DFB激光器（利好$SIVE），而VSCEL与microLED在短距及芯片间1.6T以上传输中仍属「未经证实」方案。高压直流供电部署持续推进。",
-      "summary": "瑞穗明确CPO技术路线无延期，看好$NVDA拉动的光学引擎需求。长期技术焦点指向InP DFB激光器（提及$SIVE），1.6T以上短距方案待验证。高压直流部署同步推进。"
+      "displayTitle": "瑞穗研报：CPO与800V直流技术无延期，上调$NVDA需求带动的光引擎预期；长期聚焦InP DFB激光器（利好$SIVE）",
+      "displayExcerpt": "瑞穗研报指出，CPO与800V直流供电技术均无延期。受$NVDA算力需求扩张带动，光引擎预期被上调。长期CPO发展下一阶段的焦点仍是磷化铟DFB激光器，这直接利好$SIVE。相比之下，VCSEL与MicroLED在机柜短距及1.6T+芯片互连场景中仍属「未经验证」。高压直流技术部署同步推进。",
+      "summary": "瑞穗看好CPO与800V技术进展无延迟，因$NVDA需求上调光引擎预期。长期技术路线聚焦InP DFB激光器（关注$SIVE），VCSEL等在高速短距场景仍待验证。"
     },
     {
       "sourceId": "x-serenity",
@@ -5462,9 +5451,9 @@
       "publishedAt": "2026-06-16T13:00:15.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "观点：AI是人类史上最具颠覆性的技术，影响力可比肩农业或工业革命",
-      "displayExcerpt": "作者认为AI是人类历史上最具颠覆性的技术，其变革程度可与农业或工业革命比肩。随着Anthropic、OpenAI、XAI等机构竞相研发超级智能，若AI未来能助力攻克疾病等重大难题，其产生的宏观经济影响将难以估量。",
-      "summary": "核心观点：AI是堪比历次产业革命的颠覆性技术。催化剂为各大科技机构竞相研发超级智能。强调若AI在医疗等领域实现突破，将释放难以估量的长期经济价值。"
+      "displayTitle": "AI颠覆性堪比农业与工业革命，Anthropic、OpenAI及XAI竞相研发超级智能，潜在经济价值难以估量",
+      "displayExcerpt": "作者认为，人工智能堪称人类史上最具颠覆性的技术，其历史地位足以比肩农业与工业革命。当前Anthropic、OpenAI、XAI等科技企业正全力竞逐超级智能开发。若AI未来能助力攻克医疗难题，其释放的经济价值将难以量化，长期增长潜力广阔。",
+      "summary": "观点指出AI颠覆性堪比农业与工业革命，Anthropic、OpenAI与XAI正竞相研发超级智能。若AI赋能医疗突破，将创造难以估量的宏观经济价值。"
     }
   ]
 }
