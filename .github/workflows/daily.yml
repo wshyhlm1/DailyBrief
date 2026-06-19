@@ -35,6 +35,12 @@ on:
     # the "target hour" run much more reliable than single-hourly cron.
     - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
+    inputs:
+      rebuild_site_only:
+        description: "Rebuild archive/search and publish existing reports without generating a new report"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write # needed to push to gh-pages branch
@@ -248,6 +254,7 @@ jobs:
           fi
 
       - name: Generate today's report
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.rebuild_site_only != true }}
         env:
           LLM_BACKEND: ${{ vars.LLM_BACKEND || 'anthropic' }}
           LLM_MODEL: ${{ vars.LLM_MODEL }}
