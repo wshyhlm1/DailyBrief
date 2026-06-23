@@ -1,117 +1,146 @@
 {
-  "hero_headline": "AI安全工具发布与全球资本市场波动交织",
-  "daily_overview": "今日科技领域聚焦AI安全基建，OpenAI正式发布Daybreak工具集以强化企业级漏洞排查与修复。财经市场呈现显著波动，SpaceX受美债收益率意外攀升压制导致市值大幅缩水，同时算力资产证券化探索与全天候期货交易提案引发业界热议。时政层面美伊核核查谈判再生分歧，德国专家委员会酝酿调整养老金领取门槛，哈萨克斯坦则宣布暂停地方行政长官直选试点。多维信号表明技术迭代、资本流动与地缘政策正在深度交织并重塑全球格局。",
+  "hero_headline": "OpenAI发布安全工具集，格林斯潘逝世",
+  "daily_overview": "今日全球焦点集中于人工智能基础设施安全与宏观政策转向。技术端，OpenAI推出Daybreak安全工具集并启动开源漏洞修复计划，AI代理自主参与预测市场占比突破三成。财经市场波动加剧，SpaceX市值大幅回调，台湾散户高杠杆押注AI芯片股引发泡沫担忧，艾伯维完成超百亿医药并购。时政方面，美国基于核核查承诺暂缓对伊制裁并解冻资金，德国养老金改革提议延后退休年龄，蒙特利尔枪击案震动北美社会。整体呈现科技深化落地与地缘金融博弈交织的态势。",
   "tech_briefs": [
     {
-      "title": "OpenAI推出安全套件与开源维护计划",
+      "title": "OpenAI发布安全工具集并资助开源维护者",
       "url": "https://openai.com/index/daybreak-securing-the-world",
       "source": "OpenAI News",
-      "summary": "OpenAI发布Daybreak安全工具集，包含代码安全审计与漏洞验证功能。同步启动开源维护者扶持计划，利用AI辅助修复基础设施漏洞。（多家报道）",
+      "summary": "OpenAI推出Daybreak计划，包含代码安全检测与新一代模型，旨在帮助企业规模化修复漏洞。同时启动专项资助，利用智能复核协助开源社区发现缺陷，提升底层基础设施韧性。（多家报道）",
       "importance": 9
     },
     {
-      "title": "AI智能体占据Polymarket超三成交易",
+      "title": "预测市场超三成交易由自主AI代理完成",
       "url": "https://x.com/Oracle_Trade_ai/status/2068980536580985246",
       "source": "X 推文 (AttentionVC)",
-      "summary": "自主运行的AI代理已广泛应用于预测市场，算法钱包贡献平台超三成活跃度。该技术利用高频数据解析优化定价策略，正重塑衍生品交易生态。（多家报道）",
+      "summary": "算法驱动与自主钱包正重塑预测市场生态。数据显示Polymarket平台逾30%的交易量已来自AI代理，其自动化策略在复杂事件定价中展现高效率，成为量化交易新趋势。（多家报道）",
       "importance": 8
     },
     {
-      "title": "初创企业宣称突破大模型数学算力瓶颈",
-      "url": "https://www.technologyreview.com/2026/06/19/1139313/a-startup-claims-it-broke-through-a-bottleneck-thats-holding-back-llms/",
-      "source": "MIT Tech Review AI",
-      "summary": "迈阿密初创公司Subquadratic宣布其算法攻克制约大语言模型扩展的数学计算瓶颈。该技术优化底层运算逻辑以降低训练成本，有望加速模型迭代。",
-      "importance": 8
-    },
-    {
-      "title": "开源项目OpenMontage智能体视频管线",
+      "title": "GitHub热门项目OpenMontage实现全开源AI视频制作",
       "url": "https://github.com/calesthio/OpenMontage",
       "source": "GitHub Trending",
-      "summary": "该项目是全球首个面向AI编程助手的开源视频生产系统。它通过多智能体协同自动完成分镜调度与渲染导出，解决传统视频制作流程繁琐问题，为开发者提供低门槛制片工具。",
+      "summary": "全球首个开源智能体视频生产系统，内置多条流水线与丰富技能。该项目将代码环境转化为制作工作室，降低创作门槛。开发者可通过插件集成媒体流，适用于自动化视频批量生成与多模态测试。",
       "importance": 7
+    },
+    {
+      "title": "观察Anthropic与美国政府最新监管摩擦",
+      "url": "https://www.technologyreview.com/2026/06/22/1139424/three-things-to-watch-amid-anthropics-latest-feud-with-the-government/",
+      "source": "MIT Tech Review AI",
+      "summary": "媒体梳理出模型透明度、安全合规及联邦采购三大争议。此事凸显头部企业在快速扩张中与监管框架的常态化博弈，后续政策走向将直接影响行业研发路径与合规成本。",
+      "importance": 8
     }
   ],
   "finance_briefs": [
     {
       "title": "Serenity 当日荐股标的汇总",
-      "url": "https://x.com/aleabitoreddit/status/2069188398825566318",
+      "url": "https://x.com/aleabitoreddit/status/2069214132415652048",
       "source": "X Serenity (@aleabitoreddit)",
-      "summary": "已合并 Serenity 当日 1 条推文中的荐股信息，去重后标的为：$TSEM、$GFS、$INTC、$TSM、$SOI、$NVDA。供盘前快速跟踪。",
+      "summary": "已合并 Serenity 当日 2 条推文中的荐股信息，去重后标的为：$NBIS、$IREN、$TSEM、$GFS、$INTC、$TSM、$SOI、$NVDA。供盘前快速跟踪。",
       "importance": 10
     },
     {
-      "title": "SpaceX市值缩水逾4000亿美元受利率压制",
-      "url": "https://www.ft.com/content/c11d08ed-6668-4678-b829-1d50acbd12d4",
-      "source": "Financial Times",
-      "summary": "受美国国债收益率意外走高影响，SpaceX及其关联板块股价大幅下挫逾16%，市值蒸发约四千亿美元。市场担忧高融资成本将延缓重资产科技项目商业化。",
+      "title": "前美联储主席艾伦·格林斯潘逝世",
+      "url": "https://www.bbc.com/news/articles/cjer7x7yl12o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "summary": "曾主导现代美国货币政策的前美联储主席去世。其执政期被视为管理典范，但金融危机后声誉受损。市场认为其经济思想将持续影响后续金融监管与央行独立性讨论。（多家报道）",
       "importance": 9
     },
     {
-      "title": "美期交会研究全天候及能源永续合约交易",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-23/cftc-seeks-input-on-24-7-futures-energy-perpetuals-trades",
-      "source": "Bloomberg Markets",
-      "summary": "美国商品期货交易委员会公开征询意见，探讨传统能源衍生品实行全天候交易及推出永续合约可行性。此举旨在应对离岸竞争压力，提升本土能源市场流动性。",
-      "importance": 8
+      "title": "SpaceX股价重挫逾一成市值大幅蒸发",
+      "url": "https://www.ft.com/content/c11d08ed-6668-4678-b829-1d50acbd12d4",
+      "source": "Financial Times",
+      "summary": "受债券收益率攀升及获利了结影响，集团旗下股价单日暴跌逾16%。此次大幅回调反映出高估值科技资产在宏观利率变动环境下的敏感性，引发机构对估值模型的重估。",
+      "importance": 9
     },
     {
-      "title": "金融机构探索将算力转化为可交易资产",
-      "url": "https://www.economist.com/finance-and-economics/2026/06/22/how-to-turn-compute-into-a-financial-asset",
-      "source": "The Economist Finance",
-      "summary": "随着AI算力需求激增，机构正积极设计以数据处理能力为底层支持的金融衍生品。此举为基础设施建设提供新融资渠道，但仍需完善定价标准与合规框架。",
+      "title": "艾伯维斥资109亿美元收购药物开发商",
+      "url": "https://www.ft.com/content/42b5d5d0-0797-43eb-920c-120f68d21f0a",
+      "source": "Financial Times",
+      "summary": "该交易为药企半世纪以来最大规模并购，旨在补充炎症管线资产。正值全球制药业并购潮升温，巨头正加速通过外部收购对冲专利到期与研发周期拉长的双重压力。",
       "importance": 7
     },
     {
-      "title": "市场警惕日元干预风险日美财长紧急磋商",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-22/yen-intervention-risk-rises-on-reports-of-katayama-bessent-talks",
+      "title": "台湾散户高杠杆涌入AI芯片股引发担忧",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-23/tsmc-fueled-ai-frenzy-makes-taiwan-capital-of-leveraged-stock-bets",
       "source": "Bloomberg Markets",
-      "summary": "日元持续走弱促使两国财政部门召开线上会议。外汇交易员高度关注干预可能性，散户已停止做空日元，专业投资者则布局进一步贬值，汇市波动性上升。",
+      "summary": "受人工智能产业爆发推动，本地投资者大量借贷买入科技股，融资杠杆比例显著攀升。监管机构已提示过热风险，担忧非理性追高可能酝酿局部泡沫并冲击家庭资产负债表。",
       "importance": 8
     }
   ],
   "politics_briefs": [
     {
-      "title": "美方称放宽伊朗石油制裁伊方否认新承诺",
-      "url": "https://www.nytimes.com/live/2026/06/22/world/iran-us-trump-lebanon",
-      "source": "NYT World",
-      "summary": "美国宣布放松对伊朗石油出口限制，但伊朗外交部明确否认就核核查人员入境做出新承诺。双方表态分歧明显，中东能源与外交走向仍需进一步观察。（多家报道）",
+      "title": "美国基于核核查承诺放宽对伊制裁",
+      "url": "https://www.bbc.com/news/articles/c3vy3nr63gxo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "summary": "美方宣布因伊朗承诺接受核查，将解除部分制裁并释放资金。伊方回应未作新让步，仅确认维持现有机制。地缘缓和预期短期提振能源市场，后续执行细节仍存不确定性。（多家报道）",
       "importance": 9
     },
     {
-      "title": "德国养老金委员会拟调整提前退休政策门槛",
-      "url": "https://www.dw.com/zh/德国养老金改革：专家组提议最早64岁退休并领取减扣养老金/a-77661600?maca=chi-rss-chi-all-1127-rdf",
-      "source": "DW 中文",
-      "summary": "针对当前大量人员提前退休导致基金压力增大的现象，德国专家委员会提出改革草案，建议将最早可申领减额养老金年龄调整为六十四岁，以维持社保体系长期平衡。",
+      "title": "加拿大蒙特利尔发生枪击冲突致三人死亡",
+      "url": "https://www.nytimes.com/2026/06/22/world/canada/montreal-shooting-manhunt-police.html",
+      "source": "NYT World",
+      "summary": "警方与嫌疑人交火造成一名警员及两名平民遇难，当局曾发布全城居家令。案件引发对公共安全与警力部署的讨论，目前现场已封锁，详细作案动机仍在进一步调查中。",
       "importance": 7
     },
     {
-      "title": "哈萨克斯坦逆转政策暂停地方直选改革",
-      "url": "https://thediplomat.com/2026/06/kazakhstans-reverses-course-on-direct-elections-of-district-akims/",
-      "source": "The Diplomat",
-      "summary": "哈萨克斯坦政府宣布取消此前推行的区级行政长官直接选举试点计划。此举标志着地方治理改革路径的调整，政治权力结构将维持原有的自上而下任命模式。",
+      "title": "德国专家委员会提议提前退休年龄延至64岁",
+      "url": "https://www.dw.com/zh/德国养老金改革：专家组提议最早64岁退休并领取减扣养老金/a-77661600?maca=chi-rss-chi-all-1127-rdf",
+      "source": "DW 中文",
+      "summary": "面对老龄化与财政压力，官方委员会建议将提前退休年龄上调并维持减额机制。该提案旨在缓解社保赤字，预计将在政界与工会间引发新一轮博弈，落地时间表尚不明朗。",
       "importance": 7
     }
   ],
-  "editor_note": "技术迭代与宏观政策深度交织，AI应用向产业端渗透的同时，资本定价体系面临结构性重塑。建议持续关注监管框架演进与地缘变量。",
+  "editor_note": "科技与安全博弈深化，资产价格在利率波动中重估。地缘政策微调持续传导，读者宜穿透情绪，聚焦长期交叉变量。",
   "keywords": [
-    "OpenAI安全工具",
-    "SpaceX市值",
-    "算力证券化",
-    "日元干预",
-    "美伊核谈判",
-    "AI智能体交易",
+    "人工智能安全",
+    "格林斯潘逝世",
+    "SpaceX市值回调",
+    "对伊制裁",
+    "AI代理交易",
     "养老金改革",
-    "全天候期货"
+    "医药并购"
   ],
   "stock_highlights": [
+    {
+      "symbol": "NBIS",
+      "company": "Nebius Group",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2069214132415652048",
+      "view": "看多",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "作为新型云服务商受市场追捧，被视为AI超级周期核心受益标的之一，资金正向光子学与存储等AI硬件基础设施领域轮动。"
+    },
+    {
+      "symbol": "IREN",
+      "company": "Iris Energy",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2069214132415652048",
+      "view": "风险提示",
+      "target_price": "",
+      "reference_price": "$6,000,000,000资产规模",
+      "thesis": "因涉及高达60亿美元资产规模导致资金深陷其中，作者提示投资者可能因此错失AI硬件超级周期的资金轮动与配置机会。"
+    },
     {
       "symbol": "TSEM",
       "company": "Tower Semiconductor",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2069188398825566318",
-      "view": "持仓/做多",
+      "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "光电子代工表现强劲，被誉为光电子领域台积电。作者因未重仓遗憾，当前明确做多，视NVDA GTC大会为CPO赛道关键情绪催化剂。"
+      "thesis": "单日大涨超10%被作者誉为光子学领域的台积电，明确看好其在共封装光学领域的潜力，英伟达GTC大会构成潜在催化。"
+    },
+    {
+      "symbol": "SOI",
+      "company": "Soitec",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2069188398825566318",
+      "view": "看多/观察",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "与Tower Semi并列被作者视为共封装光学领域的首选标的，直接受益于AI硬件光互联技术升级及代工产业链活跃趋势。"
     },
     {
       "symbol": "SPCX",
@@ -120,8 +149,8 @@
       "url": "https://x.com/aleabitoreddit/status/2069068801329774691",
       "view": "复盘/风险提示",
       "target_price": "",
-      "reference_price": "$583B市值蒸发 / $210",
-      "thesis": "自名人$210看涨建议后市值大幅蒸发，反向操作可获超额回报。市场走势与言论显著背离，提示短期情绪过热与资金博弈风险。"
+      "reference_price": "$210 / 市值蒸发>$583B",
+      "thesis": "记录知名分析师在210美元看多后股价剧烈回调现象，三个交易日内市值蒸发超5830亿美元，展现名人看多后的反向指标效应。"
     },
     {
       "symbol": "AAOI",
@@ -130,103 +159,103 @@
       "url": "https://x.com/aleabitoreddit/status/2069062745308254434",
       "view": "看多",
       "target_price": "",
-      "reference_price": "$12.8B市值 / 年化营收$5.6B",
-      "thesis": "若达成预期年增速将超800%，基于月营收推算年化营收达$5.6B。需求扩张至2028年，营收与利润率同步攀升，高成长逻辑支撑估值。"
+      "reference_price": "$12.8B市值 / ~$471M月营收",
+      "thesis": "若兑现市场预期将实现超800%同比增速，对应56亿美元年化营收。随2028年前需求指数扩张及量价齐升，成长逻辑明确。"
     },
     {
       "symbol": "LPK",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2069005921318281566",
-      "view": "观察",
+      "view": "观察/看多",
       "target_price": "",
-      "reference_price": "$3B-$5B合理估值 / 市值上限$20B",
-      "thesis": "玻璃基板设备龙头，已锁定客户待产能爬坡。供应链博弈中属核心筹码，但细分市场天花板限制长期市值，具备不对称性价比但爆发力受限。"
+      "reference_price": "$3B-$5B估值区间",
+      "thesis": "推测实现全面量产爬坡后合理估值在30至50亿美元间，属玻璃基板设备细分标的。具备不对称风险收益特征，但市值受细分赛道总量限制。"
     },
     {
       "symbol": "SIVE",
-      "company": "",
+      "company": "Sivers Semiconductors",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2068651355422814294",
-      "view": "看多",
+      "view": "看多/技术突破",
       "target_price": "",
       "reference_price": "",
-      "thesis": "澄清市场误解，非仅CPO受益，而是下一代网络架构核心激光芯片供应商。联合开发1.6T光模块绕开EML瓶颈，技术替代潜力强劲。"
+      "thesis": "作为下一代架构核心激光供应商覆盖多技术路线，与JBL合作开发1.6T光模块绕开EML瓶颈，展现光通信前沿方案研发突破。"
     },
     {
-      "symbol": "WUS",
-      "company": "WUS Printed Circuit",
+      "symbol": "WUS TW",
+      "company": "华通电脑",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2068866709667406286",
-      "view": "持仓/做多",
+      "view": "看多/套利",
       "target_price": "",
-      "reference_price": "市值约$1.12B / 股权净值$4.79B",
-      "thesis": "连三涨停符合NAV套利与独立增长策略。持有昆山工厂高比例股权，AI数据中心需求驱动业务扩张，当前估值显著低于隐含资产净值。"
-    },
-    {
-      "symbol": "6324",
-      "company": "Harmonic Drive",
-      "source": "X Serenity (@aleabitoreddit)",
-      "url": "https://x.com/aleabitoreddit/status/2068860355393290703",
-      "view": "持仓/做多",
-      "target_price": "",
-      "reference_price": "",
-      "thesis": "高盛研报覆盖中人形机器人赛道优质标的，受日股情绪催化走强，作者已配置。看好精密传动部件在机器人产业化进程中的长期渗透趋势。"
+      "reference_price": "11.2亿市值 / 47.9亿持股",
+      "thesis": "连拉涨停验证折价套利与AI服务器双轮逻辑。主营PCB受益AI增长，持有昆山厂巨额股权存在显著折价空间，属净值套利标的。"
     },
     {
       "symbol": "138080",
       "company": "OE Solutions",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2068603148311404902",
-      "view": "观察/研究跟踪",
+      "view": "看多/关注",
       "target_price": "",
       "reference_price": "",
-      "thesis": "韩国光模块新锐，掌握EML核心技术并垂直整合，跻身全球高端供应链。体量对标同业，在高速光通信细分领域具备独特生态位。"
+      "thesis": "韩国光模块企业，商业模式类似AAOI。为全球少数掌握EML芯片技术的厂商，供应链稀缺性强，有望受益于高速光互联需求扩产。"
+    },
+    {
+      "symbol": "SNDK",
+      "company": "",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2068579389722546529",
+      "view": "类比/观察",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "借半导体周期定价逻辑映射消费端供需错配，指出乳清蛋白等补剂因需求激增出现瓶颈，可能重演历史供需错配驱动的提价行情。"
     },
     {
       "symbol": "ASML",
       "company": "ASML Holding",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2068537478131118438",
-      "view": "观察/战略配置",
+      "view": "看多/宏观逻辑",
       "target_price": "",
       "reference_price": "",
-      "thesis": "光刻设备核心供应商，贸易战背景下掌控AI与前沿供应链关键节点。地缘博弈凸显其不可替代性，长期具备战略配置价值。"
+      "thesis": "掌握量子计算、AI与机器人等前沿供应链核心环节，受全球科技博弈与产业自主化趋势催化，长期战略价值与确定性突出。"
     },
     {
-      "symbol": "SOI",
-      "company": "Soitec",
+      "symbol": "TOWA",
+      "company": "Towa Corporation",
       "source": "X Serenity (@aleabitoreddit)",
-      "url": "https://x.com/aleabitoreddit/status/2069188398825566318",
-      "view": "看多",
+      "url": "https://x.com/aleabitoreddit/status/2068537478131118438",
+      "view": "看多/宏观逻辑",
       "target_price": "",
       "reference_price": "",
-      "thesis": "共封装光学赛道首选标的，与Tower Semi并列核心受益者。受AI算力需求与NVDA GTC催化，板块情绪持续走高，具中长期配置价值。"
+      "thesis": "掌握半导体先进封装与核心材料设备环节，在AI与机器人前沿供应链中占据关键地位，地缘科技博弈背景下具备配置价值。"
     }
   ],
   "trading": {
-    "market_overview": "美股大盘整体呈现显著的结构性分化特征，半导体及硬件产业链受资金聚焦维持强势多头排列，RSI多运行于中高位区间；而部分大型科技股因短期涨幅过大进入技术性回调。加密货币市场情绪持续降温，公开数据显示恐慌贪婪指数已回落至23，落入极度恐慌象限；主流加密资产普遍失守中长期均线支撑，MACD指标持续位于零轴下方运行，空头趋势明确，行业总市值暂维持在2.27万亿美元水平。中概股板块技术形态两极分化，部分先进制造标的放量突破均线压制，但核心互联网资产仍受空头排列约束。宏观与商品外汇维度，美元指数RSI攀升至72.5逼近超买警戒线，均线系统多头发散；黄金ETF价格回落至年线下方。跨资产技术面显示流动性预期博弈加剧，整体技术环境呈现防御特征，资金在高低切与板块轮动中寻找短期确定性，整体盘面偏向震荡整理。",
+    "market_overview": "整体技术面呈现显著分化格局。美股半导体与部分成长标的动量强劲，价格稳居SMA20与SMA50之上形成多头排列，MACD金叉支撑短期偏上结构；但部分权重股跌破中期均线，MACD死叉延续绿柱，进入横盘整固阶段。加密市场情绪受恐慌指数23极度恐慌压制，BTC与ETH价格均位于SMA50与SMA200下方，MACD绿柱未见收敛，2.28万亿总市值背景下增量资金观望情绪浓厚，反弹阻力显著。中概股板块整体承压，多数标的RSI落入超卖区间，中长期均线呈空头压制，技术修复仍需放量确认。商品与宏观端，黄金ETF运行于均线下方支撑转弱，美元指数RSI达72.3进入超买区但趋势延续上行，10Y美债收益率温和走高维持多头，大类资产技术形态清晰反映宏观预期与避险资金交织。",
     "watchlist": [
       {
-        "symbol": "GFS",
-        "display_name": "GlobalFoundries(GFS)",
+        "symbol": "UMC",
+        "display_name": "联电 ADR (UMC)",
         "stance": "偏上行",
-        "rationale": "近5日录得10.19%涨幅，现价89.67元已稳居20日、50日及200日均线之上，呈现典型多头排列。RSI14报64.4，尚未进入70以上超买区，保留上行动能。MACD指标录得正值3.569，且明确上穿信号线3.5026形成金叉，短线多头趋势确立。"
+        "rationale": "当前价格27.50美元，位于SMA20（21.64）与SMA50（16.87）上方，呈现典型多头排列。5日涨幅达27.14%，上行动能强劲。MACD值为1.964上穿信号线1.7116确认金叉，虽RSI达75.9触及超买区，但均线支撑稳固，技术结构整体偏上行。"
       },
       {
         "symbol": "BABA",
-        "display_name": "阿里巴巴(BABA)",
+        "display_name": "阿里巴巴 (BABA)",
         "stance": "偏下行",
-        "rationale": "近5日下跌6.96%，RSI14触及23的显著超卖区域。MACD快线-6.6384持续运行于慢线-5.1974下方，绿柱未现收缩迹象。均线系统严格呈空头排列，20日119.59大于50日128.85大于200日149.03，价格受制于下行趋势，反弹阻力较重。"
+        "rationale": "现价104.97美元，受压于SMA20（119.59）与SMA50（128.85）之下，均线呈空头排列。MACD值-6.6384持续运行于信号线-5.1974下方，RSI报23处于深度超卖区。近5日累跌6.96%，距52周高位回撤超45%，技术面偏下行格局明确。"
       },
       {
         "symbol": "IBM",
         "display_name": "IBM",
         "stance": "中性",
-        "rationale": "现价252.22元，1日微涨1.25%后受压于20日均线277.23，但恰好在50日均线250.84附近获得支撑。RSI14为43.6处于中性常态区间，MACD数值2.437弱于信号值7.8815。多空在关键均线区间内拉锯，趋势方向不明，整体维持震荡盘整状态。"
+        "rationale": "当前报价252.22美元，贴近SMA50（250.84）但显著低于SMA20（277.23）。RSI录得43.6处于正常区间，MACD（2.437）虽为正但大幅滞后于信号线（7.8815），显示上行动能衰减。5日回撤7.35%，多空博弈均衡，技术面呈现中性震荡特征。"
       }
     ],
-    "risk_caveat": "本报告数据基于历史行情演算，仅反映当前指标结构。技术指标具滞后性且受宏观变量扰动，过去走势不代表未来表现。内容仅供技术指标解读参考，不构成任何交易建议或收益承诺。",
+    "risk_caveat": "本报告仅基于量化数据与指标读数进行客观描述。市场受多重变量影响，过去走势不代表未来表现。所有信号仅反映当前盘面状态，不构成投资建议。请结合风险偏好审慎决策，内容仅供技术指标解读参考。",
     "tickers": [
       {
         "symbol": "IBM",
@@ -1015,18 +1044,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 63920.03,
-        "pct1Day": 1.0792496792537543,
-        "pct5Day": -0.7737152147682874,
-        "pct52WeekHigh": -49.34943933770145,
-        "pct52WeekLow": 8.139401232145717,
-        "sma20": 63520.416015625,
-        "sma50": 71806.27296875,
-        "sma200": 76582.60537109376,
-        "rsi14": 40.749114821129005,
-        "macd": -2002.907815909115,
-        "macdSignal": -2463.7374153324313,
-        "macdHistogram": 460.82959942331627,
+        "currentPrice": 64087.11,
+        "pct1Day": 1.3434598342929478,
+        "pct5Day": -0.5143485082458298,
+        "pct52WeekHigh": -49.21704428601801,
+        "pct52WeekLow": 8.422065854766624,
+        "sma20": 63528.769921875,
+        "sma50": 71809.61453125,
+        "sma200": 76583.44076171875,
+        "rsi14": 41.43200891506895,
+        "macd": -1989.5796463934603,
+        "macdSignal": -2461.0717814293002,
+        "macdHistogram": 471.49213503583996,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -1042,18 +1071,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 1725,
-        "pct1Day": 1.197915428356671,
-        "pct5Day": -1.3093247854306103,
-        "pct52WeekHigh": -65.17777603274138,
-        "pct52WeekLow": 14.503383558389462,
-        "sma20": 1701.510479736328,
-        "sma50": 1978.9967114257813,
-        "sma200": 2356.7352557373047,
-        "rsi14": 41.82600586364424,
-        "macd": -65.36850499269599,
-        "macdSignal": -85.50817248433606,
-        "macdHistogram": 20.13966749164007,
+        "currentPrice": 1729.3,
+        "pct1Day": 1.4501768986998185,
+        "pct5Day": -1.0633132472145848,
+        "pct52WeekHigh": -65.09097280777951,
+        "pct52WeekLow": 14.788812282621965,
+        "sma20": 1701.7254821777344,
+        "sma50": 1979.0827124023438,
+        "sma200": 2356.756755981445,
+        "rsi14": 42.326719770531255,
+        "macd": -65.02548115455511,
+        "macdSignal": -85.43956771670788,
+        "macdHistogram": 20.414086562152775,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -1069,18 +1098,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 71.62,
-        "pct1Day": -1.1021537837206516,
-        "pct5Day": -0.43233732896144933,
-        "pct52WeekHigh": -71.71516595520158,
-        "pct52WeekLow": 18.547267950592175,
-        "sma20": 68.83644599914551,
-        "sma50": 79.49731979370117,
-        "sma200": 97.07076763153076,
-        "rsi14": 46.78223282590578,
-        "macd": -1.7529247505977565,
-        "macdSignal": -2.796597722514013,
-        "macdHistogram": 1.0436729719162563,
+        "currentPrice": 71.8,
+        "pct1Day": -0.853597342518061,
+        "pct5Day": -0.18209746187423617,
+        "pct52WeekHigh": -71.64407868728671,
+        "pct52WeekLow": 18.845208584927637,
+        "sma20": 68.8454460144043,
+        "sma50": 79.50091979980469,
+        "sma200": 97.07166763305663,
+        "rsi14": 47.1264652676218,
+        "macd": -1.7385657518942708,
+        "macdSignal": -2.7937259227733158,
+        "macdHistogram": 1.055160170879045,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -1160,18 +1189,18 @@
         "group": "macro",
         "currency": "USD",
         "exchangeName": "NYB",
-        "currentPrice": 101.042,
-        "pct1Day": 0.190383270980591,
-        "pct5Day": 1.2952380952380969,
-        "pct52WeekHigh": -0.002968974219407307,
-        "pct52WeekLow": 5.747776033490324,
-        "sma20": 99.68659973144531,
-        "sma50": 98.9682403564453,
-        "sma200": 98.69851016998291,
-        "rsi14": 72.52253940174256,
-        "macd": 0.41493294487833055,
-        "macdSignal": 0.30875533846557823,
-        "macdHistogram": 0.10617760641275231,
+        "currentPrice": 101.02,
+        "pct1Day": 0.1685686945474035,
+        "pct5Day": 1.2731829573934796,
+        "pct52WeekHigh": -0.024741451828398913,
+        "pct52WeekLow": 5.724751439037153,
+        "sma20": 99.68549957275391,
+        "sma50": 98.96780029296875,
+        "sma200": 98.69840015411377,
+        "rsi14": 72.34439095757456,
+        "macd": 0.413177705940484,
+        "macdSignal": 0.30840429067800895,
+        "macdHistogram": 0.10477341526247502,
         "trend": "bullish",
         "rsiState": "overbought",
         "signals": [
@@ -1202,14 +1231,14 @@
       "timestamp": "2026-06-23T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2273707770511.0923,
-      "total24hVolumeUsd": 73479686587.53932,
-      "marketCapChangePct24h": 0.0026242494866635956,
-      "btcDominance": 56.23206811431248,
-      "ethDominance": 9.130699774987395,
+      "totalMarketCapUsd": 2281211218678.064,
+      "total24hVolumeUsd": 73246890625.33763,
+      "marketCapChangePct24h": 0.19893160244430697,
+      "btcDominance": 56.26737173088113,
+      "ethDominance": 9.14138365544079,
       "activeCryptocurrencies": 17410
     },
-    "generated_at": "2026-06-23T00:36:42.534Z"
+    "generated_at": "2026-06-23T01:03:03.485Z"
   },
   "weather": {
     "city": "上海",
@@ -1218,11 +1247,11 @@
     "temperature_c": 23,
     "apparent_temperature_c": 26,
     "humidity": 95,
-    "wind_kmh": 12.1,
+    "wind_kmh": 11.4,
     "aqi": 74,
     "aqi_label": "良",
-    "pm25": 19.7,
-    "observed_at": "2026-06-23T08:30",
+    "pm25": 19,
+    "observed_at": "2026-06-23T09:00",
     "source": "Open-Meteo"
   }
 }
