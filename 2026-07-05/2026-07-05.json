@@ -1,34 +1,34 @@
 {
-  "hero_headline": "AI耗电推高能源成本，乌克兰扩大纵深打击",
-  "daily_overview": "科技领域聚焦AI应用深化与工程范式转变，多家机构发布新基准与智能体框架，推动模型从实验走向产业落地。财经方面，清洁能源价格因AI算力需求与补贴退坡同步攀升，极端热浪进一步加剧电网压力，科技企业自动化转型对就业结构的影响引发关注。时政焦点集中于中东权力交接与东欧战局演变，乌克兰远程打击俄能源基础设施，伊朗举行大规模悼念活动，全球地缘不确定性持续扰动市场情绪。",
+  "hero_headline": "算力需求推高美国电价，乌军无人机突袭俄能源枢纽",
+  "daily_overview": "科技领域聚焦AI应用深化与工具链迭代，主流机构相继发布垂直基准测试及网页智能体框架。财经市场受极端天气与算力基建双重挤压，清洁电力与现货电价同步走高，物流自动化进程引发就业结构重估。地缘方面乌克兰无人机成功实施纵深能源打击，德国极右翼政党加速政治扩张，教宗赴南欧岛屿呼吁正视难民危机，多重信号交织折射出技术变革、资源分配与国际秩序的深刻演变。",
   "tech_briefs": [
     {
-      "title": "OpenAI发布GeneBench-Pro基因组学基准",
-      "url": "https://openai.com/index/introducing-genebench-pro",
-      "source": "OpenAI News",
-      "summary": "该机构推出专为科学计算设计的评测基准，利用真实复杂数据集系统评估大模型在基因组学与生物学研究中的实际表现，旨在推动人工智能向高精度科研场景落地。",
+      "title": "阿里开源Page-Agent实现自然语言操控网页",
+      "url": "https://github.com/alibaba/page-agent",
+      "source": "GitHub Trending",
+      "summary": "该工具为基于JavaScript的网页内交互智能体，支持用自然语言直接操控页面组件与事件。项目解决了传统自动化测试需编写繁琐脚本的痛点，显著降低前端自动化开发与跨端集成门槛。",
       "importance": 8
     },
     {
-      "title": "阿里开源Page-Agent网页自动化控制框架",
-      "url": "https://github.com/alibaba/page-agent",
-      "source": "GitHub Trending",
-      "summary": "该项目提供基于JavaScript的页面内GUI智能体，允许通过自然语言指令直接操控网页元素。其轻量化设计降低了前端自动化门槛，为跨平台网页交互提供新思路。",
+      "title": "OpenAI推出GeneBench-Pro基因组学基准",
+      "url": "https://openai.com/index/introducing-genebench-pro",
+      "source": "OpenAI News",
+      "summary": "发布面向基因组学与生物科研的新一代性能测试基准，采用复杂真实数据集评估AI在生命科学领域的推理能力，为医疗研发智能化提供标准化参考。",
       "importance": 7
     },
     {
-      "title": "DeepMind与A24达成影视技术研究合作",
-      "url": "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
-      "source": "DeepMind Blog",
-      "summary": "双方建立联合研究关系，聚焦人工智能在影视制作流程中的应用探索。此举旨在利用生成式技术优化内容创作管线，推动AI向核心工业级研发基础设施演进。",
+      "title": "HuggingFace联合Cerebras实现Gemma 4实时语音",
+      "url": "https://huggingface.co/blog/cerebras-gemma4-voice-ai",
+      "source": "Hugging Face Blog",
+      "summary": "双方合作将Gemma 4模型接入实时语音处理管线，实现低延迟音频流式交互。该技术优化端到端响应速度，为多模态对话与无障碍应用提供底层支持。",
       "importance": 7
     },
     {
-      "title": "Vercel高管阐述智能体驱动的软件新范式",
+      "title": "Vercel发布智能体开发框架重塑软件工程范式",
       "url": "https://www.latent.space/p/vercel-agents-new-software",
       "source": "Latent Space",
-      "summary": "文章指出智能体正在重塑软件工程架构，传统代码逻辑逐步让位于技能组合与沙盒隔离机制。开发者需转向构建智能体友好界面，以适应下一代自主执行应用需求。",
-      "importance": 6
+      "summary": "框架引入沙盒环境与技能插件体系，明确智能体在新一代软件架构中的核心地位。团队强调开发者需转向构建智能体可读取的标准化网站与可组合工具链。",
+      "importance": 8
     }
   ],
   "finance_briefs": [
@@ -40,72 +40,73 @@
       "importance": 10
     },
     {
-      "title": "美清洁能源电价受AI需求与补贴削减推升",
+      "title": "AI算力扩张推高美国清洁电力采购成本",
       "url": "https://www.ft.com/content/911ad6e1-154d-4d10-a7dc-2bd0fd6fbdc2",
       "source": "Financial Times",
-      "summary": "随着支持政策逐步退出，叠加数据中心算力扩张带来的强劲需求，科技企业青睐的清洁能源购电协议价格预计将迎来显著上涨，行业成本结构面临重塑。",
-      "importance": 9
+      "summary": "数据中心能源需求激增叠加联邦补贴退坡，科技企业签署的清洁电力采购协议价格预期大幅上涨，行业面临运营成本重估与绿色能源策略调整。",
+      "importance": 8
     },
     {
-      "title": "极端热浪致美东多地停电与电力价格飙升",
+      "title": "美国东部极端热穹天气致电网负荷激增",
       "url": "https://www.ft.com/content/76de196b-175f-4f5b-b10c-cc17bb2948d1",
       "source": "Financial Times",
-      "summary": "近四十摄氏度高温伴随强风暴导致超八十万户断电。供电网络负荷逼近临界值推高批发电力价格，凸显气候异常对区域能源基础设施稳定性的严峻考验。",
-      "importance": 8
+      "summary": "超八十万家庭因风暴与高温遭遇断电，极端热浪导致区域电力现货价格飙升，公用事业电网面临严峻调度压力，凸显气候异常对能源价格的直接冲击。",
+      "importance": 6
     }
   ],
   "politics_briefs": [
     {
-      "title": "乌军无人机袭击俄圣彼得堡附近石油枢纽",
-      "url": "https://www.bbc.co.uk/news/articles/c8j2vmzxezro?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "summary": "基辅证实对俄关键能源基础设施实施远程打击，旨在削弱俄方战争资金链。此举被视为乌军纵深能力升级的标志，双方围绕战略节点的博弈进入新阶段。（多家报道）",
+      "title": "乌克兰无人机突袭圣彼得堡周边石油设施",
+      "url": "https://www.dw.com/zh/乌克兰打击圣彼得堡附近石油设施/a-77832624?maca=chi-rss-chi-all-1127-rdf",
+      "source": "DW 中文",
+      "summary": "乌军证实对俄第二大城市发动大规模无人机打击，旨在削弱俄方能源战争融资。分析指出此举标志着冲突进入新阶段，乌方正逐步建立纵深精确打击能力。（多家报道）",
       "importance": 9
     },
     {
-      "title": "逾两千万民众参与伊朗前最高领袖悼念活动",
-      "url": "https://www.bbc.co.uk/news/videos/c23y22z4ppxo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "summary": "尽管遭遇极端高温，伊朗多地仍持续举行大规模送葬仪式，预计参与人数庞大。该国政权交接步入关键窗口期，权力重组与地区外交走向备受国际社会密切关注。（多家报道）",
-      "importance": 8
-    },
-    {
-      "title": "德国选项党主席魏德尔连任并谋求执政地位",
+      "title": "德国选项党主席魏德尔成功连任并谋求执政",
       "url": "https://www.dw.com/zh/魏德尔成功连任-称afd要成为-新的人民党-领导德国/a-77833050?maca=chi-rss-chi-all-1127-rdf",
       "source": "DW 中文",
-      "summary": "民调领先政党负责人宣布连任，提出重塑主流政治版图的战略目标。该党同步讨论调整内部审查机制以扩大支持基础，其路线演进正深刻影响德国传统政治生态。",
+      "summary": "民调领先的德国选项党确认领导层延续，主席魏德尔提出打造新的人民党以主导国家议程，党内计划修订规则放宽入党限制，欧洲政治极化态势引发关注。",
       "importance": 7
+    },
+    {
+      "title": "教宗访问兰佩杜萨岛呼吁正视地中海难民危机",
+      "url": "https://www.npr.org/2026/07/04/nx-s1-5879160/pope-leo-visits-lampedusa-to-spotlight-missing-migrants",
+      "source": "NPR World",
+      "summary": "教宗亲赴欧洲主要移民登陆点举行仪式并为遇难者祈祷，敦促国际社会加强协作应对跨境迁徙困境，重申人道主义原则需优先于边境管控的政治博弈。",
+      "importance": 6
     }
   ],
-  "editor_note": "技术迭代与宏观变量交织，AI正重塑能源与劳动力结构。地缘波动加剧，市场需关注产业转型与基础设施承压带来的长期影响。",
+  "editor_note": "技术红利正转化为基础设施压力，企业部署自动化需兼顾成本与社会责任。地缘摩擦与气候异常重塑供应链风险，建议持续跟踪。",
   "keywords": [
-    "人工智能基准",
-    "清洁能源定价",
-    "自动化就业冲击",
-    "俄乌能源设施",
-    "德国政坛变局",
-    "智能体开发范式"
+    "AI基准测试",
+    "智能体开发",
+    "能源成本",
+    "物流自动化",
+    "俄乌冲突",
+    "德国选举",
+    "难民议题"
   ],
   "stock_highlights": [
     {
       "symbol": "JD",
-      "company": "京东集团",
+      "company": "京东",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2073523410643366242",
-      "view": "风险提示",
+      "view": "观察",
       "target_price": "",
       "reference_price": "",
-      "thesis": "CEO警告自动化将取代70万配送员，凸显AI与机器人技术快速发展对就业市场及公司人力成本结构的潜在冲击与长期转型挑战。"
+      "thesis": "高管预警将用机器人逐步取代70万名配送员，凸显物流自动化降本趋势，同时关注该技术快速落地对劳动力市场的潜在冲击。"
     },
     {
       "symbol": "AAPL",
-      "company": "苹果公司",
+      "company": "苹果",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2073486870315745406",
       "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "市场认为苹果在芯片制造与软硬件生态取得实质进展，正稳步突破产能与技术瓶颈，产品周期有望进入顺畅阶段，整体情绪偏向乐观。"
+      "thesis": "暗示核心零部件供应链瓶颈正逐步缓解，在AI终端需求旺盛背景下，聚焦其突破产能制约并实现设备稳定交付的潜力。"
     },
     {
       "symbol": "NBIS",
@@ -115,7 +116,7 @@
       "view": "观察",
       "target_price": "",
       "reference_price": "",
-      "thesis": "海上浮动数据中心概念兴起，利用海水自然冷却大幅降低能耗。该公司正联合三星布局海洋算力阵列，契合土地紧缺地区需求，具产业化潜力。"
+      "thesis": "探讨利用海水免费冷却的浮动数据中心概念，指出该基建路径在散热与土地稀缺选址上的优势，展望类似算力标的的长期布局潜力。"
     },
     {
       "symbol": "NVDA",
@@ -124,28 +125,8 @@
       "url": "https://x.com/aleabitoreddit/status/2072936659369517341",
       "view": "看多",
       "target_price": "",
-      "reference_price": "回调40%至60%",
-      "thesis": "联合头部光企辟谣CPO技术延期传闻，打破市场估值过高质疑。在板块情绪错杀引发大幅回调之际，被视为产业链超跌配置与资金逆势布局良机。"
-    },
-    {
-      "symbol": "META",
-      "company": "Meta Platforms",
-      "source": "X Serenity (@aleabitoreddit)",
-      "url": "https://x.com/aleabitoreddit/status/2072902886712094919",
-      "view": "看多",
-      "target_price": "",
-      "reference_price": "",
-      "thesis": "官方辟谣退出AI竞赛及削减开支传闻，明确2027年资本开支将创新高。新一代大模型算力投入呈数量级跃升，印证持续加码AI基建决心。"
-    },
-    {
-      "symbol": "688017",
-      "company": "LeaderDrive",
-      "source": "X Serenity (@aleabitoreddit)",
-      "url": "https://x.com/aleabitoreddit/status/2072913865458004014",
-      "view": "看多",
-      "target_price": "",
-      "reference_price": "20%涨停",
-      "thesis": "受中美机器人企业推进上市催化，人形机器人板块做多情绪显著升温。该股强势封板创历史新高，直接受益于行业情绪回暖与资本化落地。"
+      "reference_price": "40%至60%",
+      "thesis": "针对CPO延期质疑引发的光通信板块暴跌，公司联合卖方公开反驳。产业长期趋势未改，机构拟推光子ETF博弈错杀修复机会。"
     },
     {
       "symbol": "CCXI",
@@ -155,32 +136,52 @@
       "view": "观察",
       "target_price": "",
       "reference_price": "",
-      "thesis": "原帖将其与机器人企业并列，作为前沿公司推进资本化代表，反映资金对具身智能赛道一级向二级映射及产业链布局的预期。"
+      "thesis": "关联人形机器人企业推进上市进程，显著催化板块做多情绪，反映具身智能产业链商业化落地预期大幅增强与资本化热潮。"
+    },
+    {
+      "symbol": "688017",
+      "company": "",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2072913865458004014",
+      "view": "复盘",
+      "target_price": "",
+      "reference_price": "20%涨停/历史新高",
+      "thesis": "受中美前沿机器人企业资本化进程催化，板块做多情绪升温。该股强势触及20%涨停并创历史新高，凸显商业化预期强化。"
+    },
+    {
+      "symbol": "META",
+      "company": "Meta Platforms",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2072902886712094919",
+      "view": "看多",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "澄清AI代理研发放缓及削减资本开支等市场误传，强调战略投入未变。新模型算力呈十倍级跃升，数据中心扩张与长期前景乐观。"
     }
   ],
   "trading": {
-    "market_overview": "美股板块整体呈现结构性分化，部分半导体标的依托50日均线形成多头排列，但大盘权重股面临短期均线密集阻力，相对强弱指标普遍在45至55区间震荡洗盘，尚未确立单边突破方向。加密资产情绪持续收敛，恐慌贪婪指数已降至22并步入极度恐慌区间，BTC与ETH日线虽触发MACD低位金叉，但价格依然受制于200日均线强压，总市值维持在2.27万亿美元附近。中概股技术面普遍承压，多数标的均线系统呈标准空头排列，价格持续运行于关键支撑带下方。商品与外汇维度，美元指数于100.86一线窄幅震荡，黄金短期回落至20日均线下方，整体进入技术性盘整。",
+    "market_overview": "美股板块呈现显著分化，大型科技权重普遍受压于50日均线下方，RSI读数多数回落至40至50区间，但部分传统标的凭借买盘完成均线金叉突破，整体呈现结构性修复。加密资产方面，恐慌贪婪指数已降至23的极度恐慌区间，总市值报2.27兆美元，BTC主导率攀升至55.7%。主流币RSI集中于49中性分水岭，MACD绿柱收敛但仍处零轴下，处于技术寻底阶段。中概股受制于SMA200长期空头压制，RSI跌入超卖区，下行通道稳固。商品外汇端，美元指数多头排列但MACD高位死叉，黄金失守均线且RSI降至42，技术面偏空特征明确。各板块动能转换频繁，波动率维持高位。",
     "watchlist": [
       {
-        "symbol": "BB",
-        "display_name": "黑莓 (BB)",
+        "symbol": "IBM",
+        "display_name": "IBM",
         "stance": "偏上行",
-        "rationale": "现价11.51美元，5日累计涨幅11.32%，动量显著。价格稳立于20日9.91、50日7.99与200日5.02均线上方，呈典型多头排列。RSI14录得64.7，处于强势区间。MACD指标1.1228上穿信号线0.8923形成金叉，红柱持续放大，短期技术面维持偏上行格局。"
+        "rationale": "价格站稳289.52并上穿SMA20(273.02)与SMA50(255.34)，5日累计涨幅达12.1%显示短期动量强劲。RSI读数61.5处于多头活跃区但未触及超买，MACD指标录得5.25并上穿信号线形成金叉，技术形态呈现明确的偏上行特征。"
       },
       {
         "symbol": "BABA",
         "display_name": "阿里巴巴 (BABA)",
         "stance": "偏下行",
-        "rationale": "现价96.14美元，较52周高点回撤超百分之五十，均线系统呈标准空头排列，价格低于20日107.43、50日122.90及200日147.08均线。RSI14深入23.8超卖区域。MACD负值8.3141位于信号线下方，绿柱延续，中期下行趋势未现扭转。"
+        "rationale": "当前价格96.14全面运行于SMA20(107.43)、SMA50(122.9)及SMA200(147.08)下方，呈典型空头排列。RSI14指标深跌至23.8触发超卖区域，MACD读数-8.31位于零轴之下且绿柱持续放大，下行趋势与动量共振，技术面处于偏下行状态。"
       },
       {
         "symbol": "BTC-USD",
-        "display_name": "Bitcoin",
+        "display_name": "比特币 (BTC-USD)",
         "stance": "中性",
-        "rationale": "现价63161美元，5日反弹约5.03%，RSI14精准徘徊于50.1中轴，多空动能平衡。MACD虽完成低位金叉，但价格仍受压于50日67046与200日74826均线，整体处于空头排列后的筑底震荡阶段，技术面暂呈中性。"
+        "rationale": "价格位于62989附近，虽小幅上穿20日均线62138但受压于50日均线67043。RSI指标精准处于49.5中性分水岭，MACD在零轴下方录得-1501并与信号线形成金叉。短期反弹动能与长期空头排列指标相互制衡，技术格局呈现中性震荡。"
       }
     ],
-    "risk_caveat": "本技术解读仅基于公开历史行情与指标测算，市场受多重宏观变量扰动，过去走势不代表未来表现。报告内容聚焦客观数据与形态描述，仅供技术指标解读参考，投资者应独立评估风险。",
+    "risk_caveat": "本报告基于公开技术指标进行客观描述，过去走势不代表未来表现。各项指标读数仅反映当前市场多空博弈的瞬时状态，不构成任何投资决策依据，市场存在波动风险，仅供技术指标解读参考。",
     "tickers": [
       {
         "symbol": "IBM",
@@ -907,18 +908,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 63161.96,
-        "pct1Day": 0.9877187476481462,
-        "pct5Day": 5.0277063478273565,
-        "pct52WeekHigh": -49.95013790622947,
-        "pct52WeekLow": 9.375590390804028,
-        "sma20": 62147.068359375,
-        "sma50": 67046.58984375,
-        "sma200": 74826.90630859375,
-        "rsi14": 50.14266928057838,
-        "macd": -1487.9841151945366,
-        "macdSignal": -2027.582152911805,
-        "macdHistogram": 539.5980377172684,
+        "currentPrice": 62989.43,
+        "pct1Day": 0.7118658273851965,
+        "pct5Day": 4.740818002750817,
+        "pct52WeekHigh": -50.086851565955016,
+        "pct52WeekLow": 9.076825586638272,
+        "sma20": 62138.441796875,
+        "sma50": 67043.13921875,
+        "sma200": 74826.04365234375,
+        "rsi14": 49.52142053475527,
+        "macd": -1501.747291833868,
+        "macdSignal": -2030.3347882411495,
+        "macdHistogram": 528.5874964072814,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -939,18 +940,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 1780.63,
-        "pct1Day": 1.372676736161574,
-        "pct5Day": 10.584000401491773,
-        "pct52WeekHigh": -64.05478454329291,
-        "pct52WeekLow": 18.196034704681182,
-        "sma20": 1675.8482971191406,
-        "sma50": 1816.3216333007813,
-        "sma200": 2268.0842266845702,
-        "rsi14": 57.196225831847734,
-        "macd": -32.43944884572488,
-        "macdSignal": -60.75014335371044,
-        "macdHistogram": 28.31069450798556,
+        "currentPrice": 1774.79,
+        "pct1Day": 1.0402009089884958,
+        "pct5Day": 10.221313845416267,
+        "pct52WeekHigh": -64.17267543486902,
+        "pct52WeekLow": 17.808359209986545,
+        "sma20": 1675.556298828125,
+        "sma50": 1816.204833984375,
+        "sma200": 2268.055026855469,
+        "rsi14": 56.724643059376234,
+        "macd": -32.905315065056584,
+        "macdSignal": -60.84331659763702,
+        "macdHistogram": 27.938001532580437,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -966,18 +967,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 81.73,
-        "pct1Day": -0.6685214080951589,
-        "pct5Day": 9.05066408074004,
-        "pct52WeekHigh": -67.72243107398249,
-        "pct52WeekLow": 35.28160024576792,
-        "sma20": 73.27186737060546,
-        "sma50": 75.41742279052734,
-        "sma200": 93.54931114196778,
-        "rsi14": 64.39788967418237,
-        "macd": 1.6403666067533038,
-        "macdSignal": -0.03288542565283559,
-        "macdHistogram": 1.6732520324061393,
+        "currentPrice": 81.55,
+        "pct1Day": -0.8872864410884729,
+        "pct5Day": 8.810493769538109,
+        "pct52WeekHigh": -67.79351834189737,
+        "pct52WeekLow": 34.98365961143243,
+        "sma20": 73.26286735534669,
+        "sma50": 75.41382278442383,
+        "sma200": 93.5484111404419,
+        "rsi14": 63.97655879525744,
+        "macd": 1.6260076080465353,
+        "macdSignal": -0.03575722539838322,
+        "macdHistogram": 1.6617648334449187,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": []
@@ -1083,33 +1084,33 @@
       }
     ],
     "crypto_fear_greed": {
-      "value": 22,
+      "value": 23,
       "classification": "Extreme Fear",
       "classificationCn": "极度恐慌",
-      "timestamp": "2026-07-04T00:00:00.000Z"
+      "timestamp": "2026-07-05T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2271756336748.9966,
-      "total24hVolumeUsd": 52620204315.89088,
-      "marketCapChangePct24h": 0.8422614078918376,
-      "btcDominance": 55.69058451724938,
-      "ethDominance": 9.449389503952348,
+      "totalMarketCapUsd": 2268603149191.626,
+      "total24hVolumeUsd": 52511929542.11683,
+      "marketCapChangePct24h": 0.5339000975076259,
+      "btcDominance": 55.69389930756754,
+      "ethDominance": 9.446716914048082,
       "activeCryptocurrencies": 17362
     },
-    "generated_at": "2026-07-04T23:48:27.010Z"
+    "generated_at": "2026-07-05T00:20:10.937Z"
   },
   "weather": {
     "city": "上海",
-    "emoji": "🌧️",
-    "condition": "小雨",
+    "emoji": "⛈️",
+    "condition": "雷雨",
     "temperature_c": 27,
-    "apparent_temperature_c": 32,
-    "humidity": 92,
-    "wind_kmh": 9.1,
+    "apparent_temperature_c": 33,
+    "humidity": 90,
+    "wind_kmh": 8.1,
     "aqi": 156,
     "aqi_label": "中度污染",
-    "pm25": 53.8,
-    "observed_at": "2026-07-05T07:45",
+    "pm25": 41.9,
+    "observed_at": "2026-07-05T08:15",
     "source": "Open-Meteo"
   }
 }
