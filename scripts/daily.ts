@@ -33,6 +33,8 @@ import { generateTradingCommentary } from "../lib/ai/trading-commentary";
 import type { TradingSection } from "../lib/ai/pipeline";
 import { todayKey } from "../lib/utils";
 import { fetchShanghaiWeather } from "../lib/weather/shanghai";
+import { addDaysKey, fetchEarningsCalendar } from "../lib/earnings/calendar";
+import type { EarningsCalendarSnapshot } from "../lib/earnings/types";
 
 const OUTPUT_DIR = "daily_reports";
 const SOURCE_HEALTH_PATH = path.join("logs", "source-health.json");
@@ -505,6 +507,49 @@ async function runWeather(date: string) {
   return fetchShanghaiWeather(date);
 }
 
+function positiveIntEnv(name: string, fallback: number): number {
+  const raw = process.env[name];
+  if (!raw) return fallback;
+  const parsed = Number.parseInt(raw, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+function fallbackEarningsCalendar(date: string, message: string): EarningsCalendarSnapshot {
+  const lookaheadDays = positiveIntEnv("EARNINGS_LOOKAHEAD_DAYS", 7);
+  return {
+    window_start: date,
+    window_end: addDaysKey(date, lookaheadDays),
+    generated_at: new Date().toISOString(),
+    lookahead_days: lookaheadDays,
+    events: [],
+    source_status: [
+      {
+        source_id: "earnings-calendar",
+        source_name: "Upcoming tech earnings calendar",
+        ok: false,
+        events: 0,
+        message,
+      },
+    ],
+  };
+}
+
+async function runEarningsCalendar(): Promise<EarningsCalendarSnapshot | null> {
+  console.log(`[daily] fetching upcoming tech earnings calendar…`);
+  const snapshot = await fetchEarningsCalendar();
+  const okSources = snapshot.source_status.filter((s) => s.ok).length;
+  const failed = snapshot.source_status.filter((s) => !s.ok);
+  console.log(
+    `[daily] earnings calendar ready — ${snapshot.events.length} event(s), ${okSources}/${snapshot.source_status.length} source(s) ok`,
+  );
+  for (const status of failed) {
+    console.warn(
+      `[daily] earnings source ${status.source_id} failed: ${status.message ?? "unknown error"}`,
+    );
+  }
+  return snapshot;
+}
+
 async function main() {
   const date = todayKey();
   console.log(`[daily] ${date} — fetching sources…\n`);
@@ -532,6 +577,15 @@ async function main() {
     console.warn(`[daily] trading section failed: ${msg}`);
   }
 
+  let earningsCalendar: EarningsCalendarSnapshot | null = null;
+  try {
+    earningsCalendar = await runEarningsCalendar();
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    console.warn(`[daily] earnings calendar failed: ${msg}`);
+    earningsCalendar = fallbackEarningsCalendar(date, msg);
+  }
+
   console.log(`[daily] generating digest with ${getModelTag()}…`);
   const t0 = Date.now();
   const { report } = await generateDailyReport(articles, date);
@@ -556,6 +610,7 @@ async function main() {
   }
 
   if (trading) report.trading = trading;
+  if (earningsCalendar) report.earnings_calendar = earningsCalendar;
   const weather = await runWeather(date);
   if (weather) report.weather = weather;
 

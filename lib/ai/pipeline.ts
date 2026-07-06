@@ -7,6 +7,7 @@ import { REPORT_LOCALE } from "../sources/registry";
 import type { Category, RawArticle } from "../sources/types";
 import { todayKey } from "../utils";
 import type { WeatherSnapshot } from "../weather/shanghai";
+import type { EarningsCalendarSnapshot } from "../earnings/types";
 
 const SYSTEM_PROMPT_DIGEST =
   REPORT_LOCALE === "en" ? SYSTEM_PROMPT_DIGEST_EN : SYSTEM_PROMPT_DIGEST_ZH;
@@ -33,6 +34,8 @@ export interface DailyReport {
   trading?: TradingSection;
   /** Optional city weather snapshot rendered next to the report date. */
   weather?: WeatherSnapshot;
+  /** Optional top-of-report upcoming earnings calendar for watched tech names. */
+  earnings_calendar?: EarningsCalendarSnapshot;
 }
 
 import type { TickerAnalysis } from "../trading/signals";

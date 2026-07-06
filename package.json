@@ -10,6 +10,8 @@
     "regen-enrich": "tsx scripts/regen-enrich.ts",
     "regen-selected": "tsx scripts/regen-selected.ts",
     "demo-selected": "tsx scripts/selected-demo.ts",
+    "earnings:check": "tsx scripts/earnings-check.ts",
+    "earnings:assert": "tsx scripts/assert-earnings-calendar.ts",
     "quota-report": "tsx scripts/quota-report.ts",
     "sources": "tsx scripts/sources.ts",
     "sources:check": "tsx scripts/sources.ts check",

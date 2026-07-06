@@ -279,8 +279,16 @@ jobs:
           LLM_REASONING_EFFORT: ${{ vars.LLM_REASONING_EFFORT || 'high' }}
           REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
           REPORT_TZ: ${{ vars.REPORT_TZ }}
+          EARNINGS_LOOKAHEAD_DAYS: ${{ vars.EARNINGS_LOOKAHEAD_DAYS || '7' }}
+          EARNINGS_MAX_EVENTS: ${{ vars.EARNINGS_MAX_EVENTS || '12' }}
           WEB_MODE: "true"
         run: npm run daily
+
+      - name: Verify earnings calendar block
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.rebuild_site_only != true }}
+        env:
+          REPORT_TZ: ${{ vars.REPORT_TZ }}
+        run: npm run earnings:assert
 
       - name: Build static site (index + archive)
         env:

@@ -79,6 +79,22 @@ const TEXTS_ZH = {
   stockNotMentioned: "未提及",
   weatherAqi: "空气",
   weatherFeelsLike: "体感",
+  earningsTitle: "未来财报雷达",
+  earningsWindow: "观察窗口",
+  earningsEmpty: "未来窗口内暂无白名单科技公司财报。",
+  earningsExpectation: "市场预期",
+  earningsNoConsensus: "暂无公开一致预期",
+  earningsSourceHealth: "来源状态",
+  earningsConfirmed: "确认",
+  earningsEstimated: "预估",
+  earningsBeforeMarket: "盘前",
+  earningsAfterMarket: "盘后",
+  earningsDuringMarket: "盘中",
+  earningsTimeTbd: "时间待定",
+  earningsRegionUS: "美国",
+  earningsRegionChina: "中国",
+  earningsRegionTaiwan: "台湾",
+  earningsRegionKorea: "韩国",
 };
 
 const TEXTS_EN: typeof TEXTS_ZH = {
@@ -138,6 +154,22 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   stockNotMentioned: "Not stated",
   weatherAqi: "AQI",
   weatherFeelsLike: "Feels",
+  earningsTitle: "Upcoming Earnings Radar",
+  earningsWindow: "Window",
+  earningsEmpty: "No watched tech earnings in the upcoming window.",
+  earningsExpectation: "Consensus",
+  earningsNoConsensus: "No public consensus available",
+  earningsSourceHealth: "Source status",
+  earningsConfirmed: "Confirmed",
+  earningsEstimated: "Estimated",
+  earningsBeforeMarket: "BMO",
+  earningsAfterMarket: "AMC",
+  earningsDuringMarket: "During market",
+  earningsTimeTbd: "Time TBD",
+  earningsRegionUS: "US",
+  earningsRegionChina: "China",
+  earningsRegionTaiwan: "Taiwan",
+  earningsRegionKorea: "Korea",
 };
 
 const STR = REPORT_LOCALE === "en" ? TEXTS_EN : TEXTS_ZH;
@@ -491,6 +523,87 @@ function renderWeatherPill(report: DailyReport): string {
     ${feels}
     ${aqi}
   </aside>`;
+}
+
+function formatDateKeyShort(dateKey: string): string {
+  const date = new Date(`${dateKey}T12:00:00Z`);
+  const localeTag = REPORT_LOCALE === "en" ? "en-US" : "zh-CN";
+  return date.toLocaleDateString(localeTag, {
+    timeZone: "UTC",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "short",
+  });
+}
+
+function earningsTimingLabel(timing: string): string {
+  if (timing === "before_market") return STR.earningsBeforeMarket;
+  if (timing === "after_market") return STR.earningsAfterMarket;
+  if (timing === "during_market") return STR.earningsDuringMarket;
+  return STR.earningsTimeTbd;
+}
+
+function earningsRegionLabel(region: string): string {
+  if (region === "US") return STR.earningsRegionUS;
+  if (region === "China") return STR.earningsRegionChina;
+  if (region === "Taiwan") return STR.earningsRegionTaiwan;
+  if (region === "Korea") return STR.earningsRegionKorea;
+  return region;
+}
+
+function earningsCompanyName(event: NonNullable<DailyReport["earnings_calendar"]>["events"][number]): string {
+  return REPORT_LOCALE === "zh" && event.company_zh
+    ? `${event.company_zh} (${event.ticker})`
+    : `${event.company} (${event.ticker})`;
+}
+
+function earningsExpectationText(event: NonNullable<DailyReport["earnings_calendar"]>["events"][number]): string {
+  const parts: string[] = [];
+  if (event.eps_estimate) parts.push(`EPS ${event.eps_estimate}`);
+  if (event.revenue_estimate) parts.push(`Revenue ${event.revenue_estimate}`);
+  return parts.length > 0 ? parts.join(" · ") : STR.earningsNoConsensus;
+}
+
+function renderEarningsCalendarHtml(report: DailyReport): string {
+  const snapshot = report.earnings_calendar;
+  if (!snapshot) return "";
+  const okSources = snapshot.source_status.filter((source) => source.ok).length;
+  const sourceHealth = `${okSources}/${snapshot.source_status.length}`;
+  const events = snapshot.events ?? [];
+  const body =
+    events.length === 0
+      ? `<p class="earnings-empty">${STR.earningsEmpty}</p>`
+      : `<div class="earnings-grid">${events
+          .map((event) => {
+            const statusClass =
+              event.confirmation_status === "confirmed" ? "confirmed" : "estimated";
+            return `<article class="earnings-card">
+        <div class="earnings-card-head">
+          <span class="earnings-date">${escapeHtml(formatDateKeyShort(event.report_date))}</span>
+          <span class="earnings-time">${escapeHtml(earningsTimingLabel(event.timing))}</span>
+        </div>
+        <h2>${escapeHtml(earningsCompanyName(event))}</h2>
+        <p class="earnings-meta">
+          <span>${escapeHtml(earningsRegionLabel(event.region))}</span>
+          ${event.fiscal_period ? `<span>${escapeHtml(event.fiscal_period)}</span>` : ""}
+          <span class="earnings-status ${statusClass}">${event.confirmation_status === "confirmed" ? STR.earningsConfirmed : STR.earningsEstimated}</span>
+        </p>
+        <p class="earnings-expectation"><span>${STR.earningsExpectation}</span>${escapeHtml(earningsExpectationText(event))}</p>
+        <a class="earnings-source" href="${escapeHtml(event.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.source)}</a>
+      </article>`;
+          })
+          .join("\n")}</div>`;
+
+  return `<section class="earnings-radar" aria-label="${STR.earningsTitle}">
+    <div class="earnings-radar-head">
+      <div>
+        <span class="eyebrow">${STR.earningsTitle}</span>
+        <h2>${STR.earningsWindow}: ${escapeHtml(snapshot.window_start)} → ${escapeHtml(snapshot.window_end)}</h2>
+      </div>
+      <span class="earnings-health">${STR.earningsSourceHealth} ${escapeHtml(sourceHealth)}</span>
+    </div>
+    ${body}
+  </section>`;
 }
 
 const STOCK_COMPANY_ZH: Record<string, string> = {
@@ -1165,6 +1278,125 @@ export function renderHtml(
     font-size: 0.88rem;
     line-height: 1.65;
     color: var(--fg-soft);
+  }
+
+  /* ===== earnings radar ===== */
+  .earnings-radar {
+    margin: 0 0 1rem;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--rule);
+    border-left: 4px solid #2563eb;
+    border-radius: 0.55rem;
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow-soft);
+  }
+  .earnings-radar-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.9rem;
+    margin-bottom: 0.85rem;
+  }
+  .earnings-radar-head h2 {
+    margin: 0.22rem 0 0;
+    font-size: 1rem;
+    line-height: 1.35;
+    color: var(--fg);
+  }
+  .earnings-health {
+    flex-shrink: 0;
+    padding: 0.18rem 0.5rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    color: var(--muted);
+    background: var(--card);
+    font-size: 0.72rem;
+    font-weight: 650;
+  }
+  .earnings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+  .earnings-card {
+    min-width: 0;
+    padding: 0.78rem 0.85rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    background: var(--bg);
+  }
+  .earnings-card-head,
+  .earnings-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .earnings-card-head {
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+  }
+  .earnings-date {
+    color: var(--fg);
+    font-size: 0.82rem;
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+  }
+  .earnings-time,
+  .earnings-status {
+    padding: 0.12rem 0.42rem;
+    border-radius: 0.35rem;
+    background: var(--card);
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .earnings-status.confirmed { color: #166534; background: rgba(22, 163, 74, 0.12); }
+  .earnings-status.estimated { color: #92400e; background: rgba(217, 119, 6, 0.14); }
+  .earnings-card h2 {
+    margin: 0;
+    color: var(--fg);
+    font-size: 0.96rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .earnings-meta {
+    margin: 0.35rem 0 0.45rem;
+    color: var(--muted);
+    font-size: 0.74rem;
+  }
+  .earnings-expectation {
+    margin: 0;
+    color: var(--fg-soft);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+  .earnings-expectation span {
+    display: inline-block;
+    margin-right: 0.38rem;
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .earnings-source {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--link);
+    font-size: 0.76rem;
+    text-decoration: none;
+  }
+  .earnings-source:hover { text-decoration: underline; }
+  .earnings-empty {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .earnings-status.confirmed { color: #4ade80; }
+    .earnings-status.estimated { color: #fcd34d; }
   }
 
   /* ===== primary tabs ===== */
@@ -2043,6 +2275,17 @@ export function renderHtml(
       row-gap: 0.28rem;
       white-space: normal;
     }
+    .earnings-radar { padding: 0.9rem; }
+    .earnings-radar-head {
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .earnings-radar-head h2 { font-size: 0.95rem; }
+    .earnings-health {
+      display: inline-block;
+      margin-top: 0.45rem;
+    }
+    .earnings-grid { grid-template-columns: 1fr; }
     .tabs {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2166,6 +2409,8 @@ export function renderHtml(
     </div>
     ${process.env.WEB_MODE === "true" ? `<a class="archive-link" href="../archive.html">${STR.archiveLink}</a>` : ""}
   </header>
+
+  ${renderEarningsCalendarHtml(report)}
 
   <nav class="tabs" role="tablist">
     <button class="tab active" data-tab="selected">${STR.catSelected}<span class="count">${counts.selected}</span></button>
@@ -2481,6 +2726,24 @@ function mdCell(s: string): string {
   return s.replace(/\|/g, "\\|").replace(/\n+/g, " ").trim();
 }
 
+function renderEarningsCalendarMarkdown(report: DailyReport): string {
+  const snapshot = report.earnings_calendar;
+  if (!snapshot) return "";
+  const title = `## ${STR.earningsTitle}\n\n${STR.earningsWindow}: ${snapshot.window_start} → ${snapshot.window_end}\n`;
+  if (snapshot.events.length === 0) {
+    return `${title}\n${STR.earningsEmpty}\n`;
+  }
+  const header = `| ${REPORT_LOCALE === "en" ? "Date" : "日期"} | ${REPORT_LOCALE === "en" ? "Company" : "公司"} | ${REPORT_LOCALE === "en" ? "Region" : "地区"} | ${REPORT_LOCALE === "en" ? "Time" : "时间"} | ${STR.earningsExpectation} | ${REPORT_LOCALE === "en" ? "Source" : "来源"} |\n|---|---|---|---|---|---|`;
+  const body = snapshot.events
+    .map((event) => {
+      const source = `[${mdCell(event.source)}](${event.source_url})`;
+      const expectation = earningsExpectationText(event);
+      return `| ${mdCell(formatDateKeyShort(event.report_date))} | ${mdCell(earningsCompanyName(event))} | ${mdCell(earningsRegionLabel(event.region))} | ${mdCell(earningsTimingLabel(event.timing))} | ${mdCell(expectation)} | ${source} |`;
+    })
+    .join("\n");
+  return `${title}\n${header}\n${body}\n`;
+}
+
 function renderXStockSummaryMarkdown(report: DailyReport): string {
   const rows = stockRows(report);
   if (rows.length === 0) return "";
@@ -2513,6 +2776,7 @@ export function renderMarkdown(report: DailyReport, date: string): string {
         `\n`,
     );
   }
+  blocks.push(renderEarningsCalendarMarkdown(report));
   if (report.hero_headline) blocks.push(`> ${report.hero_headline}\n`);
   if (report.daily_overview) {
     blocks.push(`## ${STR.mdTodayOverview}\n\n${report.daily_overview}\n`);

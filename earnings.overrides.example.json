@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "ticker": "005930.KS",
+      "date": "2026-07-07",
+      "timing": "before_market",
+      "fiscal_period": "2Q26",
+      "revenue_estimate": "example only",
+      "expectation_note": "Optional local correction; copy to earnings.overrides.json and edit.",
+      "source_url": "https://www.samsung.com/global/ir/",
+      "confirmation_status": "confirmed"
+    }
+  ]
+}

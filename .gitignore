@@ -12,6 +12,9 @@
 /daily_reports/
 /logs/
 
+# local manual earnings-date corrections
+/earnings.overrides.json
+
 # Claude Code local state (skills + commands ARE committed; cache/state aren't)
 /.claude/state/
 /.claude/cache/
