@@ -1,99 +1,176 @@
 {
-  "hero_headline": "伊朗举行最高领袖葬礼，以国内政治冲突升级",
-  "daily_overview": "今日科技界呈现应用深化趋势，OpenAI发布全球采用数据，Vercel提出智能体将重塑软件开发范式，多款开源工具转向本地化部署以强化数据隐私。财经市场受宏观环境扰动，美光宣布巨额扩产应对存储芯片短缺，亚洲信贷市场因中东战事外溢持续低迷，易捷航空原则上接受百亿英镑收购要约。时政方面伊朗举行最高领袖葬礼，以色列内阁与最高法院冲突升级，法国极右翼领袖诉讼结果牵动欧洲政局，整体局势凸显地缘风险与产业周期共振。",
+  "hero_headline": "北约峰会聚焦防务开支，俄军突袭基辅局势升温",
+  "daily_overview": "今日全局呈现地缘政治与产业资本同步变动的特征。政治方面，北约土耳其峰会前夕乌克兰遭大规模空袭，伊朗举行已故最高领袖葬礼，中东与欧洲安全局势持续紧绷。财经领域，摩根士丹利预警美股资金正从半导体向超大规模云服务轮动，英国航空与媒体行业接连披露百亿级并购案，日元面临汇率下行压力。科技圈则聚焦大模型生态演进，OpenAI发布采用数据并推出基因组测试基准，开源社区在本地化会议助手与系统提示词审计方向取得实质进展。",
   "tech_briefs": [
     {
-      "title": "OpenAI公布ChatGPT全球采用扩展数据",
+      "title": "OpenAI发布ChatGPT全球采用率数据",
       "url": "https://openai.com/index/how-chatgpt-adoption-has-expanded",
       "source": "OpenAI News",
-      "summary": "OpenAI发布最新信号数据，显示ChatGPT在全球范围内用户基数持续增长，多语言使用频次显著上升，企业及个人正加速探索高级功能，推动AI产品跨地域渗透。",
-      "importance": 8
+      "summary": "最新数据显示ChatGPT全球用户基数持续增长，跨地区与多语言场景的交互深度显著提升，模型功能探索正加速驱动商业化渗透。",
+      "importance": 9
     },
     {
-      "title": "Rust构建的本地化AI会议助手Meetily开源",
+      "title": "隐私优先型本地AI会议助手Meetily",
       "url": "https://github.com/Zackriya-Solutions/meetily",
       "source": "GitHub Trending",
-      "summary": "该项目基于Rust开发，主打隐私优先与全本地处理，无需云端即可集成语音转录、说话人分离与模型摘要。轻量级架构大幅降低算力门槛，解决企业会议数据外泄痛点。",
+      "summary": "该项目基于Rust语言开发，集成实时转录与本地大模型摘要功能，主打完全离线处理。其解决了企业会议数据云端上传的隐私隐患，为高合规要求团队提供轻量级方案。",
       "importance": 7
     },
     {
-      "title": "谷歌DeepMind与A24达成影视AI研究合作",
-      "url": "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
-      "source": "DeepMind Blog",
-      "summary": "双方宣布建立首个跨学科研究伙伴关系，旨在探索生成式AI在影视制作流程中的前沿应用，预计将推动视觉特效生成与创意辅助工具的技术标准化落地。",
+      "title": "多平台大模型系统提示词泄露遭公开",
+      "url": "https://github.com/asgeirtj/system_prompts_leaks",
+      "source": "GitHub Trending",
+      "summary": "该仓库集中整理了多家头部厂商主流大模型的系统提示词。此举有助于开发者研究指令交互边界与安全策略，但同时也暴露出闭源模型在隔离防护层面的潜在漏洞。",
       "importance": 8
     },
     {
-      "title": "Vercel高管阐述智能体作为新型软件架构",
-      "url": "https://www.latent.space/p/vercel-agents-new-software",
-      "source": "Latent Space",
-      "summary": "Vercel技术负责人详解eve框架设计理念，强调智能体需具备沙盒环境、标准化技能接口与机器可读网页。该框架旨在解决大模型在复杂任务执行中的稳定性难题。",
-      "importance": 7
+      "title": "OpenAI推出基因组学研究基准GeneBench",
+      "url": "https://openai.com/index/introducing-genebench-pro",
+      "source": "OpenAI News",
+      "summary": "全新测试基准聚焦复杂真实世界数据集，旨在量化评估AI在基因组学与生物研发领域的实际性能，为医药科学领域的算法落地提供标准化衡量工具。",
+      "importance": 8
     }
   ],
   "finance_briefs": [
     {
       "title": "Serenity 当日荐股标的汇总",
-      "url": "https://x.com/aleabitoreddit/status/2073867745243127973",
+      "url": "https://x.com/aleabitoreddit/status/2074063175293809150",
       "source": "X Serenity (@aleabitoreddit)",
-      "summary": "已合并 Serenity 当日 1 条推文中的荐股信息，去重后标的为：$CCXI、$TSLA、$AMZN。供盘前快速跟踪。",
+      "summary": "已合并 Serenity 当日 4 条推文中的荐股信息，去重后标的为：$XFAB、$SILEX、$SIVE、$LITE、$JBL、$GFS、$AXTI、$IQE、$CCXI、$TSLA、$AMZN。供盘前快速跟踪。",
       "importance": 10
     },
     {
-      "title": "易捷航空达成约五十五亿英镑收购初步协议",
-      "url": "https://www.ft.com/content/0c317e2c-2fda-4c6f-8620-d8e6297aeb3",
-      "source": "Financial Times",
-      "summary": "英国廉价航空公司易捷航空董事会原则上同意美国私募信贷集团的收购要约，此前已拒绝四次报价。该交易若落地将重塑欧洲低成本航空市场格局。（多家报道）",
-      "importance": 8
-    },
-    {
-      "title": "银行家称亚洲信贷市场受地缘冲突拖累疲软",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-06/bankers-say-asia-loan-market-to-stay-weak-as-war-saps-confidence",
+      "title": "摩根士丹利建议资金向超大规模云轮动",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-06/morgan-stanley-s-wilson-sees-rotation-from-chips-to-hyperscalers",
       "source": "Bloomberg Markets",
-      "summary": "机构指出中东战事的持续外溢严重削弱借贷双方信心，导致亚太区企业融资活动进入下半年仍难见起色。资金避险情绪升温进一步压缩了传统银团贷款规模。",
+      "summary": "策略师指出美股创新高阻力增大，资金正逐步撤离年内强势的芯片交易，转向营收确定性更高的超大规模云服务板块，建议投资者调整科技资产配置节奏。",
+      "importance": 9
+    },
+    {
+      "title": "易捷航空同意五百余亿英镑收购方案",
+      "url": "https://www.ft.com/content/0c317e2c-2fda-4c6f-8620-d8e629f1aeb3",
+      "source": "Financial Times",
+      "summary": "英国廉价航空易捷航空董事会原则上接受美国信贷集团逾五百亿英镑收购要约。该交易此前屡遭拒绝，此次妥协标志着欧洲航空业并购整合进入关键阶段。（多家报道）",
       "importance": 8
     },
     {
-      "title": "英国监管机构警告金融服务业陷入AI军备竞赛",
-      "url": "https://www.ft.com/content/7f501320-9037-410f-b8e7-3111b9041311",
-      "source": "Financial Times",
-      "summary": "英国金融行为监管局公开呼吁扩大监管权限，指出数百万用户依赖AI进行理财决策存在隐患。监管层正加紧评估算法黑箱风险，拟出台针对性合规指引。",
+      "title": "天空集团十六亿英镑收购ITV媒体业务",
+      "url": "https://www.bbc.co.uk/news/articles/cx2wwgeg041o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "summary": "英国天空集团将以最高十六亿英镑收购ITV电视与流媒体频道。双方表示该交易将整合本土内容资源，形成对抗国际流媒体巨头的区域性传媒联盟。（多家报道）",
+      "importance": 7
+    },
+    {
+      "title": "日本外汇期权市场释放日元看跌信号",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-06/options-flash-bearish-yen-signal-as-tokyo-stays-on-the-sidelines",
+      "source": "Bloomberg Markets",
+      "summary": "受日美利差维持高位及日本当局暂未干预汇市影响，期权市场呈现明显做空日元倾向。交易员押注日元汇率短期承压，跨境资本流动或受波动加剧。",
       "importance": 7
     }
   ],
   "politics_briefs": [
     {
-      "title": "伊朗举行最高领袖葬礼与停火战略博弈",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/7/6/iran-war-live-tehran-set-for-khameneis-procession-israel-bombs-lebanon?traffic_source=rss",
-      "source": "Al Jazeera",
-      "summary": "德黑兰举行大规模送葬活动悼念遇袭身亡的最高领袖。分析指出霍尔木兹海峡封锁虽为战略筹码，但长期使用面临反噬风险，地区停火谈判仍高度不确定。",
+      "title": "北约峰会聚焦军费分摊承诺落实",
+      "url": "https://www.nytimes.com/2026/07/06/world/europe/nato-leaders-are-meeting-this-week-heres-to-know.html",
+      "source": "NYT World",
+      "summary": "北约成员国齐聚土耳其举行年度峰会。特朗普与多国领导人将就去年防务支出承诺的执行情况进行核查，乌总统亦呼吁盟友就援助决策采取更强硬立场。（多家报道）",
       "importance": 9
     },
     {
-      "title": "以色列内阁决议威胁无视最高法院关键裁决",
-      "url": "https://www.nytimes.com/2026/07/05/world/middleeast/israel-court-netanyahu-clash.html",
-      "source": "NYT World",
-      "summary": "内塔尼亚胡政府通过决议意图否决高等法院针对其司法权力的裁定，此举激化行政与司法体系矛盾。高级官员随后表态软化，但宪政危机风险依然未消。",
-      "importance": 8
+      "title": "俄军导弹与无人机大规模袭击基辅",
+      "url": "https://www.npr.org/2026/07/06/g-s1-132088/russian-missile-drone-attack-kyiv-kills-at-least-11",
+      "source": "NPR World",
+      "summary": "俄方发射数十枚导弹与无人机对基辅发动夜间攻击，造成十余人死亡与过百人受伤。乌方警告防空拦截系统库存告急，东部战线安全形势进一步恶化。（多家报道）",
+      "importance": 9
     },
     {
-      "title": "法国勒庞上诉案宣判在即牵动总统选情",
-      "url": "https://www.bbc.co.uk/news/articles/clyeele4leeo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "summary": "极右翼政党国民联盟领导人勒庞面临资格诉讼最终裁决，其目前民意支持率领跑大选。判决结果将直接决定其参选资格，进而重塑法国右翼政治版图。",
-      "importance": 7
+      "title": "伊朗举行已故最高领袖大规模葬礼游行",
+      "url": "https://www.theguardian.com/world/live/2026/jul/06/iran-middle-east-crisis-funeral-supreme-leader-ali-khamenei-tehran-latest-news-updates",
+      "source": "The Guardian",
+      "summary": "数百万民众在德黑兰参与大规模游行，悼念此前在空袭中遇难的最高领袖。此次集会凸显伊朗国内动员能力，中东地缘紧张局势短期内预计难现实质性缓和。",
+      "importance": 8
     }
   ],
-  "editor_note": "地缘风险正加速向产业链传导，信贷紧缩与产能瓶颈共振显著。技术演进持续向端侧深化，建议保持审慎乐观。",
+  "editor_note": "今日地缘震荡与产业重构并行。科技巨头加速底层基准建设与开源生态布局，资本市场围绕算力基建与汇率利差重新定价。需密切关注后续政策落地与资金流向。",
   "keywords": [
-    "人工智能落地",
-    "存储芯片扩产",
-    "中东地缘博弈",
-    "航空业并购",
-    "司法独立性",
-    "端侧隐私模型"
+    "北约峰会",
+    "乌克兰局势",
+    "中东地缘",
+    "AI基准测试",
+    "资本轮动",
+    "大模型开源"
   ],
   "stock_highlights": [
+    {
+      "symbol": "XFAB",
+      "company": "X-FAB半导体",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2074063175293809150",
+      "view": "看多",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "Kelper上调至买入评级。核心逻辑在于最大客户需求走强，AI碳化硅及光子技术带来结构性增长以对冲汽车周期。西方特种代工稀缺性凸显，同业估值溢价佐证其长期配置价值。"
+    },
+    {
+      "symbol": "SILEX",
+      "company": "Silex",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2074063175293809150",
+      "view": "仅提及/无明确观点",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "作为西方特种晶圆代工同类企业被对比提及，市场认为其正享受更高估值倍数，主要用作XFAB稀缺性逻辑的参照标的。"
+    },
+    {
+      "symbol": "SIVE",
+      "company": "Sivers半导体",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2074046947434860971",
+      "view": "看多",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "市场预期其有望复刻LITE强势走势。与O-Net合作推动ELS技术量产，JBL的1.6T LRO信号印证芯片护城河，超大规模数据中心激光器商业化加速。"
+    },
+    {
+      "symbol": "LITE",
+      "company": "Lumentum",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2074046947434860971",
+      "view": "观察",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "被市场视为SIVE股价走势的复刻基准。作为光模块领域强势标的，其历史行情被用作验证SIVE商业化落地与量产潜力的重要参照物。"
+    },
+    {
+      "symbol": "JBL",
+      "company": "捷普集团",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2074046947434860971",
+      "view": "观察",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "其1.6T LRO量产计划释放明确信号，间接印证采用Sivers芯片的可插拔光模块具备显著技术护城河，产业链商业化进程正在加速。"
+    },
+    {
+      "symbol": "AXTI",
+      "company": "AX Technology",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2074007618046345249",
+      "view": "看多",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "野村报告列为细分龙头。2/3英寸磷化铟衬底及外延片均价大幅上调42%-78%。尽管本土价格承压，但超大规模云厂商强劲采购支撑ASP结构性上行。"
+    },
+    {
+      "symbol": "IQE",
+      "company": "IQE plc",
+      "source": "X Serenity (@aleabitoreddit)",
+      "url": "https://x.com/aleabitoreddit/status/2074007618046345249",
+      "view": "看多",
+      "target_price": "",
+      "reference_price": "",
+      "thesis": "野村报告与AXTI并列细分龙头。InP衬底及外延片ASP大幅上调超40%。超大规模数据中心采购需求强劲，有效对冲区域市场价格下行压力。"
+    },
     {
       "symbol": "TSLA",
       "company": "特斯拉",
@@ -102,77 +179,67 @@
       "view": "观察",
       "target_price": "",
       "reference_price": "",
-      "thesis": "入选SVRC 2026年机器人产业现状报告头部名单，作为人形机器人核心标的，在自动化政策倾斜背景下，技术迭代与商业化落地进度具备持续跟踪价值。"
+      "thesis": "入选SVRC机器人十大头部企业名单。报告将其视为人形机器人及自动化赛道核心观察标的，凸显其在行业宏观演进中的战略地位与规模化落地潜力。"
     },
     {
       "symbol": "AMZN",
       "company": "亚马逊",
       "source": "X Serenity (@aleabitoreddit)",
-      "url": "https://x.com/aleabitoreddit/status/2073867745243127973",
+      "url": "https://x.com/aleabitoreddit/status/2073763512216899825",
       "view": "观察",
       "target_price": "",
       "reference_price": "",
-      "thesis": "入选SVRC机器人产业报告，其自动化布局被列为行业头部；同时作为数据中心BBU最终交付端，算力基建需求攀升直接带动上游产能扩张，双线逻辑明确。"
-    },
-    {
-      "symbol": "CCXI",
-      "company": "",
-      "source": "X Serenity (@aleabitoreddit)",
-      "url": "https://x.com/aleabitoreddit/status/2073867745243127973",
-      "view": "观察",
-      "target_price": "",
-      "reference_price": "",
-      "thesis": "关联人形机器人厂商Agility Robotics并入选产业头部报告。在自动化政策利好与行业需求共振下，作为产业链核心环节具备中长期配置与跟踪逻辑。"
+      "thesis": "入选SVRC机器人十强名单，同时其数据中心正接收三星组装的BBU电芯。云巨头算力扩张持续拉动高功率圆柱电池需求，供应链短期瓶颈凸显基建规模。"
     },
     {
       "symbol": "MU",
       "company": "美光科技",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2073793206408667392",
-      "view": "看多",
+      "view": "观察",
       "target_price": "",
-      "reference_price": "~$9.3B",
-      "thesis": "宣布新增约93亿美元资本开支扩产存储芯片。伴随制造本地化推进，有望直接利好半导体设备供应链，存储板块产能释放与基本面改善预期明确。"
+      "reference_price": "~93亿美元",
+      "thesis": "主导广岛新厂扩产，资本支出达1.5万亿日元。大摩研判NAND供应紧缺将延续至2027年，其大规模设备本土化投资将直接带动上下游产业链景气度上行。"
     },
     {
       "symbol": "SNDK",
-      "company": "西部数据",
+      "company": "闪迪",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2073793206408667392",
       "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "摩根士丹利研判NAND闪存供需紧张格局将延续至2027年。作为存储头部厂商，有望充分受益于行业长周期短缺带来的价格弹性与市场份额扩张。"
+      "thesis": "摩根士丹利指出NAND供应紧缺态势预计持续至2027年。作为核心存储厂商之一，有望直接受益于行业供需偏紧格局，迎来量价齐升的业绩兑现期。"
     },
     {
       "symbol": "META",
       "company": "Meta Platforms",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2073763512216899825",
-      "view": "观察",
+      "view": "仅提及/无明确观点",
       "target_price": "",
       "reference_price": "",
-      "thesis": "作为高功率圆柱电池与BBU模组最终交付客户，数据中心建设浪潮直接推升算力硬件需求，上游供应链交付能力与产能突破进度将影响其基建落地节奏。"
+      "thesis": "作为高功率圆柱电池与BBU电芯的终端采购方被提及。数据中心基建需求激增推动上游产能爬坡，短期供应链紧张态势侧面印证其AI算力资本开支规模。"
     },
     {
       "symbol": "IREN",
-      "company": "Iris Energy",
+      "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2073704784398528599",
-      "view": "看多",
+      "view": "观察",
       "target_price": "",
-      "reference_price": "~$21.6B",
-      "thesis": "Anthropic拟在澳投建1.4GW数据中心，总投资约216亿美元。作为积极承建主权云基础设施的企业，将直接受益于AI算力海外扩张与电力配套需求爆发。"
+      "reference_price": "",
+      "thesis": "新型云服务商正于澳洲加速建设主权数据中心。配合科技巨头锁定1.4GW电力的产业逻辑，地缘算力布局与基建需求共振，反映全球AI能源转移趋势。作者声明无持仓。"
     },
     {
       "symbol": "SHAZ",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2073704784398528599",
-      "view": "看多",
+      "view": "观察",
       "target_price": "",
       "reference_price": "",
-      "thesis": "参与澳大利亚大规模主权云数据中心建设，AI算力基建向海外延伸的选址与电力逻辑逐步清晰，有望承接区域级算力设施配套订单并实现业绩兑现。"
+      "thesis": "与IREN同为澳洲主权数据中心建设的加速者。产业逻辑正随大规模锁定电力容量而逐步串联，反映全球AI算力基建向能源丰富区域转移的确定性趋势。作者声明无持仓。"
     },
     {
       "symbol": "JD",
@@ -182,7 +249,7 @@
       "view": "风险提示",
       "target_price": "",
       "reference_price": "",
-      "thesis": "高管预警物流自动化加速，计划以机器人替代约70万名配送员。此举将重塑电商履约成本结构，凸显AI技术向末端配送渗透对传统劳动力市场的结构性冲击。"
+      "thesis": "日经报道引述其CEO预警：约70万物流人员未来将被自动化机器人逐步取代。凸显供应链自动化渗透加速趋势，引发劳动力市场结构性转型与就业替代讨论。"
     },
     {
       "symbol": "AAPL",
@@ -192,7 +259,7 @@
       "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "作者认为苹果具备突破关键算力与供应链瓶颈的持续创新能力，依托深厚生态与技术护城河，有望有效化解外部制约并巩固其在科技硬件领域的长期竞争优势。"
+      "thesis": "市场热议其有望在关键技术节点突破，化解当前算力与供应链瓶颈。投资者对其硬件垂直整合与底层技术迭代能力保持乐观预期，折射出资金面的长期看多情绪。"
     },
     {
       "symbol": "NBIS",
@@ -202,32 +269,32 @@
       "view": "观察",
       "target_price": "",
       "reference_price": "",
-      "thesis": "浮动数据中心概念因具备免费自然冷却优势引发关注，尤其契合土地紧缺地区需求。该技术若规模化部署，有望对传统算力基建成本结构与选址逻辑产生颠覆。"
+      "thesis": "被视作海上浮动数据中心的关键潜在玩家。该模式具备免费散热与空间优势，特别适合地理受限区域。若技术普及，其产业规模有望比肩太空算力。"
     }
   ],
   "trading": {
-    "market_overview": "当前美股呈现显著的结构分化，宽基指数QQQ均线多头排列维持，但科技权重股出现集中获利回吐，VIX恐慌指数回落至15.81，显示短期波动率边际降温。加密货币市场情绪极度低迷（恐慌指数24），总市值2.28T美元，BTC主导率攀升至55.8%。尽管BTC与ETH近五日录得超跌反弹，但价格仍受压于200日均线下方，中期空头结构未改。中概股技术面分化加剧，代工链多头趋势完整，而互联网巨头已触及RSI超卖区。商品与宏观端，美元指数在100.88高位盘整，美债收益率4.49%延续上行，黄金ETF显现底背离金叉迹象，宏观资金正围绕利率路径重定价。",
+    "market_overview": "综合当前技术面板，四大类资产呈现显著的技术分化。美股板块内部动能衰减与支撑并存，科技权重在长周期均线附近反复测试，RSI普遍回落至中性区间，均线系统多空交织，短期缺乏明确单边突破动能。加密市场情绪持续承压，恐慌贪婪指数已下探至24，主流币种价格仍深幅偏离200日均线，MACD绿柱尚未完全收敛，整体维持弱势震荡修复。中概股权重股均线空头排列显著，多数标的RSI已进入超卖区域，短期乖离率偏高，技术面存在均值回归的反抽诉求。商品外汇方面，美元指数RSI升至61.5并维持多头排列，长端美债收益率同步走强；黄金ETF虽日线出现MACD金叉，但受制于50日与200日均线的死叉压制，宽幅整理结构延续。市场整体处于多空指标相互对冲的过渡期。",
     "watchlist": [
       {
-        "symbol": "BB",
-        "display_name": "黑莓 (BB)",
+        "symbol": "IBM",
+        "display_name": "IBM",
         "stance": "偏上行",
-        "rationale": "现价11.51已站稳20/50/200日均线（9.91/7.99/5.02）之上，呈多头排列。MACD录得1.1228且高于信号线0.8923，确认金叉形态。RSI14为64.7，未入超买。五日涨幅11.32%印证短期动量强劲，架构偏上行。"
+        "rationale": "RSI处于61.5的偏强区间，MACD已触发金叉（指标值5.25高于信号线4.01）。现价289.52已有效站稳20日均线273.02与50日均线255.34上方，近5日累计涨幅达12.1%，短期均线发散向上，动量指标明确偏向多头上行。"
       },
       {
         "symbol": "BABA",
         "display_name": "阿里巴巴 (BABA)",
         "stance": "偏下行",
-        "rationale": "现价96.14运行于20/50/200日均线（107.43/122.9/147.08）下方，空头排列确立。RSI14降至23.8进入超卖区。MACD为-8.3141且低于信号线-7.8115，绿柱压制明显。五日微涨1.13%难改下行趋势，形态偏下行。"
+        "rationale": "RSI读数骤降至23.8已明确进入超卖区域，均线系统呈现标准空头排列。现价96.14大幅低于200日均线147.08，MACD持续位于零轴下方为负值8.31，价格重心逐级下移。空头动量占据主导，短期技术状态明确偏下行。"
       },
       {
-        "symbol": "GOOGL",
-        "display_name": "Alphabet (GOOGL)",
+        "symbol": "TSM",
+        "display_name": "台积电 ADR (TSM)",
         "stance": "中性",
-        "rationale": "现价359.91紧贴20日均线358.54，受50日均线370.97压制。RSI14录得49.5紧贴多空中轴，动能均衡。MACD为-4.3360，位于信号线-4.8357下方但绿柱收窄。短期缺乏突破指引，呈震荡格局，状态中性。"
+        "rationale": "现价434.16紧贴20日均线437.67与50日均线419.50窄幅整理，RSI精确录得50.1处于绝对平衡中枢。MACD虽维持正值但柱体持续收敛，多空力量暂时抵消，未形成有效突破，整体技术格局呈中性震荡。"
       }
     ],
-    "risk_caveat": "本报告基于客观数据生成，不构成任何投资建议。过去走势不代表未来表现，市场受宏观环境与突发事件影响存在不确定性，仅供技术指标解读参考，请结合自身风险偏好独立决策。",
+    "risk_caveat": "本报告仅基于公开行情数据的客观技术读数进行静态描述，过去走势不代表未来表现。市场结构受多重宏观因子影响，技术指标存在滞后性，本报告仅供技术指标解读参考，不构成任何投资建议或交易依据。",
     "tickers": [
       {
         "symbol": "IBM",
@@ -954,26 +1021,21 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 63626.63,
-        "pct1Day": 0.8532886010592997,
-        "pct5Day": 8.654148456934486,
-        "pct52WeekHigh": -49.58193100734425,
-        "pct52WeekLow": 10.180244894668295,
-        "sma20": 62010.2419921875,
-        "sma50": 66755.020546875,
-        "sma200": 74713.9523828125,
-        "rsi14": 51.87981005476248,
-        "macd": -1212.9055095749209,
-        "macdSignal": -1865.5869382079336,
-        "macdHistogram": 652.6814286330127,
+        "currentPrice": 62801.05,
+        "pct1Day": -1.1752284725260642,
+        "pct5Day": 4.66186167246557,
+        "pct52WeekHigh": -50.2361248472342,
+        "pct52WeekLow": 8.750613833269325,
+        "sma20": 61866.3251953125,
+        "sma50": 66460.879609375,
+        "sma200": 74600.2513671875,
+        "rsi14": 48.67741794479701,
+        "macd": -1049.6704084290031,
+        "macdSignal": -1703.4087105997266,
+        "macdHistogram": 653.7383021707235,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
-          {
-            "type": "macd-bull-cross",
-            "label": "MACD 金叉",
-            "daysAgo": 4
-          },
           {
             "type": "below-sma50-sma200",
             "label": "空头排列"
@@ -986,18 +1048,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 1789.44,
-        "pct1Day": 0.5849830360403379,
-        "pct5Day": 14.007288363202736,
-        "pct52WeekHigh": -63.87693886610361,
-        "pct52WeekLow": 18.78083169549243,
-        "sma20": 1675.4923828125,
-        "sma50": 1808.4834521484374,
-        "sma200": 2262.8664233398435,
-        "rsi14": 57.95030101827329,
-        "macd": -20.809299585261897,
-        "macdSignal": -52.7823585478299,
-        "macdHistogram": 31.973058962568004,
+        "currentPrice": 1765.01,
+        "pct1Day": -1.0093057248593684,
+        "pct5Day": 9.698764381546644,
+        "pct52WeekHigh": -64.37010230466599,
+        "pct52WeekLow": 17.159198269213324,
+        "sma20": 1673.9012756347656,
+        "sma50": 1801.1020678710938,
+        "sma200": 2257.523958129883,
+        "rsi14": 55.26765890449172,
+        "macd": -13.705498389920422,
+        "macdSignal": -45.04910657500871,
+        "macdHistogram": 31.343608185088286,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -1013,18 +1075,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 81.92,
-        "pct1Day": 0.3311278538057601,
-        "pct5Day": 11.420449447832889,
-        "pct52WeekHigh": -67.64739451340567,
-        "pct52WeekLow": 35.59609313756647,
-        "sma20": 73.66488227844238,
-        "sma50": 75.32348571777344,
-        "sma200": 93.34291027069092,
-        "rsi14": 64.58524432789011,
-        "macd": 1.9819488334248945,
-        "macdSignal": 0.3690556460158844,
-        "macdHistogram": 1.61289318740901,
+        "currentPrice": 80.26,
+        "pct1Day": -1.4283945484568794,
+        "pct5Day": 3.7169257476976183,
+        "pct52WeekHigh": -68.30297709528736,
+        "pct52WeekLow": 32.84841839869489,
+        "sma20": 73.98234519958496,
+        "sma50": 75.21528762817383,
+        "sma200": 93.14387474060058,
+        "rsi14": 60.682925780753706,
+        "macd": 2.06897783504337,
+        "macdSignal": 0.7026971712724128,
+        "macdHistogram": 1.366280663770957,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": []
@@ -1035,25 +1097,25 @@
         "group": "macro",
         "currency": "USD",
         "exchangeName": "CXI",
-        "currentPrice": 15.81,
-        "pct1Day": -4.701628362952228,
-        "pct5Day": -16.304920535552007,
-        "pct52WeekHigh": -55.212464589235125,
-        "pct52WeekLow": 18.161434977578473,
-        "sma20": 18.101500034332275,
-        "sma50": 17.629199981689453,
-        "sma200": 18.669950075149536,
-        "rsi14": 44.40568974461739,
-        "macd": -0.2509249902817672,
-        "macdSignal": -0.052642280040328046,
-        "macdHistogram": -0.19828271024143912,
+        "currentPrice": 16.29,
+        "pct1Day": 0.8668754475330843,
+        "pct5Day": -11.515479983614005,
+        "pct52WeekHigh": -53.85269121813031,
+        "pct52WeekLow": 21.748878923766803,
+        "sma20": 18.146000099182128,
+        "sma50": 17.56880001068115,
+        "sma200": 18.67280007839203,
+        "rsi14": 44.96297311316342,
+        "macd": -0.32328914891736105,
+        "macdSignal": -0.10677165440286238,
+        "macdHistogram": -0.21651749451449867,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
           {
             "type": "macd-bear-cross",
             "label": "MACD 死叉",
-            "daysAgo": 2
+            "daysAgo": 3
           },
           {
             "type": "below-sma50-sma200",
@@ -1098,18 +1160,18 @@
         "group": "macro",
         "currency": "USD",
         "exchangeName": "NYB",
-        "currentPrice": 100.875,
-        "pct1Day": 0.014871494703221395,
-        "pct5Day": -0.4784931012540177,
-        "pct52WeekHigh": -0.9086444007858518,
-        "pct52WeekLow": 5.572998430141291,
-        "sma20": 100.59775009155274,
-        "sma50": 99.5011003112793,
-        "sma200": 98.86377521514892,
-        "rsi14": 58.24716639502859,
-        "macd": 0.49381825700842796,
-        "macdSignal": 0.5220182320748331,
-        "macdHistogram": -0.028199975066405147,
+        "currentPrice": 101.144,
+        "pct1Day": 0.28157781868910203,
+        "pct5Day": -0.21310241619068973,
+        "pct52WeekHigh": -0.6444007858546087,
+        "pct52WeekLow": 5.854526425955006,
+        "sma20": 100.61119995117187,
+        "sma50": 99.50648025512696,
+        "sma200": 98.86512020111084,
+        "rsi14": 61.51332108763388,
+        "macd": 0.51527672249766,
+        "macdSignal": 0.5263099251726795,
+        "macdHistogram": -0.011033202675019504,
         "trend": "bullish",
         "rsiState": "normal",
         "signals": [
@@ -1136,27 +1198,66 @@
       "timestamp": "2026-07-06T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2282099939845.078,
-      "total24hVolumeUsd": 53666113758.20902,
-      "marketCapChangePct24h": 0.7555834595393963,
-      "btcDominance": 55.79517640703629,
-      "ethDominance": 9.422741172761311,
-      "activeCryptocurrencies": 17345
+      "totalMarketCapUsd": 2258992849169.961,
+      "total24hVolumeUsd": 54197922164.77961,
+      "marketCapChangePct24h": 0.12281321773719531,
+      "btcDominance": 55.7011041187029,
+      "ethDominance": 9.42181971707475,
+      "activeCryptocurrencies": 17337
     },
-    "generated_at": "2026-07-06T00:47:59.095Z"
+    "generated_at": "2026-07-06T10:19:11.767Z"
+  },
+  "earnings_calendar": {
+    "window_start": "2026-07-06",
+    "window_end": "2026-07-13",
+    "generated_at": "2026-07-06T10:19:11.946Z",
+    "lookahead_days": 7,
+    "events": [],
+    "source_status": [
+      {
+        "source_id": "overrides",
+        "source_name": "Local earnings overrides",
+        "url": "earnings.overrides.json",
+        "ok": true,
+        "events": 0
+      },
+      {
+        "source_id": "tsmc-official",
+        "source_name": "TSMC Financial Calendar",
+        "url": "https://investor.tsmc.com/english/financial-calendar",
+        "ok": false,
+        "events": 0,
+        "message": "HTTP 403 Forbidden"
+      },
+      {
+        "source_id": "nasdaq",
+        "source_name": "Nasdaq Earnings Calendar",
+        "url": "https://api.nasdaq.com/api/calendar/earnings",
+        "ok": true,
+        "events": 0
+      },
+      {
+        "source_id": "investing",
+        "source_name": "Investing.com Earnings Calendar",
+        "url": "https://www.investing.com/earnings-calendar/",
+        "ok": false,
+        "events": 0,
+        "message": "HTTP 403 Forbidden"
+      }
+    ]
   },
   "weather": {
     "city": "上海",
     "emoji": "⛅",
     "condition": "多云间晴",
-    "temperature_c": 28,
-    "apparent_temperature_c": 33,
-    "humidity": 87,
-    "wind_kmh": 9.3,
-    "aqi": 93,
-    "aqi_label": "良",
-    "pm25": 40.3,
-    "observed_at": "2026-07-06T08:45",
+    "temperature_c": 31,
+    "apparent_temperature_c": 37,
+    "humidity": 68,
+    "wind_kmh": 4.3,
+    "aqi": 105,
+    "aqi_label": "轻度污染",
+    "pm25": 68.9,
+    "observed_at": "2026-07-06T18:15",
     "source": "Open-Meteo"
   }
 }
