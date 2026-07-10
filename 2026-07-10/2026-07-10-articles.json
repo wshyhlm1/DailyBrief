@@ -6,150 +6,150 @@
       "title": "MadsLorentzen/ai-job-search",
       "url": "https://github.com/MadsLorentzen/ai-job-search",
       "excerpt": "AI-powered job application framework built on Claude Code. Fork it, fill in your profile, and let Claude evaluate jobs, tailor CVs, write cover letters, and prepare you for interviews.",
-      "meta": "TypeScript · ★ 18,871 · 🍴 5,465 · 📈 3,728 stars today",
+      "meta": "TypeScript · ★ 18,915 · 🍴 5,477 · 📈 3,716 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "基于 Claude Code 构建的求职自动化框架，旨在解决求职者反复修改简历、撰写求职信及准备面试的繁琐流程。用户只需填入个人资料，框架即可利用大模型自动评估职位匹配度、定制应聘材料并提供面试指导。适合开发者与技术从业者批量处理求职任务。"
+      "summary": "基于 Claude Code 构建的 AI 求职自动化框架。开发者填入个人信息后，可利用 Claude 自动评估岗位匹配度、针对性优化简历、撰写求职信并生成面试问答。主要面向求职者，大幅降低批量投递与定制准备的时间成本，实现端到端智能求职工作流。"
     },
     {
       "sourceId": "github-trending",
       "title": "SmartlyDressedGames/U3-SDK",
       "url": "https://github.com/SmartlyDressedGames/U3-SDK",
       "excerpt": "Source code for Unturned, a free open-world zombie survival sandbox game.",
-      "meta": "C# · ★ 1,995 · 🍴 257 · 📈 541 stars today",
+      "meta": "C# · ★ 1,998 · 🍴 257 · 📈 524 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "开源沙盒生存游戏 Unturned 的核心 SDK 与部分源码，面向游戏模组开发者与服务器运维人员开放。提供底层 API 与架构参考，便于社区自定义地图、武器与游戏逻辑，降低二创门槛。开发者可据此构建专属 Mod 或私有服务器，适合独立游戏研究与沙盒玩法扩展。"
+      "summary": "知名免费开放世界僵尸生存沙盒游戏《Unturned》的完整开源 SDK 与源代码。提供核心游戏逻辑、渲染管线与服务器架构实现，适合开发者学习 C#/Unity 多人在线沙盒构建，或供社区进行模组制作、私服部署与二次开发参考。"
     },
     {
       "sourceId": "github-trending",
       "title": "addyosmani/agent-skills",
       "url": "https://github.com/addyosmani/agent-skills",
       "excerpt": "Production-grade engineering skills for AI coding agents.",
-      "meta": "JavaScript · ★ 75,829 · 🍴 8,154 · 📈 2,582 stars today",
+      "meta": "JavaScript · ★ 75,842 · 🍴 8,157 · 📈 2,554 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向 AI 编程智能体的生产级工程技能集合，旨在解决大模型生成代码质量不稳定、缺乏工程规范的问题。项目提供标准化提示词、工作流模板与最佳实践，帮助开发者将 AI 工具无缝集成至代码审查与架构设计环节。适合追求高质量自动化研发流程的软件工程师。"
+      "summary": "面向 AI 编程智能体的生产级工程实践指南与技能集合。系统梳理智能体在代码生成、架构设计、调试与部署中的最佳实践，解决大模型在复杂工程任务中易出现的幻觉与上下文丢失问题。适合 AI 工具开发者及重度使用者参考调优。"
     },
     {
       "sourceId": "github-trending",
       "title": "VoltAgent/awesome-design-md",
       "url": "https://github.com/VoltAgent/awesome-design-md",
       "excerpt": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
-      "meta": "★ 99,612 · 🍴 11,572 · 📈 1,233 stars today",
+      "meta": "★ 99,634 · 🍴 11,573 · 📈 1,391 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "汇集主流品牌设计系统规范的结构化 DESIGN.md 文件库，专供 AI 编程智能体读取解析。开发者将文件放入项目后，AI 即可自动生成严格遵循该品牌视觉规范的 UI 组件。适用于前端快速原型搭建、设计到代码的自动化转换，以及多项目保持设计一致性的场景。"
+      "summary": "汇集主流品牌设计规范分析的 DESIGN.md 文件合集。将对应文件放入项目目录后，可引导 AI 编程智能体自动解析视觉规范并生成风格一致的 UI 代码。解决设计与开发割裂问题，适用于前端工程师快速实现高还原度的品牌界面。"
     },
     {
       "sourceId": "github-trending",
       "title": "iOfficeAI/OfficeCLI",
       "url": "https://github.com/iOfficeAI/OfficeCLI",
       "excerpt": "OfficeCLI is the first and best Office suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. Free, open-source, single binary, no Office installation required.",
-      "meta": "C# · ★ 13,379 · 🍴 912 · 📈 1,923 stars today",
+      "meta": "C# · ★ 13,391 · 🍴 912 · 📈 1,929 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "专为 AI 智能体打造的命令行 Office 文档处理工具，支持免安装环境直接读取、编辑与自动化生成 Word、Excel 和 PPT 文件。采用单二进制分发，零依赖且轻量高效。解决传统方案体积大、难集成的痛点，适用于文档批量处理、数据分析流水线与 AI 工作流集成。"
+      "summary": "专为 AI 智能体打造的命令行版 Office 套件，支持直接读写、编辑并自动化处理 Word、Excel 与 PPT 文件。采用单二进制分发，无需安装微软 Office 环境。解决智能体操作文档的兼容痛点，适用于自动化办公流集成。"
     },
     {
       "sourceId": "github-trending",
       "title": "wonderwhy-er/DesktopCommanderMCP",
       "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
       "excerpt": "This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities",
-      "meta": "TypeScript · ★ 6,566 · 🍴 781 · 📈 185 stars today",
+      "meta": "TypeScript · ★ 6,567 · 🍴 781 · 📈 185 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "基于模型上下文协议构建的本地服务端插件，为 Claude 赋予终端命令执行、文件系统检索与差异编辑能力。通过标准化接口桥接大模型与操作系统，使 AI 能安全可控地执行复杂运维任务。适合将 Claude 深度集成至本地开发环境、实现全栈自动化操控的工程师。"
+      "summary": "为 Claude 大模型设计的 MCP 协议服务器，赋予其本地终端控制、文件系统检索与基于 Diff 的代码编辑能力。通过标准化接口打通模型与本地操作系统的交互壁垒，使 AI 能直接执行 Shell 命令，适用于本地辅助编程与自动化运维。"
     },
     {
       "sourceId": "github-trending",
       "title": "anthropics/claude-cookbooks",
       "url": "https://github.com/anthropics/claude-cookbooks",
       "excerpt": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
-      "meta": "Jupyter Notebook · ★ 47,131 · 🍴 5,555 · 📈 347 stars today",
+      "meta": "Jupyter Notebook · ★ 47,140 · 🍴 5,555 · 📈 194 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Anthropic 官方推出的 Claude 应用实战指南集，收录大量 Notebook 与配方示例。涵盖提示词工程、工具调用、多模态处理及智能体工作流设计，直观展示 API 调用模式。开发者可快速复现代码并调试参数，适用于 AI 应用原型开发、功能探索与团队技术培训。"
+      "summary": "Anthropic 官方出品的 Claude 模型应用实战手册，汇集多种高实用性 Notebook 与 Prompt 配方。涵盖复杂推理、工具调用等进阶用法，帮助开发者快速掌握能力边界与调优技巧，适用于 AI 应用原型验证与教学演示。"
     },
     {
       "sourceId": "github-trending",
       "title": "vxcontrol/pentagi",
       "url": "https://github.com/vxcontrol/pentagi",
       "excerpt": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
-      "meta": "Go · ★ 19,364 · 🍴 2,620 · 📈 543 stars today",
+      "meta": "Go · ★ 19,374 · 🍴 2,621 · 📈 535 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向网络安全领域的完全自主型 AI 智能体系统，可自动化执行复杂渗透测试任务。通过多智能体协作与漏洞知识库结合，自动完成信息收集、漏洞扫描与报告生成，显著降低人工成本。适合安全研究员、红队演练及 DevSecOps 团队进行常态化资产风险评估。"
+      "summary": "全自主 AI 智能体渗透测试系统，可独立完成漏洞扫描、权限提升与横向移动等复杂安全审计任务。基于多智能体协同架构与自动化工作流，大幅降低人工红队操作门槛，主要面向网络安全研究员、企业安全团队及渗透测试工程师。"
     },
     {
       "sourceId": "github-trending",
       "title": "unclecode/crawl4ai",
       "url": "https://github.com/unclecode/crawl4ai",
       "excerpt": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
-      "meta": "Python · ★ 71,797 · 🍴 7,376 · 📈 195 stars today",
+      "meta": "Python · ★ 71,808 · 🍴 7,376 · 📈 215 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "专为大语言模型优化的开源网页爬虫工具，解决动态渲染页面解析难、提取数据噪声大的问题。内置智能内容清洗与结构化转换逻辑，直接输出 LLM 友好格式，支持高并发异步请求。适用于构建 RAG 知识库、AI 训练数据采集、竞品监控及自动化信息聚合。"
+      "summary": "专为大语言模型优化的开源网页爬虫与数据抓取框架。内置智能渲染、DOM 解析与抗反爬机制，能自动清洗网页噪声并输出结构化数据，直接对接 LLM 上下文。适用于 AI 训练数据采集、RAG 知识库构建与自动化信息聚合。"
     },
     {
       "sourceId": "github-trending",
       "title": "imthenachoman/How-To-Secure-A-Linux-Server",
       "url": "https://github.com/imthenachoman/How-To-Secure-A-Linux-Server",
       "excerpt": "An evolving how-to guide for securing a Linux server.",
-      "meta": "★ 29,061 · 🍴 1,937 · 📈 306 stars today",
+      "meta": "★ 29,067 · 🍴 1,938 · 📈 243 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "持续演进的 Linux 服务器安全加固指南，涵盖初始部署到深度防御的全流程。内容包含内核参数调优、防火墙策略、权限最小化与入侵检测，提供可执行脚本与配置清单。系统管理员可据此快速建立安全基线，防范常见网络攻击，适用于生产环境初始化与安全审计。"
+      "summary": "持续更新的 Linux 服务器安全加固实战指南。系统梳理防火墙配置、SSH 安全、权限最小化、日志审计等核心操作，提供可落地的命令行脚本与最佳实践。面向系统管理员与 DevOps 工程师，帮助快速搭建生产级安全基线。"
     },
     {
       "sourceId": "github-trending",
       "title": "huxingyi/autoremesher",
       "url": "https://github.com/huxingyi/autoremesher",
       "excerpt": "Automatic quad remeshing tool",
-      "meta": "C++ · ★ 2,349 · 🍴 171 · 📈 405 stars today",
+      "meta": "C++ · ★ 2,353 · 🍴 172 · 📈 403 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "自动化三维模型四边形重拓扑工具，解决扫描或雕刻模型网格布线混乱、难以绑定动画的问题。通过几何算法自动将三角面片重组为均匀的 Quad 拓扑结构，保留原始轮廓与曲率。适用于游戏资产优化、VFX 特效预处理及 3D 打印前的网格规范化工作流。"
+      "summary": "自动化四边形拓扑重建工具，支持将任意高模或扫描网格转换为干净规整的 Quad Mesh。基于几何特征分析与流形优化算法，大幅简化 3D 模型重拓扑流程，主要服务于 3D 美术师与游戏资产制作人，优化模型面数与渲染效率。"
     },
     {
       "sourceId": "github-trending",
       "title": "bradautomates/claude-video",
       "url": "https://github.com/bradautomates/claude-video",
       "excerpt": "Give Claude the ability to watch any video. /watch downloads, extracts frames, transcribes, hands it all to Claude.",
-      "meta": "Python · ★ 6,664 · 🍴 767 · 📈 727 stars today",
+      "meta": "Python · ★ 6,678 · 🍴 767 · 📈 718 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "为 Claude 扩展视频理解能力的自动化处理管道。通过指令自动完成视频下载、关键帧抽取、音频转录与图文对齐，将多模态数据整合后交付大模型推理。有效突破原生上下文限制，适用于长视频摘要生成、会议记录提取、内容审核及多媒体资料的结构化分析。"
+      "summary": "赋予 Claude 视频理解能力的自动化工具集。执行命令即可自动下载视频、抽帧提取视觉信息、完成音频转写，并将多模态数据打包输入 Claude 分析。解决大模型原生视频处理瓶颈，适用于视频内容摘要与多媒体审计场景。"
     },
     {
       "sourceId": "github-trending",
       "title": "prisma/prisma",
       "url": "https://github.com/prisma/prisma",
       "excerpt": "Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB",
-      "meta": "TypeScript · ★ 46,886 · 🍴 2,329 · 📈 373 stars today",
+      "meta": "TypeScript · ★ 46,891 · 🍴 2,329 · 📈 376 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向 Node.js 与 TypeScript 的下一代 ORM 框架，支持主流关系型与 NoSQL 数据库。采用 Schema-First 理念提供类型安全查询 API 与自动迁移工具，解决 JS 开发中数据库操作缺乏编译期检查的痛点。适合全栈开发与企业级后端数据层构建。"
+      "summary": "面向 Node.js 与 TypeScript 的新一代类型安全数据库 ORM。提供直观的 Schema 定义、自动代码生成与强类型查询 API，全面支持主流关系型与文档数据库。解决传统 SQL 拼接易出错痛点，适用于全栈开发者的数据层建模。"
     },
     {
       "sourceId": "github-trending",
       "title": "kyutai-labs/pocket-tts",
       "url": "https://github.com/kyutai-labs/pocket-tts",
       "excerpt": "A TTS that fits in your CPU (and pocket)",
-      "meta": "Python · ★ 6,962 · 🍴 700 · 📈 273 stars today",
+      "meta": "Python · ★ 6,966 · 🍴 700 · 📈 235 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "极致轻量化的本地文本转语音模型，经底层优化后可直接在普通 CPU 实时推理，无需 GPU 加速。通过模型压缩与推理提速技术，在保持自然人声合成的同时大幅降低内存占用。适用于离线语音助手、嵌入式交互、移动端实时配音及高隐私要求的本地化语音场景。"
+      "summary": "极致轻量化的纯 CPU 文本转语音（TTS）模型，体积小巧且无需 GPU 加速即可流畅运行。采用高效神经网络架构，在保持高自然度语音合成的同时大幅降低算力需求，适合部署在边缘设备或移动端，满足离线语音播报需求。"
     },
     {
       "sourceId": "github-trending",
       "title": "asgeirtj/system_prompts_leaks",
       "url": "https://github.com/asgeirtj/system_prompts_leaks",
       "excerpt": "Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI - Grok, Cursor, Copilot, VS Code, Perplexity, and more. Updated regularly.",
-      "meta": "JavaScript · ★ 55,122 · 🍴 9,003 · 📈 1,135 stars today",
+      "meta": "JavaScript · ★ 55,135 · 🍴 9,006 · 📈 1,125 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "汇集主流大模型内部系统提示词的提取与分析仓库，覆盖多家头部厂商前沿版本。通过技术逆向揭示各模型在角色设定、安全边界与推理逻辑上的底层指令，帮助开发者理解对齐策略。适用于提示词优化、AI 行为分析与安全红队测试。"
+      "summary": "汇总主流 AI 厂商多款大模型提取的系统提示词。涵盖 Claude、GPT 与 Gemini 系列不同版本的核心指令设定，为提示词工程、大模型行为机理研究与安全对齐分析提供一手参考素材，主要面向 AI 研究员与底层开发者。"
     },
     {
       "sourceId": "v2ex-hot",
@@ -315,6 +315,15 @@
     },
     {
       "sourceId": "v2ex-hot",
+      "title": "一觉醒来， codex 成为历史了，改 CHATGPT 了",
+      "url": "https://www.v2ex.com/t/1226221",
+      "excerpt": "7 回复 · 程序员 节点",
+      "publishedAt": "2026-07-09T23:03:31.000Z",
+      "category": "tech",
+      "source": "V2EX"
+    },
+    {
+      "sourceId": "v2ex-hot",
       "title": "当我一天花光了 300 美刀用来 ai 写代码，我的问题还是没有得到解决，我意识到 ai 只有在辅佐没有思想",
       "url": "https://www.v2ex.com/t/1226209",
       "excerpt": "6 回复 · 程序员 节点",
@@ -368,15 +377,6 @@
       "source": "V2EX"
     },
     {
-      "sourceId": "v2ex-hot",
-      "title": "grok4.5 太强了",
-      "url": "https://www.v2ex.com/t/1226140",
-      "excerpt": "5 回复 · 程序员 节点",
-      "publishedAt": "2026-07-09T08:56:34.000Z",
-      "category": "tech",
-      "source": "V2EX"
-    },
-    {
       "sourceId": "openai-news",
       "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
       "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
@@ -384,7 +384,7 @@
       "publishedAt": "2026-07-09T13:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI宣布GPT-5.6正式成为Microsoft 365 Copilot的首选底层模型。该模型将全面接入Word、Excel、PowerPoint及Chat等办公组件，旨在提升多场景办公任务的生成质量与处理效率。"
+      "summary": "OpenAI宣布GPT-5.6正式成为Microsoft 365 Copilot首选模型。该版本全面升级Word、Excel等办公组件的AI处理能力，旨在提升协作效率。"
     },
     {
       "sourceId": "openai-news",
@@ -394,7 +394,7 @@
       "publishedAt": "2026-07-09T10:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI推出ChatGPT Work智能体，该工具可跨应用与文件执行连续操作，支持长达数小时的项目跟进出理，致力于将复杂目标自动转化为完整工作成果，进一步提升企业级任务自动化水平。"
+      "summary": "OpenAI推出ChatGPT Work智能体，支持跨应用与文件自动执行操作。该工具可长时间跟进复杂项目，将用户目标转化为完整成果，聚焦专业场景任务自动化。"
     },
     {
       "sourceId": "openai-news",
@@ -404,7 +404,7 @@
       "publishedAt": "2026-07-09T10:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI正式启动GPT-5.5生物安全漏洞赏金计划，邀请安全研究人员对模型潜在的生物风险与滥用场景进行测试，旨在完善AI在生命科学领域的合规边界与安全防御机制。"
+      "summary": "OpenAI启动GPT-5.5生物安全漏洞赏金计划，鼓励研究人员识别并报告模型在生物领域的潜在风险与技术缺陷，以强化敏感场景下的应用合规性。"
     },
     {
       "sourceId": "openai-news",
@@ -414,7 +414,7 @@
       "publishedAt": "2026-07-09T10:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI发布GPT-5.6模型，主打更高算力性价比与按需扩展能力。该版本优化了单Token信息密度，在复杂任务处理中实现更强性能表现，面向企业提供可灵活调用的前沿智能服务。"
+      "summary": "OpenAI发布GPT-5.6模型，提升单Token智能密度与单位算力性价比。新版针对高难度任务优化按需处理能力，为企业及开发者提供更具成本效益的AI方案。"
     },
     {
       "sourceId": "openai-news",
@@ -424,7 +424,7 @@
       "publishedAt": "2026-07-08T13:30:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI公布其与政府及国家安全机构合作的指导原则，明确将负责任使用人工智能、民主问责制与公共安全作为核心准则，规范模型在政务与国防领域的应用边界与合规流程。"
+      "summary": "OpenAI公布政府与国家安全机构合作准则，将负责任使用AI、民主问责及公共安全列为核心原则，旨在规范前沿技术在公共治理领域的应用边界。"
     },
     {
       "sourceId": "openai-news",
@@ -434,7 +434,7 @@
       "publishedAt": "2026-07-08T13:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI发布最新分析报告，指出主流编程基准测试SWE-Bench Pro存在数据缺陷与评估偏差。该研究对当前AI代码能力评测体系的准确性与可靠性提出质疑，呼吁优化模型验证标准。"
+      "summary": "OpenAI分析指出编程评测基准SWE-Bench Pro存在可靠性缺陷，认为当前评估易受噪声干扰，呼吁建立严谨标准以客观衡量AI代码生成能力。"
     },
     {
       "sourceId": "openai-news",
@@ -444,7 +444,7 @@
       "publishedAt": "2026-07-08T10:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI Academy与沃尔顿家族基金会联合推出「AI技能工作坊」项目，面向K-12基础教育教师开展实操培训，旨在提升教育工作者的AI应用能力，推动技术在课堂中的安全落地。"
+      "summary": "OpenAI Academy联合沃尔顿家族基金会推出AI技能工坊，面向K-12教师提供实践培训，旨在通过实操演练帮助教育工作者掌握课堂实用的AI工具。"
     },
     {
       "sourceId": "openai-news",
@@ -453,8 +453,7 @@
       "excerpt": "A new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice.",
       "publishedAt": "2026-07-08T00:00:00.000Z",
       "category": "tech",
-      "source": "OpenAI News",
-      "summary": "OpenAI推出新一代语音交互模型GPT-Live，现已全面接入ChatGPT Voice功能。该模型旨在优化人机对话的自然度与实时响应能力，进一步拓展大语言模型在语音助手场景下的应用边界。"
+      "source": "OpenAI News"
     },
     {
       "sourceId": "openai-news",
@@ -932,7 +931,7 @@
       "publishedAt": "2026-07-08T17:16:05.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "Hugging Face联合Nvidia发布关于智能体训练数据的专题报告，系统梳理构建高质量Agent数据集的方法论与技术标准，旨在为多模态智能体的规模化开发提供开放数据基础。"
+      "summary": "Hugging Face联合英伟达发布技术指南，梳理面向AI智能体的开放数据集构建标准。文件强调高质量训练数据对提升智能体泛化能力的重要性，并提供协作框架。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1203,7 +1202,7 @@
       "publishedAt": "2026-07-09T00:00:00.000Z",
       "category": "tech",
       "source": "TLDR AI",
-      "summary": "本期资讯汇总行业重点动态：包括SpaceXAI发布Grok 4.5模型、OpenAI推出实时语音交互产品GPT-Live，以及代码智能体SWE-1.7版本更新，聚焦大模型在开发、语音与智能体领域进展。"
+      "summary": "本期简报汇总AI动态：SpaceXAI推出Grok 4.5模型，OpenAI发布实时交互功能GPT-Live，以及自动化编程模型SWE-1.7更新，聚焦工具链整合。"
     },
     {
       "sourceId": "tldr-ai",
@@ -1379,12 +1378,22 @@
     {
       "sourceId": "smol-ai-news",
       "title": "not much happened today",
+      "url": "https://news.smol.ai/issues/26-07-09-not-much/",
+      "excerpt": "**OpenAI** launched the **GPT-5.6** family including **Sol, Terra, and Luna** models, integrated across **ChatGPT, Codex, and API** with immediate rollout. The release emphasized improved **performance-per-dollar** with pricing matching GPT-5.5 but better capabilities, introducing new features like ",
+      "publishedAt": "2026-07-09T05:44:39.000Z",
+      "category": "tech",
+      "source": "Smol AI News",
+      "summary": "OpenAI上线GPT-5.6系列模型，含Sol、Terra及Luna版本，已接入ChatGPT与API平台。新版维持GPT-5.5定价，但显著提升单位成本性能。"
+    },
+    {
+      "sourceId": "smol-ai-news",
+      "title": "not much happened today",
       "url": "https://news.smol.ai/issues/26-07-08-grok-45/",
       "excerpt": "**xAI** publicly launched **Grok 4.5**, a new coding-and-agents-focused frontier model emphasizing capability-per-dollar rather than benchmark supremacy. Elon Musk described it as \"Opus-class\" but faster, more token-efficient, and lower cost, with a **1.5 trillion parameter** size, making it 3x larg",
       "publishedAt": "2026-07-08T05:44:39.000Z",
       "category": "tech",
       "source": "Smol AI News",
-      "summary": "xAI正式发布Grok 4.5大模型，参数量达1.5万亿。该模型主打代码编写与智能体应用，侧重提升算力性价比。埃隆·马斯克指出其具备Opus级别能力，同时在推理速度与Token效率上显著优化。"
+      "summary": "xAI发布1.5万亿参数Grok 4.5模型，聚焦编程与智能体场景。Elon Musk称其具Opus级能力，且推理更快、Token效率更高、成本更低，侧重性价比。"
     },
     {
       "sourceId": "smol-ai-news",
@@ -1595,18 +1604,18 @@
     },
     {
       "sourceId": "smol-ai-news",
-      "title": "not much happened today",
-      "url": "https://news.smol.ai/issues/26-06-03-not-much/",
-      "excerpt": "**Microsoft** released the detailed technical report for **MAI-Thinking-1**, a generalist reasoning model trained without third-party distillation, achieving **97% on AIME 2025** and outperforming Sonnet 4.6 in human preference tests. The report was praised for transparency, revealing no synthetic d",
+      "title": "Microsoft Build: MAI-Thinking-1 and MAI Family models, Surface RTX Spark Dev Box, and OpenClaw in Windows",
+      "url": "https://news.smol.ai/issues/26-06-02-msft-mai-2/",
+      "excerpt": "**Microsoft** introduced **MAI-Thinking-1**, a **35B parameter MoE model** with **256K context**, achieving **97% on AIME 2025** and outperforming **Sonnet 4.6** in human preference tests. The broader **7-model MAI family** spans reasoning, code, image, speech, and voice, with third-party availabili",
       "publishedAt": "2026-06-02T05:44:39.000Z",
       "category": "tech",
       "source": "Smol AI News"
     },
     {
       "sourceId": "smol-ai-news",
-      "title": "Microsoft Build: MAI-Thinking-1 and MAI Family models, Surface RTX Spark Dev Box, and OpenClaw in Windows",
-      "url": "https://news.smol.ai/issues/26-06-02-msft-mai-2/",
-      "excerpt": "**Microsoft** introduced **MAI-Thinking-1**, a **35B parameter MoE model** with **256K context**, achieving **97% on AIME 2025** and outperforming **Sonnet 4.6** in human preference tests. The broader **7-model MAI family** spans reasoning, code, image, speech, and voice, with third-party availabili",
+      "title": "not much happened today",
+      "url": "https://news.smol.ai/issues/26-06-03-not-much/",
+      "excerpt": "**Microsoft** released the detailed technical report for **MAI-Thinking-1**, a generalist reasoning model trained without third-party distillation, achieving **97% on AIME 2025** and outperforming Sonnet 4.6 in human preference tests. The report was praised for transparency, revealing no synthetic d",
       "publishedAt": "2026-06-02T05:44:39.000Z",
       "category": "tech",
       "source": "Smol AI News"
@@ -1639,15 +1648,6 @@
       "source": "Smol AI News"
     },
     {
-      "sourceId": "smol-ai-news",
-      "title": "not much happened today",
-      "url": "https://news.smol.ai/issues/26-05-26-not-much/",
-      "excerpt": "**Harness engineering** is emerging as the key differentiator for coding agents, emphasizing the stack of **model + harness + eval loop** over just stronger base models. **DeepSeek** is building a harness team to optimize interaction and verification loops, while **Google's Gemini Managed Agents** a",
-      "publishedAt": "2026-05-26T05:44:39.000Z",
-      "category": "tech",
-      "source": "Smol AI News"
-    },
-    {
       "sourceId": "latent-space",
       "title": "[AINews] SpaceXAI launches Grok 4.5, first Opus-class model post Cursor acquisition",
       "url": "https://www.latent.space/p/ainews-spacexai-launches-grok-45",
@@ -1655,7 +1655,7 @@
       "publishedAt": "2026-07-09T06:05:41.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "SpaceXAI正式推出Grok 4.5大模型，此为完成Cursor收购后发布的首款具备Opus级别能力的模型。该版本延续高频迭代策略，重点强化代码生成与多模态处理能力，拓展智能体生态。"
+      "summary": "SpaceXAI发布Grok 4.5模型，系其收购Cursor后首款对标Opus级别的先进大模型。该版本延续快速迭代节奏，聚焦架构优化以巩固前沿实验室竞争地位。"
     },
     {
       "sourceId": "latent-space",
@@ -1665,7 +1665,7 @@
       "publishedAt": "2026-07-08T22:55:07.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "Modal首席技术官Akshat Bubna撰文探讨AI基础设施演进路径，指出当前技术架构已能有效支撑智能体体验。文章分享了构建新一代智能体云平台的实践经验与底层架构技术洞察。"
+      "summary": "Modal联合创始人兼CTO Akshat Bubna撰文探讨AI基础设施演进，分析智能体体验取得突破的技术逻辑，并分享构建新型智能体云平台的核心经验。"
     },
     {
       "sourceId": "latent-space",
@@ -1675,7 +1675,7 @@
       "publishedAt": "2026-07-08T02:20:25.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "人工智能研究员Lilian Weng发布专题综述，系统梳理35篇关于「Harness Engineering for RSI」的核心论文。该报告提炼了近期强化学习与智能体工程领域的前沿研究成果与技术演进脉络。"
+      "summary": "AI研究员Lilian Weng系统梳理35篇关于递归自我改进工程架构的论文，聚焦模型优化路径与安全控制机制，为前沿大模型迭代提供理论参考。"
     },
     {
       "sourceId": "latent-space",
@@ -1838,7 +1838,7 @@
       "publishedAt": "2026-07-09T20:22:28.000Z",
       "category": "tech",
       "source": "MIT Tech Review AI",
-      "summary": "人工智能公司Anthropic研发出一项新技术，可清晰透视大语言模型内部运行机制。该团队通过分析Claude模型的运算过程，揭示了其在处理任务时的概念推理空间，为模型可解释性研究提供新路径。"
+      "summary": "AI公司Anthropic开发新技术，首次清晰揭示大语言模型在执行任务时的内部运行机制。研究人员通过该方法观察到模型处理概念的隐藏状态，相关发现涵盖常规现象与潜在风险。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -1930,7 +1930,7 @@
       "category": "tech",
       "meta": "@EverettRandle · 19.4K 粉丝 · 484.8K 阅 · 507 赞 · 56 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "探讨AI行业价值衡量标准演变。当前inference tokens是追踪生态增长的核心代理指标，行业正从Token Economy向Task Economy转型。数据与任务执行将成为万亿美元级赛道，为AI商业化评估提供新视角。"
+      "summary": "探讨AI行业从「Token经济」向「任务经济」的演进趋势。指出推理Token虽是目前生态增长的核心指标，但数据处理将成为下一个万亿美元级市场。适合关注AI商业模型与宏观赛道的从业者参考。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1941,7 +1941,7 @@
       "category": "tech",
       "meta": "@addyosmani · 405.4K 粉丝 · 396.4K 阅 · 547 赞 · 69 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "针对agentic engineering提出核心观点。强调开发者需掌控outer loop，即对系统架构、任务编排与交付负全责，而非仅调用单点模型。该视角跳出工具堆砌陷阱，为AI工程化落地划定责任边界。"
+      "summary": "聚焦智能体工程工作流，指出开发者不应仅依赖自动化工具循环，而需掌控「外层循环」，即承担代码交付的问责制、架构审查与质量把控。为过度依赖AI编程的团队提供工程规范与责任划分思路。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1952,7 +1952,7 @@
       "category": "tech",
       "meta": "@EXM7777 · 123.5K 粉丝 · 233.6K 阅 · 554 赞 · 38 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "针对前沿大模型分享高效调用策略。跳出常规应用开发套路，通过重构提示词与任务逻辑释放深层推理能力。提供将智能表现放大百倍的实操路径，为开发者榨干AI性能提供工程化思路。"
+      "summary": "分享高杠杆Prompt技巧，对比当前用大模型盲目堆砌应用的低效做法，演示如何通过精准指令引导AI执行价值倍增的核心任务。提供跳出重复开发、聚焦业务本质落地的实操思路，适合独立开发者参考。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1963,7 +1963,7 @@
       "category": "tech",
       "meta": "@eyad_khrais · 20.2K 粉丝 · 225.8K 阅 · 508 赞 · 38 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "提供转型Applied AI Engineer路径指南。该角色与传统软件工程重合度高，但新增模型评估、Agent工作流设计与系统调试等要求。梳理核心技能树，帮助开发者补齐AI工程化落地短板。"
+      "summary": "提供AI应用工程师转型指南，梳理该岗位与传统软件工程的交集与差异。系统总结模型集成、提示词调优、自动化评估等核心能力要求，附具体学习路径。适合希望切入AI工程化落地的后端开发者。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1974,7 +1974,7 @@
       "category": "tech",
       "meta": "@michaeljburry · 2.0M 粉丝 · 209.2K 阅 · 508 赞 · 51 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "从投资视角剖析AI算力需求现状。指出NVIDIA虽处核心且需求强劲，但客户高度集中，存在资本泡沫风险。结合离岸融资与市场压缩效应，为AI基础设施投资提供逆向思考框架。"
+      "summary": "深度拆解AI算力需求与硬件市场现状，指出头部芯片厂虽受益于强劲订单，但面临客户集中度过高与供应链结构隐患。结合行业数据分析算力周期潜在风险，为关注AI半导体投资的从业者提供逆向视角。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1985,7 +1985,7 @@
       "category": "tech",
       "meta": "@GoogleAIStudio · 184.1K 粉丝 · 165.4K 阅 · 504 赞 · 62 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Google官方升级Gemini API Managed Agents。新增后台执行、远程MCP集成、自定义函数调用及凭证自动刷新。提升长任务稳定性与工具连接效率，简化企业级AI工作流部署。"
+      "summary": "Google发布Gemini API托管智能体功能更新。新增后台执行、远程MCP集成、自定义函数调用及跨会话凭证刷新等能力。显著扩展了模型在复杂工作流与长期任务中的工程化落地边界，适合后端开发者跟进。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1996,7 +1996,7 @@
       "category": "tech",
       "meta": "@ClaudeDevs · 564.6K 粉丝 · 95.9K 阅 · 1.5K 赞 · 100 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "解析Claude Code参数Model与Effort Level差异。对比其在代码质量、推理深度与资源消耗上的表现，提供场景化配置指南，帮助开发者按任务复杂度精准选择方案，优化算力成本。"
+      "summary": "解析Claude Code核心参数：模型选择与计算投入级别对输出的实际影响。通过对比说明何时该切换底座、何时仅调高思考预算，提供成本与效果最优的配置策略，适合依赖AI编程助手的开发者调优参考。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2007,7 +2007,7 @@
       "category": "tech",
       "meta": "@free_ai_guides · 11.1K 粉丝 · 59.1K 阅 · 503 赞 · 114 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "提供4个月零基础到可就业的AI Engineer路线。避开纯理论，聚焦实战项目、主流框架与企业级工作流演练。拆解学习优先级与核心节点，为转行者提供高转化率的系统化指南。"
+      "summary": "分享零基础到可入职AI工程师的速成路径。摒弃纯理论堆砌，以项目驱动为核心，拆解必备技术栈、实战练习与作品集构建标准。提供高信息密度的学习路线图，适合转行或在校生快速建立工程实战能力。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2018,7 +2018,7 @@
       "category": "tech",
       "meta": "@JIACHENLIU8 · 2.9K 粉丝 · 48.9K 阅 · 508 赞 · 28 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "拆解顶级AI Researcher能力培养路径。强调研究过程重于结果，指出直觉源于对高价值问题的筛选。梳理文献阅读、实验设计与验证链路，提供可复用的科研思维框架。"
+      "summary": "拆解顶尖AI研究者的核心思维模型，强调研究过程优于单一结果。提炼高价值研究员如何预判关键问题、设计实验路径与迭代假设。提供科研选题与方法论框架，适合实验室研究员与希望提升学术洞察力的从业者。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2029,7 +2029,7 @@
       "category": "tech",
       "meta": "@unicity_labs · 127.3K 粉丝 · 4.5K 阅 · 520 赞 · 827 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Unicity Labs与Quant合作，为Agentic Trading构建可验证执行层。结合AI决策与安全架构，解决金融Agent自动交易的信任难题，为Agentic Finance提供可审计底层设施。"
+      "summary": "官宣构建智能体金融安全底座，结合可验证执行机制与AI决策层，解决量化交易智能体的信任与风控难题。展示自动化交易基础设施的技术方案，适合关注AI Agent在金融场景落地与算法交易的技术团队。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2040,7 +2040,27 @@
       "category": "tech",
       "meta": "@krudhrah · 1.2K 粉丝 · 1.3K 阅 · 517 赞",
       "source": "X 推文 (AttentionVC)",
-      "summary": "分享获取Google Knowledge Panel的路径。指出该面板是AI搜索时代建立实体关联的关键。拆解结构化数据配置、信源聚合与信息打通流程，为个人品牌提供适应AI搜索逻辑的SEO指南。"
+      "summary": "科普Google知识面板底层逻辑，指出其本质是搜索引擎实体图谱的结构化呈现。分享通过优化公开数据源、添加结构化标记与构建权威外链获取面板的实操步骤，适合关注个人IP与技术品牌建设的创作者。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Prabowo’s Clampdown on Indonesian Tycoons Fuels Capital Flight",
+      "url": "https://www.bloomberg.com/news/features/2026-07-10/indonesia-s-high-net-worth-individuals-move-money-offshore-on-prabowo-s-wealth-c",
+      "excerpt": "High-net-worth individuals say they fear the president may turn to more forceful measures to extract their money.",
+      "publishedAt": "2026-07-10T00:00:23.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets",
+      "summary": "印尼总统普拉博沃针对企业大亨的管控政策正引发资本外流。多位高净值人士表示，担忧政府可能采取更强硬手段干预私人财富，已加速将资金转移至海外。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Oil Steadies at End of Volatile Week as US and Iran Keep Talking",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-09/latest-oil-market-news-and-analysis-for-july-10",
+      "excerpt": "Oil steadied at the end of a bumpy week, as talks between the US and Iran continued despite a flare-up in fighting that drove a steep drop in traffic through the Strait of Hormuz.",
+      "publishedAt": "2026-07-09T22:04:02.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets",
+      "summary": "原油价格在剧烈波动的一周后趋于平稳。尽管冲突升级导致霍尔木兹海峡航运量骤降，但美国与伊朗持续进行的对话为市场情绪提供了支撑。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2050,7 +2070,7 @@
       "publishedAt": "2026-07-09T22:08:45.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "受华尔街芯片股反弹提振，亚洲股市周五普遍高开。科技板块回暖带动市场情绪修复，投资者密切关注半导体行业动向。与此同时，国际原油价格早盘走低。"
+      "summary": "受美国芯片制造商股价走强带动华尔街反弹，亚洲股市周五有望跟涨。大宗商品方面，原油期货开盘走低，市场交投情绪受科技板块回暖提振。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2060,7 +2080,7 @@
       "publishedAt": "2026-07-09T23:03:10.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "黄金价格保持企稳，投资者正权衡中东冲突升级的影响，并关注为应对顽固通胀可能实施的加息政策。地缘政治风险与货币政策预期交织，令金价维持震荡格局。"
+      "summary": "金价持稳，市场投资者正权衡中东地区冲突升级的影响，以及为对抗顽固通胀而可能加息的预期，多空因素交织令贵金属短期走势趋于平稳。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2070,7 +2090,7 @@
       "publishedAt": "2026-07-09T23:00:59.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "摩根大通正测试人工智能模型以自主进行资产配置。回测数据显示，该AI策略表现超越了传统的「六成股票四成债券」组合，反映机构在量化与自动化投资领域的深入探索。"
+      "summary": "摩根大通正在测试人工智能资产配置模型。在历史回测中，该智能体表现优于传统股债六四组合，标志着大型金融机构正探索利用AI自主进行资金分配。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2080,17 +2100,7 @@
       "publishedAt": "2026-07-09T23:00:21.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "新加坡附近的印尼卡里汶岛正演变为亚洲的俄罗斯石油转运枢纽。至少十六亿美元的莫斯科柴油与燃料油经此中转至亚洲主要市场，凸显区域能源贸易路线的重塑。"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Oil Steady at End of Volatile Week as Iran Talks Said to Go On",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-09/latest-oil-market-news-and-analysis-for-july-10",
-      "excerpt": "Oil steadied at the end of a bumpy week as talks between the US and Iran were said to be continuing despite a flare-up in fighting that drove a drop in traffic through the Strait of Hormuz.",
-      "publishedAt": "2026-07-09T22:04:02.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets",
-      "summary": "剧烈波动一周后油价尾盘企稳。尽管冲突导致霍尔木兹海峡航运量下降，但美伊谈判仍在推进。市场在地缘风险溢价与外交进展预期间寻找平衡，原油交投维持震荡。"
+      "summary": "印尼靠近新加坡的卡里汶岛已成为俄罗斯石油在亚洲的重要转运枢纽。价值至少十六亿美元的柴油与燃料油等成品油，正经该岛销往区域各主要市场。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2109,7 +2119,7 @@
       "publishedAt": "2026-07-09T21:39:50.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "奥特莱斯运营商Tanger总裁兼首席执行官斯蒂芬·亚洛夫表示，受夏季客流及赛事活动带动，公司业绩接近历史峰值。年初至今该公司股价已累计上涨百分之十八点二八。"
+      "summary": "Tanger公司首席执行官史蒂芬·亚洛夫表示，受益于夏季客流强劲及世界杯效应，公司业绩接近历史高位，年初至今股价已累计上涨百分之十八点二八。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2119,7 +2129,7 @@
       "publishedAt": "2026-07-09T21:34:47.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "Willow财富首席执行官米切尔·卡普兰指出，企业延长非上市周期已成趋势，大量财富创造环节已前移至IPO前的私募阶段，个人投资者参与私募市场的格局正在演变。"
+      "summary": "Willow Wealth首席执行官米切尔·卡普兰指出，企业延长上市前周期的趋势日益明显，大量财富创造环节已前移至私募阶段，正重塑个人投资者的资产配置逻辑。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2128,8 +2138,7 @@
       "excerpt": "Activist investor Donerail Group is urging the board of Beazer Homes USA Inc. to engage with potential buyers after rival homebuilder Dream Finders Homes Inc. boosted its takeover offer this week.",
       "publishedAt": "2026-07-09T21:29:25.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets",
-      "summary": "激进投资者多内尔集团敦促美国建筑商碧彩家居董事会接洽潜在买家。此举系因竞争对手梦寻者家居近日提高收购报价，市场关注该房企是否启动控制权变更谈判。"
+      "source": "Bloomberg Markets"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2308,15 +2317,6 @@
       "url": "https://www.bloomberg.com/news/videos/2026-07-09/30-year-real-yield-near-financial-crisis-level-video",
       "excerpt": "Subadra Rajappa, head of US rates strategy at Société Générale, and Vineer Bhansali, founder of LongTail Alpha, joins Katie Greifeld on \"Bloomberg Real Yield.\" Long-end Treasury real yields climbed to the highest in nearly two decades, signaling investors will increasingly need protection from polic",
       "publishedAt": "2026-07-09T18:58:32.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "US Natural Gas Dives Most in Four Months on Pipes, Algo Trades",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-09/us-natural-gas-futures-decline-on-projected-storage-surplus",
-      "excerpt": "US natural gas futures fell more than 6%, the steepest daily price decline since March, as traders weighed a flurry of market-moving pipeline expansion and export terminal updates. Losses were exacerbated as some algorithmic traders moved in a sharply bearish direction.",
-      "publishedAt": "2026-07-09T13:41:00.000Z",
       "category": "finance",
       "source": "Bloomberg Markets"
     },
@@ -2508,7 +2508,7 @@
       "publishedAt": "2026-07-09T22:55:13.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "韩国存储芯片制造商SK海力士正式登陆美国股市，首次公开募股筹集二百六十五亿美元。该交易创下外国企业在美股上市融资规模纪录，显示半导体板块的资本吸引力。"
+      "summary": "韩国存储芯片制造商SK海力士在美国市场完成首次公开募股，共筹集二百六十五亿美元资金，创下外国公司在美上市规模最大的交易纪录。"
     },
     {
       "sourceId": "ft-companies",
@@ -2518,7 +2518,7 @@
       "publishedAt": "2026-07-09T21:42:59.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "市场简报涵盖多项动态：SK海力士在纳斯达克上市融资二百六十五亿美元；欧中贸易紧张局势升温；欧洲持续高温天气对优衣库服装销售增长造成阶段性抑制。"
+      "summary": "本期快讯聚焦SK海力士在纳斯达克上市募资二百六十五亿美元。此外涵盖欧盟与中国贸易紧张局势，以及欧洲热浪对优衣库销售增速的抑制影响。"
     },
     {
       "sourceId": "ft-companies",
@@ -2735,7 +2735,7 @@
       "publishedAt": "2026-07-09T23:00:38.000Z",
       "category": "finance",
       "source": "BBC Business",
-      "summary": "为降低度假成本，与陌生人交换住房正成为新兴旅行趋势。英媒报道显示部分参与者借此节省约六千英镑假期开支，反映当前消费偏好向高性价比模式的转变。"
+      "summary": "房屋互换正成为降低度假成本的新趋势。部分家庭通过与陌生人交换住所度假，最高可节省六千英镑住宿开支，该模式正吸引越来越多游客尝试。"
     },
     {
       "sourceId": "bbc-business",
@@ -2781,7 +2781,7 @@
       "publishedAt": "2026-07-09T23:00:51.000Z",
       "category": "finance",
       "source": "BBC Business",
-      "summary": "欧洲最大港口鹿特丹港面临绿色转型压力，新诉讼要求其加快削减对化石燃料企业的依赖。该案件凸显航运与物流枢纽在环保合规及减碳目标下的运营转型挑战。"
+      "summary": "欧洲最大港口鹿特丹港正面临环保诉讼压力。相关起诉要求该港口加快减少对化石燃料企业的依赖，推动港口基础设施向绿色能源运营转型。"
     },
     {
       "sourceId": "bbc-business",
@@ -3277,7 +3277,7 @@
       "publishedAt": "2026-07-09T23:02:18.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "美国中央司令部称对伊朗发动新一轮打击，命中90个目标；伊朗卫生部表示自周二以来已有14人丧生。双方交火持续，冲突局势进一步紧张。"
+      "summary": "在伊朗最高领袖哈梅内伊葬礼举行期间，美伊双方持续交火。美军中央司令部宣布最新一轮空袭已命中九十个伊朗目标。伊朗卫生部数据显示，自本周二冲突升级以来已有十四人遇难。"
     },
     {
       "sourceId": "bbc-world",
@@ -3440,7 +3440,7 @@
       "publishedAt": "2026-07-09T22:09:57.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "韩国官方推出一款反跟踪手机应用程序，旨在协助受害者定位并追踪骚扰者。尽管政府强调其防护作用，但部分安全专家对该软件的实际效果与数据隐私风险提出质疑。"
+      "summary": "韩国官方推出新型移动应用程序，旨在协助被骚扰受害者实时追踪施害者行踪。监管部门称该工具可提升取证与保护效率，但部分法律与安全专家对其实际防护效果及隐私合规风险仍持审慎态度。"
     },
     {
       "sourceId": "bbc-world",
@@ -3450,7 +3450,7 @@
       "publishedAt": "2026-07-09T23:07:47.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "2026年巴黎高级定制时装周于近日落幕，当地持续高温天气伴随整场活动。多个奢侈品牌展示了最新一季的高定系列，吸引全球媒体与业界聚焦。"
+      "summary": "二零二六年巴黎高级定制时装周正式举行，多位设计师发布最新系列作品。活动期间巴黎遭遇罕见高温天气，时尚产业活动与极端气候背景交织，引发媒体对秀场安排及户外展示的持续关注。"
     },
     {
       "sourceId": "bbc-world",
@@ -3460,7 +3460,7 @@
       "publishedAt": "2026-07-09T23:00:38.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "为削减度假开支，房屋互换度假模式正日益流行。案例显示，部分家庭通过与陌生人互换住所，单次旅行可节省高达6000英镑的住宿与相关费用。"
+      "summary": "BBC报道显示，与陌生人交换住宅度假的模式正日益流行。案例数据显示，参与者通过该方式可显著削减出行开支，有家庭单次假期节省约六千英镑。该趋势反映了高成本环境下旅游消费模式的转变。"
     },
     {
       "sourceId": "bbc-world",
@@ -3470,7 +3470,7 @@
       "publishedAt": "2026-07-09T23:00:51.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "欧洲最大港口鹿特丹港面临环保诉讼压力，原告要求其加快减少对化石燃料企业的依赖，推动港口基础设施向绿色低碳转型。"
+      "summary": "欧洲最大港口鹿特丹港正面临环保组织提起的法律诉讼，原告要求港口运营方加速推进绿色转型，大幅减少对传统化石燃料企业的业务依赖。该案凸显欧洲基础设施向低碳能源过渡的政策压力。"
     },
     {
       "sourceId": "bbc-world",
@@ -3480,7 +3480,7 @@
       "publishedAt": "2026-07-09T22:41:08.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "宝莱坞演员卡琪·柯夏林推出新剧，聚焦母亲身份的现实困境。其指出社会常将母职视为理所当然，抚养子女实为缺乏回报的重担，引发公众对家庭劳动价值的讨论。"
+      "summary": "宝莱坞演员Kalki Koechlin推出新剧聚焦母亲角色的现实压力。她公开指出社会长期将母亲付出视为理所当然，育儿过程实则充满艰辛，呼吁公众正视家庭照护的社会价值。"
     },
     {
       "sourceId": "bbc-world",
@@ -3673,13 +3673,23 @@
     },
     {
       "sourceId": "guardian-world",
-      "title": "Australia news live: One Nation alliance ‘not our plan’, Taylor says; Hanson defends UK ‘fact-finding’ trip",
+      "title": "Australia news live: Angus Taylor happy to ‘work with’ One Nation against Labor despite speech warning of ‘eternity of pain’ under Hanson",
       "url": "https://www.theguardian.com/australia-news/live/2026/jul/10/australia-news-live-pauline-hanson-one-nation-modi-anthony-albanese-royal-commission-antisemitism-ntwnfb",
       "excerpt": "One Nation leader welcomed by far-right figures including Tommy Robinson and Rupert Lowe. Get our breaking news email, free app or daily news podcast Telstra aware of investigation into death in South Australia during triple zero issues Telstra said it is aware South Australia police are investigati",
-      "publishedAt": "2026-07-09T23:29:43.000Z",
+      "publishedAt": "2026-07-09T23:59:57.000Z",
       "category": "politics",
       "source": "The Guardian",
-      "summary": "澳大利亚政坛动态：一国党领袖汉森为其赴英实地调查之行辩护，期间曾接触极右翼人士；泰勒否认与该党结盟计划。此外，澳洲电信正配合南澳警方调查一起与紧急呼叫系统故障相关的死亡事件。"
+      "summary": "澳大利亚政坛动态更新：Angus Taylor表示愿与一国党合作以对抗工党。同时，澳电信正配合调查南澳大利亚州在紧急呼叫服务故障期间发生的死亡事件。一国党领导人近期获部分海外极右翼人士公开支持。"
+    },
+    {
+      "sourceId": "guardian-world",
+      "title": "Pianist Jayson Gillham loses discrimination case against Melbourne symphony orchestra over Gaza comments",
+      "url": "https://www.theguardian.com/australia-news/2026/jul/10/pianist-jayson-gillham-loses-discrimination-case-against-melbourne-symphony-orchestra-over-gaza-comments",
+      "excerpt": "Gillham claimed Melbourne concert in 2024 cancelled in attempt to silence him over stance on Israel attacks on Gaza A classical pianist who sued the Melbourne Symphony Orchestra has lost his case after he alleged he was unlawfully discriminated against because of his views on Israeli forces killing ",
+      "publishedAt": "2026-07-09T23:41:48.000Z",
+      "category": "politics",
+      "source": "The Guardian",
+      "summary": "古典钢琴家Jayson Gillham起诉墨尔本交响乐团歧视一案败诉。Gillham曾指控乐团因其对加沙冲突的公开立场而取消二零二四年音乐会，但法院最终未支持其非法歧视主张。"
     },
     {
       "sourceId": "guardian-world",
@@ -3705,15 +3715,6 @@
       "url": "https://www.theguardian.com/australia-news/2026/jul/10/nsw-government-legal-bill-cost-defending-protest-laws-ntwnfb",
       "excerpt": "Exclusive: Documents show $117,455.50 was spent in a single legal fight over laws rushed through after Bondi attack Follow our Australia news live blog for latest updates Get our breaking news email, free app or daily news podcast The New South Wales government has already spent hundreds of thousand",
       "publishedAt": "2026-07-09T15:00:55.000Z",
-      "category": "politics",
-      "source": "The Guardian"
-    },
-    {
-      "sourceId": "guardian-world",
-      "title": "‘Like a father to us’: pride and protest as thousands flock to see Narendra Modi in Melbourne",
-      "url": "https://www.theguardian.com/australia-news/2026/jul/09/modi-australia-visit-melbourne-marvel-stadium-ntwnfb",
-      "excerpt": "Indian prime minister wows crowd of 25,000 at Marvel Stadium as he praises role of diaspora in the India-Australia success story Follow our Australia news live blog for latest updates Get our breaking news email, free app or daily news podcast The throb of the drum beats intensified as the crowd of ",
-      "publishedAt": "2026-07-09T11:18:24.000Z",
       "category": "politics",
       "source": "The Guardian"
     },
@@ -3770,7 +3771,7 @@
       "publishedAt": "2026-07-09T22:04:27.000Z",
       "category": "politics",
       "source": "The Guardian",
-      "summary": "特朗普警告将升级冲突后数小时，美国对伊朗发动新一轮空袭。伊朗随即反击美国盟友科威特与卡塔尔，并指控美军打击其核电厂周边区域，海峡航运安全受严重威胁。"
+      "summary": "特朗普威胁升级局势后，美国对伊朗发动新一轮空袭。伊朗随即反击，打击美国盟友科威特与卡塔尔目标，并指控美军空袭其唯一核电站周边。美方要求伊朗停止在霍尔木兹海峡袭击船只。"
     },
     {
       "sourceId": "guardian-world",
@@ -3812,11 +3813,11 @@
       "sourceId": "nyt-world",
       "title": "Live Updates: U.S. and Iran Sink Into Violent Cycle After Latest Strikes",
       "url": "https://www.nytimes.com/live/2026/07/09/world/iran-war-us-trump",
-      "excerpt": "Attacks on ships were followed by new U.S. strikes on Iran, which responded by firing at Gulf nations. The pattern of hostilities has all but collapsed a cease-fire, with little sign that either side will step back.",
-      "publishedAt": "2026-07-09T22:44:27.000Z",
+      "excerpt": "As Iranians buried their slain leader, Ayatollah Ali Khamenei, prospects for a long-term peace deal appeared to be dimming.",
+      "publishedAt": "2026-07-09T23:44:46.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "继商船遇袭后，美国对伊朗发动新一轮空袭，伊朗随即向海湾盟国境内开火报复。双方交火模式已导致停火协议名存实亡，局势短期内难现缓和迹象。"
+      "summary": "美国与伊朗在最新一轮空袭后陷入持续交火循环。伊朗最高领袖阿里·哈梅内伊遇袭身亡，其葬礼正在举行。受冲突持续升级影响，外界对双方达成长期和平协议的预期显著转弱，地区局势依然高度紧张。"
     },
     {
       "sourceId": "nyt-world",
@@ -3853,7 +3854,7 @@
       "publishedAt": "2026-07-09T21:59:16.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "伊朗最高领袖哈梅内伊葬礼在马什哈德举行，数千民众参加送葬队伍。此前美以联军首轮空袭致其身亡，葬礼前夕美伊双方再次发生交火，地区局势高度紧张。"
+      "summary": "伊朗最高领袖阿里·哈梅内伊葬礼最终阶段在马什哈德启动，数千人参加送葬。其死于美以首轮联合空袭，葬礼举行前美伊刚完成新一轮交火，地区安全局势持续恶化。"
     },
     {
       "sourceId": "nyt-world",
@@ -3995,10 +3996,10 @@
       "title": "Here’s the latest.",
       "url": "https://www.nytimes.com/live/2026/07/09/world/iran-war-us-trump/heres-the-latest",
       "excerpt": "",
-      "publishedAt": "2026-07-09T22:44:25.000Z",
+      "publishedAt": "2026-07-09T23:44:44.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "此为国际新闻实时追踪页面的常规标题占位，未提供具体事件细节或独立事实信息，主要作为后续地缘冲突与外交动态的持续更新入口。"
+      "summary": "该条目为实时新闻直播页面标题，未附带具体报道正文。暂无可提取的关键事件、数据或机构信息，仅提示为美伊冲突相关动态更新。"
     },
     {
       "sourceId": "nyt-world",
@@ -4449,7 +4450,7 @@
       "publishedAt": "2026-07-09T23:25:50.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "委内瑞拉地震死亡人数已升至3889人，灾区疫情风险持续上升。联合国已发起约3亿美元的援助呼吁，用于支持地震幸存者及灾后重建工作。"
+      "summary": "委内瑞拉地震遇难人数已升至三八八九人，灾后传染病风险持续上升。联合国已正式发起约三亿美元的人道主义募捐呼吁，用于为地震幸存者提供医疗、物资及基础设施重建援助。"
     },
     {
       "sourceId": "aljazeera",
@@ -4459,7 +4460,7 @@
       "publishedAt": "2026-07-09T23:25:48.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "美国新墨西哥州总检察长劳尔·托雷斯指控司法部及特朗普政府扣留关键档案，阻碍该州对爱泼斯坦案的独立调查进程。"
+      "summary": "新墨西哥州总检察长Raul Torrez公开指控美国司法部及特朗普政府拒绝提供关键档案，严重阻碍该州对爱泼斯坦案的独立调查。双方围绕案件相关记录的信息披露正陷入对峙。"
     },
     {
       "sourceId": "aljazeera",
@@ -4469,7 +4470,7 @@
       "publishedAt": "2026-07-09T22:59:45.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "俄罗斯与乌克兰的冲突持续发酵，大量非洲籍人员参与其中。相关报道指出，战乱正给这些人员的非洲原生家庭带来沉重的人员安置与经济代价。"
+      "summary": "媒体关注俄罗斯对乌克兰军事行动中非洲籍人员的参与情况。随着冲突持续，多个非洲国家家庭正承受人员伤亡与汇款中断带来的直接与间接经济损失，相关人道主义与社会成本引发国际关注。"
     },
     {
       "sourceId": "aljazeera",
@@ -4487,8 +4488,7 @@
       "excerpt": "Two explosions in the Syrian capital earlier this week came as French President Emmanuel Macron was visiting.",
       "publishedAt": "2026-07-09T21:39:54.000Z",
       "category": "politics",
-      "source": "Al Jazeera",
-      "summary": "叙利亚政府宣布逮捕大马士革连环爆炸案嫌疑人，指控其与极端组织「伊斯兰国」有关。本周早些时候的爆炸事件发生于法国总统马克龙访问叙利亚期间。"
+      "source": "Al Jazeera"
     },
     {
       "sourceId": "aljazeera",
@@ -4948,9 +4948,9 @@
       "publishedAt": "2026-07-09T19:35:56.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "马斯克回应「中国正出货全球约90%的人形机器人」：只是暂时。1X发布最先进机械手视频，美国人形机器人或迎技术拐点",
-      "displayExcerpt": "原帖指出，中国目前正出货全球约90%的人形机器人，马斯克对此评论称「只是暂时」。与此同时，机器人公司1X今日发布了全球最先进的类人机械手演示视频。市场开始关注，随着技术突破与玩家涌现，美国人形机器人项目是否正迎来真正的技术拐点，能否打破现有供应链格局。",
-      "summary": "关注人形机器人产业链。原帖指出中国占全球出货约90%，马斯克称「暂时」。结合1X发布先进机械手视频，观点认为美国人形机器人技术或迎拐点，需关注后续商业化进展。"
+      "displayTitle": "中国出货全球约90%人形机器人引埃隆·马斯克评论「暂时而已」，1X公司展示先进机械手或迎拐点",
+      "displayExcerpt": "帖子指出中国目前出货约占全球90%的人形机器人，强调不可轻视。埃隆·马斯克仅回应「暂时而已」。与此同时，1X公司发布了目前最先进的仿生手视频。作者认为，随着技术突破及玩家入场，美国本土人形机器人项目或许正迎来关键的技术与商业化拐点，中美在具身智能领域的竞争正持续升温。",
+      "summary": "观点关注人形机器人赛道，指出中国占据约90%出货量。1X公司展示先进仿生手技术，或标志美国相关项目迎来拐点。催化因素为技术迭代，未提及具体目标价，建议关注中美具身智能竞争格局。"
     },
     {
       "sourceId": "x-serenity",
@@ -4960,9 +4960,9 @@
       "publishedAt": "2026-07-09T18:44:07.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$SIVE内部人士密集增持，CEO Vikram斥资100万瑞典克朗公开市场买入",
-      "displayExcerpt": "原帖指出，$SIVE今日出现三笔内部人士买入交易。最引人注目的是CEO Vikram在公开市场斥资100万瑞典克朗购入公司股票。此次增持发生在股价因两则误导性CPO延迟报告、Meta Compute相关消息及另一高管减持传闻而大幅下挫之后，显示出管理层对当前估值的认可。",
-      "summary": "观点聚焦$SIVE高管增持催化剂。股价因误导性CPO延迟传闻大幅回调后，CEO公开斥资100万瑞典克朗抄底，显示内部人士看好公司基本面与长期价值，投资者可关注后续业绩修复。"
+      "displayTitle": "$SIVE高管密集买入，$SIVEF CEO Vikram斥资100万SEK公开市场增持",
+      "displayExcerpt": "帖子指出$SIVE出现三笔内部人士增持。其中$SIVEF首席执行官Vikram于公开市场买入价值100万瑞典克朗的股票。此次增持发生在股价因两则误导性CPO延期报告及另一笔内部抛售消息而大幅下跌之后，显示管理层对当前估值的信心。",
+      "summary": "核心标的$SIVE，三位内部人士公开增持，CEO斥资100万SEK买入。催化因素为前期股价受误报打压大跌，内部增持释放修复信号。未提供目标价，侧重管理层信心背书。"
     },
     {
       "sourceId": "x-serenity",
@@ -4972,9 +4972,9 @@
       "publishedAt": "2026-07-09T12:46:14.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "泄露的$META内部备忘录曝光：AI基建加速推进，今年资本开支或达1450亿美元",
-      "displayExcerpt": "原帖披露一份$META内部备忘录，显示其AI基础设施建设正按预期推进。公司已与三星和$SNDK签署内存长期协议，并与住友电工签署光纤协议。预计今年将部署7GW算力基础设施，并于2027年翻倍。备忘录指出，今年资本开支规模可能高达1450亿美元，反映巨头对AI的持续重仓投入。",
-      "summary": "聚焦$META AI基建扩张。内部备忘录显示已锁定$SNDK等供应链长期协议，今年计划部署7GW算力设施且资本开支或达1450亿美元，2027年算力规划翻倍，凸显持续重资产投入策略。"
+      "displayTitle": "$META内部备忘录曝光：AI基建持续扩张，今年最高投入$145B资本开支",
+      "displayExcerpt": "流出的$META内部备忘录显示其AI业务正按节奏加速扩张。公司已与三星和$SNDK签署长期协议保障内存供应，并与住友电工签约光纤。计划今年部署7GW计算基础设施，2027年翻倍。今年资本开支预计高达$145B，彰显持续押注AI的决心。",
+      "summary": "标的$META，内部信显示AI基建加速，已锁定$SNDK与住友电工供应链。今年计划部署7GW算力设施并翻倍扩展，资本开支达$145B。观点认为公司持续加码AI算力，无具体目标价。"
     },
     {
       "sourceId": "x-serenity",
@@ -4984,9 +4984,9 @@
       "publishedAt": "2026-07-08T22:08:52.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$SPCX旗下xAI发布Grok 4.5模型，性能对标Anthropic Opus且具备极高成本优势",
-      "displayExcerpt": "原帖惊叹Elon Musk领导的xAI（通过$SPCX架构）已开发出性能媲美Anthropic Opus级别的大型语言模型Grok 4.5。该模型在保持顶尖性能的同时实现了更高的成本效率，其策略类似于中国厂商以定价与渗透率抢占市场的打法。考虑到中国AI模型近期在美国企业的采用率上升，这种性价比路线被视为理想竞争策略。",
-      "summary": "观点关注$SPCX关联的xAI技术进展。Grok 4.5模型性能达Anthropic Opus级别且成本效率显著提升，采用类似中国厂商的低价渗透策略，或加速大模型商业化与市场份额争夺。"
+      "displayTitle": "$SPCX旗下xAI推出Grok 4.5对标Opus级别，成本优势或效仿中国厂商路线",
+      "displayExcerpt": "帖子惊叹埃隆·马斯克旗下的$SPCX与xAI合作打造的Grok 4.5大语言模型，其性能已达到Anthropic Opus级别，且具备更高成本效益。作者指出该策略类似中国厂商打法，通过价格优势与快速落地抢占市场。",
+      "summary": "关注$SPCX与xAI进展，Grok 4.5性能对标Opus级别且成本更低。观点认为其正效仿中国厂商以高性价比与快速渗透抢占市场。催化剂为模型技术突破，无目标价。"
     },
     {
       "sourceId": "x-serenity",
@@ -4996,9 +4996,9 @@
       "publishedAt": "2026-07-08T21:16:03.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$META拟投100亿美元在加拿大新建数据中心，直接辟谣「削减资本开支」传闻",
-      "displayExcerpt": "原帖指出，$META计划斥资100亿美元在加拿大新建一座数据中心，以进一步扩大AI算力产能。此举直接反驳了近期部分媒体关于「Meta算力建设过度扩张」及「公司正准备削减资本开支」的报道框架。该投资计划进一步印证了巨头在AI基础设施领域的持续扩张决心与实际投入节奏。",
-      "summary": "观点强调$META AI基建并未放缓。公司明确投入100亿美元在加拿大新建数据中心以扩容AI算力，有力回击市场关于其过度建设或缩减资本开支的质疑，长期投入逻辑清晰。"
+      "displayTitle": "$META拟在加拿大投$10B建数据中心扩AI产能，反驳媒体削减开支论调",
+      "displayExcerpt": "帖子确认$META将在加拿大斥资$10B建设新数据中心以扩充AI容量。作者借此反驳近期部分媒体关于「Meta Compute」过度建设及削减资本开支的负面叙事。实际动作表明，公司仍在坚定推进AI底层基础设施布局，投资力度未减。",
+      "summary": "标的$META，宣布投资$10B在加拿大新建数据中心扩充AI算力。核心观点直接反驳媒体关于其过度建设或削减开支的传言。催化剂为海外基建落地，显示公司持续重仓AI。"
     },
     {
       "sourceId": "x-serenity",
@@ -5008,9 +5008,9 @@
       "publishedAt": "2026-07-08T20:18:34.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "散户将30-60%回撤视为「接飞刀」恐慌抛售，作者看好$NBIS长期持有价值",
-      "displayExcerpt": "原帖对比了散户与价值投资者的不同视角。当股价出现30-60%的深度回调时，散户常因技术面波动将其视为「接飞刀」而恐慌割肉；但作者认为这实为长期布局良机，尤其看好作为「下一个超大规模云厂商」的$NBIS。观点强调应忽略短期情绪噪音，坚定持有具备核心算力节点价值的优质标的。",
-      "summary": "观点反驳散户在30-60%暴跌时的恐慌情绪。认为深度回调是长期布局窗口，明确看好$NBIS作为新一代超大规模算力龙头的价值，建议忽略短期技术面噪音坚定持有。"
+      "displayTitle": "散户恐慌抛售30-60%跌幅股，作者视$NBIS等为下一代超算核心资产长期持有",
+      "displayExcerpt": "作者指出散户常将30%-60%的回调视为「接飞刀」并恐慌割肉，盲目跟风技术分析。相反，作者将其视为长期布局良机。观点聚焦下一代超算基础设施，点名$NBIS等掌握关键节点的企业，认为其具备长期持有价值，非单纯炒作标的。",
+      "summary": "观点针对$NBIS等算力基建股，认为散户因30%-60%回撤恐慌抛售是误区。作者将其视为下一代超算核心资产，主张逢低长期持有。催化因素为行业高景气度，无目标价。"
     },
     {
       "sourceId": "x-serenity",
@@ -5020,9 +5020,9 @@
       "publishedAt": "2026-07-08T12:49:57.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "蓝色起源拟以$130B估值融资$10B，为$RKLB、$ASTS等太空股提供估值锚定",
-      "displayExcerpt": "据《纽约时报》报道，蓝色起源正以$130B估值融资$10B。此举为$RKLB、$ASTS及其他太空概念股提供了积极的估值锚定参考。若SpaceX与蓝色起源能确立如此高的估值水平，将显著提升商业航天板块的相对估值预期。",
-      "summary": "蓝色起源拟以$130B估值融资$10B。该高估值为$RKLB、$ASTS等太空股提供积极估值锚定，有望带动商业航天板块整体估值预期上修。"
+      "displayTitle": "据报蓝色起源拟以1300亿美元估值融资100亿美元，利好 $RKLB、$ASTS 等航天股估值锚定",
+      "displayExcerpt": "据《纽约时报》报道，蓝色起源正计划以1300亿美元估值融资100亿美元。若SpaceX与蓝色起源能维持如此高估值，将为市场提供估值锚。该消息对 $RKLB、$ASTS 及其他商业航天板块构成积极信号，有望带动相关企业相对估值重估。",
+      "summary": "蓝色起源拟以1300亿美元估值融资100亿美元，为商业航天提供高估值锚。利好 $RKLB 与 $ASTS 等标的，或带动板块估值提升。"
     },
     {
       "sourceId": "x-serenity",
@@ -5032,9 +5032,9 @@
       "publishedAt": "2026-07-08T10:14:45.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "特朗普扬言「切断与西班牙所有贸易」，引发地缘摩擦担忧",
-      "displayExcerpt": "特朗普公开批评西班牙在北约中不履行义务，并扬言「切断与西班牙的所有贸易」。此突发言论引发市场对地缘政治摩擦升级及潜在贸易制裁的担忧，当前宏观局势走向尚不明朗，需密切关注后续政策表态。",
-      "summary": "特朗普威胁切断对西班牙贸易并批评其北约不作为。言论加剧地缘不确定性，暂无直接标的，需警惕贸易情绪波动及欧洲相关产业链风险。"
+      "displayTitle": "特朗普称西班牙为北约糟糕伙伴并扬言切断贸易，市场情绪受宏观言论扰动",
+      "displayExcerpt": "特朗普公开表示西班牙在北约参与度不足且未承担费用，扬言切断所有对西贸易。该言论引发市场对跨大西洋贸易不确定性的担忧。发帖人坦言局势难以捉摸，提醒关注宏观地缘言论对全球贸易与风险资产的潜在冲击。",
+      "summary": "特朗普批评西班牙在北约表现不佳并提及切断贸易，引发市场对欧美摩擦的担忧。暂无明确标的，属宏观地缘风险提示。"
     },
     {
       "sourceId": "x-serenity",
@@ -5044,9 +5044,9 @@
       "publishedAt": "2026-07-08T08:42:26.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "特朗普宣布与伊朗备忘录「已结束」，市场警惕中东局势变动",
-      "displayExcerpt": "特朗普在北约峰会上直言与伊朗的谅解备忘录「已结束」，并称继续交涉纯属浪费时间。此类外交转向往往迅速传导至大宗商品与避险市场，短期内将加剧资金避险情绪，后续需紧盯中东局势演变。",
-      "summary": "特朗普宣布终止与伊朗备忘录并拒绝谈判。地缘恶化预期可能扰动原油及黄金价格，市场风险偏好受考验，需关注能源供应链变化。"
+      "displayTitle": "特朗普称与伊朗谅解备忘录已终止，北约峰会发言加剧地缘不确定性",
+      "displayExcerpt": "特朗普在北约峰会上宣布与伊朗的谅解备忘录「已结束」，直言打交道纯属浪费时间。该表态凸显美伊关系趋紧，叠加强硬风格令波动预期升温。发帖人提醒此类地缘发言常在交易时段引发价格剧烈波动，需关注后续动向。",
+      "summary": "特朗普宣布终止与伊朗谅解备忘录，地缘局势或趋紧。暂无具体个股，主要提示宏观政策与地缘风险对市场的扰动。"
     },
     {
       "sourceId": "x-serenity",
@@ -5056,9 +5056,9 @@
       "publishedAt": "2026-07-07T19:49:55.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "禾赛科技面临美国国安审查，$OUST、$AEVA等西方厂商或受益",
-      "displayExcerpt": "中国激光雷达企业禾赛科技因深化与$NVDA合作，正面临美国国家安全审查。若监管限制中企出口，将直接利好$OUST、$AEVA等西方同业。此前行业已提示传感器存在被远程禁用或遭黑客利用的安全隐患。",
-      "summary": "禾赛科技因与$NVDA合作面临美国国安审查。监管若限制中企，将利好$OUST、$AEVA等西方厂商，关注供应链替代与安全审查催化。"
+      "displayTitle": "禾赛科技涉美国家安全审查，西方激光雷达厂商 $OUST、$AEVA 或受益",
+      "displayExcerpt": "中国激光雷达厂商禾赛科技因与 $NVDA 扩大合作面临美国国安审查。美方警告传感器可能存在安全隐患，若竞品因监管受限退出，将对 $OUST、$AEVA 等西方激光雷达企业构成利好，凸显本土供应链替代逻辑。",
+      "summary": "禾赛科技与 $NVDA 合作遭美安全审查，安全隐患担忧升温。若竞品受限出清，相对利好 $OUST 与 $AEVA 等西方厂商。"
     },
     {
       "sourceId": "x-serenity",
@@ -5068,9 +5068,9 @@
       "publishedAt": "2026-07-07T18:56:07.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$META澄清资本开支未放缓，持续推进数据中心与算力采购计划",
-      "displayExcerpt": "彭博社与$META正就此前算力框架传闻引发的市场抛售进行预期管理。发言人澄清称公司仍渴求算力，正推进昂贵数据中心建设，并已落实与$CRVW、谷歌、$ORC的重大采购协议，否认缩减投入。",
-      "summary": "$META澄清资本开支未放缓，强调持续建设数据中心并维持与$CRVW、谷歌、$ORC的算力采购，基建投入节奏不变。"
+      "displayTitle": "$META 澄清算力资本开支计划未变，持续投资数据中心并签署多项合作",
+      "displayExcerpt": "彭博社与 $META 正就市场对「Meta算力」的恐慌情绪进行降温。发言人强调算力需求依旧旺盛，正推进昂贵的新数据中心建设，并已同 $CRVW、Google、$ORC 签署重大算力协议，重申AI基础设施战略不变。",
+      "summary": "$META 澄清算力开支战略未变，持续扩张数据中心并签署多项合作。旨在平抑市场恐慌情绪，传递基本面稳定信号。"
     },
     {
       "sourceId": "x-serenity",
@@ -5080,9 +5080,9 @@
       "publishedAt": "2026-07-07T17:39:23.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "新华社：中国今年人形机器人产量预计破100,000台，远超大摩预测",
-      "displayExcerpt": "新华社数据显示中国今年人形机器人产量预计将突破100,000+，大幅超越摩根士丹利此前对2026年14,000台的预测。文章指美方进度落后，呼吁$TSLA等加速追赶，并建议加大上游补贴。",
-      "summary": "中国今年人形机器人产量预计超100,000台，显著领先大摩预测。中美进度差距凸显，$TSLA面临追赶压力，或催化美方加大产业链补贴。"
+      "displayTitle": "中国今年人形机器人产量预计破10万台超机构预期，凸显美企追赶需求",
+      "displayExcerpt": "新华社称中国今年人形机器人产量预计破10万台，远超摩根士丹利对2026年1.4万台的预测。发帖人质疑美国在此领域落后，呼吁 $TSLA、$CCXI 等公司加速追赶，并敦促联邦政府向机器人上游供应链注入补贴。",
+      "summary": "中国今年人形机器人产量预计超10万台，大幅领先大摩预测。发帖呼吁 $TSLA、$CCXI 等加速技术追赶，并期待政府补贴落地。"
     },
     {
       "sourceId": "x-serenity",
@@ -5092,9 +5092,9 @@
       "publishedAt": "2026-07-07T16:38:39.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "技术图形分析如同抛硬币：指数画线并无实际指引意义",
-      "displayExcerpt": "原文讽刺视觉技术分析派，指出其操作本质是五五开的抛硬币游戏。走势符合预期便推销每月40美元付费图表；走势相反则宣称形态失效。作者强调，在韩国综合指数上随意画线对市场实际走向毫无指引意义，散户需警惕此类主观分析。",
-      "summary": "观点批判技术分析派的随机性，认为在指数上画线缺乏预测价值。此类判断多为概率游戏，付费服务宣传不可靠，投资者应保持理性客观。"
+      "displayTitle": "批判散户技术面画线：胜率仅五成的猜硬币游戏",
+      "displayExcerpt": "该帖嘲讽常见的视觉技术分析流派，认为其本质如同五成胜率的抛硬币游戏：判断错误便借口形态失效，猜对则推销每月40美元的图表服务。作者指出，在综合指数如韩国KOSPI上画波浪线毫无意义，市场核心走势并不取决于这些主观画线。",
+      "summary": "观点：批判散户技术分析实质为五成胜率的猜硬币游戏。提及KOSPI指数及每月40美元的图表订阅费，认为主观画线对市场实际方向无指导意义，提醒警惕技术面营销。"
     },
     {
       "sourceId": "x-serenity",
@@ -5104,9 +5104,9 @@
       "publishedAt": "2026-07-07T14:03:29.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "多只半导体标的集体下挫：抛售或源于保证金连环追缴",
-      "displayExcerpt": "作者指出，$NBIS、$MRVL、$INTC、$SNDK、$AMD、$SIVE、$MU、$LITE等标的今日同步下跌4%至10%以上。此类无差别暴跌通常与个股基本面无关，更可能是保证金连锁追缴引发的被动抛售，投资者需警惕资金面踩踏风险。",
-      "summary": "提及$NBIS、$MRVL、$AMD等芯片股单日跌幅达4%至10%以上。作者认为此轮同步暴跌非基本面恶化，而是保证金连环追缴引发的被动抛售。"
+      "displayTitle": "科技半导体板块集体重挫：$NBIS、$MRVL等多股跌超4%至10%",
+      "displayExcerpt": "该帖指出当前多只科技与半导体相关个股出现同步暴跌，包括$NBIS、$MRVL、$INTC、$SNDK、$AMD、$SIVE、$MU及$LITE等，日内跌幅普遍达-4%至-10%以上。作者认为此类集体下挫与个股基本面无关，主要源于追加保证金等引发的无差别抛售。",
+      "summary": "观点：科技及半导体股同步暴跌跌幅-4%至-10%+，非基本面恶化所致，而是保证金追缴引发的无差别抛售，提示关注流动性风险而非个股逻辑。"
     },
     {
       "sourceId": "x-serenity",
@@ -5116,9 +5116,9 @@
       "publishedAt": "2026-07-07T12:13:51.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "投行首次覆盖$SPCX给强力买入，目标价$800对应$10T估值",
-      "displayExcerpt": "投行Raymond James首次覆盖$SPCX并给予强力买入评级，设定$800目标价，隐含SpaceX整体估值约$10T。作者对此表示震惊，并调侃此类面向散户的机构级研报内容已无需多言，市场对其超高估值合理性普遍存疑。",
-      "summary": "聚焦$SPCX获首次覆盖并获强力买入评级，目标价$800对应SpaceX约$10T估值。作者持保留态度，暗示研报或偏向营销，高估值待考。"
+      "displayTitle": "雷蒙德·詹姆斯首评$SPCX给出「强烈买入」及800美元目标价",
+      "displayExcerpt": "雷蒙德·詹姆斯首次覆盖$SPCX即给出「强烈买入」评级，并设定800美元目标价，据此推算SpaceX估值高达约10万亿美元。作者对此表示无言，并调侃此类面向散户的机构研报往往自带荒诞色彩，质疑其估值合理性。",
+      "summary": "观点：$SPCX获强烈买入评级及800美元目标价，隐含SpaceX约10万亿美元估值。作者认为该研报脱离实际，意在调侃机构报告对散户的营销性质。"
     },
     {
       "sourceId": "x-serenity",
@@ -5128,9 +5128,9 @@
       "publishedAt": "2026-07-07T08:54:13.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "三星市值$1.24T：存储提价20%且利润大增仍遭抛售7%",
-      "displayExcerpt": "原文以三星为例复盘市场情绪：市值$1.24T时市场曾质疑涨价能力。随后DRAM提价20%，营业利润同比大增1803%，超越$NVDA与$AAPL。然而利好兑现后股价反遭抛售7%，凸显资金借利好出货的博弈特征。",
-      "summary": "梳理存储提价20%及利润同比增1803%的表现。业绩超越$NVDA与$AAPL后股价仍跌7%，作者讽刺市场在基本面强劲时仍选择获利了结。"
+      "displayTitle": "三星市值1.24万亿业绩暴增反遭抛售：DRAM提价20%与利润飙升1803%",
+      "displayExcerpt": "该帖以讽刺口吻指出，三星当前市值达1.24万亿美元。市场曾质疑其无法持续上调存储芯片价格，但公司随后将DRAM价格上调20%，财报显示营业利润同比激增1803%，盈利能力超越$NVDA与$AAPL位居全球第一，然而市场反应却是逆势抛售，跌幅达-7%。",
+      "summary": "观点：对比$NVDA、$AAPL及三星，DRAM提价20%及营业利润同比增1803%。市值1.24万亿下利好兑现反遭-7%抛售，凸显市场情绪与基本面背离。"
     },
     {
       "sourceId": "x-serenity",
@@ -5140,9 +5140,9 @@
       "publishedAt": "2026-07-07T08:10:39.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "主题性抛售逻辑牵强：旧闻与谣言主导$META等标的杀跌",
-      "displayExcerpt": "作者列举近期非理性抛售依据：一是$META算力旧闻重炒；二是两则共封装光学延迟传闻均已被$NVDA辟谣。作者坚信待散户恐慌筹码出清后，此前发布看空言论的机构最终会反手做多相同标的，情绪面主导短期走势。",
-      "summary": "指出针对$META旧闻及被$NVDA辟谣的延迟传闻所引发的抛售极为牵强。预判机构在吓退散户后大概率会重新做多，提醒勿盲目跟风。"
+      "displayTitle": "驳斥无厘头主题抛售：$META算力旧闻与$NVDA证伪CPO延迟",
+      "displayExcerpt": "作者直言近期针对特定主题股的抛售极为荒谬，指出$META的算力消息并非新鲜事，而两份关于CPO延迟的传闻均已被$NVDA亲自证伪。作者高度确信，待散户恐慌抛售殆尽后，此前大肆看空的机构资金最终将反手做多同一批标的。",
+      "summary": "观点：$META算力旧闻与CPO延迟传闻遭$NVDA证伪，当前抛售缺乏逻辑。预期机构将在散户出清后反手做多，看好相关标的中长期配置价值。"
     }
   ]
 }

@@ -1,34 +1,34 @@
 {
-  "hero_headline": "美伊冲突升级，AI模型竞赛与SK海力士上市引关注",
-  "daily_overview": "今日科技聚焦模型迭代与智能体基建，OpenAI推进GPT-5.6生态，xAI发布高性价比新模型，Anthropic探索大模型可解释性。财经面紧盯巨头资本动向，SK海力士创纪录赴美募资，Meta年度算力预算或达千亿，英美央行官员释放紧缩预期。地缘层面美伊空袭致停火破裂，全球供应链波动风险攀升。整体呈现技术竞速与宏观博弈交织态势。",
+  "hero_headline": "GPT-5.6正式发布 美伊局势持续紧张",
+  "daily_overview": "今日科技焦点聚焦大模型迭代与生态整合，OpenAI发布GPT-5.6系列并重构智能体工作流，Anthropic首次揭示大语言模型内部推理空间。财经市场受芯片资本热潮与宏观通胀博弈主导，SK海尼克斯完成赴美历史级IPO，摩根大通验证AI资产配置优势，英国央行预警年内加息。地缘层面，美伊空袭与葬礼同期发生致谈判停滞，港股监管收紧以稳汇率防外流。",
   "tech_briefs": [
     {
-      "title": "OpenAI发布GPT-5.6及工作流升级",
+      "title": "OpenAI发布GPT-5.6与智能体工作流",
       "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
       "source": "OpenAI News",
-      "summary": "OpenAI将GPT-5.6设为微软办公套件首选模型，强化多模态生成能力。公司同步推出企业级智能体与生物安全漏洞赏金计划，加速复杂任务自动化（多家报道）。",
-      "importance": 9
+      "summary": "OpenAI推出GPT-5.6模型家族，同步上线ChatGPT Work长程智能体，并正式将Codex更名为ChatGPT，全面接入办公生态。（多家报道）",
+      "importance": 10
     },
     {
-      "title": "xAI推出Grok 4.5主打代码与智能体",
-      "url": "https://www.latent.space/p/ainews-spacexai-launches-grok-4.5",
+      "title": "xAI发布Grok 4.5对标顶级模型",
+      "url": "https://www.latent.space/p/ainews-spacexai-launches-grok-45",
       "source": "Latent Space",
-      "summary": "xAI正式发布聚焦代码与智能体的Grok 4.5模型，强调单位算力成本优势而非单纯跑分。该策略被市场视为抢占企业级份额的关键布局（多家报道）。",
-      "importance": 9
-    },
-    {
-      "title": "Anthropic揭示大模型内部概念推演空间",
-      "url": "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/",
-      "source": "MIT Tech Review AI",
-      "summary": "研究团队发现并可视化大模型内部隐藏计算空间，清晰展示处理抽象概念时的推演过程。该成果为提升系统可解释性与可控性提供了关键技术路径。",
+      "summary": "xAI发布Grok 4.5大模型，聚焦代码生成与智能体任务，主打算力性价比策略，旨在以更低成本提供对标顶级闭源模型的服务。（多家报道）",
       "importance": 8
     },
     {
-      "title": "GitHub热榜项目实现求职流程自动化",
+      "title": "Anthropic揭示大模型内部隐藏推理空间",
+      "url": "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/",
+      "source": "MIT Tech Review AI",
+      "summary": "研究首次清晰观测到Claude处理复杂概念时的内部J空间，揭示了大模型生成回答时的真实认知路径，为AI可解释性提供关键进展。",
+      "importance": 8
+    },
+    {
+      "title": "GitHub热门：基于AI代理的自动化求职框架",
       "url": "https://github.com/MadsLorentzen/ai-job-search",
       "source": "GitHub Trending",
-      "summary": "基于Claude Code构建的开源工具，配置资料后自动筛选岗位、生成定制化简历并模拟面试。其将繁琐流程自动化，验证了智能体垂直落地潜力。",
-      "importance": 7
+      "summary": "基于Claude Code构建的求职框架，填入资料即可自动完成岗位评估、简历定制、求职信撰写与面试模拟，旨在以AI代理降低求职信息差与时间成本。",
+      "importance": 6
     }
   ],
   "finance_briefs": [
@@ -40,59 +40,52 @@
       "importance": 10
     },
     {
-      "title": "SK海力士登陆美股完成创纪录融资",
+      "title": "SK海尼克斯创纪录完成美股上市",
       "url": "https://www.ft.com/content/33133a86-925e-4395-9f60-35e2a4052500",
       "source": "Financial Times",
-      "summary": "韩国存储芯片巨头SK海力士在纳斯达克挂牌，募资逾两百六十五亿美元创外资赴美纪录。此举旨在抢占AI算力需求风口并扩充先进产能（多家报道）。",
+      "summary": "韩国存储芯片巨头SK海尼克斯完成美国市场首秀，募资265亿美元创外国企业赴美上市新高，凸显全球资本对AI算力基础设施的追捧。（多家报道）",
       "importance": 9
     },
     {
-      "title": "英国央行官员暗示年内或需启动加息",
-      "url": "https://www.bbc.co.uk/news/articles/c932ed8nv75o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Business",
-      "summary": "首席经济学家指出受增长放缓与顽固通胀影响，年内货币政策或面临转向。该表态打破市场降息预期，反映核心物价粘性对政策调控仍构成挑战。",
-      "importance": 7
+      "title": "摩根大通AI投研跑赢传统股债组合",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-09/jpmorgan-builds-ai-agents-that-beat-60-40-portfolio-in-backtests",
+      "source": "Bloomberg Markets",
+      "summary": "摩根大通内部测试表明，AI智能体构建的资产配置策略在历史回测中显著跑赢传统股债组合，华尔街加速将AI引入核心投研流程。",
+      "importance": 8
     },
     {
-      "title": "百事公司预警美国消费市场通胀压力回升",
-      "url": "https://www.ft.com/content/2c932eab-2743-44c6-8338-6e9df7660ca3",
-      "source": "Financial Times",
-      "summary": "受成本上升与需求放缓影响，百事公司二季度销量复苏受阻。管理层预警原材料价格传导将加剧美国终端通胀，暗示快消行业定价面临宏观考验。",
-      "importance": 6
+      "title": "英国央行首席经济学家预警年内加息",
+      "url": "https://www.bbc.co.uk/news/articles/c932ed8nv75o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "summary": "英国央行警告受经济增速放缓与服务型通胀粘性双重挤压，政策利率或需在年内再次上调以遏制物价失控风险，市场流动性预期转紧。",
+      "importance": 7
     }
   ],
   "politics_briefs": [
     {
-      "title": "美伊爆发新一轮空袭对峙致停火破裂",
-      "url": "https://www.theguardian.com/world/2026/jul/09/iran-trade-strikes-ceasefire-extended-donald-trump",
-      "source": "The Guardian",
-      "summary": "美军发动新轮空袭后伊朗实施报复性反击，原有停火协议名存实亡。双方军事行动呈螺旋升级态势，中东安全局势与全球能源供应链面临冲击（多家报道）。",
-      "importance": 9
+      "title": "美伊军事冲突升级外交斡旋受阻",
+      "url": "https://www.nytimes.com/live/2026/07/09/world/iran-war-us-trump",
+      "source": "NYT World",
+      "summary": "美军对伊朗发动新一轮大规模空袭，德黑兰举行已故最高领袖葬礼，双方陷入报复循环，北约峰会召开之际和平谈判前景进一步黯淡。（多家报道）",
+      "importance": 10
     },
     {
-      "title": "委内瑞拉强震遇难人数近四千疫情风险上升",
-      "url": "https://www.aljazeera.com/news/2026/7/9/venezuela-earthquakes-toll-rises-to-3889-as-risk-of-disease-grows?traffic_source=rss",
-      "source": "Al Jazeera",
-      "summary": "联合国发起数亿美元援助呼吁，官方统计死亡人数升至近三千八百人。灾区基建受损严重且医疗系统承压，灾后传染病风险攀升，国际救援正推进。",
-      "importance": 7
-    },
-    {
-      "title": "德媒解析资本外流监管对香港金融定位影响",
+      "title": "德媒分析北京收紧在港金融监管举措",
       "url": "https://www.dw.com/zh/德语媒体：阻遏资本外流-香港又多了一个-紧箍咒/a-77892192?maca=chi-rss-chi-all-1127-rdf",
       "source": "DW 中文",
-      "summary": "德媒分析指监管层正加大措施阻断资本经港外流，旨在缓解汇率压力。此举虽有助于金融稳定，但分析认为可能对香港国际资金枢纽活力产生复杂影响。",
-      "importance": 6
+      "summary": "为缓解人民币贬值压力并阻断内地资本经港外流，监管层近期密集收紧在港金融机构审查，此举引发对香港国际金融中心地位的新一轮讨论。",
+      "importance": 8
     }
   ],
-  "editor_note": "模型竞赛步入成本博弈，算力基建开支维持高位。地缘摩擦加剧宏观不确定性，需关注技术落地与政策传导的交叉影响。",
+  "editor_note": "AI竞赛迈入拼生态与性价比阶段，地缘摩擦叠加宏观通胀压力推升避险情绪，全球资本与政策制定者正加速适应技术范式与地缘格局的双重重塑。",
   "keywords": [
-    "Grok 4.5",
     "GPT-5.6",
-    "SK海力士",
-    "Meta资本开支",
-    "美伊局势",
-    "AI智能体",
-    "宏观预期"
+    "Grok 4.5",
+    "SK海尼克斯",
+    "美伊冲突",
+    "AI智能体投研",
+    "英国加息",
+    "在港金融监管"
   ],
   "stock_highlights": [
     {
@@ -100,95 +93,85 @@
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2075289915697553697",
-      "view": "内部人士增持/看多",
+      "view": "看多",
       "target_price": "",
-      "reference_price": "100万瑞典克朗",
-      "thesis": "CEO在公开市场斥资100万瑞典克朗买入股票，显示管理层对当前估值的强烈认可，旨在对冲因误导性报告及减持传闻引发的股价下挫。"
+      "reference_price": "100万SEK增持",
+      "thesis": "SIVE高管及CEO于股价大跌后公开市场大额增持，释放明确信心信号。真金白银介入意在对冲市场误导信息影响，显示管理层对当前估值底部的强烈认可。"
     },
     {
       "symbol": "META",
-      "company": "",
+      "company": "Meta",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2075199849507762279",
-      "view": "看多/产能扩张",
+      "view": "看多",
       "target_price": "",
-      "reference_price": "$1450亿美元资本开支 / $100亿美元",
-      "thesis": "泄露备忘录与百亿级新建数据中心计划证实AI基建全面加速，今年资本开支或达1450亿美元，直接辟谣削减开支传闻，彰显算力长期扩张决心。"
-    },
-    {
-      "symbol": "SNDK",
-      "company": "",
-      "source": "X Serenity (@aleabitoreddit)",
-      "url": "https://x.com/aleabitoreddit/status/2075199849507762279",
-      "view": "仅提及/供应链受益",
-      "target_price": "",
-      "reference_price": "",
-      "thesis": "与Meta签署内存长期供应协议，直接受益于头部科技巨头AI算力基础设施的加速部署与硬件采购需求增长。"
+      "reference_price": "$145B资本开支",
+      "thesis": "META内部备忘录及海外$10B投资确认AI基建加速，今年Capex高达$145B。锁定核心供应链并大幅扩建算力以反驳削减开支传闻，坚定押注底层布局。"
     },
     {
       "symbol": "SPCX",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2074979055410266452",
-      "view": "看多/技术降本",
+      "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "通过该架构发布Grok 4.5模型，性能对标顶尖级别且具备显著成本优势，高性价比路线有望效仿中国厂商策略抢占市场份额。"
+      "thesis": "SPCX关联xAI推出Grok 4.5，性能达Opus级别且成本更低。该策略效仿中国厂商路线，凭借价格优势与快速商业化落地抢占大模型市场份额。"
     },
     {
       "symbol": "NBIS",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2074951295027568736",
-      "view": "看多/长期持有",
+      "view": "长期看多",
       "target_price": "",
-      "reference_price": "30-60%回撤",
-      "thesis": "市场将深度回调误读为恐慌信号，作者视作长期布局良机，看好其作为下一代超大规模云厂商的算力节点价值，建议忽略情绪逢低布局。"
+      "reference_price": "30-60%回调",
+      "thesis": "针对散户恐慌割肉，作者逆势视大跌为长期布局窗口。点名NBIS掌握下一代超算核心节点，具备扎实基本面与长期持有价值，非短期情绪炒作。"
     },
     {
       "symbol": "RKLB",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2074838397341065516",
-      "view": "看多/估值锚定",
+      "view": "看多",
       "target_price": "",
-      "reference_price": "$130B估值融资$10B",
-      "thesis": "蓝色起源高估值融资为商业航天板块提供明确估值锚，有望带动火箭发射龙头相对估值重估，行业长期成长逻辑获巨头资本背书。"
+      "reference_price": "1300亿美元估值",
+      "thesis": "蓝色起源拟以1300亿美元估值融资，头部航天企高估值重塑板块定价锚。RKLB有望受益于行业情绪回暖、资金关注度提升及相对估值系统性重估。"
     },
     {
       "symbol": "ASTS",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2074838397341065516",
-      "view": "看多/估值修复",
+      "view": "看多",
       "target_price": "",
-      "reference_price": "$130B估值融资$10B",
-      "thesis": "蓝色起源1300亿美元估值融资确立行业天花板，将显著提升太空概念股相对估值预期，板块景气度与市场关注度有望双升。"
+      "reference_price": "1300亿美元估值",
+      "thesis": "蓝色起源拟以1300亿美元估值融资，头部航天企高估值重塑板块定价锚。ASTS等卫星通信企业有望受益行业景气度提升，迎来板块估值系统性重估。"
     }
   ],
   "trading": {
-    "market_overview": "当前美股技术面呈现显著的结构性分化特征，以半导体权重股为代表的标的已有效站稳200日均线，均线系统多头排列提供趋势支撑，VIX指数回落至15.84显示短期波动率情绪有所降温。加密资产整体情绪持续低迷，恐慌贪婪指数录得22并处于极度恐慌区间，总市值维持在2.25万亿美元附近，BTC主导率攀升至56.3%。主流币受限于中长期均线压制，空头排列主导价格结构。中概股与半导体ADR技术信号多空交织，部分标的虽维持多头骨架但MACD指标死叉提示动能衰减。商品与宏观外汇层面，美元指数依托完整的多头排列逼近高位，黄金ETF虽受压于长期均线但MACD金叉初现。四大类资产技术指标整体缺乏单边共振，多指向存量博弈与区间震荡格局。",
+    "market_overview": "当前跨资产技术面呈现结构性分化。美股宽基指数维持在SMA50上方，科技权重动量相对坚挺，但部分半导体标的面临均线密集区博弈。加密市场恐慌贪婪指数录得23（极度恐慌），总市值约2.25万亿美元，BTC主导率56.3%，ETH占比9.4%，主流币价格整体运行于SMA200下方，空头排列与零轴下MACD特征显著。中概板块呈现技术指标修复，部分标的虽受中期均线压制，但MACD在零轴下方形成金叉。商品与宏观维度，10年期美债收益率突破SMA20与SMA50呈多头排列，美元指数运行于SMA50上方，黄金ETF则受制于SMA200且均线呈空头状态。整体指标显示资金在利率与权益间切换，各板块动量需结合关键支撑位进一步确认。",
     "watchlist": [
       {
         "symbol": "AMD",
         "display_name": "AMD",
         "stance": "偏上行",
-        "rationale": "现价546.72美元明确站稳20日(525.68)、50日(477.20)及200日(285.67)均线上方，呈现典型多头排列。RSI(14)报55.9处于常态区间，MACD数值17.7082维持正值，动能柱虽受信号线(22.2556)牵制但未翻绿。5日涨幅1.08%配合均线支撑，技术结构整体偏上行，短期买盘承接力清晰。"
+        "rationale": "现价546.72强势运行于SMA20(525.68)、SMA50(477.20)及SMA200(285.67)之上，均线系统呈多头排列。RSI14报55.9，处于中性偏强动量区。MACD读数为17.71配合1日5.66%涨幅，显示短期买盘主导，上行结构保持完好。"
       },
       {
         "symbol": "BTC-USD",
         "display_name": "Bitcoin",
         "stance": "偏下行",
-        "rationale": "现价63193.77美元明确受压于50日均线(65636.48)与200日均线(74224.62)，均线系统呈标准空头排列。MACD录得-613.227，动能柱持续偏绿。RSI(14)为50.2逼近中轴，结合价格运行于长期成本区下方，技术面偏下行特征显著，反弹面临上方均线密集压制。"
+        "rationale": "现价63161.94受压于SMA50(65635.84)与SMA200(74224.46)，长中短期均线构成空头排列。MACD读数-615.77与信号线-1205.01均运行于零轴下沿，52周高位回撤幅度达49.95%，短期反弹受制于中期均线压制，动量结构偏下行。"
       },
       {
-        "symbol": "GOOGL",
-        "display_name": "Alphabet (GOOGL)",
+        "symbol": "AVGO",
+        "display_name": "博通 (AVGO)",
         "stance": "中性",
-        "rationale": "现价358.89美元紧贴20日均线(357.84)运行，但上方受50日均线(372.60)直接压制。RSI(14)报48.2贴近中轴，MACD双线于零轴下方形成金叉(-1.755/-3.236)且绿柱开始收缩。多空指标相互抵消且量能未显著放大，技术面缺乏明确方向，整体处于中性震荡整理态势。"
+        "rationale": "现价401.11夹处于SMA20(381.37)支撑与SMA50(406.45)阻力之间，呈区间震荡。RSI14报54，远离超买超卖极端区域。MACD触发金叉后读数升至-6.72，但整体仍处负值区间，短期多空拉锯明显，技术面呈现中性震荡状态。"
       }
     ],
-    "risk_caveat": "本报告所列均线、MACD及RSI等读数均为客观统计，过去走势不代表未来表现。技术指标存在固有滞后性与假突破可能，所有形态解读仅反映当前盘口快照，仅供技术指标解读参考，不构成任何投资依据或交易指引。",
+    "risk_caveat": "本报告指标均基于公开行情计算，过去走势不代表未来表现。技术读数仅反映历史统计状态，不构成任何投资建议。市场受多重宏观因素扰动，请独立评估风险，本内容仅供技术指标解读参考。",
     "tickers": [
       {
         "symbol": "IBM",
@@ -894,18 +877,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 63193.77,
-        "pct1Day": 1.5037459987768755,
-        "pct5Day": 0.1671709408303266,
-        "pct52WeekHigh": -49.924931498556205,
-        "pct52WeekLow": 9.430674772769553,
-        "sma20": 61820.67265625,
-        "sma50": 65636.476640625,
-        "sma200": 74224.61921875,
-        "rsi14": 50.177604546434395,
-        "macd": -613.2269940459082,
-        "macdSignal": -1204.503460874684,
-        "macdHistogram": 591.2764668287757,
+        "currentPrice": 63161.94,
+        "pct1Day": 1.4526196894090297,
+        "pct5Day": 0.11671784947264885,
+        "pct52WeekHigh": -49.950153754332376,
+        "pct52WeekLow": 9.375555757429645,
+        "sma20": 61819.08125,
+        "sma50": 65635.840078125,
+        "sma200": 74224.460078125,
+        "rsi14": 50.05370084461416,
+        "macd": -615.7659897738486,
+        "macdSignal": -1205.0112600221023,
+        "macdHistogram": 589.2452702482537,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -921,18 +904,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 1744.72,
-        "pct1Day": 0.1171982517530293,
-        "pct5Day": -1.928742174847832,
-        "pct52WeekHigh": -64.77969240570697,
-        "pct52WeekLow": 15.812372963474358,
-        "sma20": 1679.9048461914062,
-        "sma50": 1779.562255859375,
-        "sma200": 2239.180487060547,
-        "rsi14": 52.273260063627795,
-        "macd": -0.550105174690998,
-        "macdSignal": -24.026184981392188,
-        "macdHistogram": 23.47607980670119,
+        "currentPrice": 1743.29,
+        "pct1Day": 0.03514061872307995,
+        "pct5Day": -2.0091229228704224,
+        "pct52WeekHigh": -64.80855952470591,
+        "pct52WeekLow": 15.717451317973774,
+        "sma20": 1679.833349609375,
+        "sma50": 1779.5336572265626,
+        "sma200": 2239.173337402344,
+        "rsi14": 52.11570176998454,
+        "macd": -0.6641737956788347,
+        "macdSignal": -24.048998705695674,
+        "macdHistogram": 23.38482491001684,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -948,18 +931,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 77.96,
-        "pct1Day": 0.22236940843988248,
-        "pct5Day": -4.518863189908493,
-        "pct52WeekHigh": -69.21131440753304,
-        "pct52WeekLow": 29.041399182186044,
-        "sma20": 75.32098617553712,
-        "sma50": 74.86535690307618,
-        "sma200": 92.44416282653809,
-        "rsi14": 54.329994125227415,
-        "macd": 1.9212311304066958,
-        "macdSignal": 1.3824168308823428,
-        "macdHistogram": 0.538814299524353,
+        "currentPrice": 77.94,
+        "pct1Day": 0.19665817975634733,
+        "pct5Day": -4.543358094169671,
+        "pct52WeekHigh": -69.21921299285691,
+        "pct52WeekLow": 29.008294667259893,
+        "sma20": 75.31998634338379,
+        "sma50": 74.86495697021485,
+        "sma200": 92.44406284332275,
+        "rsi14": 54.29094841722938,
+        "macd": 1.9196359565967356,
+        "macdSignal": 1.3820977961151444,
+        "macdHistogram": 0.5375381604815912,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": []
@@ -1029,18 +1012,18 @@
         "group": "macro",
         "currency": "USD",
         "exchangeName": "NYB",
-        "currentPrice": 100.937,
-        "pct1Day": -0.11182884546765894,
-        "pct5Day": -0.4467890249289118,
-        "pct52WeekHigh": -0.847740667976424,
-        "pct52WeekLow": 5.6378859236002095,
-        "sma20": 100.75134963989258,
-        "sma50": 99.64734008789063,
-        "sma200": 98.91998519897462,
-        "rsi14": 57.58370817561627,
-        "macd": 0.4119662435173268,
-        "macdSignal": 0.4816263924160944,
-        "macdHistogram": -0.0696601488987676,
+        "currentPrice": 100.915,
+        "pct1Day": -0.13360024510702656,
+        "pct5Day": -0.4684874174059094,
+        "pct52WeekHigh": -0.869351669941052,
+        "pct52WeekLow": 5.614861329147053,
+        "sma20": 100.7502498626709,
+        "sma50": 99.64690017700195,
+        "sma200": 98.91987522125244,
+        "rsi14": 57.16186179759434,
+        "macd": 0.4102116131921463,
+        "macdSignal": 0.4812754663510583,
+        "macdHistogram": -0.071063853158912,
         "trend": "bullish",
         "rsiState": "normal",
         "signals": [
@@ -1061,25 +1044,25 @@
       }
     ],
     "crypto_fear_greed": {
-      "value": 22,
+      "value": 23,
       "classification": "Extreme Fear",
       "classificationCn": "极度恐慌",
-      "timestamp": "2026-07-09T00:00:00.000Z"
+      "timestamp": "2026-07-10T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2252755689661.402,
-      "total24hVolumeUsd": 61280490549.09964,
-      "marketCapChangePct24h": 0.953510573869291,
-      "btcDominance": 56.292678364757684,
-      "ethDominance": 9.35035630821783,
+      "totalMarketCapUsd": 2251405556852.502,
+      "total24hVolumeUsd": 61101879726.83622,
+      "marketCapChangePct24h": 1.1566103869161821,
+      "btcDominance": 56.26602552361912,
+      "ethDominance": 9.351584397929614,
       "activeCryptocurrencies": 13741
     },
-    "generated_at": "2026-07-09T23:50:00.127Z"
+    "generated_at": "2026-07-10T00:20:12.877Z"
   },
   "earnings_calendar": {
     "window_start": "2026-07-10",
     "window_end": "2026-07-17",
-    "generated_at": "2026-07-09T23:50:00.650Z",
+    "generated_at": "2026-07-10T00:20:13.134Z",
     "lookahead_days": 7,
     "events": [
       {
@@ -1138,16 +1121,16 @@
   },
   "weather": {
     "city": "上海",
-    "emoji": "🌤️",
-    "condition": "少云",
+    "emoji": "⛅",
+    "condition": "多云间晴",
     "temperature_c": 29,
     "apparent_temperature_c": 34,
-    "humidity": 78,
-    "wind_kmh": 12.5,
+    "humidity": 77,
+    "wind_kmh": 12.3,
     "aqi": 65,
     "aqi_label": "良",
     "pm25": 14.1,
-    "observed_at": "2026-07-10T08:00",
+    "observed_at": "2026-07-10T08:15",
     "source": "Open-Meteo"
   }
 }
