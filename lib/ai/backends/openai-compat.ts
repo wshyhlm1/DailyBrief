@@ -74,7 +74,14 @@ function getClient(
   const cacheKey = `${baseURL}::${apiKey.slice(-6)}`;
   let client = clientCache.get(cacheKey);
   if (!client) {
-    client = new OpenAI({ apiKey, baseURL });
+    // Some compatible relays reject the SDK's default `OpenAI/JS` user agent
+    // at their edge. Identify the application explicitly instead of relying
+    // on the SDK default, which also makes relay-side diagnostics clearer.
+    client = new OpenAI({
+      apiKey,
+      baseURL,
+      defaultHeaders: { "User-Agent": "DailyBrief/0.1" },
+    });
     clientCache.set(cacheKey, client);
   }
   return { client, model, baseURL };
