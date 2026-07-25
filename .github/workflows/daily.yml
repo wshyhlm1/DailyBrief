@@ -274,7 +274,10 @@ jobs:
           # compatible service that isn't one of the named presets (Moonshot,
           # SiliconFlow, OpenRouter, self-hosted, ...). Provider-specific
           # vars above take precedence when both are set.
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          # Keep the previous LLM_API_KEY as a rollback path, but prefer the
+          # dedicated GLM relay when configured. This avoids coupling the
+          # daily report to an exhausted provider quota.
+          LLM_API_KEY: ${{ secrets.XKOOL_API_KEY || secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
           LLM_REASONING_EFFORT: ${{ vars.LLM_REASONING_EFFORT || 'high' }}
           REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
