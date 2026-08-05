@@ -193,6 +193,64 @@ function selectRoundRobin(
   return out;
 }
 
+function sourceBackedBrief(item: ArticleInput, index: number): BriefItem {
+  const excerpt = (item.displayExcerpt ?? item.excerpt ?? "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 260);
+  return {
+    title: item.displayTitle ?? item.title,
+    url: item.url,
+    source: item.source,
+    summary: excerpt || (
+      REPORT_LOCALE === "en"
+        ? `Source: ${item.source}. Open the original link for the full report.`
+        : `原始来源：${item.source}。请通过原文链接查看完整内容。`
+    ),
+    importance: Math.max(6, 10 - index),
+  };
+}
+
+/**
+ * Publish an honest source-backed report when the primary Qwen service is
+ * unavailable. Titles, URLs and excerpts remain bound to fetched articles;
+ * no synthetic facts or model-written conclusions are introduced.
+ */
+export function buildSourceBackedFallbackReport(
+  articles: ArticleInput[],
+): DailyReport {
+  const grouped: Record<Category, ArticleInput[]> = {
+    tech: [],
+    finance: [],
+    politics: [],
+  };
+  for (const article of articles) grouped[article.category].push(article);
+  const tech = selectRoundRobin(grouped.tech, 5).slice(0, 5);
+  const finance = selectRoundRobin(grouped.finance, 5).slice(0, 5);
+  const politics = selectRoundRobin(grouped.politics, 3).slice(0, 3);
+  const leadTitles = [tech[0], finance[0], politics[0]]
+    .filter((item): item is ArticleInput => Boolean(item))
+    .map((item) => item.displayTitle ?? item.title);
+  const sources = [...new Set([...tech, ...finance, ...politics].map((item) => item.source))];
+  const hero = leadTitles.join("；").slice(0, REPORT_LOCALE === "en" ? 140 : 80);
+
+  return {
+    hero_headline: hero || (
+      REPORT_LOCALE === "en" ? "Today's verified source digest" : "今日已核验来源速览"
+    ),
+    daily_overview: REPORT_LOCALE === "en"
+      ? `The primary Qwen service was temporarily unavailable. This continuity edition was assembled deterministically from ${articles.length} fetched source items, including ${tech.length} technology, ${finance.length} finance, and ${politics.length} world-affairs selections. Every headline, excerpt, source and URL below comes directly from the fetched source record.`
+      : `主 Qwen 服务暂时不可用。本期连续性交付版由系统直接从已抓取的 ${articles.length} 条来源记录中确定性生成，包含 ${tech.length} 条科技、${finance.length} 条财经和 ${politics.length} 条时政精选。下方标题、摘录、来源与链接均来自原始抓取记录，不生成未经来源支持的结论。`,
+    tech_briefs: tech.map(sourceBackedBrief),
+    finance_briefs: finance.map(sourceBackedBrief),
+    politics_briefs: politics.map(sourceBackedBrief),
+    editor_note: REPORT_LOCALE === "en"
+      ? "Continuity mode: Qwen remains the primary model and will be retried on the next run; this edition intentionally contains only source-bound material."
+      : "连续性模式：Qwen 仍是主模型，下次运行会继续重试；本期刻意只保留可追溯到原始来源的内容。",
+    keywords: sources.slice(0, 8),
+  };
+}
+
 async function callOnce(userPayloadJson: string): Promise<DailyReport> {
   // Claude Code CLI's built-in system prompt biases the model toward
   // conversational markdown output. Anchor the format expectation in the
@@ -284,6 +342,32 @@ async function callOnce(userPayloadJson: string): Promise<DailyReport> {
   };
 }
 
+export async function generateReportWithFallback(
+  userPayloadJson: string,
+  sourceArticles: ArticleInput[],
+  generate: (payload: string) => Promise<DailyReport> = callOnce,
+): Promise<DailyReport> {
+  try {
+    return await generate(userPayloadJson);
+  } catch (firstErr) {
+    console.warn(
+      `[pipeline] first Qwen digest call failed, retrying: ${
+        firstErr instanceof Error ? firstErr.message : String(firstErr)
+      }`,
+    );
+    try {
+      return await generate(userPayloadJson);
+    } catch (secondErr) {
+      console.error(
+        `[pipeline] Qwen remained unavailable after bounded retries; publishing source-backed continuity report: ${
+          secondErr instanceof Error ? secondErr.message : String(secondErr)
+        }`,
+      );
+      return buildSourceBackedFallbackReport(sourceArticles);
+    }
+  }
+}
+
 export async function generateDailyReport(
   articles: ArticleInput[],
   reportDayKey: string = todayKey(),
@@ -310,19 +394,7 @@ export async function generateDailyReport(
   }));
   const userPayloadJson = JSON.stringify(userPayload);
 
-  let report: DailyReport;
-  try {
-    report = await callOnce(userPayloadJson);
-  } catch (firstErr) {
-    // One retry — claude CLI occasionally wraps in narration on the first
-    // pass but obeys when the same prompt is repeated.
-    console.warn(
-      `[pipeline] first claude CLI call failed, retrying: ${
-        firstErr instanceof Error ? firstErr.message : String(firstErr)
-      }`,
-    );
-    report = await callOnce(userPayloadJson);
-  }
+  const report = await generateReportWithFallback(userPayloadJson, compact);
 
   // Hard requirement: if Serenity posted stock picks today, always surface
   // a merged, deduped ticker brief in finance summaries.

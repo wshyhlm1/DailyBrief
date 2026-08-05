@@ -53,6 +53,86 @@ const VALID_REASONING_EFFORTS = new Set([
 ] as const);
 type ReasoningEffort = "none" | "minimal" | "low" | "medium" | "high" | "xhigh";
 
+export interface TransientRetryOptions {
+  maxAttempts: number;
+  baseDelayMs: number;
+  maxDelayMs: number;
+  sleep?: (delayMs: number) => Promise<void>;
+  onRetry?: (error: unknown, attempt: number, delayMs: number) => void;
+}
+
+function positiveIntEnv(name: string, fallback: number, maximum: number): number {
+  const parsed = Number.parseInt(process.env[name] ?? "", 10);
+  if (!Number.isFinite(parsed) || parsed < 1) return fallback;
+  return Math.min(parsed, maximum);
+}
+
+function errorDetails(error: unknown, depth = 0): string {
+  if (depth > 3 || error == null) return "";
+  if (typeof error === "string") return error;
+  if (!(error instanceof Error) && typeof error !== "object") {
+    return String(error);
+  }
+  const record = error as Record<string, unknown>;
+  const own = [
+    error instanceof Error ? error.name : "",
+    error instanceof Error ? error.message : "",
+    typeof record.code === "string" ? record.code : "",
+  ].filter(Boolean);
+  if (record.cause) own.push(errorDetails(record.cause, depth + 1));
+  if (Array.isArray(record.errors)) {
+    own.push(...record.errors.map((item) => errorDetails(item, depth + 1)));
+  }
+  return own.join(" ");
+}
+
+export function isTransientOpenAICompatError(error: unknown): boolean {
+  const record = (error && typeof error === "object")
+    ? error as Record<string, unknown>
+    : {};
+  const status = Number(record.status ?? 0);
+  if ([408, 409, 425, 429].includes(status) || status >= 500) return true;
+  if (status >= 400) return false;
+  return /(?:connection error|fetch failed|timed?\s*out|timeout|ECONNRESET|ECONNREFUSED|ETIMEDOUT|ENETUNREACH|EAI_AGAIN|socket hang up|temporarily unavailable)/i.test(
+    errorDetails(error),
+  );
+}
+
+export function transientRetryDelayMs(
+  failedAttempt: number,
+  baseDelayMs: number,
+  maxDelayMs: number,
+): number {
+  return Math.min(
+    maxDelayMs,
+    Math.max(0, baseDelayMs) * 2 ** Math.max(0, failedAttempt - 1),
+  );
+}
+
+export async function withTransientRetries<T>(
+  operation: (attempt: number) => Promise<T>,
+  options: TransientRetryOptions,
+): Promise<T> {
+  const sleep = options.sleep
+    ?? ((delayMs: number) => new Promise<void>((resolve) => setTimeout(resolve, delayMs)));
+  const maxAttempts = Math.max(1, options.maxAttempts);
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return await operation(attempt);
+    } catch (error) {
+      if (attempt >= maxAttempts || !isTransientOpenAICompatError(error)) throw error;
+      const delayMs = transientRetryDelayMs(
+        attempt,
+        options.baseDelayMs,
+        options.maxDelayMs,
+      );
+      options.onRetry?.(error, attempt, delayMs);
+      await sleep(delayMs);
+    }
+  }
+  throw new Error("unreachable retry state");
+}
+
 function getClient(
   cfg: OpenAICompatConfig,
 ): { client: OpenAI; model: string; baseURL: string } {
@@ -163,38 +243,57 @@ export async function runOpenAICompat(
     }
   }
 
-  try {
-    const resp = await client.chat.completions.create(request, {
-      timeout: timeoutMs,
-    });
-    const text = (resp.choices[0]?.message?.content ?? "").trim();
-    const durationMs = Date.now() - started;
-    logLlmCall({
-      ts: new Date(started).toISOString(),
-      backend: cfg.backend,
-      model,
-      durationMs,
-      success: true,
-      inputChars,
-      outputChars: text.length,
-      errorCategory: null,
-      errorSnippet: null,
-    });
-    return { text, durationMs };
-  } catch (err) {
-    const durationMs = Date.now() - started;
-    const msg = err instanceof Error ? err.message : String(err);
-    logLlmCall({
-      ts: new Date(started).toISOString(),
-      backend: cfg.backend,
-      model,
-      durationMs,
-      success: false,
-      inputChars,
-      outputChars: 0,
-      errorCategory: classifyError(msg),
-      errorSnippet: msg.slice(0, 200),
-    });
-    throw err;
-  }
+  const qwen = isQwenEndpoint(model, baseURL);
+  const maxAttempts = positiveIntEnv("LLM_MAX_ATTEMPTS", qwen ? 4 : 3, 8);
+  const baseDelayMs = positiveIntEnv("LLM_RETRY_BASE_MS", 2_000, 60_000);
+  const maxDelayMs = positiveIntEnv("LLM_RETRY_MAX_MS", 20_000, 120_000);
+  const text = await withTransientRetries(
+    async (attempt) => {
+      const attemptStarted = Date.now();
+      try {
+        const resp = await client.chat.completions.create(request, {
+          timeout: timeoutMs,
+        });
+        const value = (resp.choices[0]?.message?.content ?? "").trim();
+        logLlmCall({
+          ts: new Date(attemptStarted).toISOString(),
+          backend: cfg.backend,
+          model,
+          durationMs: Date.now() - attemptStarted,
+          success: true,
+          inputChars,
+          outputChars: value.length,
+          errorCategory: null,
+          errorSnippet: null,
+        });
+        return value;
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        logLlmCall({
+          ts: new Date(attemptStarted).toISOString(),
+          backend: cfg.backend,
+          model,
+          durationMs: Date.now() - attemptStarted,
+          success: false,
+          inputChars,
+          outputChars: 0,
+          errorCategory: classifyError(msg),
+          errorSnippet: `attempt ${attempt}/${maxAttempts}: ${msg}`.slice(0, 200),
+        });
+        throw err;
+      }
+    },
+    {
+      maxAttempts,
+      baseDelayMs,
+      maxDelayMs,
+      onRetry: (error, attempt, delayMs) => {
+        const msg = error instanceof Error ? error.message : String(error);
+        console.warn(
+          `[llm] transient ${cfg.backend}-${model} failure on attempt ${attempt}/${maxAttempts}; retrying in ${delayMs}ms: ${msg}`,
+        );
+      },
+    },
+  );
+  return { text, durationMs: Date.now() - started };
 }

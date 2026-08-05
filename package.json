@@ -15,6 +15,7 @@
     "quota-report": "tsx scripts/quota-report.ts",
     "sources": "tsx scripts/sources.ts",
     "sources:check": "tsx scripts/sources.ts check",
+    "test:reliability": "node --import tsx --test lib/ai/backends/openai-compat.test.ts lib/ai/pipeline.test.ts",
     "deploy": "node scripts/deploy.mjs",
     "build-site": "node scripts/build-site.mjs",
     "open": "node scripts/open-report.mjs"
