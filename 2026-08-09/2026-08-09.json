@@ -1,34 +1,41 @@
 {
-  "hero_headline": "加拿大野火致万人撤离，伊朗提强硬条件重开海峡",
-  "daily_overview": "今日全球局势持续动荡，加拿大不列颠哥伦比亚省野火失控致近两万人紧急撤离；中东方面，伊朗对重开霍尔木兹海峡提出强硬条件，地缘博弈加剧。科技领域，OpenAI将Astra模型提升至关键网络安全状态，DeepMind发布机器人新模型赋能多机协作。财经方面，美国7月就业数据意外下滑，伯克希尔哈撒韦结束三年抛售斥资两百亿美元买入股票，非洲多国加速去美元化进程。",
+  "hero_headline": "加拿大野火失控万人撤离，美伊霍尔木兹海峡博弈升级",
+  "daily_overview": "今日全球焦点集中于极端气候与地缘博弈。加拿大不列颠哥伦比亚省野火失控，近两万人紧急撤离；霍尔木兹海峡航运风险加剧，美伊围绕控制权展开激烈谈判。科技领域，OpenAI因网络安全风险暂停部分Astra模型活动，Meta与AMD在推理算力与高性价比模型上加速布局。财经方面，伯克希尔打破三年净卖出纪录斥资两百亿美元入市，而美国七月就业数据意外下滑，凸显宏观经济放缓信号。",
   "tech_briefs": [
     {
-      "title": "OpenAI提升Astra模型网络安全评级",
+      "title": "OpenAI将Astra模型升级为关键网络安全状态",
       "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
       "source": "OpenAI News",
-      "summary": "OpenAI公布Astra模型初步网络安全评估，因其在代理编程和网络安全方面的显著进展，将其提升至「关键」网络状态，并暂停部分活动以加强安全控制。（多家报道）",
+      "summary": "OpenAI宣布将其即将推出的Astra模型升级至「关键」网络安全状态，因其在代理编码和网络安全方面取得重大进展，公司暂停部分活动以加强安全控制。（多家报道）",
       "importance": 9
     },
     {
-      "title": "DeepMind发布机器人新模型",
-      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
-      "source": "DeepMind Blog",
-      "summary": "该模型赋予机器人视频理解、工具编排和多机器人协作能力，帮助机器人在现实世界任务中进行推理与协作，代表了机器人应用的重要技术跨越。",
-      "importance": 8
-    },
-    {
-      "title": "GitHub热门：自我改进的RLM智能体",
+      "title": "Prime-Agent：面向编码工作流的自我改进代理",
       "url": "https://github.com/PrimeIntellect-ai/prime-agent",
       "source": "GitHub Trending",
-      "summary": "这是一个用于编码工作流和长时间自主任务的自我改进强化学习模型智能体。它通过持续学习和优化解决复杂编程任务，值得关注其在自主代理领域的探索。",
-      "importance": 7
+      "summary": "这是一个自我改进的强化学习代理，专为编码工作流和长时间自主任务设计。它通过持续自我优化解决复杂编程问题，大幅降低人工干预成本，是自动化软件工程的重要探索。",
+      "importance": 8
     },
     {
-      "title": "OpenAI改进GPT-5.6并向免费用户开放",
-      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
-      "source": "OpenAI News",
-      "summary": "ChatGPT推出准确性与一致性更高的GPT-5.6 Sol模型，同时扩大免费用户的访问权限，提供无限制的GPT-5.6 Luna日常对话服务。",
+      "title": "Meta发布高性价比模型，AMD收购Taalas",
+      "url": "https://www.latent.space/p/ainews-amd-buys-taalas",
+      "source": "Latent Space",
+      "summary": "Meta推出高性价比前沿模型Muse Spark 1.2，测试成本远低于竞品；同时AMD宣布收购Taalas，标志着推理算力基础设施竞争进入白热化阶段。（多家报道）",
       "importance": 8
+    },
+    {
+      "title": "DeepMind发布Gemini Robotics ER 2",
+      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robots-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
+      "source": "DeepMind Blog",
+      "summary": "该模型赋予机器人视频理解、任务编排和多机器人协作能力，帮助机器人在真实世界中进行推理与协作，代表了机器人应用技术的重大跨越。",
+      "importance": 8
+    },
+    {
+      "title": "agent-skills：为AI编码代理提供生产级技能",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "source": "GitHub Trending",
+      "summary": "该项目为AI编码代理提供了一套生产级的工程技能库，旨在解决大模型在复杂软件工程中缺乏规范与最佳实践的问题，提升代码生成的可靠性与工程质量。",
+      "importance": 7
     }
   ],
   "finance_briefs": [
@@ -40,66 +47,59 @@
       "importance": 10
     },
     {
-      "title": "伯克希尔哈撒韦结束三年抛售买入股票",
+      "title": "伯克希尔结束三年净卖出，斥资两百亿美元入市",
       "url": "https://www.ft.com/content/e164e244-f6de-4e3b-8a67-6bebee1b7bf4?syn-25a6b1a6=1",
       "source": "Financial Times",
-      "summary": "伯克希尔哈撒韦首席执行官Greg Abel结束长达三年多的净抛售趋势，将200亿美元净资金重新投入股票市场。",
+      "summary": "伯克希尔哈撒韦新任CEO格雷格·阿贝尔打破巴菲特留下的超三年净卖出纪录，向股市净投入200亿美元，显示其投资策略的重大转向。",
       "importance": 9
     },
     {
-      "title": "美国七月新增就业人数意外下降",
+      "title": "美国7月就业岗位意外减少2.3万个",
       "url": "https://www.bbc.co.uk/news/articles/c20j5rle717o?at_medium=RSS&at_campaign=rss",
       "source": "BBC Business",
-      "summary": "分析师此前预期美国7月就业人数将有所增加，但实际数据显示该月就业岗位减少了2.3万个，夏季经济放缓趋势延续。",
+      "summary": "分析师此前预期美国7月就业人数将增加，但实际数据显示就业岗位减少2.3万个，反映出夏季经济活动放缓的明显信号。",
       "importance": 8
     },
     {
-      "title": "非洲多国加速减少对美元依赖",
+      "title": "非洲多国加速去美元化，转向人民币与本币结算",
       "url": "https://www.economist.com/finance-and-economics/2026/08/06/african-countries-are-souring-on-the-dollar",
       "source": "The Economist Finance",
-      "summary": "随着对美元态度的转变，非洲国家正越来越多地转向使用人民币和本地货币进行贸易结算，相关货币有望从中受益。",
-      "importance": 7
-    },
-    {
-      "title": "辉瑞面临新冠疫苗收入下滑等困境",
-      "url": "https://www.ft.com/content/a371dc43-0584-4fcc-b064-80596727d5b5?syn-25a6b1a6=1",
-      "source": "Financial Times",
-      "summary": "辉瑞公司正面临新冠疫苗收入下滑以及市场对其高价收购新药担忧的双重压力，给首席执行官Albert Bourla带来严峻挑战。",
-      "importance": 7
+      "summary": "非洲国家正逐渐对美元失去兴趣，越来越多的贸易转向使用人民币及当地货币进行结算，美元在该地区的影响力面临实质性挑战。",
+      "importance": 8
     }
   ],
   "politics_briefs": [
     {
-      "title": "加拿大野火致万人撤离",
+      "title": "加拿大不列颠哥伦比亚省野火失控致万人撤离",
       "url": "https://www.nytimes.com/2026/08/08/world/canada/canada-summerland-bc-wildfire-bald-range-evacuation.html",
       "source": "NYT World",
-      "summary": "加拿大不列颠哥伦比亚省Bald Range野火迅速蔓延，过火面积超95平方公里，迫使近两万名居民紧急撤离，火势目前仍失控。（多家报道）",
+      "summary": "Bald Range野火迅速蔓延超36平方英里，火势一度在一小时内扩大2000英亩，迫使近1.8万名居民紧急撤离，目前仍处失控状态。（多家报道）",
       "importance": 9
     },
     {
-      "title": "伊朗提强硬条件重开霍尔木兹海峡",
-      "url": "https://www.theguardian.com/world/2026/aug/08/iran-issues-tough-demands-to-reopen-strait-of-hormuz-as-deal-remains-out-of-reach",
-      "source": "The Guardian",
-      "summary": "伊朗对重新开放霍尔木兹海峡提出强硬条件，要求美国纠正其行为。尽管阿曼称谈判取得积极进展，但伊朗警告协议不会直接开放海峡，博弈风险加剧。（多家报道）",
+      "title": "霍尔木兹海峡局势紧张，美伊围绕航运控制权博弈",
+      "url": "https://www.bbc.co.uk/news/articles/c934j5y2lq9o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC World",
+      "summary": "伊朗试图通过军事压力迫使美国接受其对霍尔木兹海峡的控制权，双方虽就新航运路线展开谈判，但油轮通行仍面临极高风险。（多家报道）",
       "importance": 9
     },
     {
-      "title": "特朗普前律师出任美国司法部长",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/aje-onl-nf_todd-blanche-ag-080826?traffic_source=rss",
+      "title": "美副总统万斯宣称美国已摧毁伊朗核计划",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/vance-says-us-destroyed-irans-nuclear-programme?traffic_source=rss",
       "source": "Al Jazeera",
-      "summary": "美国总统特朗普的前律师Todd Blanche正式被任命为美国司法部长，这一人事变动引发外界对美国司法系统独立性的广泛关注。",
+      "summary": "美国副总统JD·万斯公开宣称，华盛顿已经「摧毁」了伊朗的核计划并削弱了其军事能力，该言论引发国际社会对中东局势的广泛关注。",
       "importance": 8
     }
   ],
-  "editor_note": "地缘冲突与极端天气频发凸显全球系统脆弱性，而AI技术正加速向关键基础设施与物理世界渗透，机遇与风险并存。",
+  "editor_note": "极端气候与地缘博弈交织凸显全球不确定性。科技巨头在安全与算力间寻找平衡，而宏观经济的微妙变化正重塑资本流向。",
   "keywords": [
-    "霍尔木兹海峡",
-    "加拿大野火",
     "Astra模型",
-    "机器人新模型",
-    "美国就业",
+    "加拿大野火",
+    "霍尔木兹海峡",
+    "伯克希尔",
     "去美元化",
-    "伯克希尔哈撒韦"
+    "Gemini Robotics",
+    "就业数据"
   ],
   "stock_highlights": [
     {
@@ -107,110 +107,110 @@
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2086157318065168490",
-      "view": "做空/观察",
+      "view": "风险提示",
       "target_price": "",
       "reference_price": "",
-      "thesis": "作者分享做空尽职调查指南，建议通过观察超大规模云厂商财报来评估AI云需求及做空逻辑。"
+      "thesis": "关注超大规模云厂商财报对AI云的传导效应，分享做空NBIS的周末尽职调查指南。"
     },
     {
       "symbol": "GOOGL",
       "company": "Alphabet",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2086157318065168490",
-      "view": "看多/复盘",
+      "view": "仅提及/无明确观点",
       "target_price": "",
       "reference_price": "",
-      "thesis": "财报显示创纪录的AI云需求、积压订单及利润率增长，反映AI云需求强劲。"
+      "thesis": "报告创纪录的AI云需求、积压订单增加及利润率提升，作为分析AI基础设施股票的参考。"
     },
     {
       "symbol": "AMZN",
       "company": "Amazon",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2086157318065168490",
-      "view": "看多/复盘",
+      "view": "仅提及/无明确观点",
       "target_price": "",
       "reference_price": "",
-      "thesis": "财报同样报告创纪录的AI云需求、积压订单以及利润率提升，验证AI云需求强劲。"
+      "thesis": "报告创纪录的AI云需求、积压订单增加及利润率提升，作为分析AI基础设施股票的参考。"
     },
     {
       "symbol": "MU",
-      "company": "Micron Technology",
+      "company": "Micron",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2086148557187461412",
       "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "继续看好存储芯片股，认为市场瓶颈轮动逻辑依然存在，存储板块具备投资吸引力。"
+      "thesis": "持续看好存储芯片，市场瓶颈轮动转向光子学板块，需关注板块轮动节奏及叙事逻辑转变。"
     },
     {
       "symbol": "AXTI",
-      "company": "AXT Inc",
+      "company": "AXT",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2086148557187461412",
-      "view": "观察/看多",
+      "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "市场瓶颈轮动转向光子学领域，作为光子学相关标的受到关注，叙事逻辑随股价变化演变。"
+      "thesis": "市场瓶颈轮动转向光子学板块，本周焦点转向AXTI和LITE，需关注板块轮动节奏。"
     },
     {
       "symbol": "LITE",
-      "company": "Lumentum Holdings",
+      "company": "Lumentum",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2085649654059016387",
       "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "市场瓶颈轮动转向光子学领域；Rosenblatt渠道调研扎实，光通信及激光产业链已出现复苏迹象。"
+      "thesis": "赞赏Rosenblatt对光通信股的渠道调研，LITE等股票已开始围绕预期时间窗口出现复苏迹象。"
     },
     {
       "symbol": "WWR",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2085823672569467005",
-      "view": "仅提及",
+      "view": "看多",
       "target_price": "",
-      "reference_price": "$25M",
-      "thesis": "白宫加大关键矿物投资，公司获得2500万美元的石墨相关拨款，受益于政策落地。"
+      "reference_price": "",
+      "thesis": "白宫加大对关键矿物投资，WWR获2500万美元用于石墨项目，直接支持公司发展。"
     },
     {
       "symbol": "SRL",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2085823672569467005",
-      "view": "仅提及",
+      "view": "看多",
       "target_price": "",
-      "reference_price": "$400M",
-      "thesis": "白宫加大关键矿物投资，公司获得4亿美元钪相关拨款，直接受益于材料政策落地。"
+      "reference_price": "",
+      "thesis": "白宫加大对关键矿物投资，SRL获4亿美元用于钪项目，直接支持公司发展。"
     },
     {
       "symbol": "FEAM",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2085823672569467005",
-      "view": "仅提及",
+      "view": "看多",
       "target_price": "",
-      "reference_price": "$8M",
-      "thesis": "白宫加大关键矿物投资，公司获得800万美元硼相关拨款，受益于关键矿物政策。"
+      "reference_price": "",
+      "thesis": "白宫加大对关键矿物投资，FEAM获800万美元用于硼项目，直接支持公司发展。"
     },
     {
       "symbol": "HREE",
       "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2085823672569467005",
-      "view": "仅提及",
+      "view": "看多",
       "target_price": "",
-      "reference_price": "$4.8M",
-      "thesis": "白宫加大关键矿物投资，公司获得480万美元磁性稀土拨款，受益于材料政策落地。"
+      "reference_price": "",
+      "thesis": "白宫加大对关键矿物投资，HREE获480万美元用于磁性稀土项目，直接支持公司发展。"
     },
     {
       "symbol": "AAOI",
       "company": "Applied Optoelectronics",
       "source": "X Serenity (@aleabitoreddit)",
-      "url": "https://x.com/aleabitoreddit/status/2085711500875116887",
+      "url": "https://x.com/aleabitoreddit/status/2085603590903902621",
       "view": "看多",
       "target_price": "",
-      "reference_price": "Q4营收预期超$500M，Q2营收$191.9M",
-      "thesis": "财报强劲，Q4营收预期超5亿美元；指出DSP和TIA瓶颈，且因产能不足未参与CPO一代部署，印证CPO激光器需求旺盛。"
+      "reference_price": "",
+      "thesis": "财报指出DSP和TIA存在瓶颈，预计Q4营收超5亿美元；因产能不足未参与CPO一代部署，利好其他激光器厂商。"
     },
     {
       "symbol": "MXL",
@@ -220,7 +220,7 @@
       "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "AAOI财报指出DSP和TIA存在瓶颈，作为行业相关标的，有望受益于该供应链瓶颈带来的利好。"
+      "thesis": "AAOI财报指出DSP和TIA存在瓶颈，对MXL等相关公司来说是积极的行业传导信号。"
     },
     {
       "symbol": "SMTC",
@@ -230,17 +230,17 @@
       "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "AAOI财报指出DSP和TIA存在瓶颈，作为行业相关标的，有望受益于该供应链瓶颈带来的利好。"
+      "thesis": "AAOI财报指出DSP和TIA存在瓶颈，对SMTC等相关公司来说是积极的行业传导信号。"
     },
     {
       "symbol": "MTSI",
-      "company": "MACOM Technology",
+      "company": "MACOM",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2085711500875116887",
       "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "AAOI财报指出DSP和TIA存在瓶颈，作为行业相关标的，有望受益于该供应链瓶颈带来的利好。"
+      "thesis": "AAOI财报指出DSP和TIA存在瓶颈，对MTSI等相关公司来说是积极的行业传导信号。"
     },
     {
       "symbol": "SIVE",
@@ -250,58 +250,52 @@
       "view": "看多",
       "target_price": "",
       "reference_price": "",
-      "thesis": "激光器玩家，受益于CPO激光器需求旺盛及产能瓶颈；Rosenblatt调研显示光通信及激光产业链已出现复苏迹象。"
+      "thesis": "AAOI财报透露其因产能不足未参与CPO第一代部署，表明CPO激光器市场存在严重供应瓶颈，利好SIVE等激光器玩家。"
     },
     {
       "symbol": "CCXI",
-      "company": "Agility Robotics",
+      "company": "",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2085644051446108223",
-      "view": "观察",
+      "view": "仅提及/无明确观点",
       "target_price": "",
-      "reference_price": "",
-      "thesis": "美国首家上市的纯人形机器人公司即将上市，市场关注度高，与宇树科技IPO形成行业热点。"
+      "reference_price": "估值90亿美元, 开盘市值360.4亿美元",
+      "thesis": "宇树科技本月IPO估值达90亿美元，衍生品定价暗示开盘市值达360.4亿美元，美国首家纯人形机器人上市公司CCXI也将迎来发展。"
     },
     {
       "symbol": "POET",
       "company": "POET Technologies",
       "source": "X Serenity (@aleabitoreddit)",
       "url": "https://x.com/aleabitoreddit/status/2085628664528662818",
-      "view": "观察",
+      "view": "仅提及/无明确观点",
       "target_price": "",
-      "reference_price": "",
-      "thesis": "光互连公司Lumilens结束隐身模式估值达55亿美元，POET作为光通信相关标的在开源情报映射中被提及。"
+      "reference_price": "估值55亿美元",
+      "thesis": "光互连公司Lumilens结束隐身模式估值55亿美元，证实其为前三大超大规模云服务商供应产品，印证此前对POET的分析。"
     }
   ],
   "trading": {
-    "market_overview": "当前市场技术面呈现显著分化。美股方面，半导体与科技硬件板块表现强势，如TSEM、SITM等触发MACD金叉并维持多头排列，带动QQQ等宽基ETF收复均线，整体动能偏多；但部分传统科技股如IBM仍受困于空头排列。加密市场方面，尽管BTC与ETH近5日分别录得2.4%与3.3%的温和反弹，且总市值回升至2.30万亿美元（24h微增0.35%），但加密恐慌贪婪指数仅为30，处于恐慌区间，BTC主导率达56.7%而ETH仅占10.1%，显示资金避险情绪浓厚，技术面仅呈中性震荡修复。中概股走势分化，BABA与TSM等标的受均线支撑企稳反弹，但UMC等仍显疲态。商品与宏观层面，黄金ETF(GLD)突破短期均线呈现中性偏强态势，而美元指数(DXY)跌至99.60逼近超卖，10年期美债收益率(^TNX)则在4.66%高位形成MACD死叉，宏观流动性预期博弈加剧。整体而言，资金在科技成长与避险资产间轮动，缺乏单边一致性趋势。",
+    "market_overview": "当前市场呈现显著的结构性分化。美股方面，半导体等科技硬件标的如TSEM呈现多头排列与MACD金叉，而部分传统科技股如IBM维持空头排列；VIX恐慌指数跌破15并呈空头排列，反映风险偏好回升。加密资产总市值维持在2.30T USD，BTC主导率56.7%，尽管比特币MACD形成金叉，但加密恐慌贪婪指数仅为31，显示情绪依然恐慌，整体处于震荡筑底阶段。中概股表现温和，台积电等标的在均线附近震荡，MACD多呈金叉，处于中性修复格局。商品外汇方面，黄金ETF五日涨超7%表现强势，美元指数RSI跌至36低位，美债收益率高位现MACD死叉，宏观流动性预期博弈加剧。",
     "watchlist": [
       {
         "symbol": "TSEM",
         "display_name": "Tower Semiconductor (TSEM)",
         "stance": "偏上行",
-        "rationale": "当前价格252.49，近1日大涨12.37%，近5日累涨14.94%。价格站稳20日均线(231.88)与50日均线(245.34)之上，呈现典型多头排列。MACD指标形成金叉，柱状图由负转正，趋势标签为bullish，RSI14达55.0，处于正常偏强区间，短期技术动能显著向上。"
+        "rationale": "当前技术形态偏上行。股价单日大涨12.37%，五日涨幅达14.94%，强势突破短期均线。RSI14录得55，处于中性偏强区间。MACD指标形成金叉，且均线系统呈现多头排列，趋势标签为bullish，短期动量充沛，技术面呈现明显的上行setup。"
       },
       {
-        "symbol": "^VIX",
-        "display_name": "VIX 恐慌指数 (^VIX)",
+        "symbol": "IBM",
+        "display_name": "IBM",
         "stance": "偏下行",
-        "rationale": "当前报价14.90，近1日下跌1.65%，近5日重挫6.82%。价格跌破20日(17.16)、50日(17.27)及200日(18.58)均线，呈现空头排列。MACD形成死叉，信号线向下发散，趋势标签为bearish。RSI14为41.9，虽未超卖但动量偏弱，整体技术形态维持下行通道。"
+        "rationale": "当前技术形态偏下行。股价报237.28，显著低于SMA20、SMA50及SMA200，呈现典型的空头排列。RSI14为49.8，缺乏超卖反弹动能。MACD柱状图持续为负，趋势标签明确为bearish，短期均线压制明显，技术面处于弱势下行通道。"
       },
       {
         "symbol": "BTC-USD",
-        "display_name": "Bitcoin (BTC-USD)",
+        "display_name": "Bitcoin",
         "stance": "中性",
-        "rationale": "当前价格64984.09，近1日微涨0.16%，近5日涨2.40%。价格位于20日均线(64408.05)上方，但受制于200日均线(70253.01)。MACD刚刚形成金叉，红柱初现，但趋势标签仍为neutral。RSI14为55.1，处于中性区间，结合加密恐慌贪婪指数30，显示市场在恐慌情绪中呈震荡修复态势。"
-      },
-      {
-        "symbol": "GLD",
-        "display_name": "SPDR 黄金 ETF (GLD)",
-        "stance": "中性",
-        "rationale": "当前价格398.47，近1日涨2.26%，近5日涨7.25%。价格突破20日(374.87)与50日(382.34)均线，但距离200日均线(411.70)仍有距离。MACD指标金叉向上，红柱放大，但趋势标签判定为neutral。RSI14达65.3，接近超买区，短期动能释放后进入中性震荡整理概率较大。"
+        "rationale": "当前技术形态中性。比特币报64912.3，五日微涨2.29%，价格站上SMA20与SMA50，但仍受压于SMA200。RSI14为54.7，MACD在零轴上方形成金叉。结合加密恐慌贪婪指数31的恐慌情绪，当前处于底部震荡修复阶段，方向性突破信号尚未确认。"
       }
     ],
-    "risk_caveat": "本报告基于历史公开行情数据计算得出，过去走势不代表未来表现。所有技术指标读数及形态描述仅供技术指标解读参考，不构成任何投资建议，市场有风险，交易需谨慎。",
+    "risk_caveat": "本报告基于公开行情数据计算，过去走势不代表未来表现。所有技术指标解读仅供技术指标解读参考，不构成任何投资建议。市场存在不确定性，请独立评估风险。",
     "tickers": [
       {
         "symbol": "IBM",
@@ -1038,18 +1032,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 64984.09,
-        "pct1Day": 0.16013916034777267,
-        "pct5Day": 2.4002048505508076,
-        "pct52WeekHigh": -48.50627271875078,
-        "pct52WeekLow": 12.53091591456541,
-        "sma20": 64408.04609375,
-        "sma50": 63306.89796875,
-        "sma200": 70253.007265625,
-        "rsi14": 55.055017662851874,
-        "macd": 128.84080661046755,
-        "macdSignal": 51.15562668931835,
-        "macdHistogram": 77.6851799211492,
+        "currentPrice": 64912.3,
+        "pct1Day": 0.04948905521710567,
+        "pct5Day": 2.2870800732980925,
+        "pct52WeekHigh": -48.563159484134744,
+        "pct52WeekLow": 12.406599417196501,
+        "sma20": 64404.456640625,
+        "sma50": 63305.4621875,
+        "sma200": 70252.6483203125,
+        "rsi14": 54.689150967589065,
+        "macd": 123.11404378985753,
+        "macdSignal": 50.0102741250862,
+        "macdHistogram": 73.10376966477133,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": [
@@ -1066,18 +1060,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 1919.55,
-        "pct1Day": 0.3277399522827715,
-        "pct5Day": 3.2984429906199457,
-        "pct52WeekHigh": -61.25043477312968,
-        "pct52WeekLow": 27.41737386058347,
-        "sma20": 1896.0169189453125,
-        "sma50": 1798.4957470703125,
-        "sma200": 2055.429063720703,
-        "rsi14": 57.07797665072483,
-        "macd": 21.439330352977322,
-        "macdSignal": 23.858350983181914,
-        "macdHistogram": -2.4190206302045922,
+        "currentPrice": 1915.75,
+        "pct1Day": 0.12912808397057854,
+        "pct5Day": 3.093950227543,
+        "pct52WeekHigh": -61.32714459984017,
+        "pct52WeekLow": 27.165134522889627,
+        "sma20": 1895.8269165039062,
+        "sma50": 1798.41974609375,
+        "sma200": 2055.4100634765623,
+        "rsi14": 56.6316520709219,
+        "macd": 21.13619255465187,
+        "macdSignal": 23.79772342342706,
+        "macdHistogram": -2.6615308687751877,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": []
@@ -1088,18 +1082,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 76.16,
-        "pct1Day": 3.4183254269105645,
-        "pct5Day": 3.656136098966336,
-        "pct52WeekHigh": -69.92218708668184,
-        "pct52WeekLow": 26.061992838831323,
-        "sma20": 74.60601081848145,
-        "sma50": 75.24755325317383,
-        "sma200": 83.79086204528808,
-        "rsi14": 54.910935919907544,
-        "macd": -0.5068972597550498,
-        "macdSignal": -0.6356563627981944,
-        "macdHistogram": 0.12875910304314453,
+        "currentPrice": 75.97,
+        "pct1Day": 3.1603227768171718,
+        "pct5Day": 3.3975401711984343,
+        "pct52WeekHigh": -69.99722364725865,
+        "pct52WeekLow": 25.74749994703277,
+        "sma20": 74.59651069641113,
+        "sma50": 75.24375320434571,
+        "sma200": 83.78991203308105,
+        "rsi14": 54.38027887229461,
+        "macd": -0.5220541496677953,
+        "macdSignal": -0.6386877407807438,
+        "macdHistogram": 0.11663359111294846,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": [
@@ -1207,25 +1201,25 @@
       }
     ],
     "crypto_fear_greed": {
-      "value": 30,
+      "value": 31,
       "classification": "Fear",
       "classificationCn": "恐慌",
-      "timestamp": "2026-08-08T00:00:00.000Z"
+      "timestamp": "2026-08-09T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2301476258688.4604,
-      "total24hVolumeUsd": 32051524388.895615,
-      "marketCapChangePct24h": 0.34695337738349796,
-      "btcDominance": 56.65994826744934,
-      "ethDominance": 10.068092684903378,
+      "totalMarketCapUsd": 2298563495090.9976,
+      "total24hVolumeUsd": 31887021442.85619,
+      "marketCapChangePct24h": 0.26277520345537503,
+      "btcDominance": 56.66240554151327,
+      "ethDominance": 10.055249884868775,
       "activeCryptocurrencies": 18268
     },
-    "generated_at": "2026-08-08T21:54:52.886Z"
+    "generated_at": "2026-08-09T00:10:45.094Z"
   },
   "earnings_calendar": {
     "window_start": "2026-08-09",
     "window_end": "2026-08-16",
-    "generated_at": "2026-08-08T21:54:53.536Z",
+    "generated_at": "2026-08-09T00:10:45.375Z",
     "lookahead_days": 7,
     "events": [
       {
@@ -1308,14 +1302,14 @@
     "city": "上海",
     "emoji": "⛈️",
     "condition": "雷雨",
-    "temperature_c": 26,
-    "apparent_temperature_c": 28,
+    "temperature_c": 27,
+    "apparent_temperature_c": 29,
     "humidity": 92,
-    "wind_kmh": 27.9,
-    "aqi": 55,
+    "wind_kmh": 30.7,
+    "aqi": 54,
     "aqi_label": "良",
-    "pm25": 4.8,
-    "observed_at": "2026-08-09T05:45",
+    "pm25": 7.4,
+    "observed_at": "2026-08-09T08:00",
     "source": "Open-Meteo"
   }
 }
