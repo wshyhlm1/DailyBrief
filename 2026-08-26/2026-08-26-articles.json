@@ -6,18 +6,20 @@
       "title": "tt-a1i/archify",
       "url": "https://github.com/tt-a1i/archify",
       "excerpt": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
-      "meta": "HTML · ★ 17,113 · 🍴 1,189 · 📈 1,002 stars today",
+      "meta": "HTML · ★ 17,119 · 🍴 1,189 · 📈 1,002 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "面向 AI Agent 的架构图生成技能，支持生成架构、工作流、时序、数据流和生命周期图。输出为自包含的 HTML 文件，支持动画和高清导出。适用于需要可视化文档的开发者和技术团队。"
     },
     {
       "sourceId": "github-trending",
       "title": "freestylefly/awesome-gpt-image-2",
       "url": "https://github.com/freestylefly/awesome-gpt-image-2",
       "excerpt": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
-      "meta": "JavaScript · ★ 20,790 · 🍴 2,090 · 📈 4,044 stars today",
+      "meta": "JavaScript · ★ 20,799 · 🍴 2,091 · 📈 4,044 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "基于 GPT-Image2 的工业级提示词引擎与模板库，包含 530+ 逆向工程案例和 20+ 套工业级模板，并将提示词提炼为可复用的 Skills。面向图像生成开发者和创作者，适用于批量图像生产和自动化生成流程。"
     },
     {
       "sourceId": "github-trending",
@@ -26,52 +28,58 @@
       "excerpt": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
       "meta": "Python · ★ 34,270 · 🍴 3,881 · 📈 307 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "由 Anthropic 官方维护的 Claude Code 插件目录，收录高质量官方插件。面向使用 Claude Code 进行开发的技术团队和独立开发者，适用于扩展 Claude Code 功能的典型开发场景。"
     },
     {
       "sourceId": "github-trending",
       "title": "Alishahryar1/free-claude-code",
       "url": "https://github.com/Alishahryar1/free-claude-code",
       "excerpt": "Use Claude Code, Codex, Pi, and OpenCode for free (1.3B+ free tokens) from your terminal, app, IDE, or phone like OpenClaw (voice supported + ToS friendly)",
-      "meta": "Python · ★ 50,145 · 🍴 8,134 · 📈 1,047 stars today",
+      "meta": "Python · ★ 50,147 · 🍴 8,134 · 📈 1,047 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "允许用户在终端、应用、IDE 或手机上免费使用 Claude Code、Codex、Pi 和 OpenCode 等模型，提供 13 亿+ 免费 token 额度，支持语音操作。适用于预算有限的开发者，降低多模型调用门槛。"
     },
     {
       "sourceId": "github-trending",
       "title": "MadsLorentzen/ai-job-search",
       "url": "https://github.com/MadsLorentzen/ai-job-search",
       "excerpt": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
-      "meta": "Python · ★ 36,101 · 🍴 12,314 · 📈 1,299 stars today",
+      "meta": "Python · ★ 36,103 · 🍴 12,314 · 📈 1,299 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "基于 Claude Code 构建的本地 AI 求职框架，可自动评估职位、定制简历、撰写求职信并准备面试。在本地机器运行，用户 Fork 后完全自主掌控。适用于求职者和职业规划顾问，提升求职效率和针对性。"
     },
     {
       "sourceId": "github-trending",
       "title": "AgriciDaniel/claude-obsidian",
       "url": "https://github.com/AgriciDaniel/claude-obsidian",
       "excerpt": "Self-organizing AI second brain for Obsidian + Claude Code. Drop any source and Claude reads, links, and files it into one connected knowledge graph of plain Markdown you own. AI note-taking, personal knowledge management (PKM), and an open-source Notion alternative. Based on Karpathy's LLM Wiki pat",
-      "meta": "Python · ★ 13,185 · 🍴 1,395 · 📈 812 stars today",
+      "meta": "Python · ★ 13,188 · 🍴 1,395 · 📈 812 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "结合 Obsidian 与 Claude Code 构建自组织 AI 第二大脑，用户投入任意来源资料后由 Claude 自动读取、关联并归档为 Markdown 知识图谱，完全由用户自主掌控。适用于需要管理大量资料的科研人员和知识工作者。"
     },
     {
       "sourceId": "github-trending",
       "title": "basecamp/omarchy",
       "url": "https://github.com/basecamp/omarchy",
       "excerpt": "Beautiful, Modern & Opinionated Linux",
-      "meta": "Shell · ★ 31,777 · 🍴 3,227 · 📈 1,021 stars today",
+      "meta": "Shell · ★ 31,783 · 🍴 3,227 · 📈 1,021 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "Basecamp 出品的 Linux 桌面环境，强调美观、现代和高度默认配置。适合追求开箱即用体验的 Linux 用户和开发者，解决传统桌面环境配置繁琐的问题，提供统一的桌面工作流。"
     },
     {
       "sourceId": "github-trending",
       "title": "rohitg00/ai-engineering-from-scratch",
       "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
       "excerpt": "Learn it. Build it. Ship it for others.",
-      "meta": "Python · ★ 49,446 · 🍴 8,620 · 📈 837 stars today",
+      "meta": "Python · ★ 49,447 · 🍴 8,620 · 📈 837 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "AI 工程从零起步学习项目，遵循学习、构建、交付的实践路径。适用于希望系统掌握 AI 工程全流程的初中级开发者，覆盖从理论基础到项目落地的完整周期。"
     },
     {
       "sourceId": "github-trending",
@@ -80,16 +88,18 @@
       "excerpt": "Your Personal AI super intelligence. A brain that builds a local-first memory of your life, a fantastic orchestrator of agent fleets and workflows, and a deep researcher.",
       "meta": "Rust · ★ 38,075 · 🍴 3,749 · 📈 522 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "个人 AI 超级智能系统，具备本地优先的生活记忆存储、Agent 编排和深度研究能力。适用于需要长期记忆和自动化工作流的个人用户，解决 AI 缺乏持久记忆和多 Agent 协调的问题。"
     },
     {
       "sourceId": "github-trending",
       "title": "DietrichGebert/ponytail",
       "url": "https://github.com/DietrichGebert/ponytail",
       "excerpt": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-      "meta": "JavaScript · ★ 112,041 · 🍴 6,148 · 📈 1,598 stars today",
+      "meta": "JavaScript · ★ 112,046 · 🍴 6,149 · 📈 1,598 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "让 AI Agent 模拟资深开发者懒惰思维的项目，核心理念是最佳代码是未写的代码。通过减少不必要的代码生成实现高效开发。适用于希望用 AI 做架构决策和代码审查的开发团队。"
     },
     {
       "sourceId": "github-trending",
@@ -98,7 +108,8 @@
       "excerpt": "Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-directory-submission.",
       "meta": "Python · ★ 2,072 · 🍴 187 · 📈 537 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "Claude Cowork 和 Claude Code 的社区插件市场镜像仓库，提供只读浏览。开发者可在此发现社区贡献的插件资源，通过官方提交流程贡献插件，适用于使用 Claude 生态的开发者。"
     },
     {
       "sourceId": "github-trending",
@@ -107,43 +118,48 @@
       "excerpt": "ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
       "meta": "CSS · ★ 10,797 · 🍴 1,384 · 📈 136 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "ConardLi 维护的开源 AI Skills 合集，涵盖网页设计、知识检索、图像生成等技能模块。适用于需要扩展 AI Agent 能力的开发者和产品团队，可直接集成到现有工作流。"
     },
     {
       "sourceId": "github-trending",
       "title": "browser-use/browser-use",
       "url": "https://github.com/browser-use/browser-use",
       "excerpt": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
-      "meta": "Python · ★ 110,691 · 🍴 12,175 · 📈 135 stars today",
+      "meta": "Python · ★ 110,692 · 🍴 12,175 · 📈 135 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "使网站可被 AI Agent 访问和操作的自动化工具，支持在线任务自动化执行。面向需要 Web 自动化的开发者和运维人员，典型场景包括数据抓取、表单填写和流程自动化。"
     },
     {
       "sourceId": "github-trending",
       "title": "K-Dense-AI/scientific-agent-skills",
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "excerpt": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigrav",
-      "meta": "Python · ★ 34,577 · 🍴 3,353 · 📈 130 stars today",
+      "meta": "Python · ★ 34,579 · 🍴 3,353 · 📈 130 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "面向科研场景的 AI Agent 技能库，将通用 Agent 转为 AI 科学家，提供 163 个验证技能和 100+ 科学数据库覆盖生物等领域。全球 17.5 万+ 科学家使用，适用于科研自动化和文献分析。"
     },
     {
       "sourceId": "github-trending",
       "title": "marin-community/marin",
       "url": "https://github.com/marin-community/marin",
       "excerpt": "Open-source framework for the research and development of foundation models.",
-      "meta": "Python · ★ 2,371 · 🍴 208 · 📈 443 stars today",
+      "meta": "Python · ★ 2,373 · 🍴 208 · 📈 443 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "开源的基础模型研发框架，支持模型训练、评估和部署全流程。面向 AI 研究人员和工程师，适用于大语言模型和多模态模型的研究与开发，降低基础设施搭建成本。"
     },
     {
       "sourceId": "github-trending",
       "title": "VoltAgent/awesome-agent-skills",
       "url": "https://github.com/VoltAgent/awesome-agent-skills",
       "excerpt": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
-      "meta": "★ 32,461 · 🍴 3,443 · 📈 488 stars today",
+      "meta": "★ 32,463 · 🍴 3,443 · 📈 488 stars today",
       "category": "tech",
-      "source": "GitHub Trending"
+      "source": "GitHub Trending",
+      "summary": "收录 1000+ Agent 技能的精选合集，来自官方开发团队和社区贡献，兼容 Claude Code、Codex、Gemini CLI、Cursor 等主流工具。面向构建 AI 应用的开发者，适用于快速获取和复用 Agent 能力。"
     },
     {
       "sourceId": "v2ex-hot",
@@ -228,6 +244,15 @@
     },
     {
       "sourceId": "v2ex-hot",
+      "title": "WPS 格式越来越多，但是这个封闭格式却没有可靠的在线预览可用",
+      "url": "https://www.v2ex.com/t/1237389",
+      "excerpt": "18 回复 · 程序员 节点",
+      "publishedAt": "2026-08-26T07:49:14.000Z",
+      "category": "tech",
+      "source": "V2EX"
+    },
+    {
+      "sourceId": "v2ex-hot",
       "title": "没人觉得 cursor 的模型思考很慢嘛，经常思考卡死要手动停止再继续",
       "url": "https://www.v2ex.com/t/1236767",
       "excerpt": "18 回复 · Python 节点",
@@ -250,15 +275,6 @@
       "url": "https://www.v2ex.com/t/1237358",
       "excerpt": "16 回复 · Apple 节点",
       "publishedAt": "2026-08-26T06:39:36.000Z",
-      "category": "tech",
-      "source": "V2EX"
-    },
-    {
-      "sourceId": "v2ex-hot",
-      "title": "WPS 格式越来越多，但是这个封闭格式却没有可靠的在线预览可用",
-      "url": "https://www.v2ex.com/t/1237389",
-      "excerpt": "15 回复 · 程序员 节点",
-      "publishedAt": "2026-08-26T07:49:14.000Z",
       "category": "tech",
       "source": "V2EX"
     },
@@ -377,7 +393,8 @@
       "excerpt": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.",
       "publishedAt": "2026-08-26T00:00:00.000Z",
       "category": "tech",
-      "source": "OpenAI News"
+      "source": "OpenAI News",
+      "summary": "旅游平台loveholidays利用OpenAI Codex降低软件开发门槛，使全公司各团队均可参与构建软件，将创意更快转化为产品，实现业务范围内软件开发的普及化。"
     },
     {
       "sourceId": "openai-news",
@@ -386,7 +403,8 @@
       "excerpt": "OpenAI CFO Sarah Friar explains how advances across chips, compute, models, and products compound to deliver more useful intelligence at greater scale and lower cost.",
       "publishedAt": "2026-08-25T07:05:00.000Z",
       "category": "tech",
-      "source": "OpenAI News"
+      "source": "OpenAI News",
+      "summary": "OpenAI首席财务官Sarah Friar阐述AI智能实现的「全栈」逻辑，指出芯片、算力、模型与产品各层面的技术进步正相互叠加，以更低成本和更大规模交付更实用的智能能力。"
     },
     {
       "sourceId": "openai-news",
@@ -395,7 +413,8 @@
       "excerpt": "Jalapeño is a custom inference chip from OpenAI that delivers faster, more power-efficient AI inference, with higher throughput and lower latency for modern models.",
       "publishedAt": "2026-08-25T07:00:00.000Z",
       "category": "tech",
-      "source": "OpenAI News"
+      "source": "OpenAI News",
+      "summary": "OpenAI公布自研推理芯片Jalapeño的首批测试结果，该芯片在AI推理任务中实现了行业领先的吞吐量与低延迟，具备更高的能效与更快速度。"
     },
     {
       "sourceId": "openai-news",
@@ -404,7 +423,8 @@
       "excerpt": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West.",
       "publishedAt": "2026-08-25T00:00:00.000Z",
       "category": "tech",
-      "source": "OpenAI News"
+      "source": "OpenAI News",
+      "summary": "OpenAI封禁了一批源自俄罗斯的可疑账号，这些账号利用AI推广一家虚构的以色列智库及一个亲俄批西方的「主权指数」，实施隐蔽的舆论影响行动。"
     },
     {
       "sourceId": "openai-news",
@@ -413,7 +433,8 @@
       "excerpt": "Use the Admin plugin for ChatGPT Work and Codex to analyze workspace usage, manage members and permissions, adjust limits, and act on admin requests.",
       "publishedAt": "2026-08-25T00:00:00.000Z",
       "category": "tech",
-      "source": "OpenAI News"
+      "source": "OpenAI News",
+      "summary": "OpenAI为ChatGPT Work和Codex推出Admin管理插件，支持分析工作区使用情况、管理成员与权限、调整配额限制及处理管理请求等功能。"
     },
     {
       "sourceId": "openai-news",
@@ -917,7 +938,8 @@
       "excerpt": "",
       "publishedAt": "2026-08-26T00:00:00.000Z",
       "category": "tech",
-      "source": "Hugging Face Blog"
+      "source": "Hugging Face Blog",
+      "summary": "Hugging Face发布技术博客，介绍如何使用Sentence Transformers框架训练和微调多向量嵌入模型，为开发者提供多向量编码模型的训练与优化方法指导。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -926,7 +948,8 @@
       "excerpt": "",
       "publishedAt": "2026-08-25T15:14:14.000Z",
       "category": "tech",
-      "source": "Hugging Face Blog"
+      "source": "Hugging Face Blog",
+      "summary": "Hugging Face发布IBM Granite 4.2大语言模型的技术博客，介绍该系列模型的构建方式与架构设计。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -935,7 +958,8 @@
       "excerpt": "",
       "publishedAt": "2026-08-25T11:39:24.000Z",
       "category": "tech",
-      "source": "Hugging Face Blog"
+      "source": "Hugging Face Blog",
+      "summary": "Multiverse Computing在Hugging Face发布技术博客，介绍「量化感知修复」技术，通过该技术压缩的4位模型在性能上超越了原始全精度模型。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -944,7 +968,8 @@
       "excerpt": "",
       "publishedAt": "2026-08-25T00:00:00.000Z",
       "category": "tech",
-      "source": "Hugging Face Blog"
+      "source": "Hugging Face Blog",
+      "summary": "Hugging Face发布Gradio AI工作流指南，介绍如何通过Gradio完成AI工作流的搭建、运行与部署，帮助开发者实现从开发到上线的完整流程。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1187,7 +1212,8 @@
       "excerpt": "",
       "publishedAt": "2026-08-26T00:00:00.000Z",
       "category": "tech",
-      "source": "TLDR AI"
+      "source": "TLDR AI",
+      "summary": "TLDR AI本期汇总三项动态：OpenAI推出自研项目Jalapeño，Perplexity发布便携计算设备，以及Claude整合记忆功能。"
     },
     {
       "sourceId": "tldr-ai",
@@ -1637,7 +1663,8 @@
       "excerpt": "An industry legend starts covering the inevitable!",
       "publishedAt": "2026-08-25T02:50:57.000Z",
       "category": "tech",
-      "source": "Latent Space"
+      "source": "Latent Space",
+      "summary": "Latent Space报道，AI领域知名人物吴恩达（Andrew Ng）开始涉足AI工程方向的关注与内容报道，指出AI工程正成为行业发展的必然趋势。"
     },
     {
       "sourceId": "latent-space",
@@ -1817,7 +1844,8 @@
       "excerpt": "When my oldest child was born, I immediately set up Gmail and Twitter accounts in her name. I broadly announced her birth online and proceeded to plaster her photo across all sorts of platforms. In short, I began creating her digital footprint long before she could stand on her own two feet. Fast-fo",
       "publishedAt": "2026-08-26T09:00:00.000Z",
       "category": "tech",
-      "source": "MIT Tech Review AI"
+      "source": "MIT Tech Review AI",
+      "summary": "MIT科技评论编辑撰文探讨「在AI时代成长」的议题，反思从孩子出生起便为其创建数字身份、在网络分享照片等行为，指出父母在子女尚未具备自主意识时，就已为其建立了庞大的数字足迹，引发对隐私与AI时代的深层思考。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -1826,7 +1854,8 @@
       "excerpt": "Puzzles and games have been central to AI development since the very beginning. Just as we humans like to test our smarts with crosswords or logic puzzles, developers can test how far models have advanced with a gaming gauntlet. The term “machine learning” was popularized in a 1959 article by the IB",
       "publishedAt": "2026-08-26T09:00:00.000Z",
       "category": "tech",
-      "source": "MIT Tech Review AI"
+      "source": "MIT Tech Review AI",
+      "summary": "MIT科技评论报道，谜题和游戏自AI发展初期便发挥核心作用。开发者通过各类游戏测试来检验AI模型的智能进展，正如人类用填字游戏测试自身智力。文章指出当前AI模型在部分智力测试中仍存在明显不足。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -1835,7 +1864,8 @@
       "excerpt": "It’s a glorious day in Kirkland, Washington, an affluent Seattle suburb on the eastern shore of Lake Washington. The temperature is in the mid-80s, and the sky is incapable of being any more blue. The view from the Gates Ventures conference room overlooks the Carillon Point Marina, where a flotilla ",
       "publishedAt": "2026-08-26T07:01:00.000Z",
       "category": "tech",
-      "source": "MIT Tech Review AI"
+      "source": "MIT Tech Review AI",
+      "summary": "比尔·盖茨在华盛顿州柯克兰接受MIT科技评论采访时表示，人类已经跨过了AI的危险阈值。文章探讨在AI风险已成为现实的背景下，社会与技术界应如何应对这一挑战。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -1844,7 +1874,8 @@
       "excerpt": "Humanoid robots are having a moment in China. The popular machines are part of the country’s strategy to bring artificial intelligence into daily life. Embedding the technology into physical systems—an idea called embodied AI—was a key facet of China’s latest five-year plan, and companies here are a",
       "publishedAt": "2026-08-25T09:00:00.000Z",
       "category": "tech",
-      "source": "MIT Tech Review AI"
+      "source": "MIT Tech Review AI",
+      "summary": "MIT科技评论记者探访上海一场人形机器人展会。中国将具身智能纳入最新五年规划，人形机器人成为推动AI融入日常生活的重要战略方向，在中国正迎来发展热潮。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -1908,7 +1939,8 @@
       "publishedAt": "2026-08-25T16:03:04.000Z",
       "category": "tech",
       "meta": "@TryLiveAvatar · 806 粉丝 · 973.2K 阅 · 504 赞 · 158 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "LiveAvatar 宣布取消并发限制，价格降至每分钟 0.01 美元，可同时运行一万个数字人头像。产品策略从限制用量转向以极低价格抢占大规模并发市场。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1918,7 +1950,8 @@
       "publishedAt": "2026-08-24T15:00:19.000Z",
       "category": "tech",
       "meta": "@chddaniel · 25.5K 粉丝 · 299.3K 阅 · 532 赞 · 26 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "用 Grok Bot 运营 3 个 X 账号作为一个内容系统，覆盖创意生成、发帖和回复，获得 6980 万曝光、32 万点赞。附完整实操指南，属 AI 自动化社媒运营案例。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1928,7 +1961,8 @@
       "publishedAt": "2026-08-24T16:40:39.000Z",
       "category": "tech",
       "meta": "@P_Bonnet · 5.7K 粉丝 · 262.7K 阅 · 519 赞 · 74 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "从铝业贸易的历史视角反思 AI 基础设施建设：市场普遍担忧算力投入将泡沫化崩盘，博主逆向思考「如果一切顺利会怎样」，探讨 AI 价值链长期受益逻辑。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1938,7 +1972,8 @@
       "publishedAt": "2026-08-24T22:40:49.000Z",
       "category": "tech",
       "meta": "@johnbai · 11.7K 粉丝 · 181.3K 阅 · 565 赞 · 29 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "SpaceXAI 用 Grok Bot 本身来设计 Grok Bot 的交互与界面。核心观点：Agent 能将创意直接落地，设计师的工作重心应转向探索什么值得做，而非手动给想法赋形。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1948,7 +1983,8 @@
       "publishedAt": "2026-08-24T00:55:07.000Z",
       "category": "tech",
       "meta": "@harsehaj · 3.3K 粉丝 · 135.1K 阅 · 507 赞 · 35 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "在 BrowserBase 实习期间独立搭建 blogEO 引擎，能自动审计、改写和生成 SEO/AEO 优化的博客内容，实现端到端自动化，属于 AI 驱动内容增长的工程实践。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1958,7 +1994,8 @@
       "publishedAt": "2026-08-25T13:31:06.000Z",
       "category": "tech",
       "meta": "@VibeMarketer_ · 38.5K 粉丝 · 129.7K 阅 · 504 赞 · 50 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "教程教企业将团队对 AI 的每次纠错、决策和工作流沉淀为一个持续进化的「公司大脑」，让所有人的 AI 使用水平共同提升，属组织级 prompt 资产管理新角度。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1968,7 +2005,8 @@
       "publishedAt": "2026-08-24T15:09:10.000Z",
       "category": "tech",
       "meta": "@EXM7777 · 132.1K 粉丝 · 126.3K 阅 · 504 赞 · 40 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "拆解 Grok Bot 运作机制并提供 10 个变现工作流，每个工作流配备一个 24 小时独立运行的专用 bot，覆盖从流量到现金的自动化商业闭环。属实操变现金领。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1978,17 +2016,8 @@
       "publishedAt": "2026-08-24T16:49:05.000Z",
       "category": "tech",
       "meta": "@chamath · 2.4M 粉丝 · 81.1K 阅 · 595 赞 · 52 转",
-      "source": "X 推文 (AttentionVC)"
-    },
-    {
-      "sourceId": "attentionvc-ai",
-      "title": "17 Skills I Would Install on a Fresh Hermes Setup (10x Powerful Hack)",
-      "url": "https://x.com/FareaNFts/status/2091538403611533820",
-      "excerpt": "If I wiped Hermes tomorrow and started from zero, I would not open a blank chat and \"figure it out.\" I would install skills first. A raw Hermes install is smart. A skilled Hermes setup is unfair.",
-      "publishedAt": "2026-08-23T14:49:48.000Z",
-      "category": "tech",
-      "meta": "@FareaNFts · 66.2K 粉丝 · 43.7K 阅 · 534 赞 · 39 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "深度分析算力期货市场前景。引用贝莱德 CEO 预测算力将成新资产类别，探讨当前算力短缺如何推动「算力期货」成为下一个万亿美元级衍生品市场。属宏观前瞻视角。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1998,7 +2027,8 @@
       "publishedAt": "2026-08-24T20:30:59.000Z",
       "category": "tech",
       "meta": "@GoogleCloudTech · 1.3M 粉丝 · 35.3K 阅 · 526 赞 · 72 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "探讨「脚手架工程」（harness engineering）概念：如何在不手写一行代码的前提下交付软件产品。核心在编排方式——让 AI 生成全部代码而人工只设计约束与验证框架。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2008,7 +2038,8 @@
       "publishedAt": "2026-08-24T13:46:04.000Z",
       "category": "tech",
       "meta": "@_jaydeepkarale · 31.1K 粉丝 · 24.7K 阅 · 506 赞 · 86 转",
-      "source": "X 推文 (AttentionVC)"
+      "source": "X 推文 (AttentionVC)",
+      "summary": "分阶段 AI 工程师入门路线图，每阶段推荐具体课程、文档和书籍。区别于泛泛的技能清单，强调可执行的学习路径，适合零基础到可就业水平的系统化进阶。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2017,7 +2048,8 @@
       "excerpt": "Vanguard CEO Salim Ramji and Altruist CEO Jason Wenk explain why they decided to combine assets. Speaking with Dani Burger on \"Bloomberg Open Interest,\" Ramji and Wenk say they're focused on making financial advisors more accessible. (Source: Bloomberg)",
       "publishedAt": "2026-08-26T14:25:20.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets"
+      "source": "Bloomberg Markets",
+      "summary": "Vanguard宣布收购财富管理平台Altruist。Vanguard CEO Salim Ramji与Altruist CEO Jason Wenk表示，此举旨在提升财务顾问的可及性。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2053,7 +2085,8 @@
       "excerpt": "Some of the Nordic region’s biggest companies and wealthiest investors are working on a proposal to create a single, unified stock exchange.",
       "publishedAt": "2026-08-26T13:46:26.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets"
+      "source": "Bloomberg Markets",
+      "summary": "北欧地区多家大型公司和富裕投资者正推动建立统一的区域性证券交易所的提案。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2062,7 +2095,8 @@
       "excerpt": "Stephanie Roth, chief economist at Wolfe Research, expects to see cooler economic data ahead, giving the Federal Reserve cover to “credibly” avoid hiking interest rates in September. (Source: Bloomberg)",
       "publishedAt": "2026-08-26T13:42:03.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets"
+      "source": "Bloomberg Markets",
+      "summary": "Wolfe Research首席经济学家Stephanie Roth预计经济数据将降温，美联储有望在9月「可信地」避免加息。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2098,7 +2132,8 @@
       "excerpt": "La Argentina de Milei va de la euforia al estancamiento. Bancos y consultoras recortan sus previsiones de crecimiento y, con un 2027 electoral en el horizonte, la pregunta es qué pesará más entre los votantes: la baja de la inflación o una recuperación económica que aún no llega. (Source: Bloomberg)",
       "publishedAt": "2026-08-26T13:19:22.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets"
+      "source": "Bloomberg Markets",
+      "summary": "Milei治下的阿根廷从狂热走向停滞。银行和咨询机构下调增长预期，面对2027年大选，通胀下降与迟迟未至的经济复苏成为选民关注焦点。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2107,7 +2142,8 @@
       "excerpt": "Prudential Plc plans to sell a 2% stake in India’s second-largest asset manager for as much as $327 million to comply with minimum public shareholding rules.",
       "publishedAt": "2026-08-26T13:07:23.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets"
+      "source": "Bloomberg Markets",
+      "summary": "Prudential Plc计划以最高3.27亿美元出售印度第二大资产管理公司2%股份，以符合最低公众持股比例规定。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2116,7 +2152,8 @@
       "excerpt": "The Federal Reserve’s preferred inflation metric, the so-called core PCE price index, which excludes food and energy items, rose 0.2% in July and advanced 3.3% from a year ago. Inflation-adjusted consumer spending was flat last month. Michael McKee reports on Bloomberg Television. (Source: Bloomberg",
       "publishedAt": "2026-08-26T12:55:16.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets"
+      "source": "Bloomberg Markets",
+      "summary": "美联储首选通胀指标——核心PCE指数7月环比上涨0.2%，同比上涨3.3%。经通胀调整后消费者支出持平。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2386,7 +2423,8 @@
       "excerpt": "Case relating to alleged failures of child protection was getting under way in California",
       "publishedAt": "2026-08-26T13:57:09.000Z",
       "category": "finance",
-      "source": "Financial Times"
+      "source": "Financial Times",
+      "summary": "Meta同意支付最高167亿美元，以和解涉及加州的儿童社会媒体伤害诉讼案，该案涉及儿童保护不力的指控。"
     },
     {
       "sourceId": "ft-companies",
@@ -2395,7 +2433,8 @@
       "excerpt": "Acquisition comes after Texas-based investment house lost out on race to buy Janus Henderson earlier this year",
       "publishedAt": "2026-08-26T13:38:50.000Z",
       "category": "finance",
-      "source": "Financial Times"
+      "source": "Financial Times",
+      "summary": "Victory Capital以70亿美元收购First Eagle。此前这家总部位于得州的投资公司竞购Janus Henderson失败。"
     },
     {
       "sourceId": "ft-companies",
@@ -2404,7 +2443,8 @@
       "excerpt": "Freight rates remain at record highs while oil prices fall back on talks between Iran and Oman to reopen the Strait of Hormuz",
       "publishedAt": "2026-08-26T12:48:52.000Z",
       "category": "finance",
-      "source": "Financial Times"
+      "source": "Financial Times",
+      "summary": "航运业高管称伊朗局势接近乌克兰式僵局。运费维持高位，油价因伊朗与阿曼讨论重新开放霍尔木兹海峡的谈判而回落。"
     },
     {
       "sourceId": "ft-companies",
@@ -2620,7 +2660,8 @@
       "excerpt": "The deal has been reached during a California federal court trial over claims brought by 29 states.",
       "publishedAt": "2026-08-26T14:10:17.000Z",
       "category": "finance",
-      "source": "BBC Business"
+      "source": "BBC Business",
+      "summary": "Meta同意支付最高171亿美元，以和解加州联邦法院审理的涉及29个州的社会媒体诉讼案。"
     },
     {
       "sourceId": "bbc-business",
@@ -2629,7 +2670,8 @@
       "excerpt": "People on hold to HMRC for more than 30 minutes would get a tax credit under plans announced by Robert Jenrick.",
       "publishedAt": "2026-08-26T14:41:02.000Z",
       "category": "finance",
-      "source": "BBC Business"
+      "source": "BBC Business",
+      "summary": "英国改革党议员Robert Jenrick提议，民众致电税务海关总署等待超过30分钟可获得30英镑税收抵免。"
     },
     {
       "sourceId": "bbc-business",
@@ -3151,7 +3193,8 @@
       "excerpt": "The hospital tells the BBC the ward door was not locked but manned with security guards, to protect the babies.",
       "publishedAt": "2026-08-26T14:42:03.000Z",
       "category": "politics",
-      "source": "BBC World"
+      "source": "BBC World",
+      "summary": "巴基斯坦医院火灾致14名婴儿死亡，目击者称病房门被锁住。院方回应称门未上锁，而是安排保安值守以保护婴儿安全。"
     },
     {
       "sourceId": "bbc-world",
@@ -3382,7 +3425,7 @@
       "sourceId": "guardian-world",
       "title": "Moringa lattes and tigernut kebabs: the Ghanaians ‘taking back the power’ of their food",
       "url": "https://www.theguardian.com/global-development/2026/aug/26/moringa-lattes-and-tigernut-kebabs-the-young-ghanaians-taking-back-the-power-of-their-food",
-      "excerpt": "In Ghana, a grassroots movement is championing nutritious, homegrown, climate-resilient produce, rather than western imports After three years at catering school, Abiro Wisdom was certain of one thing – he did not want to go into catering. At least not the route that he might be expected to take. Hi",
+      "excerpt": "In Ghana, a grassroots movement is championing nutritious, homegrown, climate-resilient produce, rather than western imports After three years at catering school in Accra, Abiro Wisdom was certain of one thing – he did not want to go into catering. At least not the route that he might be expected to",
       "publishedAt": "2026-08-26T09:00:39.000Z",
       "category": "politics",
       "source": "The Guardian"
@@ -3466,7 +3509,8 @@
       "excerpt": "More than 380 tourists among those unaccounted for after homes, roads, bridges and power plants swept away Nepal-Tibet floods – latest updates At least 95 people have died and hundreds are missing after flash floods ⁠hit the Himalayan border areas of ⁠Nepal and Tibet in China, with officials saying ",
       "publishedAt": "2026-08-26T14:07:38.000Z",
       "category": "politics",
-      "source": "The Guardian"
+      "source": "The Guardian",
+      "summary": "尼泊尔与西藏边境山洪暴发，已致至少95人死亡、数百人失踪，其中逾380人为游客。洪水冲毁房屋、道路、桥梁及电站设施。"
     },
     {
       "sourceId": "guardian-world",
@@ -3551,6 +3595,26 @@
     },
     {
       "sourceId": "guardian-world",
+      "title": "​W​hy are European leaders staying silent after our summer of climate shock?",
+      "url": "https://www.theguardian.com/world/2026/aug/26/why-are-european-leaders-staying-silent-after-our-summer-of-climate-shock",
+      "excerpt": "Lethal temperatures ​and wildfires have exposed a widening gulf between voters demanding ​action and politicians unwilling to confront the long-term choices global heating requires • Don’t get This Is Europe delivered to your inbox? Sign up here The climate crisis means “we’re going to have to chang",
+      "publishedAt": "2026-08-26T14:40:15.000Z",
+      "category": "politics",
+      "source": "The Guardian",
+      "summary": "欧洲夏季遭遇致命高温与野火，暴露选民要求应对气候变化与政界不愿做出长期抉择之间的鸿沟日益扩大，欧洲领导人对此保持沉默。"
+    },
+    {
+      "sourceId": "guardian-world",
+      "title": "Flight attendant’s breast cancer was occupational disease, court rules",
+      "url": "https://www.theguardian.com/society/2026/aug/26/flight-attendant-breast-cancer-occupational-disease",
+      "excerpt": "Sophie Lainault, who worked for Air France, wins legal case linking illness to more than 12,600 hours on flights A flight attendant in France has succeeded in having her breast cancer recognised as an occupational disease, a first for the country’s aviation industry, her lawyer and a trade union sai",
+      "publishedAt": "2026-08-26T14:36:19.000Z",
+      "category": "politics",
+      "source": "The Guardian",
+      "summary": "法国空乘Sophie Lainault因累计飞行超12600小时患乳腺癌，法院裁定其癌症为职业病，系法国航空业首例获认定的职业病案件。"
+    },
+    {
+      "sourceId": "guardian-world",
       "title": "Devon man becomes first person to swim Switzerland’s 10 largest lakes",
       "url": "https://www.theguardian.com/lifeandstyle/2026/aug/26/devon-man-becomes-first-person-to-swim-switzerlands-10-largest-lakes",
       "excerpt": "Neil Gilson completes 230-mile challenge after a ‘tough’ 22-hour crossing of Lac Léman He staggered rather than sprang out of the lake but it wasn’t surprising. Neil Gilson, a former international athlete, could be forgiven for feeling a little wobbly, having become the first person to swim the 10 l",
@@ -3573,24 +3637,6 @@
       "url": "https://www.theguardian.com/world/2026/aug/26/yorgen-fenech-trial-daphne-caruana-galizia-claims-framed",
       "excerpt": "Yorgen Fenech tells jury he had nothing to do with killing and alleges top adviser to Malta’s then PM was instigator A businessman on trial for the murder of the journalist Daphne Caruana Galizia has spoken about the charges for the first time in court since his arrest seven years ago, telling the j",
       "publishedAt": "2026-08-26T04:00:34.000Z",
-      "category": "politics",
-      "source": "The Guardian"
-    },
-    {
-      "sourceId": "guardian-world",
-      "title": "FBI raided Spanish vacation rental of wealthy leftwing funder James ‘Fergie’ Chambers after his arrest",
-      "url": "https://www.theguardian.com/us-news/2026/aug/25/fbi-raid-james-fergie-cox-vacation-rental",
-      "excerpt": "Lawyer Baltasar Garzón, representing Chambers, said case against his client is ‘very strange’ as US requests extradition FBI agents raided the Ibiza, Spain, vacation rental of 41-year-old James “Fergie” Chambers, a US citizen and wealthy donor to leftwing and humanitarian projects worldwide, in the ",
-      "publishedAt": "2026-08-25T20:57:28.000Z",
-      "category": "politics",
-      "source": "The Guardian"
-    },
-    {
-      "sourceId": "guardian-world",
-      "title": "Burnham to take Zelenskyy’s pleas for Patriot missiles to Trump – as it happened",
-      "url": "https://www.theguardian.com/world/live/2026/aug/25/europe-ukraine-patriot-missiles-zelenskyy-trump-russia-drone-germany-latest-news-update",
-      "excerpt": "UK PM to join delegation of leaders lobbying US president to step up supplies, as Kremlin accuses Burnham of wanting to continue war Burnham plans trip to New York as Ukraine pleads for US-made missiles Vatican envoy Paul Gallagher met Russian foreign minister Sergei Lavrov in Moscow earlier today, ",
-      "publishedAt": "2026-08-25T16:09:08.000Z",
       "category": "politics",
       "source": "The Guardian"
     },
@@ -3644,18 +3690,20 @@
       "title": "Live Updates: At Least 72 Killed and Hundreds Missing as Floods Sweep Away Villages in Nepal",
       "url": "https://www.nytimes.com/live/2026/08/26/world/nepal-floods",
       "excerpt": "A wall of water crashed through a Himalayan river valley between Nepal and the Chinese territory of Tibet, the Nepali authorities said. The missing included border officials, port workers and foreign tourists.",
-      "publishedAt": "2026-08-26T14:43:10.000Z",
+      "publishedAt": "2026-08-26T14:47:41.000Z",
       "category": "politics",
-      "source": "NYT World"
+      "source": "NYT World",
+      "summary": "尼泊尔与西藏交界喜马拉雅河谷地区爆发洪水，已造成至少72人死亡、数百人失踪，失踪者包括边防人员、港口工人和外国游客。"
     },
     {
       "sourceId": "nyt-world",
       "title": "Trump’s Top Gaza Official Says Israel Is Jeopardizing the Cease-Fire",
       "url": "https://www.nytimes.com/2026/08/26/world/middleeast/trump-official-israel-jeopardizing-gaza-cease-fire.html",
       "excerpt": "Nickolay Mladenov, the Board of Peace’s high representative for Gaza, criticized Israel for its ongoing strikes on Hamas, after it rejected a U.S.-backed plan to disarm the militant group.",
-      "publishedAt": "2026-08-26T14:40:35.000Z",
+      "publishedAt": "2026-08-26T14:47:36.000Z",
       "category": "politics",
-      "source": "NYT World"
+      "source": "NYT World",
+      "summary": "特朗普政府加沙问题特使尼克拉伊·姆拉德诺夫批评以色列持续空袭哈马斯，指其拒绝美国支持的解除武装方案，危及加沙停火协议。"
     },
     {
       "sourceId": "nyt-world",
@@ -3679,10 +3727,11 @@
       "sourceId": "nyt-world",
       "title": "14 Newborns Die in Hospital Fire in Pakistan’s Capital",
       "url": "https://www.nytimes.com/2026/08/26/world/asia/pakistan-islamabad-hospital-fire.html",
-      "excerpt": "The fire broke out on the third floor of Islamabad’s largest hospital, raising concerns about the country’s health care infrastructure.",
-      "publishedAt": "2026-08-26T11:26:02.000Z",
+      "excerpt": "The fire broke out at Islamabad’s largest hospital and has become a political issue. Opposition supporters shouted, “Stop killing our children!” at an official visiting the scene.",
+      "publishedAt": "2026-08-26T14:46:43.000Z",
       "category": "politics",
-      "source": "NYT World"
+      "source": "NYT World",
+      "summary": "巴基斯坦首都伊斯兰堡最大医院发生火灾，导致14名新生儿死亡，事件已引发政治争议，反对派在官员视察现场时高喊「停止杀害我们的孩子」。"
     },
     {
       "sourceId": "nyt-world",
@@ -3709,7 +3758,8 @@
       "excerpt": "Iran and Oman said they would create a temporary shipping lane and clear mines in the waterway. Global oil prices eased after the joint announcement.",
       "publishedAt": "2026-08-26T14:03:18.000Z",
       "category": "politics",
-      "source": "NYT World"
+      "source": "NYT World",
+      "summary": "伊朗与阿曼宣布将在霍尔木兹海峡开辟临时航道并清除水雷，全球油价因这一联合声明出现回落。"
     },
     {
       "sourceId": "nyt-world",
@@ -3772,16 +3822,18 @@
       "excerpt": "",
       "publishedAt": "2026-08-26T14:08:36.000Z",
       "category": "politics",
-      "source": "NYT World"
+      "source": "NYT World",
+      "summary": "中国官方媒体报道称，尼泊尔边境一处港口在洪水中出现重大人员伤亡。该港口位于尼泊尔与中国西藏交界地区。"
     },
     {
       "sourceId": "nyt-world",
       "title": "Here’s the latest.",
       "url": "https://www.nytimes.com/live/2026/08/26/world/nepal-floods/nepal-floods-tibet-missing",
       "excerpt": "A wall of water swept down a Himalayan river valley shared between Nepal and the Chinese territory of Tibet.",
-      "publishedAt": "2026-08-26T14:28:38.000Z",
+      "publishedAt": "2026-08-26T14:47:39.000Z",
       "category": "politics",
-      "source": "NYT World"
+      "source": "NYT World",
+      "summary": "尼泊尔与中国西藏交界处喜马拉雅河谷地区遭遇洪水侵袭，洪峰沿河谷冲刷而下，造成严重人员伤亡与失踪。"
     },
     {
       "sourceId": "nyt-world",
@@ -4006,7 +4058,8 @@
       "excerpt": "得益于欧洲市场的旺盛需求以及人工智能与数字化浪潮的推动，德国出口行业的景气指数在8月份迎来强劲反弹，跃升至四年半以来的最高水平。尽管对华出口依然承压，但多个关键工业制造板块的预期明显好转，有力支撑了整体经济增长。",
       "publishedAt": "2026-08-26T14:15:00.000Z",
       "category": "politics",
-      "source": "DW 中文"
+      "source": "DW 中文",
+      "summary": "受欧洲市场需求及人工智能与数字化浪潮推动，德国8月出口景气指数强劲反弹，升至四年半最高水平。对华出口仍承压，但多个工业制造板块预期好转。"
     },
     {
       "sourceId": "dw-chinese",
@@ -4015,7 +4068,8 @@
       "excerpt": "台湾基隆地检署宣布对包括英伟达（Nvidia)和美超微(Super Micro)在台湾合作企业员工在内的九人提起诉讼，理由是他们涉嫌参与向中国非法出售英伟达高级人工智能芯片服务器。",
       "publishedAt": "2026-08-26T14:14:00.000Z",
       "category": "politics",
-      "source": "DW 中文"
+      "source": "DW 中文",
+      "summary": "台湾基隆地检署起诉九人，包括英伟达与美超微台湾合作企业员工，理由是涉嫌串谋向中国非法出售英伟达高级人工智能芯片服务器。"
     },
     {
       "sourceId": "dw-chinese",
@@ -4024,7 +4078,8 @@
       "excerpt": "美国中情局局长前往俄罗斯进行了会谈。会谈内容并未向外透露。克里姆林宫则淡化在两国政治关系方面的期望值。",
       "publishedAt": "2026-08-26T14:10:00.000Z",
       "category": "politics",
-      "source": "DW 中文"
+      "source": "DW 中文",
+      "summary": "美国中情局局长前往俄罗斯与俄方举行会谈，会谈内容未对外透露。克里姆林宫淡化对两国政治关系改善的期望值。"
     },
     {
       "sourceId": "dw-chinese",
@@ -4271,30 +4326,23 @@
     },
     {
       "sourceId": "aljazeera",
-      "title": "Kremlin says CIA head met Russian intelligence officials, but not Putin",
-      "url": "https://www.aljazeera.com/news/2026/8/26/kremlin-says-cia-head-met-russian-intelligence-officials-but-not-putin?traffic_source=rss",
-      "excerpt": "CIA's Ratcliffe has met with Russian intel officials in Moscow, but not President Putin; Kremlin calls talks 'positive'.",
-      "publishedAt": "2026-08-26T14:30:24.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
       "title": "Meta agrees to settlement, platform changes in youth addiction case",
       "url": "https://www.aljazeera.com/economy/2026/8/26/meta-agrees-to-settlement-platform-changes-in-youth-addiction-case?traffic_source=rss",
       "excerpt": "Meta settles $16.68bn lawsuit over child addiction claims, agreeing to major changes in Facebook and Instagram features.",
       "publishedAt": "2026-08-26T14:21:23.000Z",
       "category": "politics",
-      "source": "Al Jazeera"
+      "source": "Al Jazeera",
+      "summary": "Meta就166.8亿美元儿童成瘾诉讼达成和解，同意对Facebook和Instagram功能进行重大调整，以解决平台致青少年成瘾问题。"
     },
     {
       "sourceId": "aljazeera",
-      "title": "Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks",
+      "title": "Trump tells Al Jazeera “not in a hurry” for Iran to return to talks",
       "url": "https://www.aljazeera.com/economy/2026/8/26/trump-tells-al-jazeera-not-in-a-hurry-for-iran-to-return-to-talks?traffic_source=rss",
-      "excerpt": "'I have no time schedule,' Trump says when asked when he expects Iran to return to the negotiating table.",
+      "excerpt": "\"I have no time schedule,\" Trump says when asked when he expects Iran to return to the negotiating table.",
       "publishedAt": "2026-08-26T14:16:29.000Z",
       "category": "politics",
-      "source": "Al Jazeera"
+      "source": "Al Jazeera",
+      "summary": "特朗普接受半岛电视台采访时表示，不急于让伊朗重返谈判桌，称「我没有时间表」，对伊朗恢复谈判时间持不紧迫态度。"
     },
     {
       "sourceId": "aljazeera",
@@ -4491,6 +4539,15 @@
       "url": "https://www.aljazeera.com/economy/2026/8/26/one-us-dollar-now-costs-2-million-rials-in-iran-and-heres-what-it-can-buy?traffic_source=rss",
       "excerpt": "Sanctions and the US-Israel war on Iran have left the country's people unable to keep pace with rising prices.",
       "publishedAt": "2026-08-26T10:00:05.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "More than 90 killed, hundreds missing after Nepal flash flood",
+      "url": "https://www.aljazeera.com/news/2026/8/26/at-least-eight-killed-in-nepal-flash-floods-that-swept-away-villages-roads?traffic_source=rss",
+      "excerpt": "Across the border, Tibet reported 'major casualties' with people missing in the neighbouring county of Gyirong.",
+      "publishedAt": "2026-08-26T09:48:36.000Z",
       "category": "politics",
       "source": "Al Jazeera"
     },
@@ -4771,7 +4828,10 @@
       "excerpt": "[Subscribers Only] I actually allocated a sizeable amount to the lega…",
       "publishedAt": "2026-08-26T09:09:49.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "订阅专属：已对lega配置了相当规模的仓位",
+      "displayExcerpt": "作者表示已对lega相关标的配置了较大仓位，但具体内容仅对订阅用户开放，未公开更多细节。",
+      "summary": "作者称已对lega配置较大仓位，细节仅限订阅用户可见。"
     },
     {
       "sourceId": "x-serenity",
@@ -4780,7 +4840,10 @@
       "excerpt": "I love how so many people requested $SIVE that Saxo Japan went out of their way to list it! Just goes to show how much demand there is for this laser company. Special shoutout to Saxo. And of course, excited for Sivers earnings + planned Nasdaq listing coming up. サクソバンク証券: 📢 お客様のご要望にお応えして、新たな海外銘柄の取",
       "publishedAt": "2026-08-26T07:38:48.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$SIVE需求火爆，盛宝证券日本应客户要求上线该标的",
+      "displayExcerpt": "作者感叹大量用户向盛宝证券日本请求上线 $SIVE，促使盛宝专门挂牌该标的，足见这家激光公司需求之旺盛。作者感谢盛宝，并对 $SIVE 即将发布的财报及计划中的纳斯达克上市感到期待。盛宝证券日本官方公告称，为回应客户需求，新增该海外标的可供交易。",
+      "summary": "$SIVE需求旺盛，盛宝证券日本应客户要求上线该标的。作者期待 $SIVE 财报及计划中的纳斯达克上市。"
     },
     {
       "sourceId": "x-serenity",
@@ -4789,7 +4852,10 @@
       "excerpt": "[Subscribers Only] Thoughts on this 1.9x P/E memory company: (annuali…",
       "publishedAt": "2026-08-26T06:01:15.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "订阅专属：探讨这家市盈率仅1.9倍的记忆体公司",
+      "displayExcerpt": "作者分享对一家市盈率仅1.9倍的记忆体（存储）公司的看法，提到年化数据等关键指标，但完整分析仅向订阅用户开放，未公开具体标的名称与详细内容。",
+      "summary": "作者关注一家市盈率仅1.9倍的存储公司，完整分析仅限订阅用户可见。"
     },
     {
       "sourceId": "x-serenity",
@@ -4798,7 +4864,10 @@
       "excerpt": "All right back to $SMTC movie: \"The bottleneck go Brrr\": My favorite quote was: \"availability currently matters more than pricing\". In the current market for optical products. - No near-term erosion is expected on booked optical orders, which signals they're passing cost increases through fine. - I ",
       "publishedAt": "2026-08-26T00:27:44.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$SMTC跟踪：「瓶颈在轰鸣」，光产品当前可用性比价格更重要",
+      "displayExcerpt": "作者继续跟踪 $SMTC，引用一句话：「瓶颈在轰鸣」，并称当前光产品市场中，「可用性目前比价格更重要」。要点包括：已预订的光学订单短期内预计不会出现下滑，表明公司能顺利将成本上涨转嫁出去。作者据此判断行业供需紧张利好公司。",
+      "summary": "$SMTC光学订单短期内未见下滑，公司能转嫁成本上涨。作者认为光产品市场供给紧张利好公司。"
     },
     {
       "sourceId": "x-serenity",
@@ -4807,7 +4876,10 @@
       "excerpt": "Lost interest in $SMTC and every other earnings report today after finding a memory name way too interesting not to research...",
       "publishedAt": "2026-08-25T20:51:59.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "对 $SMTC 及今日所有财报失去兴趣，转而研究一家极具吸引力的存储标的",
+      "displayExcerpt": "作者表示，发现了一家极具吸引力、值得深入研究的存储（记忆体）公司后，已对 $SMTC 及当日所有其他财报报告失去兴趣。具体标的名称及研究细节未在公开内容中披露。",
+      "summary": "作者发现一家极具吸引力的存储标的，转而深入研究，对 $SMTC 等当日财报失去兴趣。"
     },
     {
       "sourceId": "x-serenity",
@@ -4816,7 +4888,10 @@
       "excerpt": "Lot of people were wondering about $SIVE earnings in 2 days. What I'm watching out for: 1. I'm hoping for more visibility on photonics co-development/qualifications/contracts. -> $AAOI stated multiple customers approaching them for CPO lasers (but had to turn them away) -> $MTSI stated many customer",
       "publishedAt": "2026-08-25T09:46:32.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$SIVE 两天后发财报，关注光子学共研进展及 $AAOI、$MTSI 相关信号",
+      "displayExcerpt": "两天后 $SIVE 将发布财报，作者表示重点关注以下几点：一是希望获得更多关于光子学共研、认证及合同的可见性。$AAOI 曾表示有多家客户接洽CPO激光器但不得不婉拒；$MTSI 也提到许多客户表达类似需求。作者将从中判断行业趋势。",
+      "summary": "$SIVE 两天后发财报，作者关注光子学共研及合同进展，并参考 $AAOI、$MTSI 的客户需求信号判断行业趋势。"
     },
     {
       "sourceId": "x-serenity",
@@ -4825,7 +4900,10 @@
       "excerpt": "[Subscribers Only] off the top of my head, just a recap of the themes…",
       "publishedAt": "2026-08-25T08:26:19.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "仅限订阅者：投资主题回顾",
+      "displayExcerpt": "此帖为仅限订阅者查看的内容，作者凭记忆对当前主要投资主题进行了简要回顾和梳理。由于内容仅向付费订阅者开放，公开信息有限，具体涉及的股票和细节未对外展示。",
+      "summary": "付费订阅专享内容，作者对当前主要投资主题做简要回顾，公开细节有限。"
     },
     {
       "sourceId": "x-serenity",
@@ -4834,7 +4912,10 @@
       "excerpt": "I know everyone's focused on Nancy Pelosi copytraders sending $BE up 11.83%. Or Trump... But you know what else is cool? FAU bottlenecks for CPO. I remember saying earlier this year FAU/Foci might be a future bottleneck around $TSM / $NVDA CPO roadmaps... This was some media commentary supporting th",
       "publishedAt": "2026-08-24T18:27:08.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$BE 涨11.83%，但 FAU 瓶颈或成 CPO 路线图关键",
+      "displayExcerpt": "市场关注佩洛西跟单交易推动 $BE 上涨11.83%，但更值得关注的是 CPO（共封装光学）领域的 FAU 瓶颈问题。作者年初曾指出，FAU/Foci 可能成为 $TSM 和 $NVDA CPO 路线图的未来瓶颈，目前一些媒体评论也印证了这一判断。",
+      "summary": "$BE 因跟单交易涨11.83%，但重点在于 FAU 可能成为 $TSM 和 $NVDA CPO 路线图的瓶颈。"
     },
     {
       "sourceId": "x-serenity",
@@ -4843,7 +4924,10 @@
       "excerpt": "$NVDA, following their $20B deal... Announces Groq3 LPX now in full production. With $NBIS the first to adopt through Nebius token factory. - 3,400 tok/s in Artificial Analysis benchmarking running Gemma 4 31B, with 100k token context - 4x faster responsiveness than the nearest alternative Thing tha",
       "publishedAt": "2026-08-24T15:23:59.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$NVDA 200亿美元交易后 Groq3 LPX 量产，$NBIS 首批采用",
+      "displayExcerpt": "$NVDA 在达成200亿美元交易后宣布 Groq3 LPX 进入全面量产，$NBIS 成为首个通过 Nebius token 工厂采用该产品的公司。在 Artificial Analysis 基准测试中运行 Gemma 4 31B，达到每秒3400 token、10万 token 上下文，响应速度比最接近的替代方案快4倍。",
+      "summary": "$NVDA 在200亿美元交易后宣布 Groq3 LPX 量产，$NBIS 首批采用，速度达3400 tok/s，快4倍。"
     },
     {
       "sourceId": "x-serenity",
@@ -4852,7 +4936,10 @@
       "excerpt": "Bro why are we fighting a Trade War with our friendly Golden Retriever named Canada. Shouldn't we be focusing on Iran today? Trump: Announces 50% Tariffs On Cars, Automotive Parts, and Steel From 2027. Serenity: \"At dawn begins an economic D-Day, The single greatest financial offensive ever marshall",
       "publishedAt": "2026-08-24T14:03:08.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "特朗普宣布2027年起对加拿大汽车及钢铁加征50%关税",
+      "displayExcerpt": "特朗普宣布从2027年起对来自加拿大的汽车、汽车零部件和钢铁征收50%关税。作者质疑与加拿大打贸易战的意义，认为应将注意力放在伊朗问题上。作者称这是「经济版诺曼底登陆的开始，有史以来最大规模的金融攻势」。",
+      "summary": "特朗普宣布2027年起对加拿大汽车、零部件及钢铁加征50%关税，作者称其为「经济版D-Day」。"
     },
     {
       "sourceId": "x-serenity",
@@ -4861,7 +4948,10 @@
       "excerpt": "$XPEV carves out its robotics unit and raises >$900M at $6.3B+ valuations. This is following’s Unitree IPO, which now has a ~$35-$36B MC. Then there’s $NVDA / $AMZN backed Agility… at a $2.5B premoney valuation. Which I’d argue is actually further ahead in commercialization than Xpeng. Regardless, h",
       "publishedAt": "2026-08-24T11:35:16.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$XPEV 拆分机器人业务融资超9亿美元，估值逾63亿美元",
+      "displayExcerpt": "$XPEV 将机器人业务拆分并融资超过9亿美元，估值达63亿美元以上。此前 Unitree IPO 后市值约350至360亿美元。而 $NVDA 和 $AMZN 投资的 Agility 估值为25亿美元（投前），作者认为其在商业化方面实际上比小鹏走得更远。",
+      "summary": "$XPEV 拆分机器人业务融资超9亿美元，估值逾63亿美元；Unitree 市值约350至360亿美元。"
     },
     {
       "sourceId": "x-serenity",
@@ -4870,7 +4960,10 @@
       "excerpt": "Lot of misinterpretations flying left and right around the $600m ATM. I'm still bullish on $AAOI and I have large positions (which is why I care more). What I've been consistent with is not being a fan of overusing ATMs/dilution for financing. I've said this before with $IREN + $POET. And I'll be co",
       "publishedAt": "2026-08-24T11:00:56.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$AAOI 6亿美元 ATM 引发争议，作者仍看多并持有大仓位",
+      "displayExcerpt": "围绕 $AAOI 的6亿美元 ATM（按市价发行）融资存在大量误读。作者仍看多 $AAOI 并持有大仓位，但一贯不赞成过度使用 ATM 或稀释股权进行融资，此前对 $IREN 和 $POET 也表达过同样观点。作者将持续关注此事。",
+      "summary": "$AAOI 6亿美元 ATM 融资引发误读，作者仍看多并持有大仓位，但不赞成过度稀释股权融资。"
     },
     {
       "sourceId": "x-serenity",
@@ -4879,7 +4972,10 @@
       "excerpt": "\"At dawn begins an economic D-Day, The single greatest financial offensive ever marshalled against an adversary\", per Bessent in FT. The US would target nations that engage with Iran's economy and financial system. Press conference is today 1 PM ET. Not quite sure markets would appreciate this, but ",
       "publishedAt": "2026-08-24T05:10:35.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "贝森特称美国将发动「经济D日」：史上最大规模金融攻势",
+      "displayExcerpt": "据英国《金融时报》报道，美国财长贝森特表示，美国将发起「经济D日」，这是史上针对对手的最大规模金融攻势。美国将针对与伊朗经济和金融体系有往来国家采取行动。新闻发布会于美东时间今日下午1点举行。市场可能对此并不买账。",
+      "summary": "贝森特称美国将对与伊朗往来国家发起史上最大金融攻势，美东时间下午1点开发布会，市场或受冲击。"
     },
     {
       "sourceId": "x-serenity",
@@ -4888,7 +4984,10 @@
       "excerpt": "After watching clips of China's humanoid Olympics... I think we're cooked chat. Still can't believe $GOOGL sold Boston Dynamics, don't think we have another humanoid that can backflip.",
       "publishedAt": "2026-08-23T19:43:52.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "中国人形机器人奥运会引热议，$GOOGL出售Boston Dynamics遭质疑",
+      "displayExcerpt": "看了中国人形机器人奥运会的片段后，感觉美国已经被甩在后面。至今难以相信 $GOOGL 当初卖掉了Boston Dynamics，目前美国似乎没有能完成后空翻的人形机器人了。",
+      "summary": "中国人形机器人进展令作者感叹美国落后，质疑 $GOOGL 出售Boston Dynamics的决定。"
     },
     {
       "sourceId": "x-serenity",
@@ -4897,7 +4996,10 @@
       "excerpt": "Having a mid-X identity crisis rn: ✓ saw 2025 ideas from $AXTI to $NBIS play out with everyone ✓ we got $AMD bandanas ✓ #1 most subscribed person on X by accident ✓ Chinese “White Hair” nicknames ✓ 1M followers Still here to track ideas, but what’s the next side quest?",
       "publishedAt": "2026-08-23T11:29:53.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "X平台粉丝破百万，回顾 $AXTI、$NBIS 及 $AMD 等2025年投资观点",
+      "displayExcerpt": "作者陷入平台身份危机：2025年从 $AXTI 到 $NBIS 的投资观点都已被市场验证，$AMD 周边也火了，意外成为X平台订阅数第一，还获得了中国粉丝起的「白发」昵称，粉丝突破100万。将继续追踪投资观点，寻找下一个方向。",
+      "summary": "作者回顾 $AXTI、$NBIS、$AMD 等2025年观点已兑现，粉丝破百万，将继续追踪投资新方向。"
     },
     {
       "sourceId": "x-serenity",
@@ -4906,7 +5008,10 @@
       "excerpt": "Apparently, $RDDT thinks $MRVL had two major catalysts recently: The $12.2B Google TPU ecosystem agreement. And… Spider-Man: “Brand New Day”",
       "publishedAt": "2026-08-22T20:40:31.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$RDDT 讨论 $MRVL 两大催化剂：$122亿Google TPU协议与蜘蛛侠新作",
+      "displayExcerpt": "据 $RDDT 讨论，$MRVL 近期有两大催化剂：一是价值 $12.2B 的Google TPU生态系统协议；二是蜘蛛侠「Brand New Day」电影相关话题热度。",
+      "summary": "$MRVL 近期两大催化剂：$12.2B Google TPU协议及蜘蛛侠「Brand New Day」话题热度。"
     },
     {
       "sourceId": "x-serenity",
@@ -4915,7 +5020,10 @@
       "excerpt": "It's been fun to read these US Gov fact sheets (few a week) recently. Earlier this week was \"Golden Age of Space Transportation\", with $SPCX hard carrying the launch sector like Faker. And $RKLB + other rocket companies as beneficiaries of the 1K launch/reentry goal by 2030. This month we also had: ",
       "publishedAt": "2026-08-22T14:54:25.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "美国政府力推太空运输「黄金时代」，$SPCX 与 $RKLB 等受益",
+      "displayExcerpt": "近期阅读美国政府发布的事实清单颇有意思。本周早些时候提到「太空运输黄金时代」，$SPCX 在发射领域独力支撑，如同Faker般carry全场。$RKLB 及其他火箭公司也将受益于2030年前实现1000次发射和再入的目标。",
+      "summary": "美国政府推动太空运输「黄金时代」，$SPCX 与 $RKLB 等火箭公司受益于2030年千次发射目标。"
     },
     {
       "sourceId": "x-serenity",
@@ -4924,7 +5032,10 @@
       "excerpt": "It's getting much harder to support $AAOI when they keep dropping $500m or $600M ATMs left and right. At a certain point, the operating outlook could be positive. But the share structure/financing becomes increasingly shareholder unfriendly. Really, really, dislike ATMs and incessant capital raises,",
       "publishedAt": "2026-08-21T20:47:27.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$AAOI 频繁进行 $500M-$600M ATM 发行，股东结构日益不友好",
+      "displayExcerpt": "当 $AAOI 不断进行 $500M 或 $600M 的ATM（按市价发行）融资时，越来越难继续看好它。虽然运营前景可能转正，但股权结构和融资方式对股东越来越不友好。作者表示非常反感频繁的ATM和持续募资行为。",
+      "summary": "$AAOI 频繁进行 $500M-$600M ATM 发行，运营虽可能转正但融资方式对股东日益不友好。"
     },
     {
       "sourceId": "x-serenity",
@@ -4933,7 +5044,10 @@
       "excerpt": "Uhh Citadel? > Say emergency rate hike. More crashes/liquidations follow > No rate hike > Reaches out to buy liquidated hedge fund portfolios > buys billions of Situational Awareness holdings. > Says AI bull case is intact >markets rally > Sells AI stocks into the buying pressure I’m just stating th",
       "publishedAt": "2026-08-21T15:01:09.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "Citadel 操作推演：喊紧急加息制造恐慌，低位收购对冲基金资产后唱多AI并抛售",
+      "displayExcerpt": "推文推测Citadel的操作路径：先散布紧急加息预期，引发市场进一步崩盘和清算；随后利率按兵不动，Citadel借机收购被清算的对冲基金组合，买入数十亿美元的持仓资产。接着宣称AI看多逻辑依然成立，推动市场反弹，最后在买盘压力中抛售AI股票。作者表示仅陈述观察到的事实。",
+      "summary": "作者推测Citadel通过散布紧急加息预期制造市场恐慌与清算，低价收购资产后唱多AI推高市场，再在买盘压力中抛售AI股票。"
     },
     {
       "sourceId": "x-serenity",
@@ -4942,7 +5056,10 @@
       "excerpt": "Since people are having fun speculating on $SKHY CPO roadmap supply chains. I'm gonna do my own guess and say SK Hynix is evaluating Celestial/Ayar. Then doing heavy evaluation into microLEDs past first-gen deployments. Both have been kinda working on it for awhile. - Ayar shown up in SK hynix's own",
       "publishedAt": "2026-08-21T09:40:02.000Z",
       "category": "finance",
-      "source": "X Serenity (@aleabitoreddit)"
+      "source": "X Serenity (@aleabitoreddit)",
+      "displayTitle": "$SKHY CPO供应链猜想：SK Hynix正评估Celestial/Ayar，并布局microLED",
+      "displayExcerpt": "针对市场对$SKHY CPO路线图供应链的猜测，作者自行推测SK Hynix正在评估Celestial和Ayar方案，并在第一代部署后着重评估microLED技术。两家公司均已在相关领域投入一段时间研发。此外，Ayar已出现在SK Hynix自己的相关材料中。",
+      "summary": "作者推测$SKHY母公司SK Hynix正评估Celestial/Ayar方案，并在第一代部署后重点布局microLED技术。Ayar已出现在SK Hynix材料中。"
     }
   ]
 }
