@@ -6,20 +6,19 @@
       "title": "tt-a1i/archify",
       "url": "https://github.com/tt-a1i/archify",
       "excerpt": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
-      "meta": "HTML · ★ 17,119 · 🍴 1,189 · 📈 1,002 stars today",
+      "meta": "HTML · ★ 17,129 · 🍴 1,190 · 📈 1,002 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向 AI Agent 的架构图生成技能，支持生成架构、工作流、时序、数据流和生命周期图。输出为自包含的 HTML 文件，支持动画和高清导出。适用于需要可视化文档的开发者和技术团队。"
+      "summary": "Agent 技能工具，用于生成架构图、工作流、时序图等可视化图表，输出为自带动画效果且可导出的独立 HTML 文件，解决技术文档缺乏直观图表展示的问题。适用于开发者和架构师在系统设计文档或技术评审场景中快速生成高质量图表。"
     },
     {
       "sourceId": "github-trending",
       "title": "freestylefly/awesome-gpt-image-2",
       "url": "https://github.com/freestylefly/awesome-gpt-image-2",
       "excerpt": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
-      "meta": "JavaScript · ★ 20,799 · 🍴 2,091 · 📈 4,044 stars today",
+      "meta": "JavaScript · ★ 20,806 · 🍴 2,091 · 📈 4,044 stars today",
       "category": "tech",
-      "source": "GitHub Trending",
-      "summary": "基于 GPT-Image2 的工业级提示词引擎与模板库，包含 530+ 逆向工程案例和 20+ 套工业级模板，并将提示词提炼为可复用的 Skills。面向图像生成开发者和创作者，适用于批量图像生产和自动化生成流程。"
+      "source": "GitHub Trending"
     },
     {
       "sourceId": "github-trending",
@@ -29,27 +28,27 @@
       "meta": "Python · ★ 34,270 · 🍴 3,881 · 📈 307 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "由 Anthropic 官方维护的 Claude Code 插件目录，收录高质量官方插件。面向使用 Claude Code 进行开发的技术团队和独立开发者，适用于扩展 Claude Code 功能的典型开发场景。"
+      "summary": "Anthropic 官方维护的 Claude Code 插件目录，提供经过审核的高质量插件集合，解决用户难以寻找可靠 Claude Code 扩展工具的问题。适用于开发者在 Claude Code 环境中集成额外能力以提升编码效率。"
     },
     {
       "sourceId": "github-trending",
       "title": "Alishahryar1/free-claude-code",
       "url": "https://github.com/Alishahryar1/free-claude-code",
       "excerpt": "Use Claude Code, Codex, Pi, and OpenCode for free (1.3B+ free tokens) from your terminal, app, IDE, or phone like OpenClaw (voice supported + ToS friendly)",
-      "meta": "Python · ★ 50,147 · 🍴 8,134 · 📈 1,047 stars today",
+      "meta": "Python · ★ 50,149 · 🍴 8,134 · 📈 1,047 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "允许用户在终端、应用、IDE 或手机上免费使用 Claude Code、Codex、Pi 和 OpenCode 等模型，提供 13 亿+ 免费 token 额度，支持语音操作。适用于预算有限的开发者，降低多模型调用门槛。"
+      "summary": "终端工具，让用户免费使用 Claude Code、Codex 等多种 AI 编程助手，提供超 13 亿免费 token 额度，支持语音操作。适用于开发者在不付费前提下体验多种 AI 编程工具，集成于 IDE 或手机端使用。"
     },
     {
       "sourceId": "github-trending",
       "title": "MadsLorentzen/ai-job-search",
       "url": "https://github.com/MadsLorentzen/ai-job-search",
       "excerpt": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
-      "meta": "Python · ★ 36,103 · 🍴 12,314 · 📈 1,299 stars today",
+      "meta": "Python · ★ 36,108 · 🍴 12,316 · 📈 1,299 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "基于 Claude Code 构建的本地 AI 求职框架，可自动评估职位、定制简历、撰写求职信并准备面试。在本地机器运行，用户 Fork 后完全自主掌控。适用于求职者和职业规划顾问，提升求职效率和针对性。"
+      "summary": "基于 Claude Code 构建的本地求职自动化框架，能评估职位、定制简历、撰写求职信并准备面试。解决求职流程繁琐耗时的痛点，适用于求职者在本地运行并完全掌控数据隐私的场景下提升求职效率。"
     },
     {
       "sourceId": "github-trending",
@@ -59,107 +58,106 @@
       "meta": "Python · ★ 13,188 · 🍴 1,395 · 📈 812 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "结合 Obsidian 与 Claude Code 构建自组织 AI 第二大脑，用户投入任意来源资料后由 Claude 自动读取、关联并归档为 Markdown 知识图谱，完全由用户自主掌控。适用于需要管理大量资料的科研人员和知识工作者。"
+      "summary": "基于 Obsidian 和 Claude Code 构建的 AI 第二大脑工具，自动读取、关联并归档任意来源资料到本地 Markdown 知识图谱。解决信息碎片化问题，适用于研究人员或知识工作者在 Obsidian 中打造个人知识库。"
     },
     {
       "sourceId": "github-trending",
       "title": "basecamp/omarchy",
       "url": "https://github.com/basecamp/omarchy",
       "excerpt": "Beautiful, Modern & Opinionated Linux",
-      "meta": "Shell · ★ 31,783 · 🍴 3,227 · 📈 1,021 stars today",
+      "meta": "Shell · ★ 31,786 · 🍴 3,227 · 📈 1,021 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Basecamp 出品的 Linux 桌面环境，强调美观、现代和高度默认配置。适合追求开箱即用体验的 Linux 用户和开发者，解决传统桌面环境配置繁琐的问题，提供统一的桌面工作流。"
+      "summary": "Basecamp 推出的现代化 Linux 桌面环境，提供美观且带有强约定配置的使用体验。解决 Linux 桌面配置繁琐的问题，适用于开发者和 Linux 用户追求开箱即用、减少配置折腾的日常办公场景。"
     },
     {
       "sourceId": "github-trending",
       "title": "rohitg00/ai-engineering-from-scratch",
       "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
       "excerpt": "Learn it. Build it. Ship it for others.",
-      "meta": "Python · ★ 49,447 · 🍴 8,620 · 📈 837 stars today",
+      "meta": "Python · ★ 49,449 · 🍴 8,619 · 📈 837 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "AI 工程从零起步学习项目，遵循学习、构建、交付的实践路径。适用于希望系统掌握 AI 工程全流程的初中级开发者，覆盖从理论基础到项目落地的完整周期。"
+      "summary": "AI 工程教学项目，遵循“学习、构建、交付”的理念，帮助用户从零掌握 AI 工程并产出可用产品。解决理论与实践脱节的问题，适用于 AI 初学者及工程师系统学习并实践 AI 工程化落地。"
     },
     {
       "sourceId": "github-trending",
       "title": "tinyhumansai/openhuman",
       "url": "https://github.com/tinyhumansai/openhuman",
       "excerpt": "Your Personal AI super intelligence. A brain that builds a local-first memory of your life, a fantastic orchestrator of agent fleets and workflows, and a deep researcher.",
-      "meta": "Rust · ★ 38,075 · 🍴 3,749 · 📈 522 stars today",
+      "meta": "Rust · ★ 38,076 · 🍴 3,749 · 📈 522 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "个人 AI 超级智能系统，具备本地优先的生活记忆存储、Agent 编排和深度研究能力。适用于需要长期记忆和自动化工作流的个人用户，解决 AI 缺乏持久记忆和多 Agent 协调的问题。"
+      "summary": "个人 AI 超级智能助手，具备本地优先的记忆系统、多 Agent 编排和深度研究能力。解决通用 AI 缺乏个人记忆与任务编排的问题，适用于个人用户管理生活数据并自动化复杂工作流。"
     },
     {
       "sourceId": "github-trending",
       "title": "DietrichGebert/ponytail",
       "url": "https://github.com/DietrichGebert/ponytail",
       "excerpt": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-      "meta": "JavaScript · ★ 112,046 · 🍴 6,149 · 📈 1,598 stars today",
+      "meta": "JavaScript · ★ 112,052 · 🍴 6,149 · 📈 1,598 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "让 AI Agent 模拟资深开发者懒惰思维的项目，核心理念是最佳代码是未写的代码。通过减少不必要的代码生成实现高效开发。适用于希望用 AI 做架构决策和代码审查的开发团队。"
+      "summary": "AI Agent 行为塑造工具，让 AI 像资深懒开发者一样思考，优先选择不写代码的解决方案。解决 AI 过度生成冗余代码的问题，适用于开发者在编程辅助场景中追求极简实现与避免过度工程。"
     },
     {
       "sourceId": "github-trending",
       "title": "anthropics/claude-plugins-community",
       "url": "https://github.com/anthropics/claude-plugins-community",
       "excerpt": "Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-directory-submission.",
-      "meta": "Python · ★ 2,072 · 🍴 187 · 📈 537 stars today",
+      "meta": "Python · ★ 2,074 · 🍴 187 · 📈 537 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Claude Cowork 和 Claude Code 的社区插件市场镜像仓库，提供只读浏览。开发者可在此发现社区贡献的插件资源，通过官方提交流程贡献插件，适用于使用 Claude 生态的开发者。"
+      "summary": "Claude Cowork 与 Claude Code 的社区插件市场只读镜像，用户可在此浏览社区贡献的扩展插件。解决官方与社区插件发现困难的问题，适用于开发者寻找特定功能扩展并通过提交链接贡献插件。"
     },
     {
       "sourceId": "github-trending",
       "title": "ConardLi/garden-skills",
       "url": "https://github.com/ConardLi/garden-skills",
       "excerpt": "ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
-      "meta": "CSS · ★ 10,797 · 🍴 1,384 · 📈 136 stars today",
+      "meta": "CSS · ★ 10,800 · 🍴 1,384 · 📈 136 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "ConardLi 维护的开源 AI Skills 合集，涵盖网页设计、知识检索、图像生成等技能模块。适用于需要扩展 AI Agent 能力的开发者和产品团队，可直接集成到现有工作流。"
+      "summary": "ConardLi 开源的 AI Skills 集合，涵盖网页设计、知识检索、图像生成等能力。解决 Agent 缺乏即用型技能模块的问题，适用于开发者快速为 AI 助手扩展特定领域技能以完成复杂任务。"
     },
     {
       "sourceId": "github-trending",
       "title": "browser-use/browser-use",
       "url": "https://github.com/browser-use/browser-use",
       "excerpt": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
-      "meta": "Python · ★ 110,692 · 🍴 12,175 · 📈 135 stars today",
+      "meta": "Python · ★ 110,694 · 🍴 12,175 · 📈 135 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "使网站可被 AI Agent 访问和操作的自动化工具，支持在线任务自动化执行。面向需要 Web 自动化的开发者和运维人员，典型场景包括数据抓取、表单填写和流程自动化。"
+      "summary": "让网站对 AI Agent 可访问的自动化工具，支持便捷执行在线任务操作。解决 AI 无法直接交互网页元素的问题，适用于开发者和自动化工程师构建网页数据抓取、表单提交等浏览器自动化流程。"
     },
     {
       "sourceId": "github-trending",
       "title": "K-Dense-AI/scientific-agent-skills",
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "excerpt": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigrav",
-      "meta": "Python · ★ 34,579 · 🍴 3,353 · 📈 130 stars today",
+      "meta": "Python · ★ 34,583 · 🍴 3,353 · 📈 130 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "面向科研场景的 AI Agent 技能库，将通用 Agent 转为 AI 科学家，提供 163 个验证技能和 100+ 科学数据库覆盖生物等领域。全球 17.5 万+ 科学家使用，适用于科研自动化和文献分析。"
+      "summary": "将任意 AI Agent 转化为科研助手的技能库，提供 163 个经验证技能与 100+ 科学数据库接口。解决通用 AI 缺乏科研领域专业能力的问题，全球超 17.5 万科学家使用，适用于科研人员的文献分析与实验数据处理场景。"
     },
     {
       "sourceId": "github-trending",
       "title": "marin-community/marin",
       "url": "https://github.com/marin-community/marin",
       "excerpt": "Open-source framework for the research and development of foundation models.",
-      "meta": "Python · ★ 2,373 · 🍴 208 · 📈 443 stars today",
+      "meta": "Python · ★ 2,374 · 🍴 208 · 📈 443 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "开源的基础模型研发框架，支持模型训练、评估和部署全流程。面向 AI 研究人员和工程师，适用于大语言模型和多模态模型的研究与开发，降低基础设施搭建成本。"
+      "summary": "面向基础模型研发的开源框架，支持模型训练与研究的全流程开发。解决大模型研究复现与工程化门槛高的问题，适用于 AI 研究员和工程师在实验环境中迭代、训练并评估基础模型架构。"
     },
     {
       "sourceId": "github-trending",
       "title": "VoltAgent/awesome-agent-skills",
       "url": "https://github.com/VoltAgent/awesome-agent-skills",
       "excerpt": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
-      "meta": "★ 32,463 · 🍴 3,443 · 📈 488 stars today",
+      "meta": "★ 32,464 · 🍴 3,443 · 📈 488 stars today",
       "category": "tech",
-      "source": "GitHub Trending",
-      "summary": "收录 1000+ Agent 技能的精选合集，来自官方开发团队和社区贡献，兼容 Claude Code、Codex、Gemini CLI、Cursor 等主流工具。面向构建 AI 应用的开发者，适用于快速获取和复用 Agent 能力。"
+      "source": "GitHub Trending"
     },
     {
       "sourceId": "v2ex-hot",
@@ -394,7 +392,7 @@
       "publishedAt": "2026-08-26T00:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "旅游平台loveholidays利用OpenAI Codex降低软件开发门槛，使全公司各团队均可参与构建软件，将创意更快转化为产品，实现业务范围内软件开发的普及化。"
+      "summary": "旅游平台loveholidays使用OpenAI Codex降低软件开发门槛，使各业务团队能将创意快速转化为产品，提升了全公司的开发效率与产品迭代速度。"
     },
     {
       "sourceId": "openai-news",
@@ -404,7 +402,7 @@
       "publishedAt": "2026-08-25T07:05:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI首席财务官Sarah Friar阐述AI智能实现的「全栈」逻辑，指出芯片、算力、模型与产品各层面的技术进步正相互叠加，以更低成本和更大规模交付更实用的智能能力。"
+      "summary": "OpenAI首席财务官Sarah Friar撰文，阐述芯片、计算、模型与产品各层的进步如何相互叠加，从而以更低成本在更大规模上提供更智能、更实用的服务。"
     },
     {
       "sourceId": "openai-news",
@@ -414,7 +412,7 @@
       "publishedAt": "2026-08-25T07:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI公布自研推理芯片Jalapeño的首批测试结果，该芯片在AI推理任务中实现了行业领先的吞吐量与低延迟，具备更高的能效与更快速度。"
+      "summary": "OpenAI公布自研推理芯片Jalapeño的初步结果，数据显示该芯片在AI推理方面实现了行业领先的速度和能效，具备更高吞吐量与更低延迟。"
     },
     {
       "sourceId": "openai-news",
@@ -423,8 +421,7 @@
       "excerpt": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West.",
       "publishedAt": "2026-08-25T00:00:00.000Z",
       "category": "tech",
-      "source": "OpenAI News",
-      "summary": "OpenAI封禁了一批源自俄罗斯的可疑账号，这些账号利用AI推广一家虚构的以色列智库及一个亲俄批西方的「主权指数」，实施隐蔽的舆论影响行动。"
+      "source": "OpenAI News"
     },
     {
       "sourceId": "openai-news",
@@ -434,7 +431,7 @@
       "publishedAt": "2026-08-25T00:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI为ChatGPT Work和Codex推出Admin管理插件，支持分析工作区使用情况、管理成员与权限、调整配额限制及处理管理请求等功能。"
+      "summary": "OpenAI为ChatGPT Work和Codex推出Admin管理插件，帮助管理员分析工作区使用情况、管理成员权限、调整使用额度并处理管理请求。"
     },
     {
       "sourceId": "openai-news",
@@ -939,7 +936,7 @@
       "publishedAt": "2026-08-26T00:00:00.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "Hugging Face发布技术博客，介绍如何使用Sentence Transformers框架训练和微调多向量嵌入模型，为开发者提供多向量编码模型的训练与优化方法指导。"
+      "summary": "Hugging Face博客介绍了如何使用Sentence Transformers训练和微调多向量嵌入模型，旨在提升文本检索与表示的效果，为开发者提供相关技术指南。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -949,7 +946,7 @@
       "publishedAt": "2026-08-25T15:14:14.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "Hugging Face发布IBM Granite 4.2大语言模型的技术博客，介绍该系列模型的构建方式与架构设计。"
+      "summary": "IBM在Hugging Face博客上发布Granite 4.2大语言模型，详细介绍了该模型的架构设计与构建方法，旨在为企业提供高效的开源AI解决方案。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -959,7 +956,7 @@
       "publishedAt": "2026-08-25T11:39:24.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "Multiverse Computing在Hugging Face发布技术博客，介绍「量化感知修复」技术，通过该技术压缩的4位模型在性能上超越了原始全精度模型。"
+      "summary": "Multiverse Computing发布「量化感知修复」技术，通过4位压缩量化使模型在大幅减小体积的同时，性能超越原始全精度模型，突破模型压缩的精度瓶颈。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -969,7 +966,7 @@
       "publishedAt": "2026-08-25T00:00:00.000Z",
       "category": "tech",
       "source": "Hugging Face Blog",
-      "summary": "Hugging Face发布Gradio AI工作流指南，介绍如何通过Gradio完成AI工作流的搭建、运行与部署，帮助开发者实现从开发到上线的完整流程。"
+      "summary": "Hugging Face博客发布了Gradio中AI工作流的构建指南，详细介绍了如何连接组件、运行任务并完成部署，帮助开发者快速搭建AI应用界面。"
     },
     {
       "sourceId": "huggingface-blog",
@@ -1213,7 +1210,7 @@
       "publishedAt": "2026-08-26T00:00:00.000Z",
       "category": "tech",
       "source": "TLDR AI",
-      "summary": "TLDR AI本期汇总三项动态：OpenAI推出自研项目Jalapeño，Perplexity发布便携计算设备，以及Claude整合记忆功能。"
+      "summary": "本期TLDR AI涵盖：OpenAI推出自研推理芯片Jalapeño，Perplexity发布便携式计算机产品，以及Claude模型新增记忆结合功能，提升信息留存能力。"
     },
     {
       "sourceId": "tldr-ai",
@@ -1664,7 +1661,7 @@
       "publishedAt": "2026-08-25T02:50:57.000Z",
       "category": "tech",
       "source": "Latent Space",
-      "summary": "Latent Space报道，AI领域知名人物吴恩达（Andrew Ng）开始涉足AI工程方向的关注与内容报道，指出AI工程正成为行业发展的必然趋势。"
+      "summary": "AI领域知名专家吴恩达开始涉足AI工程领域。Latent Space指出，这位行业传奇人物正关注AI工程化这一必然趋势，探讨其发展方向与行业影响。"
     },
     {
       "sourceId": "latent-space",
@@ -1845,7 +1842,7 @@
       "publishedAt": "2026-08-26T09:00:00.000Z",
       "category": "tech",
       "source": "MIT Tech Review AI",
-      "summary": "MIT科技评论编辑撰文探讨「在AI时代成长」的议题，反思从孩子出生起便为其创建数字身份、在网络分享照片等行为，指出父母在子女尚未具备自主意识时，就已为其建立了庞大的数字足迹，引发对隐私与AI时代的深层思考。"
+      "summary": "MIT科技评论发文探讨在AI时代下，父母如何在孩子出生后即为其创建数字足迹，讨论了在人工智能时代数据隐私和数字身份的相关问题。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -1855,7 +1852,7 @@
       "publishedAt": "2026-08-26T09:00:00.000Z",
       "category": "tech",
       "source": "MIT Tech Review AI",
-      "summary": "MIT科技评论报道，谜题和游戏自AI发展初期便发挥核心作用。开发者通过各类游戏测试来检验AI模型的智能进展，正如人类用填字游戏测试自身智力。文章指出当前AI模型在部分智力测试中仍存在明显不足。"
+      "summary": "MIT科技评论指出，自机器学习概念提出以来， puzzles和游戏一直是AI发展的核心测试手段。文章通过一系列逻辑谜题测试当前AI模型的智能水平，发现模型在部分测试中表现不佳。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -1865,7 +1862,7 @@
       "publishedAt": "2026-08-26T07:01:00.000Z",
       "category": "tech",
       "source": "MIT Tech Review AI",
-      "summary": "比尔·盖茨在华盛顿州柯克兰接受MIT科技评论采访时表示，人类已经跨过了AI的危险阈值。文章探讨在AI风险已成为现实的背景下，社会与技术界应如何应对这一挑战。"
+      "summary": "比尔·盖茨表示，人类已经跨越了人工智能的危险阈值。文章在西雅图柯克兰的盖茨创投会议室探讨了AI风险跨越临界点后的应对策略与未来发展方向。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -1875,7 +1872,7 @@
       "publishedAt": "2026-08-25T09:00:00.000Z",
       "category": "tech",
       "source": "MIT Tech Review AI",
-      "summary": "MIT科技评论记者探访上海一场人形机器人展会。中国将具身智能纳入最新五年规划，人形机器人成为推动AI融入日常生活的重要战略方向，在中国正迎来发展热潮。"
+      "summary": "记者探访上海一场人形机器人「嘉年华」。中国正将具身智能作为五年规划重点，推动机器人融入日常生活，加速人工智能在物理系统的应用落地。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -1940,7 +1937,7 @@
       "category": "tech",
       "meta": "@TryLiveAvatar · 806 粉丝 · 973.2K 阅 · 504 赞 · 158 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "LiveAvatar 宣布取消并发限制，价格降至每分钟 0.01 美元，可同时运行一万个数字人头像。产品策略从限制用量转向以极低价格抢占大规模并发市场。"
+      "summary": "LiveAvatar 宣布取消并发限制，价格降至每分钟 0.01 美元。用户可同时运行一个或上万个虚拟人，大幅降低大规模调用门槛。这是一次产品定价策略调整，直接影响成本敏感型场景的可行性。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1951,7 +1948,7 @@
       "category": "tech",
       "meta": "@chddaniel · 25.5K 粉丝 · 299.3K 阅 · 532 赞 · 26 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "用 Grok Bot 运营 3 个 X 账号作为一个内容系统，覆盖创意生成、发帖和回复，获得 6980 万曝光、32 万点赞。附完整实操指南，属 AI 自动化社媒运营案例。"
+      "summary": "用 Grok Bot 驱动 3 个 X 账号组成统一内容系统，覆盖选题、发帖、回复全流程，累计获得 6980 万曝光、32.1 万点赞。附完整操作指南，展示 AI 自动化社媒运营的实际变现路径。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1962,7 +1959,7 @@
       "category": "tech",
       "meta": "@P_Bonnet · 5.7K 粉丝 · 262.7K 阅 · 519 赞 · 74 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "从铝业贸易的历史视角反思 AI 基础设施建设：市场普遍担忧算力投入将泡沫化崩盘，博主逆向思考「如果一切顺利会怎样」，探讨 AI 价值链长期受益逻辑。"
+      "summary": "从铝业交易案例切入，探讨 AI 基础设施建设「一切顺利」的乐观情景，反驳当前 AI 投资泡沫即将破裂的主流叙事。角度较新颖，以具体行业案例推演 AI 算力需求的长期增长逻辑。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1973,7 +1970,7 @@
       "category": "tech",
       "meta": "@johnbai · 11.7K 粉丝 · 181.3K 阅 · 565 赞 · 29 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "SpaceXAI 用 Grok Bot 本身来设计 Grok Bot 的交互与界面。核心观点：Agent 能将创意直接落地，设计师的工作重心应转向探索什么值得做，而非手动给想法赋形。"
+      "summary": "SpaceXAI 团队探索用 AI agent 将设计想法直接转化为产品原型，讨论这种变化对设计师角色和工作流的影响。核心观点是设计流程从「赋予想法以形式」转向用 agent 快速验证想法。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1984,7 +1981,7 @@
       "category": "tech",
       "meta": "@harsehaj · 3.3K 粉丝 · 135.1K 阅 · 507 赞 · 35 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "在 BrowserBase 实习期间独立搭建 blogEO 引擎，能自动审计、改写和生成 SEO/AEO 优化的博客内容，实现端到端自动化，属于 AI 驱动内容增长的工程实践。"
+      "summary": "在 Browserbase 实习期间独立完成 blogEO 项目，构建一个能审计、重写、生成 SEO/AEO 优化博客的自动化引擎。涵盖完整工程实现过程，展示用 AI 自动化内容生产与搜索引擎优化的实践路径。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -1995,7 +1992,7 @@
       "category": "tech",
       "meta": "@VibeMarketer_ · 38.5K 粉丝 · 129.7K 阅 · 504 赞 · 50 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "教程教企业将团队对 AI 的每次纠错、决策和工作流沉淀为一个持续进化的「公司大脑」，让所有人的 AI 使用水平共同提升，属组织级 prompt 资产管理新角度。"
+      "summary": "将团队对 AI 的每次纠正、决策和有用工作流沉淀为一个持续进化的「企业大脑」，让全员受益。核心思路是把散落的 prompt 和经验系统化，解决团队 AI 能力不共享、重复试错的痛点。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2006,7 +2003,7 @@
       "category": "tech",
       "meta": "@EXM7777 · 132.1K 粉丝 · 126.3K 阅 · 504 赞 · 40 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "拆解 Grok Bot 运作机制并提供 10 个变现工作流，每个工作流配备一个 24 小时独立运行的专用 bot，覆盖从流量到现金的自动化商业闭环。属实操变现金领。"
+      "summary": "拆解 Grok Bot 的使用方法，给出 10 个能直接驱动业务变现的工作流模板，每个工作流配一个专用 bot 全天候运行。属于工具实操类内容，强调按场景拆分专用 agent 的思路。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2016,8 +2013,7 @@
       "publishedAt": "2026-08-24T16:49:05.000Z",
       "category": "tech",
       "meta": "@chamath · 2.4M 粉丝 · 81.1K 阅 · 595 赞 · 52 转",
-      "source": "X 推文 (AttentionVC)",
-      "summary": "深度分析算力期货市场前景。引用贝莱德 CEO 预测算力将成新资产类别，探讨当前算力短缺如何推动「算力期货」成为下一个万亿美元级衍生品市场。属宏观前瞻视角。"
+      "source": "X 推文 (AttentionVC)"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2028,7 +2024,7 @@
       "category": "tech",
       "meta": "@GoogleCloudTech · 1.3M 粉丝 · 35.3K 阅 · 526 赞 · 72 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "探讨「脚手架工程」（harness engineering）概念：如何在不手写一行代码的前提下交付软件产品。核心在编排方式——让 AI 生成全部代码而人工只设计约束与验证框架。"
+      "summary": "讨论「Harness Engineering」——如何在零手写代码的情况下交付软件产品。核心在于工程编排层的设计而非传统编码，属于 AI 生成代码后软件交付方式变化的深度探讨。"
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2039,7 +2035,7 @@
       "category": "tech",
       "meta": "@_jaydeepkarale · 31.1K 粉丝 · 24.7K 阅 · 506 赞 · 86 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "分阶段 AI 工程师入门路线图，每阶段推荐具体课程、文档和书籍。区别于泛泛的技能清单，强调可执行的学习路径，适合零基础到可就业水平的系统化进阶。"
+      "summary": "分阶段 AI 工程师学习路线图，每阶段推荐具体课程、文档和书籍，而非泛泛罗列技能关键词。区别于常见的「技能清单式」路线图，强调可执行的学习路径和资源优先级。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2049,7 +2045,7 @@
       "publishedAt": "2026-08-26T14:25:20.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "Vanguard宣布收购财富管理平台Altruist。Vanguard CEO Salim Ramji与Altruist CEO Jason Wenk表示，此举旨在提升财务顾问的可及性。"
+      "summary": "先锋集团CEO萨利姆·拉姆吉与Altruist CEO杰森·温克表示，双方决定合并资产，致力于让财务顾问服务更具可及性。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2086,7 +2082,7 @@
       "publishedAt": "2026-08-26T13:46:26.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "北欧地区多家大型公司和富裕投资者正推动建立统一的区域性证券交易所的提案。"
+      "summary": "北欧地区部分最大企业与富裕投资者正推进一项提案，拟创建统一的区域性证券交易所。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2096,7 +2092,7 @@
       "publishedAt": "2026-08-26T13:42:03.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "Wolfe Research首席经济学家Stephanie Roth预计经济数据将降温，美联储有望在9月「可信地」避免加息。"
+      "summary": "Wolfe Research首席经济学家斯蒂芬妮·罗斯预计未来经济数据将降温，使美联储「可信」地在9月避免加息。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2133,7 +2129,7 @@
       "publishedAt": "2026-08-26T13:19:22.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "Milei治下的阿根廷从狂热走向停滞。银行和咨询机构下调增长预期，面对2027年大选，通胀下降与迟迟未至的经济复苏成为选民关注焦点。"
+      "summary": "米莱治下的阿根廷从狂热走向停滞，银行与咨询机构下调增长预期，通胀回落与迟迟未至的经济复苏成为影响选民的焦点。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2143,7 +2139,7 @@
       "publishedAt": "2026-08-26T13:07:23.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "Prudential Plc计划以最高3.27亿美元出售印度第二大资产管理公司2%股份，以符合最低公众持股比例规定。"
+      "summary": "保诚集团计划以最高3.27亿美元出售印度第二大资产管理公司2%股份，以遵守最低公众持股比例规定。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2153,7 +2149,7 @@
       "publishedAt": "2026-08-26T12:55:16.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "美联储首选通胀指标——核心PCE指数7月环比上涨0.2%，同比上涨3.3%。经通胀调整后消费者支出持平。"
+      "summary": "美联储首选通胀指标——核心PCE指数7月环比上涨0.2%，同比上涨3.3%；经通胀调整后的消费者支出环比持平。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2414,7 +2410,8 @@
       "excerpt": "TWG Global hits out at ‘multipronged attacks’ on investment empire, which has stakes in high-profile sports teams",
       "publishedAt": "2026-08-26T14:35:40.000Z",
       "category": "finance",
-      "source": "Financial Times"
+      "source": "Financial Times",
+      "summary": "马克·沃尔特旗下的TWG Global否认「贱卖」及「欺诈」指控，称其持有知名体育球队股份的投资帝国正遭受多方攻击。"
     },
     {
       "sourceId": "ft-companies",
@@ -2424,7 +2421,7 @@
       "publishedAt": "2026-08-26T13:57:09.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "Meta同意支付最高167亿美元，以和解涉及加州的儿童社会媒体伤害诉讼案，该案涉及儿童保护不力的指控。"
+      "summary": "Meta同意支付最高167亿美元，以了结加州一项涉及儿童保护不力指控的社交媒体伤害诉讼案件。"
     },
     {
       "sourceId": "ft-companies",
@@ -2434,7 +2431,7 @@
       "publishedAt": "2026-08-26T13:38:50.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "Victory Capital以70亿美元收购First Eagle。此前这家总部位于得州的投资公司竞购Janus Henderson失败。"
+      "summary": "Victory Capital将以70亿美元收购First Eagle，此前这家总部位于得州的投资公司今年竞购Janus Henderson失败。"
     },
     {
       "sourceId": "ft-companies",
@@ -2444,7 +2441,7 @@
       "publishedAt": "2026-08-26T12:48:52.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "航运业高管称伊朗局势接近乌克兰式僵局。运费维持高位，油价因伊朗与阿曼讨论重新开放霍尔木兹海峡的谈判而回落。"
+      "summary": "航运高管称伊朗战争正接近类似乌克兰的僵局，与此同时运费率维持纪录高位，油价因伊朗与阿曼重新开放霍尔木兹海峡的谈判回落。"
     },
     {
       "sourceId": "ft-companies",
@@ -2661,7 +2658,7 @@
       "publishedAt": "2026-08-26T14:10:17.000Z",
       "category": "finance",
       "source": "BBC Business",
-      "summary": "Meta同意支付最高171亿美元，以和解加州联邦法院审理的涉及29个州的社会媒体诉讼案。"
+      "summary": "Meta同意支付最高171亿美元，以了结加州联邦法院审理的由29个州提起的社交媒体相关诉讼。"
     },
     {
       "sourceId": "bbc-business",
@@ -2671,7 +2668,7 @@
       "publishedAt": "2026-08-26T14:41:02.000Z",
       "category": "finance",
       "source": "BBC Business",
-      "summary": "英国改革党议员Robert Jenrick提议，民众致电税务海关总署等待超过30分钟可获得30英镑税收抵免。"
+      "summary": "英国改革党提议，民众致电税务海关总署等待超30分钟可获30英镑税收抵免，该方案由罗伯特·詹里克宣布。"
     },
     {
       "sourceId": "bbc-business",
@@ -3194,7 +3191,7 @@
       "publishedAt": "2026-08-26T14:42:03.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "巴基斯坦医院火灾致14名婴儿死亡，目击者称病房门被锁住。院方回应称门未上锁，而是安排保安值守以保护婴儿安全。"
+      "summary": "巴基斯坦医院火灾致14名婴儿死亡，目击者称病房门被锁。院方回应称门未上锁，由安保人员值守以保护婴儿。"
     },
     {
       "sourceId": "bbc-world",
@@ -3509,8 +3506,7 @@
       "excerpt": "More than 380 tourists among those unaccounted for after homes, roads, bridges and power plants swept away Nepal-Tibet floods – latest updates At least 95 people have died and hundreds are missing after flash floods ⁠hit the Himalayan border areas of ⁠Nepal and Tibet in China, with officials saying ",
       "publishedAt": "2026-08-26T14:07:38.000Z",
       "category": "politics",
-      "source": "The Guardian",
-      "summary": "尼泊尔与西藏边境山洪暴发，已致至少95人死亡、数百人失踪，其中逾380人为游客。洪水冲毁房屋、道路、桥梁及电站设施。"
+      "source": "The Guardian"
     },
     {
       "sourceId": "guardian-world",
@@ -3601,7 +3597,7 @@
       "publishedAt": "2026-08-26T14:40:15.000Z",
       "category": "politics",
       "source": "The Guardian",
-      "summary": "欧洲夏季遭遇致命高温与野火，暴露选民要求应对气候变化与政界不愿做出长期抉择之间的鸿沟日益扩大，欧洲领导人对此保持沉默。"
+      "summary": "致命高温与野火暴露欧洲选民要求行动与政客不愿面对全球变暖长期抉择之间的鸿沟，欧洲领导人在夏季气候冲击后保持沉默。"
     },
     {
       "sourceId": "guardian-world",
@@ -3611,7 +3607,7 @@
       "publishedAt": "2026-08-26T14:36:19.000Z",
       "category": "politics",
       "source": "The Guardian",
-      "summary": "法国空乘Sophie Lainault因累计飞行超12600小时患乳腺癌，法院裁定其癌症为职业病，系法国航空业首例获认定的职业病案件。"
+      "summary": "法国空乘Sophie Lainault在法航工作期间累计飞行超12600小时，其乳腺癌被法院认定为职业病，为该国航空业首例。"
     },
     {
       "sourceId": "guardian-world",
@@ -3693,7 +3689,7 @@
       "publishedAt": "2026-08-26T14:47:41.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "尼泊尔与西藏交界喜马拉雅河谷地区爆发洪水，已造成至少72人死亡、数百人失踪，失踪者包括边防人员、港口工人和外国游客。"
+      "summary": "尼泊尔与西藏交界喜马拉雅河谷地区暴发洪水，已致至少72人死亡、数百人失踪，失踪者包括边防人员、港口工人及外国游客。"
     },
     {
       "sourceId": "nyt-world",
@@ -3703,7 +3699,7 @@
       "publishedAt": "2026-08-26T14:47:36.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "特朗普政府加沙问题特使尼克拉伊·姆拉德诺夫批评以色列持续空袭哈马斯，指其拒绝美国支持的解除武装方案，危及加沙停火协议。"
+      "summary": "加沙和平委员会高级代表Nickolay Mladenov批评以色列在拒绝美方案武装哈马斯计划后持续空袭，指其危及停火协议。"
     },
     {
       "sourceId": "nyt-world",
@@ -3731,7 +3727,7 @@
       "publishedAt": "2026-08-26T14:46:43.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "巴基斯坦首都伊斯兰堡最大医院发生火灾，导致14名新生儿死亡，事件已引发政治争议，反对派在官员视察现场时高喊「停止杀害我们的孩子」。"
+      "summary": "巴基斯坦首都伊斯兰堡最大医院发生火灾，14名新生儿死亡。反对派支持者向现场视察官员高呼「停止杀害我们的孩子」，事件已成政治议题。"
     },
     {
       "sourceId": "nyt-world",
@@ -3758,8 +3754,7 @@
       "excerpt": "Iran and Oman said they would create a temporary shipping lane and clear mines in the waterway. Global oil prices eased after the joint announcement.",
       "publishedAt": "2026-08-26T14:03:18.000Z",
       "category": "politics",
-      "source": "NYT World",
-      "summary": "伊朗与阿曼宣布将在霍尔木兹海峡开辟临时航道并清除水雷，全球油价因这一联合声明出现回落。"
+      "source": "NYT World"
     },
     {
       "sourceId": "nyt-world",
@@ -3823,7 +3818,7 @@
       "publishedAt": "2026-08-26T14:08:36.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "中国官方媒体报道称，尼泊尔边境一处港口在洪水中出现重大人员伤亡。该港口位于尼泊尔与中国西藏交界地区。"
+      "summary": "中国官方媒体称，中尼边境一处港口在洪灾中出现「重大」人员伤亡。"
     },
     {
       "sourceId": "nyt-world",
@@ -3833,7 +3828,7 @@
       "publishedAt": "2026-08-26T14:47:39.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "尼泊尔与中国西藏交界处喜马拉雅河谷地区遭遇洪水侵袭，洪峰沿河谷冲刷而下，造成严重人员伤亡与失踪。"
+      "summary": "尼泊尔与西藏交界喜马拉雅河谷地区遭遇洪水侵袭，洪水席卷下游地区。"
     },
     {
       "sourceId": "nyt-world",
@@ -4059,7 +4054,7 @@
       "publishedAt": "2026-08-26T14:15:00.000Z",
       "category": "politics",
       "source": "DW 中文",
-      "summary": "受欧洲市场需求及人工智能与数字化浪潮推动，德国8月出口景气指数强劲反弹，升至四年半最高水平。对华出口仍承压，但多个工业制造板块预期好转。"
+      "summary": "受欧洲市场需求旺盛及人工智能与数字化浪潮推动，8月德国出口景气指数跃升至四年半最高水平。尽管对华出口承压，关键工业板块预期明显好转。"
     },
     {
       "sourceId": "dw-chinese",
@@ -4069,7 +4064,7 @@
       "publishedAt": "2026-08-26T14:14:00.000Z",
       "category": "politics",
       "source": "DW 中文",
-      "summary": "台湾基隆地检署起诉九人，包括英伟达与美超微台湾合作企业员工，理由是涉嫌串谋向中国非法出售英伟达高级人工智能芯片服务器。"
+      "summary": "台湾基隆地检署起诉包括英伟达和美超微在台合作企业员工在内的九人，理由是涉嫌向中国非法出售英伟达高级AI芯片服务器。"
     },
     {
       "sourceId": "dw-chinese",
@@ -4079,7 +4074,7 @@
       "publishedAt": "2026-08-26T14:10:00.000Z",
       "category": "politics",
       "source": "DW 中文",
-      "summary": "美国中情局局长前往俄罗斯与俄方举行会谈，会谈内容未对外透露。克里姆林宫淡化对两国政治关系改善的期望值。"
+      "summary": "美国中情局局长前往俄罗斯进行会谈，会谈内容未对外透露。克里姆林宫淡化在两国政治关系方面的期望。"
     },
     {
       "sourceId": "dw-chinese",
@@ -4326,23 +4321,43 @@
     },
     {
       "sourceId": "aljazeera",
+      "title": "Israel extends campaign against UNRWA to advance West Bank annexation",
+      "url": "https://www.aljazeera.com/news/2026/8/26/israel-extends-campaign-against-unrwa-to-advance-west-bank-annexation?traffic_source=rss",
+      "excerpt": "Raid on UNRWA centre exposes Israel's strategic push to erase refugee rights, seal West Bank annexation, analysts say.",
+      "publishedAt": "2026-08-26T14:42:36.000Z",
+      "category": "politics",
+      "source": "Al Jazeera",
+      "summary": "以色列突袭联合国近东巴勒斯坦难民救济和工程处（UNRWA）中心，分析人士指其意在消除难民权利、推动西岸地区吞并。"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "Kremlin says CIA head met Russian intelligence officials, but not Putin",
+      "url": "https://www.aljazeera.com/news/2026/8/26/kremlin-says-cia-head-met-russian-intelligence-officials-but-not-putin?traffic_source=rss",
+      "excerpt": "CIA's Ratcliffe has met with Russian intel officials in Moscow, but not President Putin; Kremlin calls talks 'positive'.",
+      "publishedAt": "2026-08-26T14:30:24.000Z",
+      "category": "politics",
+      "source": "Al Jazeera",
+      "summary": "美国中情局局长Ratcliffe在莫斯科与俄罗斯情报官员会面，但未与普京会面。克里姆林宫称会谈是「积极」的。"
+    },
+    {
+      "sourceId": "aljazeera",
       "title": "Meta agrees to settlement, platform changes in youth addiction case",
       "url": "https://www.aljazeera.com/economy/2026/8/26/meta-agrees-to-settlement-platform-changes-in-youth-addiction-case?traffic_source=rss",
       "excerpt": "Meta settles $16.68bn lawsuit over child addiction claims, agreeing to major changes in Facebook and Instagram features.",
       "publishedAt": "2026-08-26T14:21:23.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "Meta就166.8亿美元儿童成瘾诉讼达成和解，同意对Facebook和Instagram功能进行重大调整，以解决平台致青少年成瘾问题。"
+      "summary": "Meta就青少年成瘾诉讼达成和解，同意支付166.8亿美元并对Facebook和Instagram功能进行重大调整。"
     },
     {
       "sourceId": "aljazeera",
-      "title": "Trump tells Al Jazeera “not in a hurry” for Iran to return to talks",
+      "title": "Trump tells Al Jazeera ‘not in a hurry’ for Iran to return to talks",
       "url": "https://www.aljazeera.com/economy/2026/8/26/trump-tells-al-jazeera-not-in-a-hurry-for-iran-to-return-to-talks?traffic_source=rss",
-      "excerpt": "\"I have no time schedule,\" Trump says when asked when he expects Iran to return to the negotiating table.",
+      "excerpt": "'I have no time schedule,' Trump says when asked when he expects Iran to return to the negotiating table.",
       "publishedAt": "2026-08-26T14:16:29.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "特朗普接受半岛电视台采访时表示，不急于让伊朗重返谈判桌，称「我没有时间表」，对伊朗恢复谈判时间持不紧迫态度。"
+      "summary": "特朗普接受半岛电视台采访时表示，不急于让伊朗重返谈判桌，称自己「没有时间表」。"
     },
     {
       "sourceId": "aljazeera",
@@ -4530,24 +4545,6 @@
       "url": "https://www.aljazeera.com/news/2026/8/26/is-japan-trying-to-build-bridges-with-china-after-taiwan-spat?traffic_source=rss",
       "excerpt": "Experts say Japanese lawmakers' visit to Beijing signals an attempt by Japan to defrost its worst China rift in decades.",
       "publishedAt": "2026-08-26T10:28:52.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "One US dollar now costs 2 million rials in Iran, and here’s what it can buy",
-      "url": "https://www.aljazeera.com/economy/2026/8/26/one-us-dollar-now-costs-2-million-rials-in-iran-and-heres-what-it-can-buy?traffic_source=rss",
-      "excerpt": "Sanctions and the US-Israel war on Iran have left the country's people unable to keep pace with rising prices.",
-      "publishedAt": "2026-08-26T10:00:05.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "More than 90 killed, hundreds missing after Nepal flash flood",
-      "url": "https://www.aljazeera.com/news/2026/8/26/at-least-eight-killed-in-nepal-flash-floods-that-swept-away-villages-roads?traffic_source=rss",
-      "excerpt": "Across the border, Tibet reported 'major casualties' with people missing in the neighbouring county of Gyirong.",
-      "publishedAt": "2026-08-26T09:48:36.000Z",
       "category": "politics",
       "source": "Al Jazeera"
     },
@@ -4829,9 +4826,9 @@
       "publishedAt": "2026-08-26T09:09:49.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "订阅专属：已对lega配置了相当规模的仓位",
-      "displayExcerpt": "作者表示已对lega相关标的配置了较大仓位，但具体内容仅对订阅用户开放，未公开更多细节。",
-      "summary": "作者称已对lega配置较大仓位，细节仅限订阅用户可见。"
+      "displayTitle": "已向某标的投入较大仓位（仅订阅用户可见）",
+      "displayExcerpt": "作者表示已向某标的分配了较大仓位，但具体内容仅对订阅用户开放，未公开详细标的及金额。",
+      "summary": "作者称已配置较大仓位，细节仅限订阅用户，未透露具体标的。"
     },
     {
       "sourceId": "x-serenity",
@@ -4841,9 +4838,9 @@
       "publishedAt": "2026-08-26T07:38:48.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$SIVE需求火爆，盛宝证券日本应客户要求上线该标的",
-      "displayExcerpt": "作者感叹大量用户向盛宝证券日本请求上线 $SIVE，促使盛宝专门挂牌该标的，足见这家激光公司需求之旺盛。作者感谢盛宝，并对 $SIVE 即将发布的财报及计划中的纳斯达克上市感到期待。盛宝证券日本官方公告称，为回应客户需求，新增该海外标的可供交易。",
-      "summary": "$SIVE需求旺盛，盛宝证券日本应客户要求上线该标的。作者期待 $SIVE 财报及计划中的纳斯达克上市。"
+      "displayTitle": "盛宝日本应客户需求上线 $SIVE，激光公司需求旺盛",
+      "displayExcerpt": "作者表示大量用户向盛宝证券日本（Saxo Japan）请求上线 $SIVE，促使该券商特意将其挂牌，反映出这家激光公司的需求非常强劲。作者对盛宝表示感谢，并期待 $SIVE 即将公布的财报及计划中的纳斯达克上市。盛宝证券公告称响应客户需求新增海外标的交易。",
+      "summary": "$SIVE 因用户需求旺盛被盛宝日本上线，作者期待其财报及纳斯达克上市计划。"
     },
     {
       "sourceId": "x-serenity",
@@ -4853,9 +4850,9 @@
       "publishedAt": "2026-08-26T06:01:15.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "订阅专属：探讨这家市盈率仅1.9倍的记忆体公司",
-      "displayExcerpt": "作者分享对一家市盈率仅1.9倍的记忆体（存储）公司的看法，提到年化数据等关键指标，但完整分析仅向订阅用户开放，未公开具体标的名称与详细内容。",
-      "summary": "作者关注一家市盈率仅1.9倍的存储公司，完整分析仅限订阅用户可见。"
+      "displayTitle": "市盈率仅1.9倍的存储公司分析（仅订阅用户可见）",
+      "displayExcerpt": "作者分享了对一家市盈率仅1.9倍存储公司的看法，涉及年化业绩等分析，但详细内容仅对订阅用户开放。",
+      "summary": "作者关注一家P/E仅1.9倍的存储公司，详细分析仅限订阅用户。"
     },
     {
       "sourceId": "x-serenity",
@@ -4865,9 +4862,9 @@
       "publishedAt": "2026-08-26T00:27:44.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$SMTC跟踪：「瓶颈在轰鸣」，光产品当前可用性比价格更重要",
-      "displayExcerpt": "作者继续跟踪 $SMTC，引用一句话：「瓶颈在轰鸣」，并称当前光产品市场中，「可用性目前比价格更重要」。要点包括：已预订的光学订单短期内预计不会出现下滑，表明公司能顺利将成本上涨转嫁出去。作者据此判断行业供需紧张利好公司。",
-      "summary": "$SMTC光学订单短期内未见下滑，公司能转嫁成本上涨。作者认为光产品市场供给紧张利好公司。"
+      "displayTitle": "$SMTC 光模块订单稳固，作者称供应紧缺比价格更重要",
+      "displayExcerpt": "作者回顾 $SMTC 走势，引用「瓶颈持续放大」并指出当前光器件市场中「供应可得性比价格更重要」。已预订的光学订单近期未见下滑迹象，表明公司能顺利传导成本上涨。作者对订单韧性和定价能力持积极态度。",
+      "summary": "$SMTC 光学订单稳固，成本传导顺利，供应紧缺背景下定价能力强。"
     },
     {
       "sourceId": "x-serenity",
@@ -4877,9 +4874,9 @@
       "publishedAt": "2026-08-25T20:51:59.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "对 $SMTC 及今日所有财报失去兴趣，转而研究一家极具吸引力的存储标的",
-      "displayExcerpt": "作者表示，发现了一家极具吸引力、值得深入研究的存储（记忆体）公司后，已对 $SMTC 及当日所有其他财报报告失去兴趣。具体标的名称及研究细节未在公开内容中披露。",
-      "summary": "作者发现一家极具吸引力的存储标的，转而深入研究，对 $SMTC 等当日财报失去兴趣。"
+      "displayTitle": "发现一家极具研究价值的存储公司，暂别 $SMTC 财报",
+      "displayExcerpt": "作者表示对当天 $SMTC 及其他公司的财报失去了兴趣，因为发现了一家存储公司太过有趣，忍不住要去深入研究，暗示该标的具有较高的关注价值。",
+      "summary": "作者发现一家极具研究价值的存储公司，暂时放下 $SMTC 财报转而深入调研。"
     },
     {
       "sourceId": "x-serenity",
@@ -4889,9 +4886,9 @@
       "publishedAt": "2026-08-25T09:46:32.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$SIVE 两天后发财报，关注光子学共研进展及 $AAOI、$MTSI 相关信号",
-      "displayExcerpt": "两天后 $SIVE 将发布财报，作者表示重点关注以下几点：一是希望获得更多关于光子学共研、认证及合同的可见性。$AAOI 曾表示有多家客户接洽CPO激光器但不得不婉拒；$MTSI 也提到许多客户表达类似需求。作者将从中判断行业趋势。",
-      "summary": "$SIVE 两天后发财报，作者关注光子学共研及合同进展，并参考 $AAOI、$MTSI 的客户需求信号判断行业趋势。"
+      "displayTitle": "$SIVE 两天后发财报，关注光子学合作进展",
+      "displayExcerpt": "作者指出很多人关注 $SIVE 两天后即将公布的财报，他重点关注的包括：光子学联合开发、认证及合同的更多可见性。$AAOI 曾表示多个客户主动接洽寻求CPO激光器但不得不拒绝，$MTSI 也提到多家客户有类似需求，行业需求信号积极。",
+      "summary": "$SIVE 财报在即，作者关注光子学合作进展；$AAOI 和 $MTSI 反映CPO激光器需求强劲。"
     },
     {
       "sourceId": "x-serenity",
@@ -4901,9 +4898,9 @@
       "publishedAt": "2026-08-25T08:26:19.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "仅限订阅者：投资主题回顾",
-      "displayExcerpt": "此帖为仅限订阅者查看的内容，作者凭记忆对当前主要投资主题进行了简要回顾和梳理。由于内容仅向付费订阅者开放，公开信息有限，具体涉及的股票和细节未对外展示。",
-      "summary": "付费订阅专享内容，作者对当前主要投资主题做简要回顾，公开细节有限。"
+      "displayTitle": "仅限订阅者：近期投资主题回顾",
+      "displayExcerpt": "本文为订阅者专属内容，作者凭记忆对近期重点投资主题进行了简要回顾与梳理，供付费读者参考。",
+      "summary": "订阅制内容，作者回顾近期投资主题，细节仅对付费用户开放。"
     },
     {
       "sourceId": "x-serenity",
@@ -4913,9 +4910,9 @@
       "publishedAt": "2026-08-24T18:27:08.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$BE 涨11.83%，但 FAU 瓶颈或成 CPO 路线图关键",
-      "displayExcerpt": "市场关注佩洛西跟单交易推动 $BE 上涨11.83%，但更值得关注的是 CPO（共封装光学）领域的 FAU 瓶颈问题。作者年初曾指出，FAU/Foci 可能成为 $TSM 和 $NVDA CPO 路线图的未来瓶颈，目前一些媒体评论也印证了这一判断。",
-      "summary": "$BE 因跟单交易涨11.83%，但重点在于 FAU 可能成为 $TSM 和 $NVDA CPO 路线图的瓶颈。"
+      "displayTitle": "$BE 涨 11.83%，CPO 供应链 FAU 瓶颈浮现",
+      "displayExcerpt": "市场关注佩洛西跟单交易推动 $BE 上涨 11.83%，但更值得关注的是 CPO 供应链中 FAU 可能成为瓶颈。作者此前曾指出，围绕 $TSM 和 $NVDA 的 CPO 路线图，FAU/Foci 未来可能成为供应瓶颈，近期媒体报道也佐证了这一判断。",
+      "summary": "$BE 因佩洛西跟单涨 11.83%；作者关注 CPO 供应链中 FAU 对 $TSM/$NVDA 路线图可能构成瓶颈。"
     },
     {
       "sourceId": "x-serenity",
@@ -4925,9 +4922,9 @@
       "publishedAt": "2026-08-24T15:23:59.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$NVDA 200亿美元交易后 Groq3 LPX 量产，$NBIS 首批采用",
-      "displayExcerpt": "$NVDA 在达成200亿美元交易后宣布 Groq3 LPX 进入全面量产，$NBIS 成为首个通过 Nebius token 工厂采用该产品的公司。在 Artificial Analysis 基准测试中运行 Gemma 4 31B，达到每秒3400 token、10万 token 上下文，响应速度比最接近的替代方案快4倍。",
-      "summary": "$NVDA 在200亿美元交易后宣布 Groq3 LPX 量产，$NBIS 首批采用，速度达3400 tok/s，快4倍。"
+      "displayTitle": "$NVDA 200 亿美元大单后 Groq3 LPX 量产，$NBIS 首发采用",
+      "displayExcerpt": "$NVDA 在 200 亿美元交易之后宣布 Groq3 LPX 进入全面量产，$NBIS 通过 Nebius token 工厂率先采用。在 Artificial Analysis 基准测试中运行 Gemma 4 31B、100k token 上下文时达到每秒 3,400 token，响应速度比最接近的替代方案快 4 倍。",
+      "summary": "$NVDA 200 亿美元大单后 Groq3 LPX 量产，$NBIS 首发采用，基准测试达 3,400 tok/s，快 4 倍。"
     },
     {
       "sourceId": "x-serenity",
@@ -4937,9 +4934,9 @@
       "publishedAt": "2026-08-24T14:03:08.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "特朗普宣布2027年起对加拿大汽车及钢铁加征50%关税",
-      "displayExcerpt": "特朗普宣布从2027年起对来自加拿大的汽车、汽车零部件和钢铁征收50%关税。作者质疑与加拿大打贸易战的意义，认为应将注意力放在伊朗问题上。作者称这是「经济版诺曼底登陆的开始，有史以来最大规模的金融攻势」。",
-      "summary": "特朗普宣布2027年起对加拿大汽车、零部件及钢铁加征50%关税，作者称其为「经济版D-Day」。"
+      "displayTitle": "特朗普宣布 2027 年起对汽车及钢铁加征 50% 关税",
+      "displayExcerpt": "作者质疑与加拿大打贸易战的意义，认为应聚焦伊朗局势。特朗普宣布自 2027 年起对汽车、汽车零部件及钢铁加征 50% 关税。作者形容这是「黎明开始的经济 D-Day，有史以来最大规模的金融攻势」。",
+      "summary": "特朗普宣布 2027 年起对汽车、零部件及钢铁征 50% 关税，作者称其为「经济 D-Day」。"
     },
     {
       "sourceId": "x-serenity",
@@ -4949,9 +4946,9 @@
       "publishedAt": "2026-08-24T11:35:16.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$XPEV 拆分机器人业务融资超9亿美元，估值逾63亿美元",
-      "displayExcerpt": "$XPEV 将机器人业务拆分并融资超过9亿美元，估值达63亿美元以上。此前 Unitree IPO 后市值约350至360亿美元。而 $NVDA 和 $AMZN 投资的 Agility 估值为25亿美元（投前），作者认为其在商业化方面实际上比小鹏走得更远。",
-      "summary": "$XPEV 拆分机器人业务融资超9亿美元，估值逾63亿美元；Unitree 市值约350至360亿美元。"
+      "displayTitle": "$XPEV 拆分机器人业务融资超 9 亿美元，估值逾 63 亿美元",
+      "displayExcerpt": "$XPEV 剥离机器人业务部门并融资超 9 亿美元，估值超 63 亿美元。此前 Unitree IPO 后市值约 350-360 亿美元；$NVDA 和 $AMZN 支持的 Agility 估值为 25 亿美元。作者认为 Agility 在商业化方面实际上比小鹏更领先。",
+      "summary": "$XPEV 拆分机器人业务融资超 9 亿美元，估值逾 63 亿美元；Unitree 市值约 350-360 亿美元。"
     },
     {
       "sourceId": "x-serenity",
@@ -4961,9 +4958,9 @@
       "publishedAt": "2026-08-24T11:00:56.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$AAOI 6亿美元 ATM 引发争议，作者仍看多并持有大仓位",
-      "displayExcerpt": "围绕 $AAOI 的6亿美元 ATM（按市价发行）融资存在大量误读。作者仍看多 $AAOI 并持有大仓位，但一贯不赞成过度使用 ATM 或稀释股权进行融资，此前对 $IREN 和 $POET 也表达过同样观点。作者将持续关注此事。",
-      "summary": "$AAOI 6亿美元 ATM 融资引发误读，作者仍看多并持有大仓位，但不赞成过度稀释股权融资。"
+      "displayTitle": "$AAOI 6 亿美元 ATM 引发争议，作者仍看多并持有大仓位",
+      "displayExcerpt": "围绕 $AAOI 6 亿美元 ATM 发行市场出现大量误读。作者表示仍看多 $AAOI 且持有大仓位，但一贯不赞成过度使用 ATM 或稀释股权融资，此前对 $IREN 和 $POET 也表达过相同立场。",
+      "summary": "$AAOI 6 亿美元 ATM 引发争议，作者仍看多且持有大仓位，但不赞成过度稀释股权融资。"
     },
     {
       "sourceId": "x-serenity",
@@ -4973,9 +4970,9 @@
       "publishedAt": "2026-08-24T05:10:35.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "贝森特称美国将发动「经济D日」：史上最大规模金融攻势",
-      "displayExcerpt": "据英国《金融时报》报道，美国财长贝森特表示，美国将发起「经济D日」，这是史上针对对手的最大规模金融攻势。美国将针对与伊朗经济和金融体系有往来国家采取行动。新闻发布会于美东时间今日下午1点举行。市场可能对此并不买账。",
-      "summary": "贝森特称美国将对与伊朗往来国家发起史上最大金融攻势，美东时间下午1点开发布会，市场或受冲击。"
+      "displayTitle": "贝森特称美国将发起史上最大金融攻势，针对与伊朗经济往来的国家",
+      "displayExcerpt": "贝森特在英国《金融时报》撰文称：「黎明时分，一场经济D日开始了，这是有史以来针对对手发起的最大规模金融攻势。」美国将 targeting 那些与伊朗经济和金融体系有往来的国家。新闻发布会定于美东时间下午1点举行。市场未必会欢迎这一消息。",
+      "summary": "美国财长贝森特称将发起史上最大金融攻势，针对与伊朗经济往来国家。市场或对此承压。"
     },
     {
       "sourceId": "x-serenity",
@@ -4985,9 +4982,9 @@
       "publishedAt": "2026-08-23T19:43:52.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "中国人形机器人奥运会引热议，$GOOGL出售Boston Dynamics遭质疑",
-      "displayExcerpt": "看了中国人形机器人奥运会的片段后，感觉美国已经被甩在后面。至今难以相信 $GOOGL 当初卖掉了Boston Dynamics，目前美国似乎没有能完成后空翻的人形机器人了。",
-      "summary": "中国人形机器人进展令作者感叹美国落后，质疑 $GOOGL 出售Boston Dynamics的决定。"
+      "displayTitle": "看完中国人形机器人奥运会，感叹 $GOOGL 当年卖掉 Boston Dynamics 令人难以置信",
+      "displayExcerpt": "看完中国人形机器人奥运会的片段后，作者感叹「我们完了」。仍然不敢相信 $GOOGL 当年卖掉了 Boston Dynamics，认为美国目前没有另一台能完成后空翻的人形机器人，在硬件实力上可能已被中国拉开差距。",
+      "summary": "作者观看中国人形机器人赛事后担忧美国落后，遗憾 $GOOGL 出售了 Boston Dynamics。"
     },
     {
       "sourceId": "x-serenity",
@@ -4997,9 +4994,9 @@
       "publishedAt": "2026-08-23T11:29:53.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "X平台粉丝破百万，回顾 $AXTI、$NBIS 及 $AMD 等2025年投资观点",
-      "displayExcerpt": "作者陷入平台身份危机：2025年从 $AXTI 到 $NBIS 的投资观点都已被市场验证，$AMD 周边也火了，意外成为X平台订阅数第一，还获得了中国粉丝起的「白发」昵称，粉丝突破100万。将继续追踪投资观点，寻找下一个方向。",
-      "summary": "作者回顾 $AXTI、$NBIS、$AMD 等2025年观点已兑现，粉丝破百万，将继续追踪投资新方向。"
+      "displayTitle": "X平台身份危机：从 $AXTI 到 $NBIS 的2025年投资思路均已兑现，粉丝突破100万",
+      "displayExcerpt": "作者在X平台发帖感慨出现「身份危机」：从 $AXTI 到 $NBIS 的2025年投资思路已经兑现，$AMD 头巾风潮也来了，意外成为X上订阅数第一的用户，还收获了中国粉丝起的「白发」昵称，粉丝量突破100万。虽然仍会继续追踪投资思路，但下一个支线任务是什么？",
+      "summary": "作者回顾2025年 $AXTI 至 $NBIS 等投资思路均已兑现，粉丝破100万，思考下一步方向。"
     },
     {
       "sourceId": "x-serenity",
@@ -5009,9 +5006,9 @@
       "publishedAt": "2026-08-22T20:40:31.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$RDDT 讨论 $MRVL 两大催化剂：$122亿Google TPU协议与蜘蛛侠新作",
-      "displayExcerpt": "据 $RDDT 讨论，$MRVL 近期有两大催化剂：一是价值 $12.2B 的Google TPU生态系统协议；二是蜘蛛侠「Brand New Day」电影相关话题热度。",
-      "summary": "$MRVL 近期两大催化剂：$12.2B Google TPU协议及蜘蛛侠「Brand New Day」话题热度。"
+      "displayTitle": "$RDDT 认为 $MRVL 近期有两大催化剂：谷歌122亿美元TPU协议与蜘蛛侠新片",
+      "displayExcerpt": "$RDDT 社区讨论认为 $MRVL 近期迎来两个重要催化剂：一是金额达 $12.2B 的谷歌TPU生态系统协议，二是蜘蛛侠电影「Brand New Day」。前者直接利好数据中心芯片业务，后者则被视为更广泛的市场情绪催化因素。",
+      "summary": "$MRVL 近期两大催化剂：谷歌 $12.2B TPU协议及蜘蛛侠新片，受 $RDDT 社区关注。"
     },
     {
       "sourceId": "x-serenity",
@@ -5021,9 +5018,9 @@
       "publishedAt": "2026-08-22T14:54:25.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "美国政府力推太空运输「黄金时代」，$SPCX 与 $RKLB 等受益",
-      "displayExcerpt": "近期阅读美国政府发布的事实清单颇有意思。本周早些时候提到「太空运输黄金时代」，$SPCX 在发射领域独力支撑，如同Faker般carry全场。$RKLB 及其他火箭公司也将受益于2030年前实现1000次发射和再入的目标。",
-      "summary": "美国政府推动太空运输「黄金时代」，$SPCX 与 $RKLB 等火箭公司受益于2030年千次发射目标。"
+      "displayTitle": "美国政府发布「太空运输黄金时代」文件，$SPCX 和 $RKLB 等火箭公司受益",
+      "displayExcerpt": "近期频繁阅读美国政府发布的事实说明书，本周早些发布了「太空运输黄金时代」文件，$SPCX 像Faker一样硬扛发射领域，$RKLB 等其他火箭公司也将从2030年前实现1000次发射与再入目标中受益。本月还发布了其他相关文件。",
+      "summary": "美国政府「太空运输黄金时代」文件利好 $SPCX 与 $RKLB，2030年目标1000次发射。"
     },
     {
       "sourceId": "x-serenity",
@@ -5033,9 +5030,9 @@
       "publishedAt": "2026-08-21T20:47:27.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$AAOI 频繁进行 $500M-$600M ATM 发行，股东结构日益不友好",
-      "displayExcerpt": "当 $AAOI 不断进行 $500M 或 $600M 的ATM（按市价发行）融资时，越来越难继续看好它。虽然运营前景可能转正，但股权结构和融资方式对股东越来越不友好。作者表示非常反感频繁的ATM和持续募资行为。",
-      "summary": "$AAOI 频繁进行 $500M-$600M ATM 发行，运营虽可能转正但融资方式对股东日益不友好。"
+      "displayTitle": "$AAOI 频繁推出5亿至6亿美元ATM发行，融资方式对股东越来越不友好",
+      "displayExcerpt": "作者表示越来越难以支持 $AAOI，因为公司频繁推出5亿或6亿美元的ATM（按市价发行）增发。虽然经营前景可能转好，但股权结构和融资方式对股东越来越不友好。作者非常反感ATM发行和不断的融资行为。",
+      "summary": "$AAOI 频繁推出 $500M-$600M ATM增发，融资方式日益对股东不友好，作者表示难以继续支持。"
     },
     {
       "sourceId": "x-serenity",
@@ -5045,9 +5042,9 @@
       "publishedAt": "2026-08-21T15:01:09.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "Citadel 操作推演：喊紧急加息制造恐慌，低位收购对冲基金资产后唱多AI并抛售",
-      "displayExcerpt": "推文推测Citadel的操作路径：先散布紧急加息预期，引发市场进一步崩盘和清算；随后利率按兵不动，Citadel借机收购被清算的对冲基金组合，买入数十亿美元的持仓资产。接着宣称AI看多逻辑依然成立，推动市场反弹，最后在买盘压力中抛售AI股票。作者表示仅陈述观察到的事实。",
-      "summary": "作者推测Citadel通过散布紧急加息预期制造市场恐慌与清算，低价收购资产后唱多AI推高市场，再在买盘压力中抛售AI股票。"
+      "displayTitle": "Citadel操纵市场猜想：喊话紧急加息引发清算后低价接盘，再唱多AI逢高卖出",
+      "displayExcerpt": "作者推测Citadel的操作路径：先放出紧急加息风声，引发市场进一步崩盘和清算；随后加息未落地，Citadel趁机联系收购被清算的对冲基金资产组合，买入数十亿美元的持仓。接着又称AI看多逻辑依然成立，推动市场反弹，最后在买盘压力下抛售AI股票。",
+      "summary": "作者猜测Citadel通过散布加息言论引发清算，低价收购数十亿美元资产，再借AI看多论推动反弹后高位抛售AI股票。"
     },
     {
       "sourceId": "x-serenity",
@@ -5057,9 +5054,9 @@
       "publishedAt": "2026-08-21T09:40:02.000Z",
       "category": "finance",
       "source": "X Serenity (@aleabitoreddit)",
-      "displayTitle": "$SKHY CPO供应链猜想：SK Hynix正评估Celestial/Ayar，并布局microLED",
-      "displayExcerpt": "针对市场对$SKHY CPO路线图供应链的猜测，作者自行推测SK Hynix正在评估Celestial和Ayar方案，并在第一代部署后着重评估microLED技术。两家公司均已在相关领域投入一段时间研发。此外，Ayar已出现在SK Hynix自己的相关材料中。",
-      "summary": "作者推测$SKHY母公司SK Hynix正评估Celestial/Ayar方案，并在第一代部署后重点布局microLED技术。Ayar已出现在SK Hynix材料中。"
+      "displayTitle": "$SKHY CPO路线图猜测：SK海力士正评估Celestial/Ayar及microLED技术",
+      "displayExcerpt": "作者对$SKHY的CPO路线图供应链进行猜测，认为SK海力士正在评估Celestial/Ayar方案，并在第一代部署之后重点评估microLED技术。两项技术相关方均已布局一段时间，且Ayar已出现在SK海力士自身的展示材料中。",
+      "summary": "作者猜测SK海力士正评估Celestial/Ayar方案，并在首代部署后深入评估microLED，Ayar已出现在其展示材料中。"
     }
   ]
 }
