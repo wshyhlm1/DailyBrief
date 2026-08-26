@@ -216,6 +216,50 @@ function sourceBackedBrief(item: ArticleInput, index: number): BriefItem {
   };
 }
 
+function sourceBackedText(item: ArticleInput): string {
+  return (
+    item.summary ??
+    (item as ArticleInput & { cnSummary?: string }).cnSummary ??
+    item.displayExcerpt ??
+    item.excerpt ??
+    ""
+  )
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function hasLocalizedSourceBackedText(item: ArticleInput): boolean {
+  const text = sourceBackedText(item);
+  if (REPORT_LOCALE === "en") {
+    return /[A-Za-z]/.test(text) && !/[\u3400-\u9fff]/.test(text);
+  }
+  return /[\u3400-\u9fff]/.test(text);
+}
+
+/**
+ * Degraded reports should keep their source-balanced selection, but prefer
+ * articles whose source-backed text is already in the report language. This
+ * matters when the normal digest is unavailable: the enrichment batches are
+ * deliberately smaller than the 60-item digest candidate pool.
+ */
+function selectLocalizedRoundRobin(
+  items: ArticleInput[],
+  limit: number,
+): ArticleInput[] {
+  const localized = selectRoundRobin(
+    items.filter(hasLocalizedSourceBackedText),
+    limit,
+  );
+  if (localized.length >= limit) return localized;
+
+  const localizedUrls = new Set(localized.map((item) => item.url));
+  const remaining = selectRoundRobin(
+    items.filter((item) => !localizedUrls.has(item.url)),
+    limit - localized.length,
+  );
+  return [...localized, ...remaining];
+}
+
 /**
  * Publish an honest source-backed report when the primary Qwen service is
  * unavailable. Titles, URLs and text remain bound to fetched articles or to
@@ -231,9 +275,9 @@ export function buildSourceBackedFallbackReport(
     politics: [],
   };
   for (const article of articles) grouped[article.category].push(article);
-  const tech = selectRoundRobin(grouped.tech, 5).slice(0, 5);
-  const finance = selectRoundRobin(grouped.finance, 5).slice(0, 5);
-  const politics = selectRoundRobin(grouped.politics, 3).slice(0, 3);
+  const tech = selectLocalizedRoundRobin(grouped.tech, 5).slice(0, 5);
+  const finance = selectLocalizedRoundRobin(grouped.finance, 5).slice(0, 5);
+  const politics = selectLocalizedRoundRobin(grouped.politics, 3).slice(0, 3);
   const leadTitles = [tech[0], finance[0], politics[0]]
     .filter((item): item is ArticleInput => Boolean(item))
     .map((item) => item.displayTitle ?? item.title);

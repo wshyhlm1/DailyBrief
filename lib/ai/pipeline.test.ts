@@ -92,3 +92,30 @@ test("source-backed fallback keeps an independently generated translation", () =
 
   assert.equal(report.finance_briefs[0].summary, "中文翻译摘要，保留来源事实。");
 });
+
+test("source-backed fallback prefers localized candidates", () => {
+  const report = buildSourceBackedFallbackReport(
+    [
+      ...Array.from({length: 5}, (_, index) => ({
+        sourceId: `raw-${index}`,
+        source: `Raw Source ${index}`,
+        title: `Raw English headline ${index}`,
+        url: `https://example.test/raw-${index}`,
+        excerpt: `Raw English excerpt ${index}.`,
+        category: "tech" as const,
+      })),
+      ...Array.from({length: 5}, (_, index) => ({
+        sourceId: `localized-${index}`,
+        source: `Localized Source ${index}`,
+        title: `Localized English headline ${index}`,
+        url: `https://example.test/localized-${index}`,
+        excerpt: `Original English excerpt ${index}.`,
+        summary: `中文翻译摘要 ${index}。`,
+        category: "tech" as const,
+      })),
+    ],
+  );
+
+  assert.equal(report.tech_briefs.length, 5);
+  assert.ok(report.tech_briefs.every((item) => /[\u3400-\u9fff]/.test(item.summary)));
+});
