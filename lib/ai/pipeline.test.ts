@@ -74,3 +74,20 @@ test("total Qwen unavailability publishes the source-backed fallback", async () 
   assert.equal(report.tech_briefs[0].url, articles[0].url);
   assert.match(report.editor_note, /Qwen/);
 });
+
+
+test("source-backed fallback keeps an independently generated translation", () => {
+  const report = buildSourceBackedFallbackReport([
+    {
+      sourceId: "finance-source",
+      source: "Finance Source",
+      title: "English market headline",
+      url: "https://example.test/translated",
+      excerpt: "Original English excerpt.",
+      summary: "中文翻译摘要，保留来源事实。",
+      category: "finance",
+    },
+  ]);
+
+  assert.equal(report.finance_briefs[0].summary, "中文翻译摘要，保留来源事实。");
+});

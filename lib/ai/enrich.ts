@@ -1,5 +1,5 @@
 import { jsonrepair } from "jsonrepair";
-import { runLlm } from "./llm";
+import { runTranslationLlm } from "./llm";
 import { extractJson } from "./json-util";
 import { REPORT_LOCALE } from "../sources/registry";
 
@@ -243,7 +243,7 @@ async function runEnrichment(
   systemPrompt: string,
   scope: string,
 ): Promise<Map<string, string>> {
-  // Sonnet has a strong "match input language" reflex — when items contain
+  // Some models have a strong "match input language" reflex — when items contain
   // English titles + Chinese-tinted source names (or just a Chinese-leaning
   // RLHF default), system-prompt-only language constraints get ignored. Pin
   // the output language as the first line of the *user* prompt for recency.
@@ -263,7 +263,7 @@ async function runEnrichment(
   const result = new Map<string, string>();
 
   try {
-    const { text } = await runLlm({
+    const { text } = await runTranslationLlm({
       systemPrompt,
       userPrompt,
       timeoutMs: 240_000,
@@ -313,9 +313,9 @@ async function runEnrichment(
 }
 
 /**
- * Generate Chinese summaries for a batch of GitHub Trending repos in
- * a single Claude CLI call. Failures are non-fatal — caller gets an
- * empty map and the rendering simply omits summaries.
+ * Generate localized summaries for a batch of GitHub Trending repos in
+ * a single dedicated translation-model call. Failures are non-fatal — caller
+ * gets an empty map and the rendering simply omits summaries.
  */
 export async function enrichGithubTrendingSummaries(
   items: EnrichInput[],
@@ -331,8 +331,8 @@ export async function enrichGithubTrendingSummaries(
 
 /**
  * Generate Chinese factual summaries for the (up to ~50) finance news
- * items that will be shown in the raw panel. One Sonnet call covers
- * the whole batch.
+ * items that will be shown in the raw panel. One dedicated translation-model
+ * call covers the whole batch.
  */
 export async function enrichFinanceNewsSummaries(
   items: EnrichInput[],
@@ -393,7 +393,7 @@ export async function enrichXStockPickSummaries(
   const result = new Map<string, LocalizedXStockPick>();
 
   try {
-    const { text } = await runLlm({
+    const { text } = await runTranslationLlm({
       systemPrompt: PROMPTS.xStock,
       userPrompt,
       timeoutMs: 360_000,

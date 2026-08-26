@@ -7,6 +7,7 @@ name: Daily Brief
 #   2. Settings → Pages → Build & deployment → Source: "Deploy from a branch" → gh-pages / root
 #   3. Settings → Secrets and variables → Actions:
 #        - Secrets: ANTHROPIC_API_KEY (or OPENAI / DEEPSEEK / MINIMAX as you prefer)
+#                   TRANSLATION_API_KEY or XKOOL_API_KEY (optional GLM translation route)
 #                   ATTENTIONVC_API_KEY (optional, for the X viral feed)
 #                   TWITTER_AUTH_TOKEN (optional, for self-hosted RSSHub X feeds)
 #        - Variables (all optional, sensible defaults provided):
@@ -18,6 +19,7 @@ name: Daily Brief
 #                            examples: "8" / "8,18" / "0,6,12,18"
 #            REPORT_DAYS     day-of-week filter (cron-style 0-6 SUN=0)  (default: * — every day)
 #                            examples: "*" / "1-5" (weekdays) / "1,3,5" (MWF)
+#            TRANSLATION_BASE_URL / TRANSLATION_MODEL (optional; default: xkool / glm-5.2)
 #   4. Trigger once manually from Actions tab to seed gh-pages.
 #
 # After first successful run your report is live at:
@@ -274,11 +276,14 @@ jobs:
           # compatible service that isn't one of the named presets (Moonshot,
           # SiliconFlow, OpenRouter, self-hosted, ...). Provider-specific
           # vars above take precedence when both are set.
-          # Keep the previous LLM_API_KEY as a rollback path, but prefer the
-          # dedicated GLM relay when configured.
-          LLM_API_KEY: ${{ secrets.XKOOL_API_KEY || secrets.LLM_API_KEY }}
+          # Keep the main report credential separate from the dedicated
+          # translation credential. They may point at different providers.
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
           LLM_REASONING_EFFORT: ${{ vars.LLM_REASONING_EFFORT }}
+          TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY || secrets.XKOOL_API_KEY }}
+          TRANSLATION_BASE_URL: ${{ vars.TRANSLATION_BASE_URL || 'https://new.xkool.cfd/v1' }}
+          TRANSLATION_MODEL: ${{ vars.TRANSLATION_MODEL || 'glm-5.2' }}
           REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
           REPORT_TZ: ${{ vars.REPORT_TZ }}
           EARNINGS_LOOKAHEAD_DAYS: ${{ vars.EARNINGS_LOOKAHEAD_DAYS || '7' }}

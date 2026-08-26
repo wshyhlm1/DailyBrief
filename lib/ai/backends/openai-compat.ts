@@ -1,6 +1,10 @@
 import OpenAI from "openai";
 import { classifyError, logLlmCall } from "../log";
-import type { LlmRunOptions, LlmRunResult } from "../llm";
+import type {
+  LlmRouteOverrides,
+  LlmRunOptions,
+  LlmRunResult,
+} from "../llm";
 
 /**
  * OpenAI-compatible backend. Reused for any provider that exposes the
@@ -135,21 +139,28 @@ export async function withTransientRetries<T>(
 
 function getClient(
   cfg: OpenAICompatConfig,
+  overrides: LlmRouteOverrides = {},
 ): { client: OpenAI; model: string; baseURL: string } {
   // Provider-specific env wins; LLM_API_KEY / LLM_BASE_URL are generic
   // aliases so users pointing at a non-preset OpenAI-compatible service
   // (Moonshot, SiliconFlow, OpenRouter, self-hosted vLLM, ...) don't have
   // to misuse the OPENAI_* variable names just to reach a custom endpoint.
-  const apiKey = process.env[cfg.apiKeyEnv] || process.env.LLM_API_KEY;
+  const apiKey =
+    overrides.apiKey?.trim() ||
+    process.env[cfg.apiKeyEnv] ||
+    process.env.LLM_API_KEY;
   if (!apiKey) {
     throw new Error(
       `${cfg.apiKeyEnv} (or generic LLM_API_KEY) is required for LLM_BACKEND=${cfg.backend}. Set it in .env.local.`,
     );
   }
-  const baseURL = process.env[cfg.baseUrlEnv]?.trim()
-    || process.env.LLM_BASE_URL?.trim()
-    || cfg.defaultBaseUrl;
-  const model = process.env.LLM_MODEL?.trim() || cfg.defaultModel;
+  const baseURL =
+    overrides.baseUrl?.trim() ||
+    process.env[cfg.baseUrlEnv]?.trim() ||
+    process.env.LLM_BASE_URL?.trim() ||
+    cfg.defaultBaseUrl;
+  const model =
+    overrides.model?.trim() || process.env.LLM_MODEL?.trim() || cfg.defaultModel;
 
   const cacheKey = `${baseURL}::${apiKey.slice(-6)}`;
   let client = clientCache.get(cacheKey);
@@ -160,14 +171,23 @@ function getClient(
     client = new OpenAI({
       apiKey,
       baseURL,
-      defaultHeaders: { "User-Agent": "DailyBrief/0.1" },
+      defaultHeaders: {
+        "User-Agent": baseURL.includes("new.xkool.cfd")
+          ? "DailyBrief/xkool"
+          : "DailyBrief/0.1",
+      },
     });
     clientCache.set(cacheKey, client);
   }
   return { client, model, baseURL };
 }
 
-function resolveReasoningEffort(): ReasoningEffort | null {
+function resolveReasoningEffort(
+  overrides: LlmRouteOverrides = {},
+): ReasoningEffort | null {
+  if (Object.prototype.hasOwnProperty.call(overrides, "reasoningEffort")) {
+    return overrides.reasoningEffort as ReasoningEffort | null;
+  }
   const raw = process.env.LLM_REASONING_EFFORT?.trim().toLowerCase();
   if (!raw) return null;
   if (VALID_REASONING_EFFORTS.has(raw as ReasoningEffort)) {
@@ -201,12 +221,13 @@ export function openaiCompatModel(cfg: OpenAICompatConfig): string {
 export async function runOpenAICompat(
   opts: LlmRunOptions,
   cfg: OpenAICompatConfig,
+  overrides: LlmRouteOverrides = {},
 ): Promise<LlmRunResult> {
-  const { client, model, baseURL } = getClient(cfg);
+  const { client, model, baseURL } = getClient(cfg, overrides);
   const started = Date.now();
   const inputChars = opts.systemPrompt.length + opts.userPrompt.length;
   const timeoutMs = opts.timeoutMs ?? 180_000;
-  const reasoningEffort = resolveReasoningEffort();
+  const reasoningEffort = resolveReasoningEffort(overrides);
   const request: OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming = {
     model,
     messages: [

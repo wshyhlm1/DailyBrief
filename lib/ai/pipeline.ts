@@ -194,7 +194,12 @@ function selectRoundRobin(
 }
 
 function sourceBackedBrief(item: ArticleInput, index: number): BriefItem {
-  const excerpt = (item.displayExcerpt ?? item.excerpt ?? "")
+  // Enrichment runs before the report generator. When the primary digest
+  // model is unavailable, preserve the independently generated translation
+  // instead of dropping back to the original English excerpt.
+  const enrichedSummary =
+    item.summary ?? (item as ArticleInput & { cnSummary?: string }).cnSummary;
+  const excerpt = (item.displayExcerpt ?? enrichedSummary ?? item.excerpt ?? "")
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, 260);
@@ -213,8 +218,9 @@ function sourceBackedBrief(item: ArticleInput, index: number): BriefItem {
 
 /**
  * Publish an honest source-backed report when the primary Qwen service is
- * unavailable. Titles, URLs and excerpts remain bound to fetched articles;
- * no synthetic facts or model-written conclusions are introduced.
+ * unavailable. Titles, URLs and text remain bound to fetched articles or to
+ * the independently validated enrichment pass; no synthetic conclusions are
+ * introduced.
  */
 export function buildSourceBackedFallbackReport(
   articles: ArticleInput[],
