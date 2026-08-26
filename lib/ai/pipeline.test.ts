@@ -84,6 +84,7 @@ test("source-backed fallback keeps an independently generated translation", () =
       title: "English market headline",
       url: "https://example.test/translated",
       excerpt: "Original English excerpt.",
+      displayExcerpt: "Original English display excerpt.",
       summary: "中文翻译摘要，保留来源事实。",
       category: "finance",
     },

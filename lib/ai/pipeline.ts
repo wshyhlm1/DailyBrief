@@ -199,7 +199,7 @@ function sourceBackedBrief(item: ArticleInput, index: number): BriefItem {
   // instead of dropping back to the original English excerpt.
   const enrichedSummary =
     item.summary ?? (item as ArticleInput & { cnSummary?: string }).cnSummary;
-  const excerpt = (item.displayExcerpt ?? enrichedSummary ?? item.excerpt ?? "")
+  const excerpt = (enrichedSummary ?? item.displayExcerpt ?? item.excerpt ?? "")
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, 260);
